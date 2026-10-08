@@ -1,0 +1,69 @@
+managed implementation in class zbp_bom_app01_RV unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZBOM_APP01_RV alias _hdr
+//persistent table zbom_htb
+with unmanaged save
+draft table zbom_HDTB
+lock master total etag Createdon
+etag master Createdon
+
+authorization master ( instance )
+//etag master <field_name>
+{
+create ( authorization : global);
+  update;
+  delete;
+  action ( features : instance ) loadexcl result [1] $self;
+  side effects { action loadexcl affects entity _ITEM; }
+  determination gtdata on save { create; update; }
+//  determination set_status on save { create; update; }
+
+  draft action Edit;
+  draft action Resume;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  field ( readonly, numbering : managed ) Suid;
+  field ( readonly ) materialnumber,plant,alternativebom,bomusage;
+  field ( readonly ) status;
+  association _ITEM { create; with draft; }
+  mapping for zbom_htb corresponding ;
+}
+
+define behavior for ZBOM_APP01_IRV alias _item
+persistent table zbom_itb
+draft table zbom_idtb
+lock dependent by _hdr
+authorization dependent by _hdr
+{
+//  create;
+  update;
+  delete;
+
+  field ( readonly : update ) materialnumber;
+  field ( readonly ) suid,alternativebom,plant,bomusage;
+
+  association _hdr { with draft; }
+  determination gtdata on save { create; update;}
+    mapping for zbom_itb corresponding ;
+}
+
+//define behavior for ZBOM_APP01_IRV alias _item
+////persistent table zbom_idtb
+//with unmanaged save
+//draft table zbom_IDTB
+//lock dependent by _HDR
+//authorization dependent by _HDR
+////etag master <field_name>
+//{
+//
+//  update;
+//  delete;
+//  field ( readonly : update ) materialnumber;
+//   field ( readonly,numbering : managed ) suid;
+//   association _HDR { with draft; }
+//   determination gtdata on save { create; update;}
+//    mapping for zbom_itb corresponding ;
+//}

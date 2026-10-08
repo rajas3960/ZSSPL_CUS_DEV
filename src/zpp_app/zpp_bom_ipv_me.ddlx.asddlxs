@@ -1,0 +1,44 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_BOM_IPV
+    with 
+{
+@UI.facet: [ { id:              'Item',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Bill Of material Item',
+                 position:        10 } ]
+    @UI.hidden: true
+    Uuid;
+    @UI: { lineItem: [{ position: 20, label: 'REV.'}],
+  identification: [{ position: 20, label: 'REV' } ] }
+  @EndUserText.label: 'REV.'
+    Itemno;
+    @UI: { lineItem: [{ position: 30, label: 'DETAILS'}],
+  identification: [{ position: 30, label: 'DETAILS' } ] }
+  @EndUserText.label: 'DETAILS'
+    Details;
+    @UI: { lineItem: [{ position: 40, label: 'DATE'}],
+  identification: [{ position: 40, label: 'DATE' } ] }
+  @EndUserText.label: 'DATE'
+    Itemcreate;
+    @UI: { lineItem: [{ position: 50, label: 'INITIAL'}],
+  identification: [{ position: 50, label: 'INITIAL' } ] }
+  @EndUserText.label: 'INITIAL'
+    Initials;
+    @UI: { lineItem: [{ position: 60, label: 'Itemcreatedby'}],
+  identification: [{ position: 60, label: 'Itemcreatedby' } ] }
+  @EndUserText.label: 'Itemcreatedby'
+    Itemcreatedby;
+    @UI: { lineItem: [{ position: 70, label: 'Itemcreatedat'}],
+  identification: [{ position: 70, label: 'Itemcreatedat' } ] }
+  @EndUserText.label: 'Itemcreatedat'
+    Itemcreatedat;
+    @UI: { lineItem: [{ position: 80, label: 'Itemlastchangedby'}],
+  identification: [{ position: 80, label: 'Itemlastchangedby' } ] }
+  @EndUserText.label: 'Itemlastchangedby'
+    Itemlastchangedby;
+    /* Associations */
+    @UI.hidden: true
+    _hdr;
+    
+}

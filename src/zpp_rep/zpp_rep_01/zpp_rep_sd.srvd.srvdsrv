@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition'
+define service ZPP_REP_SD {
+  expose ZPP_REP_CV;
+}

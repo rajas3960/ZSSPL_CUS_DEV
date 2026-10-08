@@ -1,0 +1,73 @@
+managed implementation in class zbp_pp_bom_hre unique;
+strict ( 1 );
+with draft;
+
+define behavior for ZPP_BOM_HRE alias _hdr
+with unmanaged save
+//persistent table zpp_bom_htb
+draft table zpp_bom_hddf
+lock master
+total etag Createdon
+authorization master ( instance )
+etag master Createdon
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly, numbering : managed ) Uuid;
+  field (readonly) Bomdate,Bomnumber,Drawingno,Projectname,towertypedesc,structuredesc,Purchaser,Refdocno,Bomno,bomversion;
+  field (readonly:update, mandatory:create) Projectno,Towertype,Structure;
+  association _item { create; with draft; }
+  association _item1 { create; with draft; }
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  determination gt_data1 on save { create; update; }
+  determination Bomdate on modify{ create; }
+  validation Validation on save { create; field Projectno, Towertype,Structure; }
+  action ( features : instance ) seltitem result [1] $self;
+  action ( features : instance ) selsec result [1] $self;
+  action (features : instance) printBom  result [1] $self;
+  side effects {  action seltitem affects entity _item;
+  action selsec affects entity _item1; }
+  mapping for zpp_bom_htb corresponding;
+}
+
+define behavior for ZPP_BOM_IRE alias _item
+with unmanaged save
+draft table zpp_bom_iddf
+//persistent table zpp_bom_itb
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly:update ) Markno,Markdesc,Member,Length,Width,Quantity,totalwt,unitperpcs,Unit;
+   field ( readonly ) Uuid ,Srno ;
+//   determination gtidata1 on save { create; update; field Srno; }
+   determination DELDE on modify { delete; field Srno; }
+   action ( features : instance ) selectim result [1] $self;
+   determination gtidata1 on save { create; update; field Srno; }
+//   determine action validreqty { validation ; }
+//action (features : instance ) selectionitm parameter zpp_BOMHD result [1] $self;
+  association _hdr { with draft; }
+  mapping for zpp_bom_itb corresponding;
+}
+define behavior for ZPP_BOM_IRV1 alias _item1
+with unmanaged save
+draft table zpp_bom_idrv1
+//persistent table zpp_bom_itb
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+
+   field ( readonly ) Uuid ,Maktx,Matnr,Meins,Totalqty,Unitwt,bomnum ;
+  association _hdr { with draft; }
+  mapping for zpp_bom_itb1 corresponding;
+}

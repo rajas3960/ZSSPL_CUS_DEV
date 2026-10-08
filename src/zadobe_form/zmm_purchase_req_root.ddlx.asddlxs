@@ -1,0 +1,73 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZMM_PURCHASE_REQ_Root with
+{
+
+  @UI.selectionField: [{position: 20  }]
+  @UI.lineItem: [{ position: 10 },
+   { navigationAvailable:  false },
+   { type: #FOR_ACTION, dataAction: 'preview' , label: 'Issue output' ,position: 10 }]
+  @EndUserText.label: 'Purchase Requestion No'
+  purreq_no;
+  @UI.selectionField: [{ position: 10 }]
+  @EndUserText.label: 'Purchase Requestion Item No'
+  purreq_itno;
+  @UI.lineItem: [{ position: 30 }]
+  @EndUserText.label: 'Purchase Requestion Description'
+  Hdesc;
+  @UI.lineItem: [{ position: 40 }]
+  @EndUserText.label: 'Item Text'
+  itemtext;
+  @UI.lineItem: [{ position: 50 }]
+  @EndUserText.label: 'Requested Quantity'
+  REQ;
+  @UI.lineItem: [{ position: 60 }]
+  @EndUserText.label: 'Base Unit'
+  BaseUnit;
+  @UI.lineItem: [{ position: 70 }]
+  @EndUserText.label: 'Per Price'
+  PERPRICE;
+  @UI.lineItem: [{ position: 80 }]
+  @EndUserText.label: 'Net Amount'
+  NET_AMT;
+  @UI.lineItem: [{ position: 90 }]
+  @UI.selectionField: [{ position: 10 }]
+  @EndUserText.label: 'Cost Center'
+  CostCenter;
+  @UI.lineItem: [{ position: 100 }]
+  @UI.selectionField: [{ position: 10 }]
+  @EndUserText.label: 'GL Acccount'
+  GLAccount;
+  @UI.lineItem: [{ position: 110 }]
+  @UI.selectionField: [{ position: 10 }]
+  @EndUserText.label: 'Cost Name'
+  COSTNAME;
+  @UI.lineItem: [{ position: 120 }]
+  @EndUserText.label: 'Remarks'
+  remarks;
+  @UI.lineItem: [{ position: 130 }]
+  @EndUserText.label: 'Requestion Date'
+  reqdate;
+  @UI.lineItem: [{ position: 140 }]
+  @EndUserText.label: 'Indent Date'
+  indetdate;
+  @UI.lineItem: [{ position: 150 }]
+  @EndUserText.label: 'Department'
+  dept;
+  @UI.lineItem: [{ position: 160 }]
+  @EndUserText.label: 'GR Document'
+  GRDocument;
+  @UI.lineItem: [{ position: 170 }]
+  @EndUserText.label: 'Vendor Name'
+  VendorName;
+  @UI.selectionField: [{ position: 30 }]
+  @UI.lineItem: [{ position: 20 }]
+  @EndUserText.label: 'Purchase Order No'
+  PurchasingDocument;
+  @UI.lineItem: [{ position: 30 }]
+  @EndUserText.label: 'Purchasing Document Item'
+  PurchasingDocumentItem;
+  @UI.lineItem: [{ position: 180 }]
+  @EndUserText.label: 'Requestion Days'
+  REQDays;
+
+};

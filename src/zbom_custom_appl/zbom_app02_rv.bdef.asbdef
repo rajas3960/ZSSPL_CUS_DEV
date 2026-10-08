@@ -1,0 +1,85 @@
+managed implementation in class zbp_bom_app02_rv unique;
+strict (1);
+with draft;
+
+define behavior for ZBOM_APP02_RV alias _HDR
+//persistent table zbom_app02_htb1
+with unmanaged save
+draft table zbom_app02_hdt1
+lock master total etag Createdon
+etag master Createdon
+authorization master ( instance )
+
+{
+  create ( authorization : global);
+  update;
+  delete;
+  action loadexcl result [1] $self;
+  side effects { action loadexcl affects entity _ITEM; }
+  determination gtdata on save { create; update; }
+//  determination gtdata2 on save { create; update; }
+
+//  determination calc_error_count on save { create; update; }
+
+  draft action Edit;
+  draft action Resume;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  field ( readonly, numbering : managed ) Suid;
+  field ( readonly ) Createdby, Createdon, Status;
+  association _ITEM { create; with draft; }
+//  association _HRD  { create; with draft; }
+
+  mapping for zbom_app02_htb1 corresponding;
+  action create_bom result [1] $self;
+}
+
+define behavior for ZBOM_APP02_IRV alias _ITEM
+//persistent table zbom_app02_ITB
+with unmanaged save
+draft table zbom_app02_ditb2
+lock dependent by _HDR
+authorization dependent by _HDR
+{
+  update;
+  delete;
+
+  field ( readonly )
+    Suid,
+    materialNumber,
+    plant,
+    bomusage,
+    alternativebom,
+    itemid;
+
+  association _HDR { with draft; }
+
+  determination gtdata on save { create; update; }
+//   determination gtdata2 on save { create; update; }
+validation errormesg on save  { create; }
+  mapping for ZBOM_APP02_ITB2 corresponding;
+}
+
+//define behavior for ZBOM_APP02_RV2 alias _HRD
+////persistent table zbom_app02_ht2
+//with unmanaged save
+//draft table zbom_app02_hdt2
+//lock dependent by _HDR
+//authorization dependent by _HDR
+//{
+//  update;
+//  delete;
+//
+//  field ( readonly )
+//    Suid,
+//    materialnumber,
+//    plant,
+//    bomusage,
+//    alternativebom;
+//
+//  association _HDR { with draft; }
+//  determination gtdata2 on save { create; update; }
+////  determination ZBOM_APP02_RV2~GTDATA2
+//  mapping for zbom_app02_ht2 corresponding;
+//}

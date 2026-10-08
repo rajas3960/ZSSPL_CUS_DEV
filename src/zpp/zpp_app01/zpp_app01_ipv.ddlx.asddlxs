@@ -1,0 +1,50 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_APP01_IPV
+    with 
+{
+
+ @UI.facet: [ { id:              'Item',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'MultiLevel BOM Components',
+                 position:        10 } ]
+  @UI.hidden: true
+  Uuid;
+  @UI.hidden: true
+  Ccode;
+  @UI.hidden: true
+  Sno;
+  @UI: { lineItem: [{ position: 5, label: 'Plant'}],
+    identification: [{ position: 5, label: 'Plant' } ] }
+Plant;
+  @UI: { lineItem: [{ position: 10, label: 'Material Number'}],
+    identification: [{ position: 10, label: 'Material Number' } ] }
+Fgproduct;
+@UI: { lineItem: [{ position: 20, label: 'BOM ID'}],
+      identification: [{ position: 20, label: 'BOM ID' } ] }
+  Bomid;
+  @UI: { lineItem: [{ position: 90, label: 'BOM Component & Group'}],
+      identification: [{ position: 90, label: 'BOM Component & Group' } ] }
+  Component;
+  @UI.hidden           : true
+  Bomvar;
+  @UI.hidden           : true
+  Bomitmnode;
+  @UI.hidden           : true
+  Bomintchgcnt;
+  @UI.hidden           : true
+  Bomver;
+  @UI.hidden           : true
+  Bomcat;
+  @UI.hidden           : true
+  Componentdescription;
+  @UI: { lineItem: [{ position: 100, label: 'Component Quantity'}],
+      identification: [{ position: 100, label: 'Component Quantity' } ] }
+  Componentquantity;
+  @UI.hidden           : true
+  Componentuom;
+/* Associations */
+ @UI.hidden           : true
+_Mhdr;
+    
+}

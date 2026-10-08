@@ -1,0 +1,22 @@
+managed implementation in class zbp_pp_stock_rv unique;
+strict ( 2 );
+
+define behavior for ZPP_STOCK_RV alias HDR
+with unmanaged save
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+//  create ( authorization : global );
+//  update;
+//  delete;
+  field ( readonly ) MaterialDocumentYear, MaterialDocument, MaterialDocumentItem, PurchaseOrder, PurchaseOrderItem, Product, Plant, StorageLocation, Batch, Currency, InventoryStockType, InventorySpecialStockType;
+
+  action(features : instance) Gtlegth parameter ZPP_STOCK_P ;
+
+  side effects { action Gtlegth affects field length,field width, field pcs,   $self;
+
+
+
+    }
+}

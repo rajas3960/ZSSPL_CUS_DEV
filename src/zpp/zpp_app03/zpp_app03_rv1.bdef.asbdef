@@ -1,0 +1,97 @@
+managed implementation in class zbp_pp_app03_rv1 unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPP_APP03_RV1 alias _hdr
+//persistent table zpp_app03_tb1
+draft table zpp_app03_dt1
+with unmanaged save
+lock master
+total etag Lastchangedon
+authorization master ( instance )
+etag master Lastchangedon
+//early numbering
+{
+  create ( authorization : global );
+  update;
+  delete;
+  //  field (readonly : update) Werks,Jobdesc;
+  field ( mandatory : create ) Werks, Jobdesc;
+  field ( readonly : update ) Werks, Jobdesc;
+  field ( readonly ) Jobshtnum, Status;
+  draft action Resume;
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action  Prepare;
+
+  action ( features : instance ) Closejob result [1] $self;
+  action ( features : instance ) matval parameter ZPP_MATSTVH_AE result [1] $self;
+  action ( features : instance ) salvalje parameter ZPP_MATSTVH_AE result [1] $self;
+  action (features : instance) genjob result[1] $self;
+  determination gtdata1 on save { create; update; }
+
+
+  determination gtjob1 on modify {create; field Werks;}
+  side effects { action matval  affects entity _Item1 ;
+  action genjob affects field Jobshtnum;
+  field Werks affects field Jobshtnum ;
+  }
+
+  association _Item1 { create(features : instance); with draft; }
+  association _Item2 { create(features : instance); with draft; }
+
+  mapping for zpp_app03_tb1 corresponding;
+}
+
+define behavior for ZPP_APP03_IRV1 alias _item1
+//persistent table zpp_app03_itb1
+with unmanaged save
+draft table zpp_app03_idt1
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+
+  update;
+  delete(features : instance);
+  field ( readonly ) Jobshtnum, Orderno, plant;
+  field(readonly)Matnr,Plnqty,Totopnqty,Totreqty,Uom,Maktx,Vbeln,Soitem;
+  field(features : instance) Reqty;
+
+  validation reqty_val on save {create; update; field Reqty ;}
+  determine action validreqty {validation reqty_val ;}
+
+
+
+  association _hdr { with draft; }
+  static action ( authorization : global ) matvh parameter ZPP_MATSTVH_AE result [1] $self;
+  static action ( authorization : global ) sovh parameter ZPP_SALESVH_AE result [1] $self;
+
+  action ( features : instance ) addmat result [1] $self;
+
+   side effects {
+  determine action validreqty executed on field Reqty affects messages ;
+  action addmat affects entity _hdr._Item2;
+
+  }
+  determination gtidata1 on save { create; update; field Reqty; }
+  mapping for zpp_app03_itb1 corresponding;
+
+}
+
+define behavior for ZPP_APP03_IRV2 alias _item2
+//persistent table zpp_app03_itb2
+with unmanaged save
+draft table zpp_app03_idt2
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete(features : instance);
+  field ( readonly ) Jobsheet, Sno, Orderno, plant,Reqty,Matnr,Uom,Maktx,Vbeln,Soitem;
+
+  association _hdr { with draft; }
+  mapping for zpp_app03_itb2 corresponding;
+}

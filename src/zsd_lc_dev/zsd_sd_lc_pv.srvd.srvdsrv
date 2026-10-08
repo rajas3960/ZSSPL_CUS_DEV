@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Defination - LC Definition'
+define service Zsd_sd_lc_pv {
+  expose ZSD_LV_RPV  as mainpage;
+  expose zsd_item_pv as ITEM;
+}

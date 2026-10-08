@@ -1,0 +1,8 @@
+@EndUserText.label: 'Service defination of Release Document'
+define service ZPP_APP3_UI {
+  expose ZPP_APP03_Hpv   as main;
+  expose ZPP_APP03_IPV   as item;
+  expose zpp_app03_ipv02 as item2;
+  expose zpp_Bom_report  as item3;
+  expose ZPP_APP03_IPV3  as str;
+}

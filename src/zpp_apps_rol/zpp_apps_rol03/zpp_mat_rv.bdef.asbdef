@@ -1,0 +1,31 @@
+managed implementation in class zbp_pp_mat_rv unique;
+
+strict (2);
+with draft;
+
+define behavior for ZPP_MAT_RV
+persistent table zpp_mat_tb
+draft table zpp_mat_dt
+
+lock master
+total etag createdon
+authorization master ( instance )
+etag master CreatedOn
+{
+
+  create ( authorization : global );
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Resume;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+  field ( mandatory : create, readonly : update ) Matnr;
+  field ( readonly ) CreatedOn;
+
+  mapping for zpp_mat_tb corresponding;
+
+}

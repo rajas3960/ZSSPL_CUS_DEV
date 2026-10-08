@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service defination of  GI and GR'
+define service ZPP_APPS07_UI {
+  expose ZPP_APPS07_PV    as MainPage;
+  expose ZPP_APPS07_IPV;
+  expose ZPP_APPS07_IPV2;
+  expose ZPP_APPS07_RRV01;
+}

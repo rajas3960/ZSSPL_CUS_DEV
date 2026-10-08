@@ -1,0 +1,91 @@
+@Metadata.layer: #PARTNER
+annotate entity ZMM_UAPPS01_IPV with
+{
+  @UI.facet: [ { id:              'Item',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Transfer Posting Details',
+                   position:        10 } ]
+  @UI.hidden: true
+  Uuid;
+  @UI: { lineItem: [{ position: 10, label: 'Item Number'} ],
+  identification: [{ position: 10, label: 'Item Number' } ] }
+  Itemno;
+  //  @UI: { lineItem: [{ position: 20, label: 'Movement Type'}],
+  //  identification: [{ position: 20, label: 'Movement Type' } ] }
+  @UI.hidden: true
+  Gmtype;
+  //  @UI: { lineItem: [{ position: 21, label: 'Material Document'}],
+  //  identification: [{ position: 21, label: 'Material Document' } ] }
+  //  matdoc;
+  @UI: { lineItem: [{ position: 30, label: 'Material'}],
+  identification: [{ position: 30, label: 'Material' } ] }
+  //  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZMM_MATERIAL_VH',
+  // element: 'Product' }  }]
+  //  @Search.defaultSearchElement: true
+  Material;
+  @UI: { lineItem: [{ position: 35, label: 'Tran. Material'}],
+  identification: [{ position: 35, label: 'Tran. Material' } ] }
+  Imaterial;
+  //  @UI: { lineItem: [{ position: 35, label: 'Material Description'}],
+  //  identification: [{ position: 35, label: 'Material Description' } ] }
+  @UI.hidden: true
+  Mdesc;
+  @UI: { lineItem: [{ position: 40, label: 'Plant'}],
+  identification: [{ position: 40, label: 'Plant' } ] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_PlantStdVH',element: 'Plant' }  }]
+  Plant;
+  @UI: { lineItem: [{ position: 50, label: 'Stor.Loc'}],
+  identification: [{ position: 50, label: 'Stor.Loc' } ] }
+  Sloc;
+  @UI: { lineItem: [{ position: 55, label: 'Tran. Stor.Loc'}],
+  identification: [{ position: 55, label: 'Tran .Stor.Loc' } ] }
+  Isloc;
+  @UI: { lineItem: [{ position: 60, label: 'Quantity'}],
+  identification: [{ position: 60, label: 'Quantity' } ] }
+  Matqty;
+  @UI: { lineItem: [{ position: 70, label: 'Units'}],
+  identification: [{ position: 70, label: 'Units' } ] }
+  Uom;
+  @UI: { lineItem: [{ position: 80, label: 'Batch'}],
+  identification: [{ position: 80, label: 'Batch' } ] }
+  Batch;
+  @UI: { lineItem: [{ position: 85, label: 'Tran. Batch'}],
+  identification: [{ position: 85, label: 'Tran. Batch' } ] }
+  Ibatch;
+  //  @UI: { lineItem: [{ position: 71, label: 'Rate'}],
+  //  identification: [{ position: 71, label: 'Rate' } ] }
+  @UI.hidden: true
+  Rate;
+  //  @UI: { lineItem: [{ position: 80, label: 'Cost Center'}],
+  //  identification: [{ position: 80, label: 'Cost Center' } ] }
+  @UI.hidden: true
+  Costcenter;
+  //  @UI: { lineItem: [{ position: 90, label: 'GL Account'}],
+  //  identification: [{ position: 90, label: 'GL Account' } ] }
+  @UI.hidden: true
+  Glaccount;
+  //  @UI: { lineItem: [{ position: 100, label: 'Staff Food/Spoilage Qty'}],
+  //  identification: [{ position: 100, label: 'Staff Food/Spoilage Qty' } ] }
+  @UI.hidden: true
+  Spsfqty;
+  @UI.hidden: true
+  //  @UI: { lineItem: [{ position: 110, label: 'Header Description'}],
+  //  identification: [{ position: 110, label: 'Header Description' } ] }
+  //  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZMM_MVMTYP_VH1', element: 'value_low' }, distinctValues: true }]
+  Hdrdesc;
+  @UI.hidden: true
+  Mark;
+  @UI.hidden: true
+  Createdby;
+  @UI.hidden: true
+  Createdat;
+  @UI.hidden: true
+  Lastchangedby;
+  @UI.hidden: true
+  Lastchangedat;
+  /* Associations */
+  @UI.hidden: true
+  _Header;
+
+}

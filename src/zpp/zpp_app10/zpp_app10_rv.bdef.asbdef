@@ -1,0 +1,29 @@
+managed implementation in class zbp_pp_app10_rv unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPP_APP10_RV //alias <alias_name>
+//persistent table zpp_app03_tb1
+draft table zpp_app10_dt1
+with unmanaged save
+lock master
+total etag Lastchangedon
+authorization master ( instance )
+etag master Lastchangedon
+//etag master <field_name>
+
+{
+
+  draft action Resume;
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action  Prepare;
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) werks, jobshtnum;
+  action (features : instance ) goodrecipts  result[1] $self;
+
+
+}

@@ -1,0 +1,120 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: {
+    typeName: 'Job-Sheet Release',
+    typeNamePlural: 'Job-Sheet Release',
+    title: { type: #STANDARD, value: 'Vrno' }
+  }
+}
+annotate entity ZPP_APPS06_PV with
+{
+
+  @UI.facet: [ { id:              'Header',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'Jobsheet Release Orders',
+                        position:        10 } ,
+                      { id:              'Item1',
+                        purpose:         #STANDARD,
+                        type:            #LINEITEM_REFERENCE,
+                        label:           'Marks Numbers With Productions Orders',
+                        position:        20,
+                        targetElement:   '_item'},
+                        {
+          id: 'DeOverallstatus',
+          purpose: #HEADER,
+          type: #DATAPOINT_REFERENCE,
+          position: 30,
+          targetQualifier: 'StatusData'
+       } ]
+
+  @Consumption.filter:{ mandatory: true }
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZPP_APPS06_VHR', element: 'vrno' } } ]
+  @UI: {  lineItem:       [ { position: 10, label: 'Vr Number' } ],
+         identification: [ { position: 10, label: 'Vr Number'},{ type: #FOR_ACTION ,dataAction: 'Gtrelord',label: 'Release Plan',position: 10,importance: #HIGH },
+         { type: #FOR_ACTION ,dataAction: 'Gtmatchk',label: 'Material Check ',position: 30 },
+         { type: #FOR_ACTION ,dataAction: 'GtContract',label: 'Contractor',position: 40 },
+         { type: #FOR_ACTION ,dataAction: 'Gtunrelord1',label: 'Un Release Plan',position: 20 ,importance: #HIGH}] }
+//           { type: #FOR_ACTION ,dataAction: 'Gtunrelord',label: 'Un Release Plan',position: 40 } ] }
+  @EndUserText.label: 'Vr Number'
+  Vrno;
+  @UI: {  lineItem:       [ { position: 20, label: 'Plant' } ],
+       identification: [ { position: 20, label: 'Plant'} ] }
+  @EndUserText.label: 'Plant'
+  Werks;
+  @UI.hidden: true
+  Uuid;
+  @UI.hidden: true
+  Vbeln;
+  @UI.hidden: true
+  Prod;
+  @UI: {  lineItem:       [ { position: 30, label: 'Project' } ],
+      identification: [ { position: 30, label: 'Project'} ] }
+  @EndUserText.label: 'Project'
+  Project;
+  @UI: {  lineItem:       [ { position: 40, label: 'Project Name' } ],
+      identification: [ { position: 40, label: 'Project Name'} ] }
+  @EndUserText.label: 'Project Name'
+  Projectname;
+  @UI: {  lineItem:       [ { position: 50, label: 'Section Material' } ],
+      identification: [ { position: 50, label: 'Section Material'} ] }
+  @EndUserText.label: 'Section Material'
+  Sectmat;
+  @UI: {  lineItem:       [ { position: 60, label: 'Section Material Desc.' } ],
+    identification: [ { position: 60, label: 'Section Material Desc.'} ] }
+  @EndUserText.label: 'Section Material Desc.'
+  Secdesc;
+  @UI: {  lineItem:       [ { position: 70, label: 'Unit W/t' } ],
+      identification: [ { position: 70, label: 'Unit W/t'} ] }
+  @EndUserText.label: 'Unit W/t'
+  Unitwet;
+  @UI: {  lineItem:       [ { position: 80, label: 'PO No' } ],
+      identification: [ { position: 80, label: 'PO No'} ] }
+  @EndUserText.label: 'PO No'
+  Purno;
+  @UI: {  lineItem:       [ { position: 90, label: 'Deletion Mark' } ],
+      identification: [ { position: 90, label: 'Deletion Mark'} ] }
+  @EndUserText.label: 'Deletion Mark'
+  Delmark;
+  @UI.hidden: true
+  Status;
+  @UI: {  lineItem:       [ { position: 25, label: 'Status',criticality:'stuscrt' } ],
+      identification: [ { position: 25, label: 'Status'} ] }
+        @UI.textArrangement: #TEXT_ONLY
+  @UI.dataPoint: { qualifier: 'StatusData', title: 'Status', criticality: 'stuscrt' }
+  @EndUserText.label: 'Status'
+  Text;
+  @UI: {  lineItem:       [ { position: 100, label: 'Released By User' } ],
+    identification: [ { position: 100, label: 'Released By User'} ] }
+
+  Relusr;
+   @UI: {  lineItem:       [ { position: 110, label: 'Contractor' } ],
+    identification: [ { position: 110, label: 'Contractor'} ] }
+    Contr;
+     @UI: {  lineItem:       [ { position: 120, label: 'Contractor Name' } ],
+    identification: [ { position: 120, label: 'Contractor Name'} ] }
+    Contrname;
+  @UI.hidden: true
+  Gengt;
+  @UI.hidden: true
+  Vrcuting;
+  @UI.hidden: true
+  Totlentq;
+  @UI.hidden: true
+  Totwithst;
+  @UI.hidden: true
+  Totwithmk;
+  @UI.hidden: true
+  Createdby;
+  @UI.hidden: true
+  Createdon;
+  @UI.hidden: true
+  Lastchangedby;
+  @UI.hidden: true
+  Lastchangedon;
+  @UI.hidden: true
+  /* Associations */
+  _item;
+
+}

@@ -1,0 +1,115 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Operational WIP',
+                typeNamePlural: 'Operational WIP Report',
+                title: { type: #STANDARD, label: 'STOCK REPORTS', value: 'ProductionOrderOperation' } },
+                presentationVariant: [{ sortOrder: [{ by: 'ProductionOrderOperation', direction:  #ASC }] }] }
+annotate entity ZPP_WIP_02_PV with
+{
+  @UI.facet: [ { id:              'OperationalWIP',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'ProductionOrder',
+                   position:        10 }]
+  @UI: {  lineItem:       [ { position: 5, label: 'SL No.' } ],
+    identification: [ { position: 5, label: 'SL No.'} ] }
+  @EndUserText.label: 'SL No.'
+  ProductionOrderOperation;
+  @UI: {  lineItem:       [ { position: 10, label: 'Production Order No.' } ],
+     identification: [ { position: 10, label: 'Production Order No.'} ] }
+  @EndUserText.label: 'Production Order No.'
+  @UI.selectionField: [{ position: 10 }]
+  ProductionOrder;
+//  @UI.hidden: true
+//  OrderConfirmation;
+  @UI: {  lineItem:       [ { position: 20, label: 'Mark No.' } ],
+     identification: [ { position: 20, label: 'Mark No.' } ] }
+  @EndUserText.label: 'Mark No.'
+  Product;
+  @UI: {  lineItem:       [ { position: 25, label: 'Section' } ],
+    identification: [ { position: 25, label: 'Section' } ] }
+  @EndUserText.label: 'Section'
+  pdtext;
+  @UI: {  lineItem:       [ { position: 30, label: 'Weight/PC' } ],
+      identification: [ { position: 30, label: 'Weight/PC' } ] }
+  @EndUserText.label: 'Weight/PC'
+  WIEGHTPERPC;
+  @UI: {  lineItem:       [ { position: 33, label: 'Sales Order' } ],
+     identification: [ { position: 33, label: 'Sales Order' } ] }
+  @EndUserText.label: 'Sales Order'
+  SalesOrder;
+  @UI: {  lineItem:       [ { position: 36, label: 'Priority PO' } ],
+  identification: [ { position: 36, label: 'Priority PO' } ] }
+  @EndUserText.label: 'Priority PO'
+  YY1_PriorityPONos_SDH;
+  @UI: {  lineItem:       [ { position: 38, label: 'Project' } ],
+   identification: [ { position: 38, label: 'Project' } ] }
+  @EndUserText.label: 'Project'
+  YY1_Project_SDH;
+  @UI: {  lineItem:       [ { position: 39, label: 'Project Name' } ],
+   identification: [ { position: 39, label: 'Project Name' } ] }
+  @EndUserText.label: 'Project Name'
+  ProductName;
+  @UI: {  lineItem:       [ { position: 40, label: 'Operation' } ],
+     identification: [ { position: 40, label: 'Operation' } ] }
+  @EndUserText.label: 'Operation'
+  @Consumption.valueHelpDefinition: [{  entity: {name: 'ZVH_OPERATION',
+ element: 'WorkCenter'  }}]
+ 
+  WorkCenter;
+  @UI: {  lineItem:       [ { position: 50, label: 'Operation Qty. in Pcs' } ],
+      identification: [ { position: 50, label: 'Operation Qty. in Pcs' } ] }
+  @EndUserText.label: 'Operation Qty. in Pcs'
+  OpPlannedTotalQuantity;
+
+  @UI: {  lineItem:       [ { position: 60, label: 'Operation Weight. In Kgs' } ],
+     identification: [ { position: 60, label: 'Operation Weight. In Kgs' } ] }
+  @EndUserText.label: 'Operation Weight. In Kgs'
+  OPQTY_KG;
+  @UI.hidden: true
+  ConfirmationUnit;
+  @UI: {  lineItem:       [ { position: 70, label: 'Yield qty in pcs' } ],
+     identification: [ { position: 70, label: 'Yield qty in pcs' } ] }
+  @EndUserText.label: 'Yield qty in pcs'
+  ConfYieldQtyInProductionUnit;
+  @UI: {  lineItem:       [ { position: 80, label: 'Prod. Weight' } ],
+     identification: [ { position: 80, label: 'Prod. Weight' } ] }
+  @EndUserText.label: 'Prod. Weight'
+  PRODQQTY_KG;
+  @UI: {  lineItem:       [ { position: 85, label: 'Jobsheet No' } ],
+    identification: [ { position: 85, label: 'Jobsheet No' } ] }
+  @EndUserText.label: 'Jobsheet No'
+  Jobsht;
+  @UI: {  lineItem:       [ { position: 90, label: 'Voucher No' } ],
+    identification: [ { position: 90, label: 'Voucher No' } ] }
+  @EndUserText.label: 'Voucher No'
+  Vrno;
+
+  //  @UI: {  lineItem:       [ { position: 95, label: 'Balance Qty.' } ],
+  //     identification: [ { position: 95, label: 'Balance Qty.' } ] }
+  //  @EndUserText.label: 'Balance Qty.'
+  //  Balance_qty;
+
+
+  //  @UI: {  lineItem:       [ { position: 100, label: ' Balance Weight' } ],
+  //     identification: [ { position: 100, label: ' Balance Weight' } ] }
+  //  @EndUserText.label: ' Balance Weight'
+  //  Balance_wt;
+  @UI.hidden: true
+  YY1_WGT_PC_PRDU;
+  @UI: {  lineItem:       [ { position: 110, label: 'Confirmation Entry Date' } ],
+   identification: [ { position: 110, label: 'Confirmation Entry Date' } ] }
+  @EndUserText.label: 'Confirmation Entry Date'
+  @Consumption.filter: { selectionType: #RANGE }
+  @UI.selectionField: [{ element: 'ConfirmationEntryDate' , position: 20 }]
+  ConfirmationEntryDate;
+  @UI: {  lineItem:       [ { position: 120, label: 'Released User' } ],
+    identification: [ { position: 120, label: 'Released User' } ] }
+  @EndUserText.label: 'Released User'
+  EnteredByUser;
+  @UI: {  lineItem:       [ { position: 130, label: 'Production Order Confirmation' } ],
+    identification: [ { position: 130, label: 'Production Order Confirmation' } ] }
+  @EndUserText.label: 'Production Order Confirmation'
+  OrderConfirmation;
+
+}

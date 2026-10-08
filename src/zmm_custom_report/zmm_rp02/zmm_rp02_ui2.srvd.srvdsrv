@@ -1,0 +1,11 @@
+@EndUserText.label: 'UI 2 Service Defination'
+define service ZMM_RP02_UI2 {
+  expose ZMM_RP02_PV     as MAINPAGE;
+  expose ZMM_RP02_CSI_V;
+  expose ZMM_RP02_INV;
+  expose ZMM_RP02_INV_CD;
+  expose ZTAX_CODE;
+  expose ZMM_RP02_SERIN;
+  expose ZMM_RP02_JV;
+  expose ZMM_RP02_JV2;
+}

@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Challan Wise Report",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Challan Wise Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zmmchalanr01"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_EE1281F7A9F026F773255A1BD11F3F9DEC6B2560_TM",
+    "semanticObject": "YY1_CHALLAN_RP01",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_EE1281F7A9F026F773255A1BD11F3F9DEC6B2560_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Challan Wise Report"
+      }
+    }
+  ]
+}

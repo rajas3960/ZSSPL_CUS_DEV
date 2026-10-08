@@ -1,0 +1,84 @@
+@Metadata.layer: #CUSTOMER
+@UI.headerInfo.title : { type: #STANDARD , label: 'GR Document Posting' , value: 'Docno' }
+@EndUserText.label: 'Material Uploader'
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'Docno', direction: #ASC }]
+,visualizations: [{ type: #AS_LINEITEM }],text: 'GR Document Posting'  }]
+
+
+annotate entity ZMAT_DOC_RPV with
+
+{
+
+  @UI.facet: [{ id: 'Header', purpose: #STANDARD,
+                 type: #IDENTIFICATION_REFERENCE,
+                 label: 'Material Document Header',
+                 position: 10},
+            { id: 'Items',
+            purpose: #STANDARD,
+            type: #LINEITEM_REFERENCE,
+            label: 'Items',
+            position: 20,
+            targetElement: '_Item'}  ]
+
+
+  @UI.hidden: true
+  Uuid;
+  @UI: { lineItem: [{ position: 10, label: 'Document Date' }],
+  identification: [{ position: 10,label: 'Document Date' },
+  { type: #FOR_ACTION, dataAction: 'PostGI', label: 'Post GI' },
+   { type: #FOR_ACTION, dataAction: 'PostPO', label: 'PostPO' }] }
+  
+  Documentdate;
+  @UI: { lineItem: [{ position: 20,label: 'Posting Date' }],
+  identification: [{ position: 20,label: 'Posting Date' }]}
+  Postingdate;
+  @UI: { lineItem: [{ position: 30 ,label: 'Documment Number'}],
+  identification: [{ position: 30,label: 'Document Number' }]}
+  Docno;
+
+  @UI:{ lineItem: [{ position: 35,label: 'Material' }],
+  identification: [{ position: 35,label: 'Material' }] }
+  Material;
+  @UI.textArrangement: #TEXT_ONLY
+  @UI:{lineItem: [{ position: 36,label: 'Material Description' }],
+  identification: [{ position: 36,label: 'Material Description' }]}
+  Mdesc;
+  @UI: { lineItem: [{ position: 37, label: 'Supplier' }],
+       identification: [{ position: 37, label: 'Supplier' }] }
+  Supplier;
+
+  @UI: { lineItem: [{ position: 38, label: 'Company Code' }],
+         identification: [{ position: 38, label: 'Company Code' }] }
+  CompanyCode;
+
+  @UI: { lineItem: [{ position: 39, label: 'PO Number' }],
+         identification: [{ position: 39, label: 'PO Number' }] }
+  Pono;
+  @UI: { lineItem: [{ position: 40,label: 'Status'  }],
+  identification: [{ position: 40,label: 'Status' }]}
+  Status;
+  @UI: { lineItem: [{ position: 50 ,label: 'Item Count' }],
+  identification: [{ position: 50,label: 'Item Count' }]}
+  Itmcnt;
+  @UI.hidden: true
+  Mark;
+  //  @UI:{ lineItem: [{position: 60,label: 'Attchment'  }],
+  //  identification: [{ position: 60,label: 'Attachment',importance: #HIGH }] }
+  //  Zattachment;
+  @UI: { lineItem: [{ position: 70 , label: 'Created By'}],
+  identification: [{ position: 70,label: 'Created By' }]}
+  Createdby;
+  @UI: { lineItem: [{ position: 80 ,label: 'Created At'}],
+  identification: [{ position: 80,label: 'Creatd At' }]}
+  Createdat;
+  @UI: { lineItem: [{ position: 90,label: 'Last Changed By' }],
+  identification: [{position: 90,label: 'Last Changed By'  }]}
+  Lastchangedby;
+  @UI: { lineItem: [{ position: 100 }],identification: [{ position: 100,label: 'Last Changed At' }]}
+  Lastchangedat;
+  @UI: { lineItem: [{ position: 110 }]}
+  /* Associations */
+  _Item;
+
+}

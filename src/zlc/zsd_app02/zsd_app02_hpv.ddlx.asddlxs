@@ -1,0 +1,52 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Sales Order LC Utlization App',
+typeNamePlural: 'Sales Order LC Utlization App',
+title: { type: #STANDARD, value: 'SalesDocument' },
+         description: { type: #STANDARD, value: 'TotalNetAmount' }  } }
+         
+annotate entity ZSD_APP02_HPV
+    with 
+{
+ @UI.facet: [ { id:              'Header',
+                          purpose:         #STANDARD,
+                          type:            #IDENTIFICATION_REFERENCE,
+                          label:           'Sales Order Header',
+                          position:        10 
+                          },
+                           { id:              'Items',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'LC Item Utlization',
+                      position:        20,
+                      targetElement:   '_litem'} ]
+
+
+ @UI: { lineItem: [{ position: 10, label: 'Sales Order' }],
+    identification: [{ position: 10, label: 'Sales Order' }]}
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_SalesOrderStdVH',element: 'SalesOrder' }}]
+  SalesDocument;
+  @UI: { lineItem: [{ position: 20, label: 'Sold To Party' }],
+  identification: [{ position: 20, label: 'Sold To Party' }]}
+  SoldToParty;
+  @UI: { lineItem: [{ position: 30, label: 'Sales Doc Date' }],
+  identification: [{ position: 30, label: 'Sales Doc Date' }]}
+  SalesDocumentDate;
+  @UI: { lineItem: [{ position: 40, label: 'Reference' }],
+  identification: [{ position: 40, label: 'Reference' }]}
+  PurchaseOrderByCustomer;
+  @UI: { lineItem: [{ position: 50, label: 'Total NetAmount' }],
+  identification: [{ position: 50, label: 'Total  NetAmount' }]}
+  TotalNetAmount;
+@UI.hidden: true
+  TaxAmount1;
+  @UI.hidden: true
+  TransactionCurrency;
+  @UI: { lineItem: [{ position: 60, label: 'Incoterms' }],
+  identification: [{ position: 60, label: 'Incoterms' }]}
+  IncotermsClassification;
+    /* Associations */
+    @UI.hidden: true
+    _litem;
+    
+}

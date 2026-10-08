@@ -1,0 +1,6 @@
+@EndUserText.label: 'Stock Report UI'
+define service ZPP_STOCK_UI {
+  expose ZPP_STOCK_PV  as mAINPAGE;
+  expose ZPP_STOCK_IT;
+  expose ZPP_STOCK_bal;
+}

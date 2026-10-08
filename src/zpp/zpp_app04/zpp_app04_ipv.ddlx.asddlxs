@@ -1,0 +1,61 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_APP04_IPV with
+{
+  @UI.facet: [ { id:              'Item',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'Jobsheet Production Order Item',
+                        position:        10 } ]
+
+
+  @UI.hidden: true
+  Jobsheet;
+  @UI: { lineItem: [{ position: 10, label: 'Manufaturing Order'}],
+  identification: [{ position: 10, label: 'Manufaturing Order' } ] }
+  Sfgordnum;
+  @UI.hidden: true
+  Sfgordnitm;
+  @UI.hidden: true
+  Burks;
+  @UI: { lineItem: [{ position: 20, label: 'Manufaturing Order Type'}],
+  identification: [{ position: 20, label: 'Manufaturing Order Type' } ] }
+  Sfgordtyp;
+  @UI.hidden: true
+  Sfgordtxt;
+  @UI: { lineItem: [{ position: 30, label: 'Material'}],
+  identification: [{ position: 30, label: 'Material' } ] }
+  Sfgmatnr;
+  @UI: { lineItem: [{ position: 40, label: 'Material Desc'}],
+  identification: [{ position: 40, label: 'Material Desc' } ] }
+  Sfgmaktx;
+  @UI.hidden: true
+  Sfgbatch;
+  @UI.hidden: true
+  Sfgsloc;
+  @UI: { lineItem: [{ position: 50, label: 'Open Order Quantity'}],
+  identification: [{ position: 50, label: 'Open Order Quantity' } ] }
+  Sfgplndqty;
+  @UI.hidden: true
+  Sfgplndunt;
+  @UI: { lineItem: [{ position: 60, label: 'Requested Quantity'}],
+  identification: [{ position: 60, label: 'Requested Quantity' } ] }
+  Reqty;
+  @UI.hidden: true
+  Ernam;
+  @UI.hidden: true
+  Erdat;
+  @UI: { lineItem: [{ position: 70, label: 'Sales Order'}],
+  identification: [{ position: 70, label: 'Sales Order' } ] }
+  Salesord;
+  @UI: { lineItem: [{ position: 80, label: 'Sales Order Item'}],
+  identification: [{ position: 80, label: 'Sales Order Item' } ] }
+  Soitem;
+  @UI.hidden: true
+  Createdby;
+  @UI.hidden: true
+  Createdon;
+  @UI.hidden: true
+  /* Associations */
+  _Header;
+
+}

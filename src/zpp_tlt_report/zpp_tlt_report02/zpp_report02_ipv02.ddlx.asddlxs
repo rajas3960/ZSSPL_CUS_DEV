@@ -1,0 +1,102 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'SalesDocument'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'SalesDocument'
+@UI.presentationVariant: [{ text: 'Default' ,
+                              sortOrder:[{ by: 'SalesDocument', direction: #ASC }],
+                              groupBy: [  'SalesDocument' ],
+                              visualizations: [ {  type: #AS_LINEITEM },
+                              {  type: #AS_LINEITEM }] }]
+annotate entity ZPP_REPORT02_ipv02 with
+{
+  @UI.facet: [ { id:              'MISReport',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Mis Report',
+                 position:        10 }]
+  @UI: {  lineItem:       [ { position: 10, label: 'Sale Order' } ],
+ identification: [ { position: 10, label: 'Sale Order'} ] }
+  @EndUserText.label: 'Sale Order'
+  @Consumption.valueHelpDefinition: [
+  {
+    entity: {
+      name: 'ZPP_REPORT02_F4',
+      element: 'SalesDocument'
+    }
+  }
+  ]
+  @UI.selectionField: [{ position: 10 }]
+  SalesDocument;
+  @UI: {  lineItem:       [ { position: 20, label: 'Priority Po' } ],
+   identification: [ { position: 20, label: 'Priority Po'} ] }
+  @EndUserText.label: 'Priority Po'
+  @Consumption.valueHelpDefinition: [
+  {
+    entity: {
+      name: 'ZPP_REPORT02_F4',
+      element: 'Po'
+    }
+  }
+  ]
+  @UI.selectionField: [{ position: 20 }]
+  YY1_PriorityPONos_SDH;
+  @UI: {  lineItem:       [ { position: 30, label: 'Project' } ],
+   identification: [ { position: 30, label: 'Project'} ] }
+  @EndUserText.label: 'Project'
+  @Consumption.valueHelpDefinition: [
+  {
+    entity: {
+      name: 'ZPP_REPORT02_F4',
+      element: 'Project'
+    }
+  }
+  ]
+  @UI.selectionField: [{ position: 30 }]
+  YY1_Project_SDH;
+    @UI: {  lineItem:       [ { position: 35, label: 'Project Name' } ],
+   identification: [ { position: 35, label: 'Project Name'} ] }
+  @EndUserText.label: 'Project Name'
+  ProductName;
+  @UI: {  lineItem:       [ { position: 40, label: 'Batch Wt (MT)' } ],
+   identification: [ { position: 40, label: 'Batch Wt (MT)'} ] }
+  @EndUserText.label: 'Batch Wt (MT)'
+  batch_wt;
+  @UI: {  lineItem:       [ { position: 50, label: 'Plan Wt (MT)' } ],
+   identification: [ { position: 50, label: 'Plan Wt (MT)'} ] }
+  @EndUserText.label: 'Plan Wt (MT)'
+  Plan_wt;
+  @UI: {  lineItem:       [ { position: 60, label: 'Balance Wt (MT)' } ],
+   identification: [ { position: 60, label: 'Balance Wt (MT)'} ] }
+  @EndUserText.label: 'Balance Wt (MT)'
+  Balance_Wt;
+  @UI: {  lineItem:       [ { position: 70, label: 'Fabrication Wt (Mt)' } ],
+   identification: [ { position: 70, label: 'Fabrication Wt (Mt)'} ] }
+  @EndUserText.label: 'Fabrication Wt (Mt)'
+  Glava_in;
+  @UI: {  lineItem:       [ { position: 75, label: 'Balance Fabrication Wt (Mt)' } ],
+   identification: [ { position: 75, label: 'Balance Fabrication Wt (Mt)'} ] }
+  @EndUserText.label: 'Balance Fabrication Wt (Mt)'
+  Balglvin_wt;
+  @UI: {  lineItem:       [ { position: 80, label: 'Galva Wt(MT)' } ],
+   identification: [ { position: 80, label: 'Galva Wt (MT)'} ] }
+  @EndUserText.label: 'Galva Weight'
+  Glalva_wt;
+  @UI: {  lineItem:       [ { position: 90, label: 'Balance Galva Wt (Mt)' } ],
+   identification: [ { position: 90, label: 'Balance Galva Wt (Mt)'} ] }
+  @EndUserText.label: 'Balance Galva Wt (Mt)'
+  Balglv_wt;
+  @UI: {  lineItem:       [ { position: 100, label: 'Dispatch Yard Recpt Wt (MT)' } ],
+   identification: [ { position: 100, label: 'Dispatch Yard Recpt Wt (MT)'} ] }
+  @EndUserText.label: 'Dispatch Yard Recpt Wt (MT)'
+  Despatch_wt;
+  @UI: {  lineItem:       [ { position: 110, label: 'Balance Dispatch Yard Recpt Wt (MT)' } ],
+   identification: [ { position: 110, label: 'Balance Dispatch Yard Recpt Wt (MT)'} ] }
+  @EndUserText.label: 'Balance Dispatch Yard Recpt Wt (MT)'
+  Balrdispatch_wt;
+  @UI: {  lineItem:       [ { position: 120, label: 'Dispatch Weight (MT)' } ],
+   identification: [ { position: 120, label: 'Dispatch Weight (MT)'} ] }
+  @EndUserText.label: 'Dispatch Weight (MT)'
+  TotSP_Wt;
+
+}

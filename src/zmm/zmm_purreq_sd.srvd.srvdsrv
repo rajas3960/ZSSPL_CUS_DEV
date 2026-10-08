@@ -1,0 +1,12 @@
+@EndUserText.label: 'Service Defination of Purchase Req'
+define service Zmm_purreq_sd {
+  expose ZMM_PURREQ_PV       as PurReq;
+  expose ZMM_PURREQ_HRV;
+  expose ZMM_PURREQ_HPV      as Header_purreq;
+  expose zmm_purreq_ipv;
+  expose zsd_purchasereq_vh;
+  expose zmm_purchase_reg;
+  expose ZMM_PURREQ_MATERIAL;
+  expose ZMM_PURCHASERQ_ITEM;
+  expose ZMM_PR_FIRST_ITEM;
+}

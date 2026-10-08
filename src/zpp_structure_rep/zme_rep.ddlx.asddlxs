@@ -1,0 +1,23 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: { typeName: 'Structure Report',
+                typeNamePlural: 'Structure Reports'}}
+annotate entity ZPV_REP
+    with 
+{
+ @UI.facet: [ { id:              'StructureReport',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Structure Report',
+                   position:        10 }]
+     @UI: { lineItem: [{ position: 10, label: 'Material'}],
+  identification: [{ position: 10, label: 'Material' } ] }
+  @EndUserText.label: 'Material'
+  @UI.selectionField: [{element: 'Material'}]               
+    Material;
+     @UI: { lineItem: [{ position: 20, label: 'Total weight'}],
+  identification: [{ position: 20, label: 'Total weight' } ] }
+  @EndUserText.label: 'Total weight'
+    Total_weight;
+    
+}

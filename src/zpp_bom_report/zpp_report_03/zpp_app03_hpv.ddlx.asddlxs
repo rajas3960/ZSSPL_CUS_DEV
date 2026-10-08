@@ -1,0 +1,76 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Released Document Report',
+typeNamePlural: 'Released Document Report',
+title: { type: #STANDARD, value: 'Reldocno' }         } }
+annotate entity ZPP_APP03_Hpv with
+{
+  @UI.facet: [ { id:              'Header',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Release Header',
+                   position:        10 } ,
+                 { id:              'Items',
+                   purpose:         #STANDARD,
+                   type:            #LINEITEM_REFERENCE,
+                   label:           'Release Item',
+                   position:        20,
+                   targetElement:   'item'},
+                    { id:              'SubItems',
+                   purpose:         #STANDARD,
+                   type:            #LINEITEM_REFERENCE,
+                   label:           'Release Sub Item',
+                   position:        30,
+                   targetElement:   'item2'} ]
+  @UI.hidden: true
+  Uuid;
+  @Consumption.valueHelpDefinition: [{entity: { name: 'ZPP_DOCUEMNT_SERISE',element: 'name' } }  ]
+  @UI.lineItem: [{ position: 1, label: 'Rel Doc Type' }]
+  @UI.identification: [{ position: 1, label: 'Rel Doc Type' },
+  { type: #FOR_ACTION , dataAction: 'gt_section',label: 'Fetch Structure🫡' ,position: 10} ,
+  { type: #FOR_ACTION , dataAction: 'Gen_pt',label: 'Generate Print🖨️' ,position: 30}]
+  @EndUserText.label: 'Rel Doc Type'
+  reldocs;
+  @UI: { lineItem: [{ position: 10, label: 'SSPL PROJECT ID'}],
+  identification: [{ position: 10, label: 'SSPL PROJECT ID' }] }
+  @EndUserText.label: 'SSPL PROJECT ID'
+  @Consumption.valueHelpDefinition: [{entity: {name: 'ZPP_MAT_f4',element: 'Product'}}]
+  Matnr;
+  @UI: { lineItem: [{ position: 25, label: 'CLIENT'}],
+  identification: [{ position: 25, label: 'CLIENT' } ] }
+  @EndUserText.label: 'CLIENT'
+  Maktx;
+  @UI: { lineItem: [{ position: 30, label: 'RELEASE DOC. NO'}],
+  identification: [{ position: 30, label: 'RELEASE DOC. NO' } ] }
+  @EndUserText.label: 'RELEASE DOC. NO'
+  Reldocno;
+  @UI: { lineItem: [{ position: 40, label: 'Project'}],
+  identification: [{ position: 40, label: 'Project' } ] }
+  @EndUserText.label: 'Project'
+  Project;
+  @UI: { lineItem: [{ position: 50, label: 'Contractor'}],
+  identification: [{ position: 50, label: 'Contractor' } ] }
+  @EndUserText.label: 'Contractor'
+  Contractor;
+  @UI: { lineItem: [{ position: 55, label: 'Prepared By'}],
+  identification: [{ position: 55, label: 'Prepared By' } ] }
+  @EndUserText.label: 'Prepared By'
+  Preparedby;
+  @UI: { lineItem: [{ position: 60, label: 'BOM RELEASE DATE'}],
+  identification: [{ position: 60, label: 'BOM RELEASE DATE' } ] }
+  @EndUserText.label: 'BOM RELEASE DATE'
+  Realeasdt;
+  @UI.hidden: true
+  Createby;
+  @UI.hidden: true
+  Createon;
+  @UI: { lineItem: [{ position: 20, label: 'Attachment'}],
+  identification: [{ position: 20, label: 'Attachment' } ] }
+  @EndUserText.label: 'Attachment'
+  Attachment;
+  @UI.hidden: true
+  /* Associations */
+  item;
+  @UI.hidden: true
+  item2;
+}

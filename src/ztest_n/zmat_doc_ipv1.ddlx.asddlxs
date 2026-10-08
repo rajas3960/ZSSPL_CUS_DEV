@@ -1,0 +1,67 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZMAT_DOC_IPV1 with
+{
+  @UI.facet: [ { id:              'Item',
+                    purpose:         #STANDARD,
+                    type:            #IDENTIFICATION_REFERENCE,
+                    label:           'All Details',
+                    position:        10 } ]
+  @UI.hidden: true
+  Uuid;
+  @UI:{lineItem: [{ position: 10 , label: 'Item Number'}],
+  identification: [{ position: 10,label: 'Item Number' }]}
+  Itemno;
+  @UI:{lineItem: [{ position: 20,label: 'Goods Movement Type' }],
+  identification: [{ position: 20,label: 'Goods Movement Type' }]}
+  Gmtype;
+  @UI:{ lineItem: [{ position: 30,label: 'Material Document' }],
+  identification: [{position: 30,label: 'Material Documnt'  }] }
+  Matdoc;
+  @UI:{ lineItem: [{ position: 40, label: 'Material' }],
+  identification: [{ position: 40,label: 'Material' }] }
+  
+  Material;
+  @UI:{lineItem: [{ position: 50 ,label: 'Material Description' }],
+  identification: [{ position: 50,label: 'Material Description' }]}
+  Mdesc;
+  @UI:{lineItem: [{ position: 60,label: 'Plant' }],
+  identification: [{position: 60,label: 'Plant'  }]}
+  Plant;
+  @UI:{lineItem: [{ position: 70, label: 'Stroge Location'  }],
+  identification: [{ position: 70,label: 'Stroge Location' }]}
+  Sloc;
+  @UI:{ lineItem: [{ position: 80, label: 'Material Quantity' }],
+  identification: [{ position: 80,label: 'Material Quantity' }] }
+  Matqty;
+  @UI:{lineItem: [{ position: 90,label: 'Unit Of Measure' }]}
+  Uom;
+  @UI:{lineItem: [{ position: 100 , label: 'Rate'}],
+  identification: [{ position: 100,label: 'Rate' }]}
+  Rate;
+  @UI:{ lineItem: [{ position: 110,label: 'Cost Center' }],
+  identification: [{position: 110,label: 'Cost Center'  }]}
+  Costcenter;
+  @UI:{lineItem: [{position: 120,label: 'GL Account'  }],
+  identification: [{ position: 120,label:'GLAccount' }]}
+  Glaccount;
+  @UI:{ lineItem: [{ position: 130,label: 'Staff Food Spoilage Quantity' }],
+  identification: [{ position: 130,label: 'Staff Food Spoilage Quantity' }]}
+  Spsfqty;
+  @UI:{ lineItem: [{ position: 140,label: 'Header Description' }],
+   identification: [{ position: 140,label: 'Header Description' }]}
+  Hdrdesc;
+  @UI.hidden: true
+  Mark;
+  @UI.hidden: true
+  Createdby;
+  @UI.hidden: true
+  Createdat;
+  @UI.hidden: true
+  Lastchangedby;
+  @UI.hidden: true
+  Lastchangedat;
+  /* Associations */
+  @UI.hidden: true
+  _Header;
+
+}

@@ -1,0 +1,65 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: {
+    typeName: 'Jobsheet Master Application',
+    typeNamePlural: 'Jobsheet Master Application',
+    title: { type: #STANDARD, value: 'Uuid' }
+  }
+}
+annotate entity ZPP_APPS02_PV with
+{
+ @UI.facet: [ { id:              'Header',
+                       purpose:         #STANDARD,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Jobsheet Master Application',
+                       position:        10 } ,
+                     { id:              'Item1',
+                       purpose:         #STANDARD,
+                       type:            #LINEITEM_REFERENCE,
+                       label:           'Jobsheet Material Selection',
+                       position:        20,
+                       targetElement:   '_Item1'} ,{
+                       id:              'Item2',
+                       purpose:         #STANDARD,
+                       type:            #LINEITEM_REFERENCE,
+                       label:           'Jobsheet Material Selected',
+                       position:        30,
+                       targetElement:   '_Item2'}
+                       ]
+                       
+
+@UI.hidden: true
+Uuid;
+  @UI: { lineItem: [{ position: 20, label: 'Plant'}],
+ identification: [{ position: 20, label: 'Plant' } ,{ type: #FOR_ACTION , dataAction: 'confimjob' ,label: 'Confirm Jobsheet' },
+// { type: #FOR_ACTION , dataAction: 'matval' ,label: 'Material Value' },
+{ type: #FOR_ACTION , dataAction: 'seltitem' ,label: 'Purchase Order ' },
+ { type: #FOR_ACTION , dataAction: 'getpdf' ,label: 'Print' },
+ { type: #FOR_ACTION , dataAction: 'genjob' ,label: 'Generate Jobsheet' }] }
+ @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_PlantStdVH',element: 'Plant' } }]
+Werks;
+  @UI: { lineItem: [{ position: 60, label: 'Createdby'}]}
+  Createdby;
+  @UI: { lineItem: [{ position: 70, label: 'Createdon'}]}
+  Createdon;
+  @UI: { lineItem: [{ position: 80, label: 'Lastchangedby'}]}
+  Lastchangedby;
+  @UI: { lineItem: [{ position: 90, label: 'Lastchangedon'}]}
+  Lastchangedon;
+ @UI: { lineItem: [{ position: 40, label: 'Del Mark'}]}
+Delmark;
+  @UI: { lineItem: [{ position: 50, label: 'Status'}],
+   identification: [{ position: 50, label: 'Status' } ] }
+Status;
+@UI.hidden: true
+/* Associations */
+_Item1;
+@UI.hidden: true
+_Item2;
+@UI.hidden: true
+Gengt;
+  @UI: { lineItem: [{ position: 60, label: 'Attachment'}],
+   identification: [{ position: 60, label: 'Attachment' } ] }
+Attachmentsul;
+
+}

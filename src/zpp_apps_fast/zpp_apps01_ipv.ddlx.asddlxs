@@ -1,0 +1,65 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Job Card Planning Creation Item',
+typeNamePlural: 'Job Card Planning Creation Item',
+title: { type: #STANDARD, value: 'Uuid'        } }     }
+@UI.createHidden: true
+@UI.updateHidden: true
+@UI.deleteHidden: true
+annotate entity ZPP_APPS01_IPV
+    with 
+{
+    @UI.facet: [ { id:              'JobcardPlanningItem',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Job Card Planning Selection Items',
+                      position:        20 } ]
+    @UI.hidden: true
+    Uuid;
+    @UI: { lineItem: [{ position: 5, label: 'Production Order'},{ type: #FOR_ACTION , dataAction: 'gt_selection', label: 'Select'}],
+  identification: [{ position: 5, label: 'Production Order' } ] }
+  @EndUserText.label: 'Production Order'
+    Productionorder;
+    @UI: { lineItem: [{ position: 10, label: 'Production Order Item'}],
+  identification: [{ position: 10, label: 'Production Order Item' } ] }
+  @EndUserText.label: 'Production Order Item'
+    Productionorderitem;
+     @UI: { lineItem: [{ position: 20, label: 'Material'}],
+  identification: [{ position: 20, label: 'Material' } ] }
+  @EndUserText.label: 'Material'
+    material;
+     
+    @UI: { lineItem: [{ position: 30, label: 'Batch'}],
+  identification: [{ position: 30, label: 'Batch' } ] }
+  @EndUserText.label: 'Componet Material'
+   batch;
+    @UI: { lineItem: [{ position: 40, label: 'Sale Order'}],
+  identification: [{ position: 40, label: 'Sale Order' } ] }
+  @EndUserText.label: 'Sale Order'
+    Saleorder;
+    @UI: { lineItem: [{ position: 50, label: 'Sale Order Item'}],
+  identification: [{ position: 50, label: 'Sale Order Item' } ] }
+  @EndUserText.label: 'Sale Order Item'
+   Saleorderitem;
+    @UI: { lineItem: [{ position: 60, label: 'Qty in PC'}],
+  identification: [{ position: 60, label: 'Qty in PC' } ] }
+  @EndUserText.label: 'Qty in PC'
+    Palnpc;
+    @UI: { lineItem: [{ position: 70, label: 'Component Material'}],
+  identification: [{ position: 70, label: 'Component Material' } ] }
+  @EndUserText.label: 'Component Material'
+    rawmaterial;
+    @UI: { lineItem: [{ position: 80, label: 'Consumption Qty in KG'}],
+  identification: [{ position: 80, label: 'Consumption Qty in KG' } ] }
+  @EndUserText.label: 'Consumption Qty in KG'
+    Menge;
+    @UI.hidden: true
+    Meins;
+    @UI: { lineItem: [{ position: 50, label: 'Unit Wt'}],
+  identification: [{ position: 50, label: 'Unit Wt' } ] }
+  @EndUserText.label: 'Unit Wt'
+    Unitwt;
+    /* Associations */
+    @UI.hidden: true
+    _hdr;    
+}

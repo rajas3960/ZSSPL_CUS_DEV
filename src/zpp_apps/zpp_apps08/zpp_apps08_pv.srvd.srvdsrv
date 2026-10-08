@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service defination of maintain user'
+define service ZPP_APPS08_PV {
+  expose ZPP_APPS08_PV;
+  expose ZPP_APPS08_BP;
+}

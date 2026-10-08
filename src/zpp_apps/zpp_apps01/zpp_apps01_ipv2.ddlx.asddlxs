@@ -1,0 +1,43 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_APPS01_IPV2
+    with 
+{
+    @UI.facet: [ { id:              'Citem',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'Jobsheet Material Components',
+                        position:        10 } 
+                        ]
+@UI.hidden: true
+Uuid;
+@UI: { lineItem: [{ position: 10, label: 'Order No'}],
+  identification: [{ position: 10, label: 'Order No' } ] }
+Orderno;
+@UI.hidden: true
+Sno;
+@UI: { lineItem: [{ position: 20, label: 'Sno'}],
+  identification: [{ position: 20, label: 'Sno' } ] }
+Sno1;
+@UI: { lineItem: [{ position: 30, label: 'Material'}], 
+  identification: [{ position: 30, label: 'Material' } ] }
+Matnr;
+@UI: { lineItem: [{ position: 40, label: 'Material Dec.'}],
+  identification: [{ position: 40, label: 'Material Dec.' } ] }
+Maktx;
+@UI: { lineItem: [{ position: 50, label: 'Component Quantity'}],
+  identification: [{ position: 50, label: 'Component Quantity' } ] }
+Comqty;
+@UI.hidden: true
+Comuom;
+@UI: { lineItem: [{ position: 60, label: 'Base Quantity'}],
+  identification: [{ position: 60, label: 'Base Quantity' } ] }
+Baseqty;
+@UI.hidden: true
+Baseuom;
+@UI.hidden: true
+/* Associations */
+_hdr;
+@UI.hidden: true
+_item;
+    
+}

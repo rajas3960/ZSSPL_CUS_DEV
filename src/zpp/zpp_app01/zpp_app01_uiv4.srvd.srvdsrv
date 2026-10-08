@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Denifnation Of UIV4'
+define service ZPP_APP01_UIV4 {
+  expose ZPP_APP01_HPV     as Mainpage;
+  expose ZPP_APP01_IPV;
+  expose ZPP_PRODU_ITEM_RV;
+}

@@ -1,0 +1,55 @@
+managed implementation in class zbp_mat_doc_rv unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZMAT_DOC_RV alias Header
+//persistent table zmat_doc_grr
+with unmanaged save
+draft table zmat_doc_grr_dt
+lock master
+total etag Lastchangedat
+authorization master ( instance )
+etag master Lastchangedat
+{
+  create ( authorization : global );
+  update;
+  delete;
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+  action ( features : instance ) PostGI result [1] $self;
+  action ( features : instance) CreatePo result [1] $self;
+  field (readonly)Pono;
+  determination Getdata on save {field Uuid;}
+
+//   field(recommendations)Material ;
+//  recommendation function Myfunction;
+//  side effects {recommendation function Myfunction executed on field Mdesc; }
+
+  field ( readonly, numbering : managed ) Uuid;
+  field ( readonly ) Createdat, Createdby, Lastchangedat, Lastchangedby, Docno, Status, Itmcnt;
+  association _Item { create; with draft; }
+  mapping for zmat_doc_grr corresponding;
+
+}
+
+define behavior for ZMAT_DOC_IV1 alias Items
+persistent table zmat_doc_gr
+draft table zmat_doc_gr_dt
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update(features : instance);
+  delete(features : instance);
+  field ( readonly ) Uuid;
+  field(readonly)Matdoc;
+   field(readonly : update)Itemno;
+   determination Fillmaterialdescription on modify {field Material; }
+side effects { field Material affects field Mdesc;}
+  association _Header { with draft; }
+  mapping for zmat_doc_gr corresponding;
+}

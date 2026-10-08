@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Production Planning Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zppapprolrp02"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_E1AAE4BF0C13CE9018F4EE5B3EC983734614459F_TM",
+    "semanticObject": "YY1_PPSRL_RP02",
+    "action": "Manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_E1AAE4BF0C13CE9018F4EE5B3EC983734614459F_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Production Planning Report"
+      }
+    }
+  ]
+}

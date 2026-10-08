@@ -1,0 +1,236 @@
+managed implementation in class zbp_pp_apps05_rv unique;
+strict ( 1 );
+with draft;
+
+
+define behavior for ZPP_APPS05_RV alias _hdr
+//persistent table zpp_apps05_htb
+with unmanaged save
+draft table zpp_apps05_dthb
+lock master
+total etag Lastchangedon
+authorization master ( instance )
+etag master Lastchangedon
+
+{
+  create ( authorization : global );
+  update;
+  delete ( features : instance );
+
+  draft action Resume;
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  field ( mandatory ) Vrcuting, Project, Purno, Werks;
+  field ( readonly, numbering : managed ) Uuid;
+  field ( readonly ) Projectname, Createdby, Createdon, Lastchangedby, Lastchangedon, Gengt, Delmark, Status, Vrno, Matno, Totwithmk, Attachment, Totwithst, Chckmrk;
+  field ( features : instance ) Vrcuting, Project, Werks, Purno, Sectmat, Unitwet;
+
+
+
+
+
+
+
+
+  action ( features : instance ) GtMark result [1] $self;
+  action ( features : instance ) GtLent result [1] $self;
+  action ( features : instance ) GtStok result [1] $self;
+  action ( features : instance ) GtOpers result [1] $self;
+  action ( features : instance ) GtIntc deep parameter ZPP_APPS05_EXLP result [1] entity ZPP_APPs05_RV;
+  //  action (features : instance ) Gtvrno result [1] $self;
+  action ( features : instance ) GtPrint parameter ZPP_APPS01_PRINT result [1] $self;
+  action ( features : instance ) GtCheck result [1] $self;
+  action ( features : instance ) GtDelete parameter ZPP_APPS5_DEL ;
+  action ( features : instance ) Gtcheckst result[1] $self;
+  action (features : instance ) Gtstockclr result[1] $self;
+
+
+  validation Vtoncrt on save { create; }
+  determine action vtonct { validation Vtoncrt; }
+
+  determination gt_data1 on save { create; update; }
+  determination gt_uporder on save { create; field Vrno; }
+  determination gt_plant on modify { create; }
+  determination gt_uintwt on modify {field Sectmat;}
+
+
+  side effects
+  { field Vrcuting affects $self;
+    field Project affects $self;
+    field Purno affects $self;
+    field Werks affects $self;
+    field Sectmat affects $self;
+    field Unitwet affects $self;
+    action GtMark affects entity _itemgtmark;
+    action GtLent affects entity _itemgtlet;
+    action GtStok affects entity _itemftstock;
+    action GtOpers affects entity _itemftmark;
+    action GtIntc affects entity _itemrsult, entity _itemrsult._citem, entity _itemsumry;
+    action GtCheck affects field Chckmrk, messages;
+    entity _itemftmark affects field Totwithmk;
+    action Gtcheckst affects field Status, $self ;
+    //   action GtDelete affects messages, entity _itemftmark,entity _itemftstock,entity _itemgtlet,entity _itemgtmark ,entity _itemgtstock ,entity _itemrsult,entity _itemsumry ,entity _itemrsult._citem ;
+
+
+  }
+
+
+  association _itemgtmark { create; with draft; }
+  association _itemftmark { create; with draft; }
+  association _itemgtlet { create; with draft; }
+  association _itemgtstock { create; with draft; }
+  association _itemftstock { create; with draft; }
+  association _itemrsult { create; with draft; }
+  association _itemsumry { create; with draft; }
+
+  mapping for zpp_apps05_htb corresponding;
+}
+
+define behavior for ZPP_APPS05_IRV1 alias _itemgtmark
+//persistent table zpp_apps05_itb2
+draft table zpp_apps05_ditb
+with unmanaged save
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update ( features : instance );
+  delete;
+  field ( readonly ) Uuid, Orderno, Length, Maktx, Matnr, Operation, Orderitem, Plant, Netwt, Plnqty, Rsnum, Secon, Soitem, Totopnqty, Totreqty, Uom, Vbeln, Width;
+  field ( features : instance ) Reqty;
+
+  validation reqty_val on save { create; update; field Reqty; }
+  determine action validreqty { validation reqty_val; }
+
+  action ( features : instance ) GtSelec result [1] $self;
+  side effects
+  { action GtSelec affects entity _Hdr._itemftmark, field _hdr.Totwithmk;
+  }
+
+  association _hdr { with draft; }
+  mapping for zpp_apps05_itb corresponding;
+}
+
+
+define behavior for ZPP_APPS05_IRV2 alias _itemftmark
+//persistent table zpp_apps05_itb2
+draft table zpp_apps05_ditb2
+with unmanaged save
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Sno, Length, Maktx, Matnr, Netwt, Operation, Orderno, Plant, Plnqty, Reqty, Uom, Vbeln, Vrno, Wetpc, Width, Jobsht, Resv;
+
+
+
+  determination gt_del on modify { delete; }
+
+  action ( features : instance ) deletes result [1] $self;
+  side effects { action deletes affects entity _hdr._itemgtmark, field _hdr.Totwithmk; }
+  association _hdr { with draft; }
+  mapping for zpp_apps05_itb2 corresponding;
+}
+
+define behavior for ZPP_APPS05_IRV3 alias _itemgtlet
+//persistent table zpp_apps05_itb3
+with unmanaged save
+draft table zpp_apps05_dibt3
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Length, Quantity;
+
+  association _hdr { with draft; }
+  mapping for zpp_apps05_itb3 corresponding;
+}
+
+define behavior for ZPP_APPS05_IRV4 alias _itemgtstock
+//persistent table zpp_apps05_itb4
+with unmanaged save
+draft table zpp_apps05_ditb4
+lock dependent by _Hdr
+authorization dependent by _Hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Sno, Irno, Length, Quantity, Quanwt, Vrno;
+  association _Hdr { with draft; }
+  mapping for zpp_apps05_itb4 corresponding;
+}
+define behavior for ZPP_APPS05_IRV5 alias _itemftstock
+//persistent table zpp_apps05_itb4
+with unmanaged save
+draft table zpp_apps05_ditb5
+lock dependent by _Hdr
+authorization dependent by _Hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Materialdoc, Matdocitm, Batch, Plant, Product, Storagelocation, Purchaseorder, Purchaseorderitem, Apiecs, Aquatity
+  , Supp, Width, Pripono, Irno, Length, Quantity, Piecs, Mark, Rquantity;
+  field ( features : instance ) Rpiecs;
+  determination gt_itmrqty on modify { field Rpiecs; }
+  action ( features : instance ) Gtselc result [1] $self;
+  side effects
+  { action Gtselc affects entity _Hdr._itemgtstock, entity _Hdr._itemsumry, field _Hdr.Totwithst;
+    field Rpiecs affects field Rquantity, $self; }
+  association _Hdr { with draft; }
+  mapping for zpp_apps05_itb5 corresponding;
+}
+define behavior for ZPP_APPS05_IRV6 alias _itemrsult
+//persistent table zpp_apps05_itb4
+with unmanaged save
+draft table zpp_apps05_ditb6
+lock dependent by _Hdr
+authorization dependent by _Hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Srcid, Actlent, Lengthstr, Rtnlent, Srclent, Srcpcs, Totlen, Trmwste, Vrno, Wast, Wastepr;
+  association _Hdr { with draft; }
+  association _citem { create; with draft; }
+  mapping for zpp_apps05_itb6 corresponding;
+
+}
+define behavior for ZPP_APPS05_IRV7 alias _item7
+//persistent table zpp_apps05_itb4
+with unmanaged save
+draft table zpp_apps05_ditb7
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Srcid, Parid, Balpcs, Length, Marno, Pcs, Process, Vrno, Atotqty, Totqty, Orderno;
+  association _Hdr { with draft; }
+  association _itemrsult { with draft; }
+  mapping for zpp_apps05_itb7 corresponding;
+
+}
+define behavior for ZPP_APPS05_IRV8 alias _itemsumry
+//persistent table zpp_apps05_itb4
+with unmanaged save
+draft table zpp_apps05_ditb8
+lock dependent by _Hdr
+authorization dependent by _Hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Sno, Apcs, Batch, Irno, Length, width, Matnr, Netwst, Plant, Quanwt, Rqty, Rtrn, Storagelocation, Uqty, Used, Vrno, Wasper;
+  association _Hdr { with draft; }
+  mapping for zpp_apps05_itb8 corresponding;
+
+}

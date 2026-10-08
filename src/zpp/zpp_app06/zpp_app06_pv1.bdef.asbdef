@@ -1,0 +1,39 @@
+projection;
+strict ( 2 );
+use draft;
+use side effects;
+
+define behavior for ZPP_APP06_PV1 //alias <alias_name>
+{
+  use update;
+
+  use action load_item;
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+  side effects { action load_item affects entity _Item1; field Werks affects field Jobshtnum; }
+
+  use association _item1 { create; with draft; }
+  use association _item2 { create; with draft; }
+}
+
+define behavior for ZPP_APP06_IPV1 //alias <alias_name>
+{
+  use update;
+
+  use action goodsreceipt;
+  use action validrcptqty;
+
+  side effects { determine action validrcptqty executed on field receiptqty affects messages ;
+                 action goodsreceipt affects entity _hdr._Item1; }
+
+  use association _hdr { with draft; }
+}
+
+define behavior for ZPP_APP06_IPV2 //alias <alias_name>
+{
+  use association _hdr { with draft; }
+}

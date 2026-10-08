@@ -1,0 +1,149 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Jobsheet Master Application',
+typeNamePlural: 'Jobsheet Master Application',
+title: { type: #STANDARD, value: 'Uuid'        } }     }
+
+annotate entity ZPP_APPS03_PV with
+{
+  //  @UI.facet: [ { id:              'Header',
+  //                     purpose:         #STANDARD,
+  //                     type:            #IDENTIFICATION_REFERENCE,
+  //                     label:           'Jobsheet Master Application',
+  //                     position:        10 } ,
+  //                   { id:              'Item1',
+  //                     purpose:         #STANDARD,
+  //                     type:            #LINEITEM_REFERENCE,
+  //                     label:           'Jobsheet Material Selection',
+  //                     position:        20,
+  //                     targetElement:   '_Item'} ,{
+  //                     id:              'Item2',
+  //                     purpose:         #STANDARD,
+  //                     type:            #LINEITEM_REFERENCE,
+  //                     label:           'Jobsheet Material Selected',
+  //                     position:        30,
+  //                     targetElement:   '_Item2'},{
+  //                        id:              'Item3',
+  //                     purpose:         #STANDARD,
+  //                     type:            #LINEITEM_REFERENCE,
+  //                     label:           'Length',
+  //                     position:        40,
+  //                     targetElement:   '_Item3'}
+  //
+  //                     ]
+  @UI.facet: [      {
+                 label: 'Planning Option',
+                 id: 'GeneralInfo',
+                 type: #COLLECTION,
+                 position: 10 },
+                 { id:              'PLAN_H',
+                  parentId: 'GeneralInfo',
+                 purpose:         #STANDARD,
+                 type:           #IDENTIFICATION_REFERENCE,
+                 position:        20 ,
+                 targetQualifier: 'Planningopt'} ,
+                  { id:              'PLAN_I',
+               parentId: 'GeneralInfo',
+                 purpose:         #STANDARD,
+                 type:           #LINEITEM_REFERENCE,
+                   label:           'Seleciton Marks To Cut',
+                 position:        30 ,
+                 targetElement: '_Item'},
+                 {
+                 id:              'PLAN_II',
+               parentId: 'GeneralInfo',
+                 purpose:         #STANDARD,
+                 type:           #LINEITEM_REFERENCE,
+                   label:           'Pending Marks To Cut',
+                 position:        40 ,
+                 targetElement: '_Item2'},
+                  {
+                 id:              'LENGTH',
+                 purpose:         #STANDARD,
+                 type:           #LINEITEM_REFERENCE,
+                   label:           'Length',
+                 position:        50 ,
+                 targetElement: '_Item3'} ]
+
+
+
+  @UI.hidden: true
+  Uuid;
+  @UI: { lineItem: [{ position: 10, label: 'Plant'}],
+   identification: [{ position: 10, label: 'Plant' ,qualifier: 'Planningopt'} ,
+   { type: #FOR_ACTION , dataAction: 'confimjob' ,label: 'Confirm Jobsheet' },
+   { type: #FOR_ACTION , dataAction: 'matval' ,label: 'Material Value' },
+  { type: #FOR_ACTION , dataAction: 'seltitem' ,label: 'Purchase Order ' },
+   { type: #FOR_ACTION , dataAction: 'showleng' ,label: 'Show Length' },
+   { type: #FOR_ACTION , dataAction: 'print' ,label: 'Print' }] }
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_PlantStdVH',element: 'Plant' } }]
+  Werks;
+  @UI: { lineItem: [{ position: 90, label: 'Vr No'}],
+  identification: [{ position: 90, label: 'Vr No' ,qualifier: 'Planningopt'} ] }
+  Vrno;
+  @UI.hidden: true
+  Vbeln;
+  @UI.hidden: true
+  Prod;
+  @UI: { identification: [{ position: 20, label: 'Project' ,qualifier: 'Planningopt'} ] }
+  @Consumption.valueHelpDefinition: [
+   {
+     entity: { name: 'ZPP_PRODUCT_VH4', element: 'Product' },
+     additionalBinding: [
+       { localElement: 'Projectname', element: 'Productname' }
+     ]
+   }
+  ]
+  Project;
+  @UI: { identification: [{ position: 30, label: 'Project Name',qualifier: 'Planningopt' } ] }
+  Projectname;
+  @UI: { identification: [{ position: 50, label: 'Product Code' ,qualifier: 'Planningopt'} ] }
+  Sectmat;
+  @UI: { identification: [{ position: 60, label: 'Unit Wight',qualifier: 'Planningopt' } ] }
+  Unitwet;
+  @UI: { identification: [{ position: 40, label: 'Purchase Order No',qualifier: 'Planningopt' } ] }
+  @Consumption.valueHelpDefinition: [
+    {
+      entity: { name: 'ZPP_APPS02_POV4', element: 'Pono' },
+      additionalBinding: [
+        { localElement: 'Sectmat', element: 'Material', usage: #RESULT },
+        { localElement: 'Unitwet', element: 'Unitwt', usage: #RESULT }
+      ]
+    }
+  ]
+  Purno;
+  @UI: { identification: [{ position: 70, label: 'Deletion Mark',qualifier: 'Planningopt' } ] }
+  Delmark;
+  @UI: { identification: [{ position: 80, label: 'Status',qualifier: 'Planningopt' } ] }
+  Status;
+  @UI.hidden: true
+  Gengt;
+  @UI.hidden: true
+  Filenameul;
+  @UI: { lineItem: [{ position:120, label: 'Attachment'}],
+  identification: [{ position:120, label: 'Attachment',qualifier: 'Planningopt' } ] }
+  Attachmentsul;
+  @UI.hidden: true
+  Mimetypeul;
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZPP_APPS02_OP',element: 'name' } }]
+  @UI.identification: [{ position: 5 , label: 'Vr Series',qualifier: 'Planningopt'  }]
+  Vrcuting;
+  @UI.hidden: true
+  Vrcutnam;
+  @UI: { lineItem: [{ position: 100, label: 'Createdby'}],
+  identification: [{ position: 100, label: 'Createdby' } ] }
+  Createdby;
+  @UI: { lineItem: [{ position:110, label: 'Createdon'}],
+  identification: [{ position:110, label: 'Createdon' } ] }
+  Createdon;
+  @UI.hidden: true
+  Lastchangedby;
+  @UI.hidden: true
+  Lastchangedon;
+  /* Associations */
+  @UI.hidden: true
+  _Item;
+  @UI.hidden: true
+  _Item2;
+
+}

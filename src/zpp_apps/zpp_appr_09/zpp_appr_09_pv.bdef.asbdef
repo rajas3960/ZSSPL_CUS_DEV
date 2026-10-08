@@ -1,0 +1,11 @@
+projection;
+strict ( 2 );
+use side effects;
+
+define behavior for ZPP_APPR_09_PV alias hdr
+{
+
+  use action active;
+  use action inactive;
+  use action price;
+}

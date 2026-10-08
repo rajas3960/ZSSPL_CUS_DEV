@@ -1,0 +1,66 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_APPS01_IPV3
+    with 
+{
+   @UI.facet: [ { id:              'Item1',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'Jonsheet Material Selection',
+                        position:        10 } ]
+@UI.hidden: true
+Uuid;
+@UI: { lineItem: [{ position: 10, label: 'Order No'},{ type: #FOR_ACTION, dataAction: 'grpitm', label: 'Group Material',position: 30  }],
+
+  identification: [{ position: 10, label: 'Order No' } ] }
+Orderno;
+@UI.hidden: true
+Orderitem;
+@UI.hidden: true
+Plant;
+@UI: { lineItem: [{ position: 20, label: 'Material'}],
+  identification: [{ position: 20, label: 'Material' } ] }
+@Consumption.filter.mandatory: true
+@Consumption.filter.defaultValueHigh: ''
+
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.valueHelpDefinition: [ { entity:{ name: 'I_ProductStdVH',element: 'Product' }}]
+@Consumption.filter: { selectionType : #RANGE, multipleSelections : true}
+Matnr;
+@UI: { lineItem: [{ position: 25, label: 'Material Description'}],
+  identification: [{ position: 25, label: 'Material Description' } ] }
+  Maktx;
+  @UI: { lineItem: [{ position: 27, label: 'Section Material'}],
+  identification: [{ position: 27, label: 'Section Material' } ] }
+  @EndUserText.label: 'Section Material'
+  Secon;
+@UI: { lineItem: [{ position: 30, label: 'Planned Quantity'}],
+  identification: [{ position: 30, label: 'Planned Quantity' } ] }
+Plnqty;
+@UI.hidden: true
+Uom;
+@UI: { lineItem: [{ position: 40, label: 'Requested Quantity'}],
+  identification: [{ position: 40, label: 'Requested Quantity' } ] }
+Reqty;
+@UI: { lineItem: [{ position: 50, label: 'Total Req Qty'}],
+  identification: [{ position: 50, label: 'Total Req Qty' } ] }
+Totreqty;
+@UI: { lineItem: [{ position: 50, label: 'Total Open Quantity'}],
+  identification: [{ position: 50, label: 'Total Open Quantity' } ] }
+Totopnqty;
+
+  @UI.identification: [{ position: 60, label: 'Sales Order No' } ] 
+Vbeln;
+  @UI.identification: [{ position: 70, label: 'Sales Order Item' } ]
+Soitem;
+@UI.hidden: true
+Rsnum;
+
+@UI: { lineItem: [{ position: 80, label: 'Operations'}],
+  identification: [{ position: 80, label: 'Operations' } ] }
+Operation;
+
+@UI.hidden: true
+/* Associations */
+_hdr;
+    
+}

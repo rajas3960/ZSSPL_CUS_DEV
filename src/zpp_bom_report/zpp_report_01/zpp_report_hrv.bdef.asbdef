@@ -1,0 +1,42 @@
+managed implementation in class zbp_pp_report_hrv unique;
+strict ( 2 );
+
+define behavior for ZPP_REPORT_HRV alias hdr
+with unmanaged save
+//persistent table <???>
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( readonly) Material;
+  association Item { create; }
+  action ( features : instance ) PrintBom result [1] $self;
+  mapping for ZPP_REPORT_HRV corresponding;
+}
+
+define behavior for ZPP_REP_IRV alias item
+with unmanaged save
+//persistent table <???>
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+
+  field ( readonly ) Material, Structure;
+  association _hdr;
+  association Item1 { create; }
+}
+
+define behavior for ZPP_REP_IRV2 alias item1
+with unmanaged save
+//persistent table <???>
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+
+  field ( readonly ) Material, Structure, Tower_type;
+  association _hdr;
+  association item;
+}

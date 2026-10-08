@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_NROB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <ATTRIBUTES>
+    <OBJECT>ZPP_BOM</OBJECT>
+    <DOMLEN>ZPP_BOM_NO</DOMLEN>
+    <PERCENTAGE>6.0</PERCENTAGE>
+   </ATTRIBUTES>
+   <TEXT>
+    <LANGU>E</LANGU>
+    <OBJECT>ZPP_BOM</OBJECT>
+    <TXT>Bom number</TXT>
+    <TXTSHORT>Bom number</TXTSHORT>
+   </TEXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

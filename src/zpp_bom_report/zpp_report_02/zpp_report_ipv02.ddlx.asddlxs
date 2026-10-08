@@ -1,0 +1,36 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_REPORT_IPV02
+    with 
+{
+
+    @UI.facet: [ { id:              'Item',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Bill Of Material Item',
+                 position:        10 } ]
+    @UI.hidden: true             
+    Project;
+    @UI.hidden: true
+    Towertype;
+    @UI.hidden: true
+    Towersubtype;
+    @UI.hidden: true
+    Structure;
+     @UI: { lineItem: [{ position: 10, label: 'Mark Number'}],
+    identification: [{ position: 10, label: 'Mark Number' } ] }
+    @EndUserText.label: 'Mark Number'
+    MarkNumber;
+     @UI: { lineItem: [{ position: 20, label: 'Component'}],
+    identification: [{ position: 20, label: 'Component' } ] }
+    @EndUserText.label: 'Component'    
+    Componet;
+     @UI: { lineItem: [{ position: 30, label: 'Component Status'}],
+    identification: [{ position: 30, label: 'Component Status' } ] }
+    @UI.selectionField: [{element: 'Componet',position: 10}]
+    @EndUserText.label: 'Component Status'
+    Comp;
+    @UI.hidden: true
+    /* Associations */
+    _hdr;
+    
+}

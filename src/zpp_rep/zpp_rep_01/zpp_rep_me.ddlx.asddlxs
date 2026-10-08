@@ -1,0 +1,91 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: { typeName: 'MIS Details Report',
+                typeNamePlural: 'MIS Details Reports',
+                title: { type: #STANDARD, label: 'MIS Details Report', value: 'Salesorder' } }}
+annotate entity ZPP_REP_CV
+    with 
+{
+    
+    
+     @UI.facet: [ {   id:             'Salesorder',
+                     purpose:         #STANDARD,
+                     type:            #IDENTIFICATION_REFERENCE,
+                     label:           'MIS Details Report',
+                     position:        10 }]
+    @UI.lineItem: [{ position: 10, label: 'Sales order' }]
+    @UI.identification: [{ position: 10, label: 'Sales order' }]
+    @UI.selectionField: [{ position: 10 }]
+    @EndUserText.label: 'Sales order'
+    Salesorder;
+    @UI.lineItem: [{ position: 20, label: 'Sales line Item' }]
+    @UI.identification: [{ position: 20, label: 'Sales line Item' }]
+    @UI.selectionField: [{ position: 20 }]
+    @EndUserText.label: 'Sales line Item'
+    SaleslineItem;
+    @UI.lineItem: [{ position: 30, label: 'Plant' }]
+    @UI.identification: [{ position: 30, label: 'Plant' }]
+    @EndUserText.label: 'Plant'
+    Plant;
+    @UI.lineItem: [{ position: 40, label: 'Sold To Party' }]
+    @UI.identification: [{ position: 40, label: 'Sold To Party' }]
+    @EndUserText.label: 'Sold To Party'
+    SoldToParty;
+    @UI.lineItem: [{ position: 50, label: 'Sold To Party Name' }]
+    @UI.identification: [{ position: 50, label: 'Sold To Party Name' }]
+    @EndUserText.label: 'Sold To Party Name'
+    SoldToPartyName;
+    @UI.lineItem: [{ position: 60, label: 'Ship To Party' }]
+    @UI.identification: [{ position: 60, label: 'Ship To Party' }]
+    @EndUserText.label: 'Ship To Party'
+    ShipToParty;
+    @UI.lineItem: [{ position: 70, label: 'Ship To Party Name' }]
+    @UI.identification: [{ position: 70, label: 'Ship To Party Name' }]
+    @EndUserText.label: 'Ship To Party Name'
+    ShipToPartyName;
+    @UI.lineItem: [{ position: 70, label: 'Structure' }]
+    @UI.identification: [{ position: 70, label: 'Structure' }]
+    @EndUserText.label: 'Structure'
+    PricingReferenceMaterial;
+    @UI.lineItem: [{ position: 80, label: 'Mark Number' }]
+    @UI.identification: [{ position: 80, label: 'Mark Number' }]
+    @EndUserText.label: 'Mark Number'
+    ProductNumber;
+    @UI.lineItem: [{ position: 90, label: 'Mark No Desc' }]
+    @UI.identification: [{ position: 90, label: 'Mark No Desc' }]
+    @EndUserText.label: 'Mark No Desc'
+    ItemDescription;
+    @UI.lineItem: [{ position: 100, label: 'Order Quantity' }]
+    @UI.identification: [{ position: 100, label: 'Order Quantity' }]
+    @EndUserText.label: 'OrderQuantity'
+    OrderQuantity;
+   @UI.hidden: true
+    OrderQuantityUnit;
+    @UI.lineItem: [{ position: 120, label: 'Rate/kg' }]
+    @UI.identification: [{ position: 10, label: 'Rate/kg' }]
+    @EndUserText.label: 'Rate/kg'
+    Ratekg;
+    @UI.hidden: true
+    TransactionCurrency;
+    @UI.lineItem: [{ position: 140, label: 'Production Quantity(DIN)' }]
+    @UI.identification: [{ position: 140, label: 'Production Quantity(DIN)' }]
+    @EndUserText.label: 'Production Quantity(DIN)'
+    ProductionQuantityDIN;
+    @UI.hidden: true
+    ConfirmationUnit;
+    @UI.lineItem: [{ position: 160, label: 'Dispatched Qty' }]
+    @UI.identification: [{ position: 160, label: 'Dispatched Qty' }]
+    @EndUserText.label: 'Dispatched Qty'
+    DispatchedQty;
+    @UI.hidden: true
+    BillingQuantityUnit;
+    @UI.lineItem: [{ position: 180, label: 'Balance Quantity' }]
+    @UI.identification: [{ position: 180, label: 'Balance Quantity' }]
+    @EndUserText.label: 'Balance Quantity'
+    BalanceQuantity;
+    @UI.lineItem: [{ position: 190, label: 'Balance Amount' }]
+    @UI.identification: [{ position: 190, label: 'Balance Amount' }]
+    @EndUserText.label: 'Balance Amount'
+    BalanceAmount;
+    
+}

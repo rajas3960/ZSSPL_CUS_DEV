@@ -1,0 +1,206 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'GSTR1',
+                typeNamePlural: 'GSTR1',
+                title: { type: #STANDARD, label: 'GSTR1', value: 'REFDOC' } },
+  presentationVariant: [{ sortOrder: [{ by: 'BILLDOC', direction:  #ASC }] }] }
+
+annotate view ZSD_GSTR1_PV
+    with 
+{
+@UI.facet: [ { id:              'GSTR1',
+                     purpose:         #STANDARD,
+                     type:            #IDENTIFICATION_REFERENCE, 
+                     label:           'GSTR1',
+                     position: 10
+                     },
+                     {   
+                     position:        10 ,
+                     targetElement:   'billdoc'} ]
+@UI                 : { lineItem: [{ position: 10, label: 'Transaction Number'}],
+    identification      : [{ position: 10, label: 'Transaction Number' }],
+    selectionField      : [{position: 10}]   }
+@Consumption.valueHelpDefinition: [{ entity: { name: 'I_BillingDocumentStdVH', element: 'BillingDocument' } } ] 
+@EndUserText.label: 'Transaction Number'                   
+BILLDOC;
+@UI                 : { lineItem: [{ position: 20, label: 'Transaction Item Number'}],
+    identification      : [{ position: 20, label: 'Transaction Item Number' }] }
+    @EndUserText.label: 'Transaction Item Number'
+BILLITEM;
+@UI                 : { lineItem: [{ position: 30, label: 'Invoice No'}],
+    identification      : [{ position: 30, label: 'Invoice No' }],
+    selectionField      : [{position: 20}]   }
+    @EndUserText.label: 'Invoice No'
+//@Consumption.valueHelpDefinition: [{ entity: { name: 'I_BillingDocumentStdVH', element: '' } } ] 
+REFDOC;
+@UI                 : { lineItem: [{ position: 40, label: 'Billing Date'}],
+    identification      : [{ position: 40, label: 'Billing Date' }],
+    selectionField      : [{position: 30}]   }
+    @EndUserText.label: 'Billing Date'
+     @Consumption.filter:{ selectionType: #INTERVAL,multipleSelections: false }
+BILLDATE;
+@UI                 : { lineItem: [{ position: 50, label: 'Plant'}],
+    identification      : [{ position: 50, label: 'Plant' }]
+ }
+ @EndUserText.label: 'Plant'
+ Plant;
+ @UI                 : { lineItem: [{ position: 60, label: 'Plant Name'}],
+    identification      : [{ position: 60, label: 'Plant Name' }]
+ }
+ @EndUserText.label: 'Plant Name'
+ PlantName;
+@UI                 : { lineItem: [{ position: 70, label: 'Original Invoice No'}],
+    identification      : [{ position: 70, label: 'Original Invoice No' }]
+ }
+ @EndUserText.label: 'Original Invoice No'
+CUSTOMINV;
+@UI                 : { lineItem: [{ position: 80, label: 'HSN No'}],
+    identification      : [{ position: 80, label: 'HSN No' }]
+ }
+ @EndUserText.label: 'HSN No'
+ HSNNO; 
+ @UI                 : { lineItem: [{ position: 90, label: 'Item Descripition'}],
+    identification      : [{ position: 90, label: 'Item Descripition' }]
+ }
+ @EndUserText.label: 'Item Descripition'
+ ITETTEXT;
+ @UI                 : { lineItem: [{ position: 100, label: 'Quantity'}],
+    identification      : [{ position: 100, label: 'Quantity' }]
+ }
+ @EndUserText.label: 'Quantity'
+ QUANTITY; 
+ @UI                 : { lineItem: [{ position: 110, label: 'Unit Of Measure'}],
+    identification      : [{ position: 110, label: 'Unit Of Measure' }]
+ }
+ @EndUserText.label: 'UOM'
+ UOM; 
+@UI                 : { lineItem: [{ position: 120, label: 'Taxable Value'}],
+    identification      : [{ position: 120, label: 'Taxable Value' }]
+ }
+ @EndUserText.label: 'Taxable Value'
+TOTTAXAMT;
+@UI                 : { lineItem: [{ position: 130, label: 'Invoice Value'}],
+    identification      : [{ position: 130, label: 'Invoice Value' }]
+ }
+ @EndUserText.label: 'Invoice Value'
+TOTNETAMT;
+@UI                 : { lineItem: [{ position: 140, label: 'GST Rate'}],
+    identification      : [{ position: 140, label: 'GST Rate' }]
+ }
+ @EndUserText.label: 'GST Rate'
+GSTRATE;
+@UI                 : { lineItem: [{ position: 150, label: 'IGST Amount'}],
+    identification      : [{ position: 150, label: 'IGST Amount' }]
+ }
+ @EndUserText.label: 'IGST Amount'
+IGSTAMT;
+@UI                 : { lineItem: [{ position: 160, label: 'CGST Amount'}],
+    identification      : [{ position: 160, label: 'CGST Amount' }]
+ }
+ @EndUserText.label: 'CGST Amount'
+CGSTAMT;
+@UI                 : { lineItem: [{ position: 170, label: 'SGST Amount'}],
+    identification      : [{ position: 170, label: 'SGST Amount' }]
+ }
+ @EndUserText.label: 'SGST Amount'
+SGATAMT;
+@UI                 : { lineItem: [{ position: 180, label: 'CESS Amount'}],
+    identification      : [{ position: 180, label: 'CESS Amount' }]
+ }
+ @EndUserText.label: 'CESS Amount'
+CESSAMT;
+@UI                 : { lineItem: [{ position: 190, label: 'Customer No'}],
+    identification      : [{ position: 190, label: 'Customer No' }]
+ }
+ @EndUserText.label: 'Customer No'
+Customer;
+@UI                 : { lineItem: [{ position: 192, label: 'Freight Amount'}],
+    identification      : [{ position: 192, label: 'Freight Amount' }]
+ }
+ @EndUserText.label: 'Freight Amount'
+ FREIGHT;
+ @UI                 : { lineItem: [{ position: 194, label: 'TCS'}],
+    identification      : [{ position: 194, label: 'TCS' }]
+ }
+ @EndUserText.label: 'TCS'
+ tcsamt;
+  @UI                 : { lineItem: [{ position: 196, label: 'TCS Scraps Charges'}],
+    identification      : [{ position: 196, label: 'TCS Scraps Charges' }]
+ }
+ @EndUserText.label: 'TCS Scraps Charges'
+ tcssrap;
+@UI                 : { lineItem: [{ position: 200, label: 'Customer Name'}],
+    identification      : [{ position: 200, label: 'Customer Name' }]
+ }
+ @EndUserText.label: 'Customer Name '
+CUSTNAME;
+@UI                 : { lineItem: [{ position: 210, label: 'Customer GSTIN'}],
+    identification      : [{ position: 210, label: 'Customer GSTIN' }]
+ }
+ @EndUserText.label: 'Customer GSTIN'
+TAXNO2;
+@UI                 : { lineItem: [{ position: 220, label: 'Place Of Supply'}],
+    identification      : [{ position: 220, label: 'Place Of Supply' }]
+ }
+ @EndUserText.label: 'Place Of Supply'
+STATECODE;
+@UI                 : { lineItem: [{ position: 230, label: 'Sales Type'}],
+    identification      : [{ position: 230, label: 'Sales Type' }]
+ }
+ @EndUserText.label: 'Sales Type'
+SALESTYPE;
+@UI                 : { lineItem: [{ position: 240, label: 'EXPORT TYPE'}],
+    identification      : [{ position: 240, label: 'EXPORT TYPE' }]
+ }
+ @EndUserText.label: 'EXPORT TYPE'
+EXPORTTYPE;
+@UI                 : { lineItem: [{ position: 250, label: 'Accounting No'}],
+    identification      : [{ position: 250, label: 'Accounting No' }]
+ }
+ @EndUserText.label: 'Accounting No'
+ACCDOC;
+@UI                 : { lineItem: [{ position: 260, label: 'Accounting Date'}],
+    identification      : [{ position: 260, label: 'Accounting Date' }]
+ }
+ @EndUserText.label: 'Accounting Date'
+FIDATE;
+@UI                 : { lineItem: [{ position: 270, label: 'Billing Type'}],
+    identification      : [{ position: 270, label: 'Billing Type' }]
+ }
+ @EndUserText.label: 'Billing Type'
+ BILLINGTYPE;
+ @UI                 : { lineItem: [{ position: 280, label: 'Is Cancel'}],
+    identification      : [{ position: 280, label: 'Is Cancel' }]
+ }
+ @EndUserText.label: 'Is Cancel'
+ cancel;
+  @UI                 : { lineItem: [{ position: 290, label: 'Cancel Bill No'}],
+    identification      : [{ position: 290, label: 'Cancel Bill No' }]
+ }
+ @EndUserText.label: 'Cancel Bill No'
+ billcan;
+  @UI                 : { lineItem: [{ position: 117, label: 'Uom 2'}],
+    identification      : [{ position: 117, label: 'Uom 2' }]
+ }
+ @EndUserText.label: 'UOM2'
+ ConditionQuantityUnit;
+   @UI                 : { lineItem: [{ position: 115, label: 'Quantity 2'}],
+    identification      : [{ position: 115, label: 'Quantity 2' }]
+ }
+ @EndUserText.label: 'Quantity 2'
+ 
+ QTY;
+ 
+ 
+ 
+
+ 
+ 
+    
+    
+ 
+ 
+ 
+}
+
+    

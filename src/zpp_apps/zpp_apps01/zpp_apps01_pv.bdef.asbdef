@@ -1,0 +1,56 @@
+projection;
+strict ( 1 );
+use draft;
+use side effects;
+
+define behavior for ZPP_APPS01_pv //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Genjob;
+  use action matval;
+  use action getitems;
+  use action confimjob;
+  use action getpdf;
+  use action poval;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+  use association _Item { create; with draft; }
+   use association _Item2 { create; with draft; }
+}
+
+define behavior for ZPP_APPS01_iPV1 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+//  use action getoprt;
+
+  use association _hdr { with draft; }
+  use association _citem { create; with draft; }
+}
+
+define behavior for ZPP_APPS01_IPV3 //alias <alias_name>
+{
+  use update;
+  use delete;
+  use action grpitm;
+
+  use association _hdr { with draft; }
+  }
+
+define behavior for ZPP_APPS01_IPV2 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+  use association _item { with draft; }
+}

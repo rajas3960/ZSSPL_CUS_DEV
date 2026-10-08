@@ -1,0 +1,50 @@
+managed implementation in class zbp_pp_app01_hrv unique;
+strict ( 2 );
+with draft;
+
+
+define behavior for ZPP_APP01_HRV alias _Mhdrp
+with unmanaged save
+draft table zpp_app01_dtb1
+lock master
+total etag Createdon
+authorization master ( instance )
+etag master Createdon
+{
+  create;
+  update;
+  delete;
+  field ( readonly, numbering : managed ) Uuid;
+  field (mandatory : create) Plant;
+  association _Mitem { create;with draft; }
+  action(features : instance) Relase  result  [1] $self  ;
+  action(features : instance) PGI  result  [1] $self  ;
+  action(features : instance) GRN  result  [1] $self  ;
+
+
+
+    draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+    determination GetData on save { create; update; field Plant,Mat,Salesno; }
+    mapping for zpp_app01_htb1 corresponding;
+}
+
+define behavior for ZPP_APP01_IRV alias _Mitemp
+with unmanaged save
+draft table zpp_app01_ditb1
+//lock dependent by _Header
+//authorization dependent by _Header
+//persistent table zpp_app01_itb1
+lock dependent by _Mhdr
+authorization dependent by _Mhdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Sno;
+  association _Mhdr  { with draft; }
+    mapping for zpp_app01_itb1 corresponding;
+}

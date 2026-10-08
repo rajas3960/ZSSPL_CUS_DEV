@@ -1,0 +1,16 @@
+projection;
+strict ;
+
+define behavior for ZSD_REP_PV alias _HDR
+{
+
+  use action Printso;
+
+  use association item;
+}
+
+define behavior for ZSD_REP_IPV alias item
+{
+
+  use association _hdr;
+}

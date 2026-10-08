@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Manage Jobsheet Master"
+  },
+  "ui5AppDetails": {
+    "appId": "zppapprp08"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_CD3353EE73A403861A7561F378A13EC2ACEFBCEF_TM",
+    "semanticObject": "YY1_PPRPS05_R",
+    "action": "Manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_CD3353EE73A403861A7561F378A13EC2ACEFBCEF_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Manage Jobsheet Master"
+      }
+    }
+  ]
+}

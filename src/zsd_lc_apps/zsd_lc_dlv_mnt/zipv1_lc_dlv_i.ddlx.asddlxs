@@ -1,0 +1,64 @@
+@Metadata.layer: #PARTNER
+annotate entity ZIPV1_LC_DLV_I with
+{
+  @UI.facet: [{ id: 'Itmdata',
+         purpose: #STANDARD,
+         type: #IDENTIFICATION_REFERENCE,
+         label: 'Item Data', position: 10     } ]
+  @UI.hidden: true
+  Recguid;
+  @UI.hidden: true
+  Sonum;
+  @UI: { lineItem: [{ position: 10, label: 'Item No' }],
+  identification: [{ position: 10, label: 'Item No' }]}
+  Soitem;
+  @UI: { lineItem: [{ position: 30, label: 'Itm Cat' }],
+  identification: [{ position: 30, label: 'Itm Cat' }]}
+  Pstyv;
+  @UI: { lineItem: [{ position: 20, label: 'Product' }],
+  identification: [{ position: 20, label: 'Product' }]}
+  Product;
+  @UI.hidden: true
+  Prddesc;
+  @UI: { lineItem: [{ position: 130, label: 'Plant' }],
+  identification: [{ position: 130, label: 'Plant' }]}
+  Plant;
+  @UI: { lineItem: [{ position: 140, label: 'Stor.loc' }],
+  identification: [{ position: 140, label: 'Stor.loc' }]}
+  Sloc;
+  @UI: { lineItem: [{ position: 40, label: 'Order Qty' }],
+  identification: [{ position: 40, label: 'Order Qty' }]}
+  Ordqty;
+  @UI: { lineItem: [{ position: 50, label: 'Open Qty' }],
+  identification: [{ position: 50, label: 'Open Qty' }]}
+  Opnqty;
+  @UI.hidden: true
+  Salunt;
+  @UI.hidden: true
+  Docurr;
+  @UI: { lineItem: [{ position: 60, label: 'Net Value' }],
+  identification: [{ position: 60, label: 'Net Value' }]}
+  Itmnet;
+  @UI: { lineItem: [{ position: 70, label: 'Tax Value' }],
+  identification: [{ position: 70, label: 'Tax Value' }]}
+  Itmtax;
+  @UI: { lineItem: [{ position: 80, label: 'Avaliable Stock' }],
+  identification: [{ position: 80, label: 'Avaliable Stock' }]}
+  Stkqty;
+  @UI: { lineItem: [{ position: 90, label: 'Dlv Qty' }],
+  identification: [{ position: 90, label: 'Dlv Qty' }]}
+  Dlvqty;
+  @UI: { lineItem: [{ position: 100, label: 'Dlv Net' }],
+  identification: [{ position: 100, label: 'Dlv Net' }]}
+  Dlvnet;
+  @UI: { lineItem: [{ position: 110, label: 'Dlv Tax' }],
+  identification: [{ position: 110, label: 'Dlv Tax' }]}
+  Dlvtax;
+  @UI: { lineItem: [{ position: 120, label: 'Dlv Total' }],
+  identification: [{ position: 120, label: 'Dlv Total' }]}
+  Dlvtot;
+  /* Associations */
+  @UI.hidden: true
+  _hdr;
+
+}

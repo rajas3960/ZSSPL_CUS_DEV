@@ -1,0 +1,17 @@
+@EndUserText.label: 'Service Defn. Billet'
+define service ZSERV_D_BILLET {
+  expose ZC_BILLET_HDR     as Mainpage;
+  expose ZC_BILLET_101     as postgr;
+  expose ZC_BILLET_261     as postgi;
+  expose ZC_BILLET_531     as postbyp;
+  expose ZC_BILLET_HTB     as heat;
+  expose ZVCASTERF4;
+  expose ZVBILLETHEATF4;
+  expose ZVBILLETHEATF4_1;
+  expose ZPP_APPS_COMPRC;
+  expose ZPP_APPS_prodtc;
+  expose ZVBILLETHEATF4_5;
+  expose zpp_appsr_prodcom;
+  expose ZPP_APPS_ROLBALV;
+  expose ZPP_APPS_ROL02cv;
+}

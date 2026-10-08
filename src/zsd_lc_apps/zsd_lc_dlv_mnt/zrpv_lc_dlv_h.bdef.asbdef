@@ -1,0 +1,35 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZRPV_LC_DLV_H //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use association _Item { with draft; }
+  use association _lcnum { with draft; }
+}
+
+define behavior for ZIPV1_LC_DLV_I //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+}
+
+define behavior for ZIPV2_LC_LN //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+}

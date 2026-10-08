@@ -1,0 +1,81 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Purchase Indent Report',
+                typeNamePlural: 'Purchase Indent Report',
+                imageUrl: 'IMAGES',
+                title: { type: #STANDARD, label: 'Purchase Indent Report',value: 'Name' },description:{ value: 'indentno' } },
+
+
+  presentationVariant: [{ sortOrder: [{ by: 'indentno', direction:  #ASC }] }] }
+annotate entity ZMM_PURREQ_HPV with
+{
+  @UI.facet: [{
+     label: 'Indent Store Consuables',
+     id: 'PurchaseIndent',
+     type: #COLLECTION,
+     position: 10
+   },
+  { id: 'PurchaseIndentHeader' ,
+           purpose: #STANDARD,
+           type: #IDENTIFICATION_REFERENCE,
+           label: 'Purchase Indent ',
+           parentId: 'PurchaseIndent',
+           position: 10 },
+
+           { id: 'PurchaseIndentReport' ,
+           purpose: #STANDARD,
+           type: #LINEITEM_REFERENCE,
+           label: 'Purchase Indent Table',
+           position: 20,
+           targetElement: '_item'},
+           {type: #DATAPOINT_REFERENCE ,
+      qualifier: 'Preview',
+      purpose: #HEADER
+      } ]
+
+  @UI: { lineItem: [{ position: 10, label: 'Indent No' }],
+  identification: [{ position: 10, label: 'Indent No' },
+  { type: #FOR_ACTION, dataAction: 'preview' , label: 'Issue output' ,position: 20 }] }
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'zsd_purchasereq_vh',element: 'PurchaseRequisition' } }]
+  indentno;
+  @UI: { lineItem: [{ position: 50, label: 'Purpose' }],
+  identification: [{ position: 50, label: 'Purpose' }] }
+  Header_dec;
+  @UI.hidden: true
+  Req_type;
+  @UI.hidden: true
+  LastChangeDateTime;
+  @UI: { lineItem: [{ position: 30, label: 'Department' }],
+  identification: [{ position: 30, label: 'Department' }] }
+  dept;
+  @UI: { lineItem: [{ position: 40, label: 'Cost Name' }],
+  identification: [{ position: 40, label: 'Cost Name' }] }
+  Costname;
+  @UI: { lineItem: [{ position: 20, label: 'Indent Date' }],
+  identification: [{ position: 20, label: 'Indent Date' }] }
+
+  indentdate;
+  @UI.hidden: true
+  IMAGES;
+  /* Associations */
+  @UI.hidden: true
+  _image;
+  @UI.hidden: true
+  Name;
+  @UI: { lineItem: [{ position: 60, label: 'Plant' }],
+  identification: [{ position: 60, label: 'Plant' }] }
+  Plant;
+    @UI: { lineItem: [{ position: 70, label: 'Attachment' }],
+  identification: [{ position: 70, label: 'Attachment' }] }
+    attachment;
+      @UI: { lineItem: [{ position: 80, label: 'minetype' }],
+  identification: [{ position: 80, label: 'minetype' }] }
+    minetype;
+      @UI: { lineItem: [{ position: 90, label: 'filename' }],
+  identification: [{ position: 90, label: 'filename' }] }
+    filename;
+      @UI.hidden: true
+  _item;
+    
+}

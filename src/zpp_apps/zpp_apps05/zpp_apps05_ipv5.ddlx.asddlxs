@@ -1,0 +1,71 @@
+@Metadata.layer: #CUSTOMER
+@UI.createHidden: true
+@UI.updateHidden: #( ishide )
+@UI.deleteHidden: true
+@UI: { headerInfo: {
+typeName: 'Manage Jobsheet Master',
+typeNamePlural: 'Manage Jobsheet Master',
+title: { type: #STANDARD, value: 'Uuid'        } }     }
+annotate entity ZPP_APPS05_IPV5 with
+{
+  @UI.facet: [ { id:              'Stock',
+                       purpose:         #STANDARD,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Stock',
+                       position:        10 } ]
+  @UI.hidden: true
+
+  Uuid;
+  @UI: { lineItem: [{ position: 10, label: 'Length'},{ type: #FOR_ACTION ,dataAction: 'Gtselc' , position: 10,label: 'Select' }],
+  identification: [{ position: 10, label: 'Length' } ] }
+  Length;
+  @UI: { lineItem: [{ position: 15, label: 'Width'}],
+  identification: [{ position: 15, label: 'Width' } ] }
+  Width;
+  @UI: { lineItem: [{ position: 20, label: 'Product'}],
+  identification: [{ position: 20, label: 'Product' } ] }
+  Product;
+  @UI: { lineItem: [{ position: 30, label: 'Plant'}],
+  identification: [{ position: 30, label: 'Plant' } ] }
+  Plant;
+  @UI: { lineItem: [{ position: 40, label: 'Storage location'}],
+  identification: [{ position: 40, label: 'Storage location' } ] }
+  Storagelocation;
+  @UI: { lineItem: [{ position: 50, label: 'Batch'}],
+  identification: [{ position: 50, label: 'Batch' } ] }
+  Batch;
+  @UI: { lineItem: [{ position: 60, label: 'GRN No'}],
+  identification: [{ position: 60, label: 'GRN No' } ] }
+  Materialdoc;
+  @UI.hidden: true
+  Matdocitm;
+  @UI.hidden: true
+  Purchaseorder;
+  @UI.hidden: true
+  Purchaseorderitem;
+  @UI: { lineItem: [{ position: 70, label: 'Pieces'}],
+  identification: [{ position: 70, label: 'Pieces' } ] }
+  Piecs;
+  @UI: { lineItem: [{ position: 80, label: 'A Pieces'}],
+  identification: [{ position: 80, label: 'A Pieces' } ] }
+  Apiecs;
+  @UI: { lineItem: [{ position: 90, label: 'Total Weight'}],
+  identification: [{ position: 90, label: 'Total Weight' } ] }
+  Quantity;
+  @UI: { lineItem: [{ position: 100, label: 'A Quantity'}],
+  identification: [{ position: 100, label: 'A Quantity' } ] }
+  Aquatity;
+ @UI: { hidden: #(ishide),
+         lineItem: [{ position: 110 ,importance: #HIGH}],
+        identification: [{ position: 110 ,importance: #HIGH}] }
+        Rpiecs;
+          @UI: { hidden: #(ishide),
+         lineItem: [{ position: 120 }],
+        identification: [{ position: 120 }] }
+   Rquantity;
+  @UI.hidden: true
+
+  /* Associations */
+  _Hdr;
+
+}

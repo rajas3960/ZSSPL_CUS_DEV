@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition'
+define service ZBOM_APP01_UI {
+  expose ZBOM_APP01_PV  as Mainpage;
+  expose ZBOM_APP01_IPV;
+}

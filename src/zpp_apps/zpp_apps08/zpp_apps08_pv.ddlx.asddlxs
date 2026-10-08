@@ -1,0 +1,54 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'User Authorisation',
+typeNamePlural: 'User Authorisation'}}
+annotate entity ZPP_APPS08_PV
+    with 
+{
+   @UI.facet: [ { id:              'User',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'User Authorisation',
+                      position:        10 }]
+    @UI.hidden: true
+    Uuid;
+      @Consumption.valueHelpDefinition: [
+    {
+      entity: { name: 'ZPP_APPS08_BP', element: 'UserID' },
+      additionalBinding: [
+        { localElement: 'Name', element: 'PersonFullName', usage: #RESULT }
+      ]
+    }
+  ]
+      @UI: { lineItem: [{ position: 10, label: 'User Id'}],
+  identification: [{ position: 10, label: 'User Id' } ] }
+  @EndUserText.label: 'User Id'
+    Userid;
+    @UI: { lineItem: [{ position: 20, label: 'User Name'}],
+  identification: [{ position: 20, label: 'User Name' } ] }
+  @EndUserText.label: 'User Name'
+    Name;
+     @Consumption.valueHelpDefinition: [
+    {
+      entity: { name: 'I_CompanyCodeStdVH', element: 'CompanyCode' } } ]
+    @UI: { lineItem: [{ position: 30, label: 'Company Code'}],
+  identification: [{ position: 30, label: 'Company Code' } ] }
+  @EndUserText.label: 'Company Code'
+    Compny;
+      @Consumption.valueHelpDefinition: [
+    {
+      entity: { name: 'I_PlantStdVH', element: 'Plant' } } ]
+    @UI: { lineItem: [{ position: 40, label: 'Plant'}],
+  identification: [{ position: 40, label: 'Plant' } ] }
+  @EndUserText.label: 'Plant'
+    Plant;
+   @UI: { lineItem: [{ position: 50, label: 'Created By'}],
+  identification: [{ position: 50, label: 'Created By' } ] }
+  @EndUserText.label: 'Created By'
+    Createdby;
+@UI: { lineItem: [{ position: 60, label: 'Created On'}],
+  identification: [{ position: 60, label: 'Created On' } ] }
+  @EndUserText.label: 'Created On'
+    Createdon;
+    
+}

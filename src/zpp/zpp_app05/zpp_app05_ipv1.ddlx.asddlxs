@@ -1,0 +1,51 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_APP05_IPV1
+    with 
+{
+  @UI.facet: [ { id:              'Item1',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'Jonsheet Material Selection',
+                        position:        10 } ]
+                        
+  @UI.hidden: true
+Jobshtnum;
+@UI: { lineItem: [{ position: 10, label: 'Order No'},{  type: #FOR_ACTION, dataAction: 'matvh', label: 'Material Vh',position: 10 } 
+,{ type: #FOR_ACTION, dataAction: 'sovh', label: 'Sales Vh',position: 20 },
+{ type: #FOR_ACTION, dataAction: 'addmat', label: 'Group Material',position: 30  }],
+
+  identification: [{ position: 10, label: 'Order No' } ] }
+Orderno;
+@UI.hidden: true
+Plant;
+@UI: { lineItem: [{ position: 20, label: 'Material'}],
+  identification: [{ position: 20, label: 'Material' } ] }
+Matnr;
+@UI.hidden: true
+Maktx;
+@UI: { lineItem: [{ position: 30, label: 'Planned Quantity'}],
+  identification: [{ position: 30, label: 'Planned Quantity' } ] }
+Plnqty;
+@UI.hidden: true
+Uom;
+@UI: { lineItem: [{ position: 40, label: 'Requested Quantity'}],
+  identification: [{ position: 40, label: 'Requested Quantity' } ] }
+Reqty;
+@UI: { lineItem: [{ position: 50, label: 'Total Req Qty'}],
+  identification: [{ position: 50, label: 'Total Req Qty' } ] }
+Totreqty;
+@UI: { lineItem: [{ position: 50, label: 'Total Open Quantity'}],
+  identification: [{ position: 50, label: 'Total Open Quantity' } ] }
+Totopnqty;
+
+  @UI.identification: [{ position: 60, label: 'Sales Order No' } ] 
+Vbeln;
+ @UI.identification: [{ position: 70, label: 'Created by' } ] 
+Createdby;
+ @UI.identification: [{ position: 80, label: 'Created on' } ] 
+Createdon;
+@UI.hidden: true
+/* Associations */
+_hdr;
+    
+}

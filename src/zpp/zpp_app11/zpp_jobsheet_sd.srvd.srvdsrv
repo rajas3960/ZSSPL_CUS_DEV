@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition of Jobsheet'
+define service Zpp_Jobsheet_SD {
+  expose zpp_jobsheet_pv;
+}

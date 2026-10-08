@@ -1,0 +1,47 @@
+managed implementation in class zbp_sd_app02_hrv unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZSD_APP02_HRV alias _hdr
+//persistent table <???>
+with unmanaged save
+draft table zsd_app02_dtb1
+lock master
+total etag LastChangeDateTime
+authorization master ( instance )
+etag master LastChangeDateTime
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) SalesDocument,SalesDocumentDate,PurchaseOrderByCustomer,TotalNetAmount,SoldToParty,IncotermsClassification ;
+  association _litem { create; with draft; }
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  mapping for zsd_app02_tb1 corresponding;
+
+}
+
+define behavior for ZSD_APP02_IRV alias _lcline
+//persistent table zsd_app02_itb1
+with unmanaged save
+draft table zsd_app02_idt1
+lock dependent by _SalesHeader
+authorization dependent by _SalesHeader
+//etag master <field_name>
+{
+  update(features : instance);
+  delete(features : instance);
+  field ( readonly ) Salesdocument, Lcline,Createdby,Createdon;
+  determination Gtdata1 on save { create; field Lcline ;}
+  determination Gtdata2 on save { field Lcline,Lnum,Lcamount;}
+  validation valso on save { field Lcamount ;}
+//  determination validatin on save { field Lcamount; create; update;}
+
+  association _SalesHeader { with draft; }
+
+    mapping for zsd_app02_itb1 corresponding;
+}

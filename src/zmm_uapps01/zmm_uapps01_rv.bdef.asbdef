@@ -1,0 +1,45 @@
+managed implementation in class zbp_mm_uapps01_rv unique;
+strict ( 1 );
+with draft;
+
+define behavior for ZMM_UAPPS01_RV alias Header
+//persistent table zmm_uapps01_tb1
+with unmanaged save
+draft table  zmm_uapps01_dtb1
+lock master
+total etag LastChangedAt
+authorization master ( instance )
+etag master LastChangedAt
+{
+  create(authorization : global);
+  update;
+  delete;
+
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+  field ( readonly, numbering : managed ) Uuid;
+  field ( readonly ) Createdat, Createdby, Lastchangedat, Lastchangedby, Status, Itmcnt, Docno;
+
+  association _Item { create; with draft; }
+
+  determination GetData1 on save { field uuid; }
+  action ( features : instance ) PostGI result [1] $self;
+}
+
+define behavior for ZMM_UAPPS01_IRV  alias Item
+//persistent table zmm_uapps01_tb2
+with unmanaged save
+draft table zmm_uapps01_dtb2
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Itemno;
+  association _Header {with draft;}
+}

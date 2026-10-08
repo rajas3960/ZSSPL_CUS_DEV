@@ -1,0 +1,4 @@
+@EndUserText.label: 'ServiceDefinition Z_MSME_REPORTS'
+define service Z_MSME_REPORTS_SD {
+  expose Z_MSME_REPORTS_PV as MSME_REPORTS;
+}

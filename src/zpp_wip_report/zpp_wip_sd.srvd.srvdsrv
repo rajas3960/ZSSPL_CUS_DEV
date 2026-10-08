@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service defination of  WIP Report'
+define service ZPP_WIP_SD {
+  expose ZPP_WIP_02_PV as WIP_Report;
+}

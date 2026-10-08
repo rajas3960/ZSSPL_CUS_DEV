@@ -1,0 +1,31 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZTAXCODE_PJV
+    with 
+{
+    @UI.facet: [{ id: 'ID01', 
+                    purpose: #STANDARD,
+                    type: #IDENTIFICATION_REFERENCE, 
+                    label: 'Tax Code', 
+                    position: 10 } ]
+  @UI.lineItem: [{ position: 10, label: 'TaxCode' }]
+  @UI.identification:  [{ position: 10, label: 'TaxCode' }]
+  @EndUserText.label: 'TaxCode'
+Taxcode;
+@UI.lineItem: [{ position: 20, label: 'CGSTPercent' }]
+  @UI.identification:  [{ position: 20, label: 'CGSTPercent' }]
+  @EndUserText.label: 'CGSTPercent'
+CGSTPercent;
+@UI.lineItem: [{ position: 30, label: 'SGSTPercent' }]
+  @UI.identification:  [{ position: 30, label: 'SGSTPercent' }]
+  @EndUserText.label: 'SGSTPercent'
+SGSTPercent;
+@UI.lineItem: [{ position: 40, label: 'IGSTPercent' }]
+  @UI.identification:  [{ position: 40, label: 'IGSTPercent' }]
+  @EndUserText.label: 'IGSTPercent'
+IGSTPercent;
+@UI.lineItem: [{ position: 80, label: 'Description' }]
+  @UI.identification:  [{ position: 80, label: 'Description' }]
+  @EndUserText.label: 'Description'
+Description;
+    
+}

@@ -1,0 +1,39 @@
+projection;
+strict ( 1 );
+use draft;
+use side effects;
+
+define behavior for ZPP_BOM_HDPV //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+  use action seltitem;
+  use action printBom;
+  use action selsec;
+
+  use association _item {  with draft; }
+  use association _item1 { with draft; }
+}
+
+define behavior for ZPP_BOM_IDPV //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _hdr{with draft; }
+}
+define behavior for ZPP_BOM_IpV1 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _hdr{with draft; }
+}

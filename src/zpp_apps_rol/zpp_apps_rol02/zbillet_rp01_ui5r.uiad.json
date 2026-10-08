@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Manage Section(Angle) Production"
+  },
+  "ui5AppDetails": {
+    "appId": "zbilletrp01"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_3E52AFC6D8DB549ED326E75E28751A81446BDD26_TM",
+    "semanticObject": "YY1_BILLETRP_01",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_3E52AFC6D8DB549ED326E75E28751A81446BDD26_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Manage Section(Angle) Production",
+        "subtitle": "Dashboard"
+      }
+    }
+  ]
+}

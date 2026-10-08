@@ -1,0 +1,151 @@
+@Metadata.layer: #CUSTOMER
+
+@UI: { headerInfo: { title: { type: #STANDARD, label: 'Batch', value: 'batch' } } }
+annotate entity ZC_BILLET_101 with
+{
+
+  @UI.facet:
+  [{ id: 'GeneralDataI', isSummary: true, label: 'Billet', type: #COLLECTION, purpose: #STANDARD },
+  { type: #FIELDGROUP_REFERENCE, targetQualifier: 'GeneralData1', parentId: 'GeneralDataI', position: 10, label: 'Basic Details', id: 'GeneralData1' }
+  ]
+
+  @UI.hidden: true
+  id;
+  @UI.hidden: true
+  item;
+  @UI.hidden: true
+  referenceid;
+      @UI.lineItem: [ { position: 2,importance: #HIGH } ]
+      @UI.identification: [ { position: 2 } ]
+      @UI.fieldGroup: [ { position: 2,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  checkbox;
+
+  @UI.lineItem: [ { position: 5 } ]
+  @UI.identification: [ { position: 5 } ]
+  @UI.fieldGroup: [ { position: 5,  qualifier: 'GeneralData1', importance: #HIGH } ]
+//  @Consumption.valueHelpDefinition: [{ entity:{ element: 'heatnumber', name:'ZVBILLETHEATF4_5' },
+//                                          distinctValues: true,
+//                                          useForValidation: true,
+//                                           enabled: '',
+//  additionalBinding:  [  { localParameter: '', localElement: 'plant', localConstant: '', parameter: '', element: 'plant',
+//          usage: #FILTER
+//         } ,
+//         { localParameter: '',localElement: 'productionorder',localConstant: '',parameter: '',element: 'productionorder',usage: #FILTER }
+//          
+//         
+//         ] 
+//          
+//         }
+//         
+//          ]
+@Consumption.valueHelpDefinition: [{
+    entity: { 
+        element: 'heatnumber', 
+        name: 'ZVBILLETHEATF4_5' 
+    },
+    distinctValues: true,
+    useForValidation: true,
+    additionalBinding: [
+        {
+            localElement: 'plant',
+            element: 'plant',
+            usage: #FILTER
+        },
+        {
+            localElement: 'productionorder',
+            element: 'productionorderr',
+            usage: #FILTER
+        }
+    ]
+}]
+  heatnumber;
+
+  @UI.lineItem: [ { position: 6 },{ type: #FOR_ACTION, dataAction: 'btchsplt', label: 'Batch Split'} ]
+  @UI.identification: [ { position: 8 } ]
+  @UI.fieldGroup: [ { position: 8,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  material;
+
+  @UI.hidden: true
+  plant;
+  @UI.hidden: true
+  productionorder;
+
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.fieldGroup: [ { position: 10,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  lengthmtr;
+
+  @UI.lineItem: [ { position: 15 } ]
+  @UI.identification: [ { position: 15 } ]
+  @UI.fieldGroup: [ { position: 15,  qualifier: 'GeneralData1', importance: #HIGH } ]
+//@UI.hidden: true
+
+  batch;
+
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.fieldGroup: [ { position: 20,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  piece;
+
+  @UI.lineItem: [ { position: 25 } ]
+  @UI.identification: [ { position: 25 } ]
+  @UI.fieldGroup: [ { position: 25,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  quantity;
+
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.fieldGroup: [ { position: 30,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  uom;
+
+  @Consumption.valueHelpDefinition: [{
+        entity:{
+        element: 'storagelocation',
+        name:'ZVXSLOCF4'
+        },
+
+           distinctValues: true,
+        useForValidation: true,
+//        enabled: '',
+
+                additionalBinding:
+        [
+        {
+//          localParameter: '',
+          localElement: 'plant',
+          localConstant: '',
+          parameter: '',
+          element: 'plant',
+          usage: #FILTER
+         }
+         ]
+        }
+      ]
+  @UI.lineItem: [ { position: 35 } ]
+  @UI.identification: [ { position: 35 } ]
+  @UI.fieldGroup: [ { position: 35,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  storagelocation;
+//    @UI.lineItem: [ { position: 40  } ]
+ @UI.lineItem: [ { position: 40 } ]
+  @UI.identification: [ { position: 40 } ]
+  @UI.fieldGroup: [ { position: 40,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  prioritypo;
+    @UI.lineItem: [ { position: 7 } ]
+  length;
+    @UI.lineItem: [ { position: 8 } ]
+  
+  width;
+    @UI.lineItem: [ { position: 9 } ]
+  pcs;
+    @UI.lineItem: [ { position: 36 } ]
+      @UI.identification: [ { position: 36 } ]
+      @UI.fieldGroup: [ { position: 36,  qualifier: 'GeneralData1', importance: #HIGH } ]
+  remark;
+
+ @UI.hidden: true
+  balance;
+     @UI.lineItem: [ { position: 22 } ]
+      @UI.identification: [ { position: 22 } ]
+      @UI.fieldGroup: [ { position: 22,  qualifier: 'GeneralData1', importance: #HIGH } ]
+          balance1   ; 
+
+}

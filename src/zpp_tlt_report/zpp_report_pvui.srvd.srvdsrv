@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service defination of Balance Report'
+define service ZPP_REPORT_PVUI {
+  expose zpp_report_pv01 as mainpage;
+  expose ZPP_REP_IPV03   as item;
+}

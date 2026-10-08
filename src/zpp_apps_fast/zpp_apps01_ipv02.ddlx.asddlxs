@@ -1,0 +1,74 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Job Card Creation Item',
+typeNamePlural: 'Job Card Creation Item',
+title: { type: #STANDARD, value: 'Uuid'        } }     }
+@UI.createHidden: true
+@UI.updateHidden: true
+@UI.deleteHidden: true
+annotate entity ZPP_APPS01_Ipv02
+    with 
+{    
+      @UI.facet: [ { id:              'JobcardPlanningChildItem',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Production Planning Selected Items',
+                      position:        30 } ]
+    @UI.hidden: true
+    Uuid;
+    @UI: { lineItem: [{ position: 10, label: 'Production Order'}],
+  identification: [{ position: 10, label: 'Production Order' } ] }
+  @EndUserText.label: 'Production Order'
+    Productionorder;
+    @UI: { lineItem: [{ position: 20, label: 'Production Order Item'}],
+  identification: [{ position: 20, label: 'Production Order Item' } ] }
+  @EndUserText.label: 'Production Order Item'
+    Productionorderitem;
+     @UI: { lineItem: [{ position: 30, label: 'Sale Order'}],
+  identification: [{ position: 30, label: 'Sale Order' } ] }
+  @EndUserText.label: 'Sale Order'
+    Saleorder;
+     @UI: { lineItem: [{ position: 40, label: 'Sale Order Item'}],
+  identification: [{ position: 40, label: 'Sale Order Item' } ] }
+  @EndUserText.label: 'Sale Order Item'
+    Saleorderitem;
+     @UI: { lineItem: [{ position: 50, label: 'Qty in Pieces'}],
+  identification: [{ position: 50, label: 'Qty in Pieces' } ] }
+  @EndUserText.label: 'Qty in Pieces'
+    Pcs;
+     @UI: { lineItem: [{ position: 60, label: 'Consumption Qty in KG'}],
+  identification: [{ position: 60, label: 'Consumption Qty in KG' } ] }
+  @EndUserText.label: 'Consumption Qty in KG'
+    Menge;
+    @UI.hidden: true
+    Meins;
+     @UI: { lineItem: [{ position: 70, label: 'Material'}],
+  identification: [{ position: 70, label: 'Material' } ] }
+  @EndUserText.label: 'Material'
+    Matnr;
+     @UI: { lineItem: [{ position: 80, label: 'Material Desc'}],
+  identification: [{ position: 80, label: 'Material Desc' } ] }
+  @EndUserText.label: 'Material Desc'
+    Maktx;
+     @UI: { lineItem: [{ position: 90, label: 'Due Date'}],
+  identification: [{ position: 90, label: 'Due Date' } ] }
+  @EndUserText.label: 'Due Date'
+    Duedate;
+    
+     @UI: { lineItem: [{ position: 100, label: 'Unitwt'}],
+  identification: [{ position: 100, label: 'Unitwt' } ] }
+  @EndUserText.label: 'Unitwt'
+    Unitwt;
+    @UI: { lineItem: [{ position: 110, label: 'Project'}],
+  identification: [{ position: 110, label: 'Project' } ] }
+  @EndUserText.label: 'Project'
+    party;
+    @UI: { lineItem: [{ position: 110, label: 'process'}],
+  identification: [{ position: 110, label: 'process' } ] }
+  @EndUserText.label: 'process'
+    process;
+    /* Associations */
+    @UI.hidden: true
+    _hdr;
+    
+}

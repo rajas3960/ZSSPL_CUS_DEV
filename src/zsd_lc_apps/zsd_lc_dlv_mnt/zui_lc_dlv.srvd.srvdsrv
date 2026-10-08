@@ -1,0 +1,6 @@
+@EndUserText.label: 'LC Delivery Creation - SDef'
+define service ZUI_LC_DLV {
+  expose ZRPV_LC_DLV_H  as MAIN;
+  expose ZIPV2_LC_LN;
+  expose ZIPV1_LC_DLV_I;
+}

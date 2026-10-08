@@ -1,0 +1,97 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Production Planning Creation',
+typeNamePlural: 'Production Planning Creation',
+title: { type: #STANDARD, value: 'Uuid'        } }     }
+annotate entity ZPP_APPSR_PV
+    with 
+{
+  @UI.facet: [ { id:              'ProductionPlanning',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Production Planning',
+                      position:        10 } ,
+                    { id:              'ProductionPlanningItems',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'Production Planning Selection Items',
+                      position:        20,
+                      targetElement:   '_itemselc'},
+                      { id:              'ProductionPlanningChildItems',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'Production Planning Selected Items',
+                      position:        30,
+                      targetElement:   '_itemseld'} ]
+    @UI.hidden: true
+    Uuid;
+    
+    @UI: { lineItem: [{ position: 10, label: 'Material'}],
+  identification: [{ position: 10, label: 'Material' },
+  { type: #FOR_ACTION , dataAction: 'gt_section',label: 'Fetch Section' ,position: 10} ] }
+  @EndUserText.label: 'Material'
+    @Consumption.valueHelpDefinition: [
+    {
+      entity: { name: 'ZPP_APPS_ROL01_VH', element: 'Material' },
+      additionalBinding: [
+        { localElement: 'Plant', element: 'SupplyingPlant', usage: #RESULT }
+      ]
+    }
+  ]
+    Secmat;
+    
+    @UI: { lineItem: [{ position: 20, label: 'Plant'}],
+  identification: [{ position: 20, label: 'Plant' } ] }
+  @EndUserText.label: 'Plant'
+    Plant;
+    
+    @UI: { lineItem: [{ position: 30, label: 'From Date'}],
+  identification: [{ position: 30, label: 'From Date' } ] }
+  @EndUserText.label: 'From Date'
+    Frmdt;
+    
+    @UI: { lineItem: [{ position: 40, label: 'To Date'}],
+  identification: [{ position: 40, label: 'To Date' } ] }
+  @EndUserText.label: 'To Date'
+    Todt;
+    @UI: { lineItem: [{ position: 50, label: 'Planned Order'}],
+  identification: [{ position: 50, label: 'Planned Order' } ] }
+  @EndUserText.label: 'Planned Order'
+    Plannedorder;
+    @UI: { lineItem: [{ position: 60, label: 'Total Qty'}],
+  identification: [{ position: 60, label: 'Total Qty' } ] }
+  @EndUserText.label: 'Total Qty'
+    Totqty;
+    @UI: { lineItem: [{ position: 70, label: 'Unit Of Measure'}],
+  identification: [{ position: 70, label: 'Unit Of Measure' } ] }
+  @EndUserText.label: 'Unit Of Measure'
+    Uom;
+    @UI: { lineItem: [{ position: 80, label: 'Status'}],
+  identification: [{ position: 80, label: 'Status' } ] }
+  @EndUserText.label: 'Status'
+    Status;
+        @UI: { lineItem: [{ position: 85, label: 'Manufacturing Order'}],
+  identification: [{ position: 85, label: 'Manufacturing Order' } ] }
+  @EndUserText.label: 'Manufacturing Order'
+    ManufacturingOrder;
+    @UI: { lineItem: [{ position: 90, label: 'Created by'}],
+  identification: [{ position: 90, label: 'Created by' } ] }
+  @EndUserText.label: 'Created by'
+    Createdby;
+    @UI: { lineItem: [{ position: 100, label: 'Created on'}],
+  identification: [{ position: 100, label: 'Created on' } ] }
+  @EndUserText.label: 'Created on'
+    Createdon;
+//@UI.hidden: true
+ @UI: { lineItem: [{ position: 110, label: 'Unit Weight'}],
+  identification: [{ position: 110, label: 'Unit Weight' } ] }
+  @EndUserText.label: 'Unit Weight'
+    unitwt;
+
+    /* Associations */
+    @UI.hidden: true
+    _itemselc;
+    @UI.hidden: true
+    _itemseld;
+    
+}

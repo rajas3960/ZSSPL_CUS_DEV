@@ -1,0 +1,21 @@
+projection;
+strict ( 2 );
+
+define behavior for ZMM_PURREQ_HPV //alias <alias_name>
+{
+//  use create;
+//  use update;
+//  use delete;
+
+  use association _item { create; }
+   use action preview;
+}
+
+define behavior for zmm_purreq_ipv //alias <alias_name>
+{
+//  use update;
+//  use delete;
+
+
+  use association _header;
+}

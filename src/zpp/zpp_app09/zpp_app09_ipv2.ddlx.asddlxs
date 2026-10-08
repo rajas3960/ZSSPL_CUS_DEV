@@ -1,0 +1,38 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_APP09_IPV2
+    with 
+{
+   @UI.facet: [ { id:              'Item2',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'Jobsheet Raw Materials',
+                        position:        10 } ]
+@UI.hidden: true
+Jobshtnum;
+@UI: { lineItem: [{ position: 10, label: 'Sno'},{ type: #FOR_ACTION , dataAction: 'goodissue',label: 'Good Issue' }],
+  identification: [{ position: 10, label: 'Sno' } ] }
+Sno;
+@UI: { lineItem: [{ position: 30, label: 'Material'}],
+  identification: [{ position: 30, label: 'Material' } ] }
+Matnr;
+@UI.hidden: true
+Werks;
+@UI: { lineItem: [{ position: 40, label: 'Component Qty'}],
+  identification: [{ position: 40, label: 'Component Qty' } ] }
+Comqty;
+@UI.hidden: true
+Uom;
+//@UI: { lineItem: [{ position: 50, label: 'Stock Qty'}],
+//  identification: [{ position: 50, label: 'Stock Qty' } ] }
+@UI.hidden: true
+Stocqty;
+@UI.hidden: true
+Stcuom;
+@UI.hidden: true
+Btach;
+@UI.hidden: true
+Strgloc;
+@UI.hidden: true
+/* Associations */
+_hdr;
+}

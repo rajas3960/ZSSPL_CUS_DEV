@@ -1,0 +1,45 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Released Document Report',
+typeNamePlural: 'Released Document Report',
+title: { type: #STANDARD, value: 'Srno' }         } }
+annotate entity ZPP_APP03_IPV with
+{
+  @UI.facet: [ { id:              'Item',
+                  purpose:         #STANDARD,
+                  type:            #IDENTIFICATION_REFERENCE,
+                  label:           'Release Document Item',
+                  position:        10 } ]
+  @UI.hidden: true
+  Uuid;
+   @UI: { lineItem: [{ position: 10, label: 'Sr No'},{ type: #FOR_ACTION , dataAction: 'get_select', label: 'Select🫠'}],
+  identification: [{ position: 10, label: 'Sr No' } ] }
+  @EndUserText.label: 'Attachment'
+  Srno;
+   @UI: { lineItem: [{ position: 20, label: 'Project'}],
+  identification: [{ position: 20, label: 'Project' } ] }
+  @EndUserText.label: 'Project'
+  Proj;
+   @UI: { lineItem: [{ position: 30, label: 'Tower Type'}],
+  identification: [{ position: 30, label: 'Tower Type' } ] }
+  @EndUserText.label: 'Tower Type'
+  Towertype;
+   @UI: { lineItem: [{ position: 40, label: 'Tower Type Desc'}],
+  identification: [{ position: 40, label: 'Tower Type Desc' } ] }
+  @EndUserText.label: 'Tower Type Desc'
+  Ttdesc;
+   @UI: { lineItem: [{ position: 50, label: 'Tower Sub Type'}],
+  identification: [{ position: 50, label: 'Tower Sub Type' } ] }
+  @EndUserText.label: 'Tower Sub Type'
+  Ttsub;
+   @UI: { lineItem: [{ position: 60, label: 'Tower Sub Type Desc'}],
+  identification: [{ position: 60, label: 'Tower Sub Type Desc' } ] }
+  @EndUserText.label: 'Tower Sub Type Desc'
+  Ttsdesc;
+  @UI.hidden: true
+  mark;
+  @UI.hidden: true
+  /* Associations */
+  hdr;
+
+}

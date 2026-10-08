@@ -1,0 +1,130 @@
+managed implementation in class zbp_rcv_lc_dlv_h unique;
+strict ( 2 );
+with draft;
+define behavior for ZRCV_LC_DLV_H alias Header
+//persistent table ztb1_lc_dlv_h
+with unmanaged save
+draft table zdt1_lc_dlv_h
+lock master total etag Recguid
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Recguid, Audat, Crefdt, Cusref, Docurr, Erdat, Ernam, Grdtot, Netval, Prcdat, Prcprcd, Shaddr, Shipto, Soldto, Sotype, Spart, Staddr,
+  Taxval, Totdlval, Totlcno, Totlcval, Vkorg, Vtweg;
+  field ( readonly : update ) Sonum;
+  field ( mandatory : create ) Sonum;
+  field ( numbering : managed ) Recguid;
+  association _Item { create; with draft; }
+  association _lcnum { create; with draft; }
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  determination GetData on save { field Recguid; }
+
+  mapping for ztb1_lc_dlv_h control zcx1_lc_dlv_h
+    {
+      Audat    = audat;
+      Crefdt   = crefdt;
+      Cusref   = cusref;
+      Docurr   = docurr;
+      Erdat    = erdat;
+      Ernam    = ernam;
+      Grdtot   = grdtot;
+      Netval   = netval;
+      Prcdat   = prcdat;
+      Prcprcd  = prcprcd;
+      Recguid  = recguid;
+      Shaddr   = shaddr;
+      Shipto   = shipto;
+      Soldto   = soldto;
+      Sonum    = sonum;
+      Sotype   = sotype;
+      Spart    = spart;
+      Staddr   = staddr;
+      Taxval   = taxval;
+      Totdlval = totdlval;
+      Totlcno  = totlcno;
+      Totlcval = totlcval;
+      Vkorg    = vkorg;
+      Vtweg    = vtweg;
+    }
+
+}
+
+define behavior for ZICV1_LC_DLV_I alias Litem
+persistent table ztb2_lc_dlv_i
+draft table zdt2_lc_dlv_i
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Recguid, Sonum, Soitem, Dlvnet, Dlvtax, Dlvtot, Docurr, Itmnet, Itmtax, Opnqty, Ordqty, Plant, Prddesc, Product, Pstyv,
+  Salunt, Stkqty, Sloc;
+  association _hdr { with draft; }
+
+  mapping for ztb2_lc_dlv_i control zcx2_lc_dlv_i
+    {
+      Dlvnet  = dlvnet;
+      Dlvqty  = dlvqty;
+      Dlvtax  = dlvtax;
+      Dlvtot  = dlvtot;
+      Docurr  = docurr;
+      Itmnet  = itmnet;
+      Itmtax  = itmtax;
+      Opnqty  = opnqty;
+      Ordqty  = ordqty;
+      Plant   = plant;
+      Prddesc = prddesc;
+      Product = product;
+      Pstyv   = pstyv;
+      Recguid = recguid;
+      Salunt  = salunt;
+      Sloc    = sloc;
+      Soitem  = soitem;
+      Sonum   = sonum;
+      Stkqty  = stkqty;
+    }
+}
+
+define behavior for ZICV2_LC_LN alias lcitm
+persistent table ztb3_lc_ln
+draft table zdt3_lc_ln
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Recguid, Sonum, Soldto, Lcnumber, Bankname, Bnkbrch, Lcamt, Lcbcamt, Lcdate, Lcutamt, Lcvdate, Status, Vfdate, Vtdate;
+  association _hdr { with draft; }
+
+  mapping for ztb3_lc_ln control zcx3_lc_ln
+    {
+      Bankname = bankname;
+      Bnkbrch  = bnkbrch;
+      Lcamt    = lcamt;
+      Lcbcamt  = lcbcamt;
+      Lccuky   = lccuky;
+      Lcdate   = lcdate;
+      Lcnumber = lcnumber;
+      Lcselamt = lcselamt;
+      Lcutamt  = lcutamt;
+      Lcvdate  = lcvdate;
+      Mark     = mark;
+      Recguid  = recguid;
+      Soldto   = soldto;
+      Sonum    = sonum;
+      Status   = status;
+      Vfdate   = vfdate;
+      Vtdate   = vtdate;
+    }
+
+}

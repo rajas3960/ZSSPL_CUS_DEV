@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination - v4'
+define service ZSD_SALES_REPORT {
+  expose ZCE_SALES as sdreport;
+}

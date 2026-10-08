@@ -1,0 +1,1545 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'Projection CDS View for I_MATERIALDOCUMENTITEM_2'
+@UI.headerInfo.typeNamePlural: 'Projection CDS View for I_MATERIALDOCUMENTITEM_2'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'MaterialDocumentYear'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'MaterialDocumentYear'
+annotate view ZC_MATERIALDOCUMENTITEM_2 with
+{
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  MaterialDocumentYear;
+  
+  @UI.identification: [ {
+    position: 20 
+  } ]
+  @UI.lineItem: [ {
+    position: 20 
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  MaterialDocument;
+  
+  @UI.identification: [ {
+    position: 30 
+  } ]
+  @UI.lineItem: [ {
+    position: 30 
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  MaterialDocumentItem;
+  
+  @UI.identification: [ {
+    position: 40 
+  } ]
+  @UI.lineItem: [ {
+    position: 40 
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Material;
+  
+  @UI.identification: [ {
+    position: 50 
+  } ]
+  @UI.lineItem: [ {
+    position: 50 
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  Plant;
+  
+  @UI.identification: [ {
+    position: 60 
+  } ]
+  @UI.lineItem: [ {
+    position: 60 
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  StorageLocation;
+  
+  @UI.identification: [ {
+    position: 70 
+  } ]
+  @UI.lineItem: [ {
+    position: 70 
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  StorageType;
+  
+  @UI.identification: [ {
+    position: 80 
+  } ]
+  @UI.lineItem: [ {
+    position: 80 
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  StorageBin;
+  
+  @UI.identification: [ {
+    position: 90 
+  } ]
+  @UI.lineItem: [ {
+    position: 90 
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  Batch;
+  
+  @UI.identification: [ {
+    position: 100 
+  } ]
+  @UI.lineItem: [ {
+    position: 100 
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  ShelfLifeExpirationDate;
+  
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  ManufactureDate;
+  
+  @UI.identification: [ {
+    position: 120 
+  } ]
+  @UI.lineItem: [ {
+    position: 120 
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  Supplier;
+  
+  @UI.identification: [ {
+    position: 130 
+  } ]
+  @UI.lineItem: [ {
+    position: 130 
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  SalesOrder;
+  
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 
+  } ]
+  @UI.selectionField: [ {
+    position: 140 
+  } ]
+  SalesOrderItem;
+  
+  @UI.identification: [ {
+    position: 150 
+  } ]
+  @UI.lineItem: [ {
+    position: 150 
+  } ]
+  @UI.selectionField: [ {
+    position: 150 
+  } ]
+  SalesOrderScheduleLine;
+  
+  @UI.identification: [ {
+    position: 160 
+  } ]
+  @UI.lineItem: [ {
+    position: 160 
+  } ]
+  @UI.selectionField: [ {
+    position: 160 
+  } ]
+  WBSElementInternalID;
+  
+  @UI.identification: [ {
+    position: 170 
+  } ]
+  @UI.lineItem: [ {
+    position: 170 
+  } ]
+  @UI.selectionField: [ {
+    position: 170 
+  } ]
+  Customer;
+  
+  @UI.identification: [ {
+    position: 180 
+  } ]
+  @UI.lineItem: [ {
+    position: 180 
+  } ]
+  @UI.selectionField: [ {
+    position: 180 
+  } ]
+  InventorySpecialStockType;
+  
+  @UI.identification: [ {
+    position: 190 
+  } ]
+  @UI.lineItem: [ {
+    position: 190 
+  } ]
+  @UI.selectionField: [ {
+    position: 190 
+  } ]
+  InventoryStockType;
+  
+  @UI.identification: [ {
+    position: 200 
+  } ]
+  @UI.lineItem: [ {
+    position: 200 
+  } ]
+  @UI.selectionField: [ {
+    position: 200 
+  } ]
+  StockOwner;
+  
+  @UI.identification: [ {
+    position: 210 
+  } ]
+  @UI.lineItem: [ {
+    position: 210 
+  } ]
+  @UI.selectionField: [ {
+    position: 210 
+  } ]
+  GoodsMovementType;
+  
+  @UI.identification: [ {
+    position: 220 
+  } ]
+  @UI.lineItem: [ {
+    position: 220 
+  } ]
+  @UI.selectionField: [ {
+    position: 220 
+  } ]
+  DebitCreditCode;
+  
+  @UI.identification: [ {
+    position: 230 
+  } ]
+  @UI.lineItem: [ {
+    position: 230 
+  } ]
+  @UI.selectionField: [ {
+    position: 230 
+  } ]
+  InventoryUsabilityCode;
+  
+  @UI.identification: [ {
+    position: 240 
+  } ]
+  @UI.lineItem: [ {
+    position: 240 
+  } ]
+  @UI.selectionField: [ {
+    position: 240 
+  } ]
+  QuantityInBaseUnit;
+  
+  @UI.identification: [ {
+    position: 250 
+  } ]
+  @UI.lineItem: [ {
+    position: 250 
+  } ]
+  @UI.selectionField: [ {
+    position: 250 
+  } ]
+  QuantityInEntryUnit;
+  
+  @UI.identification: [ {
+    position: 260 
+  } ]
+  @UI.lineItem: [ {
+    position: 260 
+  } ]
+  @UI.selectionField: [ {
+    position: 260 
+  } ]
+  PostingDate;
+  
+  @UI.identification: [ {
+    position: 270 
+  } ]
+  @UI.lineItem: [ {
+    position: 270 
+  } ]
+  @UI.selectionField: [ {
+    position: 270 
+  } ]
+  DocumentDate;
+  
+  @UI.identification: [ {
+    position: 280 
+  } ]
+  @UI.lineItem: [ {
+    position: 280 
+  } ]
+  @UI.selectionField: [ {
+    position: 280 
+  } ]
+  ReservationItemRecordType;
+  
+  @UI.identification: [ {
+    position: 290 
+  } ]
+  @UI.lineItem: [ {
+    position: 290 
+  } ]
+  @UI.selectionField: [ {
+    position: 290 
+  } ]
+  TotalGoodsMvtAmtInCCCrcy;
+  
+  @UI.identification: [ {
+    position: 300 
+  } ]
+  @UI.lineItem: [ {
+    position: 300 
+  } ]
+  @UI.selectionField: [ {
+    position: 300 
+  } ]
+  InventoryValuationType;
+  
+  @UI.identification: [ {
+    position: 310 
+  } ]
+  @UI.lineItem: [ {
+    position: 310 
+  } ]
+  @UI.selectionField: [ {
+    position: 310 
+  } ]
+  ReservationIsFinallyIssued;
+  
+  @UI.identification: [ {
+    position: 320 
+  } ]
+  @UI.lineItem: [ {
+    position: 320 
+  } ]
+  @UI.selectionField: [ {
+    position: 320 
+  } ]
+  PurchaseOrder;
+  
+  @UI.identification: [ {
+    position: 330 
+  } ]
+  @UI.lineItem: [ {
+    position: 330 
+  } ]
+  @UI.selectionField: [ {
+    position: 330 
+  } ]
+  PurchaseOrderItem;
+  
+  @UI.identification: [ {
+    position: 340 
+  } ]
+  @UI.lineItem: [ {
+    position: 340 
+  } ]
+  @UI.selectionField: [ {
+    position: 340 
+  } ]
+  ProjectNetwork;
+  
+  @UI.identification: [ {
+    position: 350 
+  } ]
+  @UI.lineItem: [ {
+    position: 350 
+  } ]
+  @UI.selectionField: [ {
+    position: 350 
+  } ]
+  OrderID;
+  
+  @UI.identification: [ {
+    position: 360 
+  } ]
+  @UI.lineItem: [ {
+    position: 360 
+  } ]
+  @UI.selectionField: [ {
+    position: 360 
+  } ]
+  OrderItem;
+  
+  @UI.identification: [ {
+    position: 370 
+  } ]
+  @UI.lineItem: [ {
+    position: 370 
+  } ]
+  @UI.selectionField: [ {
+    position: 370 
+  } ]
+  MaintOrderRoutingNumber;
+  
+  @UI.identification: [ {
+    position: 380 
+  } ]
+  @UI.lineItem: [ {
+    position: 380 
+  } ]
+  @UI.selectionField: [ {
+    position: 380 
+  } ]
+  MaintOrderOperationCounter;
+  
+  @UI.identification: [ {
+    position: 390 
+  } ]
+  @UI.lineItem: [ {
+    position: 390 
+  } ]
+  @UI.selectionField: [ {
+    position: 390 
+  } ]
+  Reservation;
+  
+  @UI.identification: [ {
+    position: 400 
+  } ]
+  @UI.lineItem: [ {
+    position: 400 
+  } ]
+  @UI.selectionField: [ {
+    position: 400 
+  } ]
+  ReservationItem;
+  
+  @UI.identification: [ {
+    position: 410 
+  } ]
+  @UI.lineItem: [ {
+    position: 410 
+  } ]
+  @UI.selectionField: [ {
+    position: 410 
+  } ]
+  DeliveryDocument;
+  
+  @UI.identification: [ {
+    position: 420 
+  } ]
+  @UI.lineItem: [ {
+    position: 420 
+  } ]
+  @UI.selectionField: [ {
+    position: 420 
+  } ]
+  DeliveryDocumentItem;
+  
+  @UI.identification: [ {
+    position: 430 
+  } ]
+  @UI.lineItem: [ {
+    position: 430 
+  } ]
+  @UI.selectionField: [ {
+    position: 430 
+  } ]
+  ReversedMaterialDocumentYear;
+  
+  @UI.identification: [ {
+    position: 440 
+  } ]
+  @UI.lineItem: [ {
+    position: 440 
+  } ]
+  @UI.selectionField: [ {
+    position: 440 
+  } ]
+  ReversedMaterialDocument;
+  
+  @UI.identification: [ {
+    position: 450 
+  } ]
+  @UI.lineItem: [ {
+    position: 450 
+  } ]
+  @UI.selectionField: [ {
+    position: 450 
+  } ]
+  ReversedMaterialDocumentItem;
+  
+  @UI.identification: [ {
+    position: 460 
+  } ]
+  @UI.lineItem: [ {
+    position: 460 
+  } ]
+  @UI.selectionField: [ {
+    position: 460 
+  } ]
+  RvslOfGoodsReceiptIsAllowed;
+  
+  @UI.identification: [ {
+    position: 470 
+  } ]
+  @UI.lineItem: [ {
+    position: 470 
+  } ]
+  @UI.selectionField: [ {
+    position: 470 
+  } ]
+  GoodsRecipientName;
+  
+  @UI.identification: [ {
+    position: 480 
+  } ]
+  @UI.lineItem: [ {
+    position: 480 
+  } ]
+  @UI.selectionField: [ {
+    position: 480 
+  } ]
+  GoodsMovementReasonCode;
+  
+  @UI.identification: [ {
+    position: 490 
+  } ]
+  @UI.lineItem: [ {
+    position: 490 
+  } ]
+  @UI.selectionField: [ {
+    position: 490 
+  } ]
+  UnloadingPointName;
+  
+  @UI.identification: [ {
+    position: 500 
+  } ]
+  @UI.lineItem: [ {
+    position: 500 
+  } ]
+  @UI.selectionField: [ {
+    position: 500 
+  } ]
+  CostCenter;
+  
+  @UI.identification: [ {
+    position: 510 
+  } ]
+  @UI.lineItem: [ {
+    position: 510 
+  } ]
+  @UI.selectionField: [ {
+    position: 510 
+  } ]
+  GLAccount;
+  
+  @UI.identification: [ {
+    position: 520 
+  } ]
+  @UI.lineItem: [ {
+    position: 520 
+  } ]
+  @UI.selectionField: [ {
+    position: 520 
+  } ]
+  ServicePerformer;
+  
+  @UI.identification: [ {
+    position: 530 
+  } ]
+  @UI.lineItem: [ {
+    position: 530 
+  } ]
+  @UI.selectionField: [ {
+    position: 530 
+  } ]
+  PersonWorkAgreement;
+  
+  @UI.identification: [ {
+    position: 540 
+  } ]
+  @UI.lineItem: [ {
+    position: 540 
+  } ]
+  @UI.selectionField: [ {
+    position: 540 
+  } ]
+  AccountAssignmentCategory;
+  
+  @UI.identification: [ {
+    position: 550 
+  } ]
+  @UI.lineItem: [ {
+    position: 550 
+  } ]
+  @UI.selectionField: [ {
+    position: 550 
+  } ]
+  WorkItem;
+  
+  @UI.identification: [ {
+    position: 560 
+  } ]
+  @UI.lineItem: [ {
+    position: 560 
+  } ]
+  @UI.selectionField: [ {
+    position: 560 
+  } ]
+  ServicesRenderedDate;
+  
+  @UI.identification: [ {
+    position: 570 
+  } ]
+  @UI.lineItem: [ {
+    position: 570 
+  } ]
+  @UI.selectionField: [ {
+    position: 570 
+  } ]
+  IssgOrRcvgMaterial;
+  
+  @UI.identification: [ {
+    position: 580 
+  } ]
+  @UI.lineItem: [ {
+    position: 580 
+  } ]
+  @UI.selectionField: [ {
+    position: 580 
+  } ]
+  IssuingOrReceivingPlant;
+  
+  @UI.identification: [ {
+    position: 590 
+  } ]
+  @UI.lineItem: [ {
+    position: 590 
+  } ]
+  @UI.selectionField: [ {
+    position: 590 
+  } ]
+  IssuingOrReceivingStorageLoc;
+  
+  @UI.identification: [ {
+    position: 600 
+  } ]
+  @UI.lineItem: [ {
+    position: 600 
+  } ]
+  @UI.selectionField: [ {
+    position: 600 
+  } ]
+  IssgOrRcvgBatch;
+  
+  @UI.identification: [ {
+    position: 610 
+  } ]
+  @UI.lineItem: [ {
+    position: 610 
+  } ]
+  @UI.selectionField: [ {
+    position: 610 
+  } ]
+  IssgOrRcvgSpclStockInd;
+  
+  @UI.identification: [ {
+    position: 620 
+  } ]
+  @UI.lineItem: [ {
+    position: 620 
+  } ]
+  @UI.selectionField: [ {
+    position: 620 
+  } ]
+  IssuingOrReceivingValType;
+  
+  @UI.identification: [ {
+    position: 630 
+  } ]
+  @UI.lineItem: [ {
+    position: 630 
+  } ]
+  @UI.selectionField: [ {
+    position: 630 
+  } ]
+  CompanyCode;
+  
+  @UI.identification: [ {
+    position: 640 
+  } ]
+  @UI.lineItem: [ {
+    position: 640 
+  } ]
+  @UI.selectionField: [ {
+    position: 640 
+  } ]
+  BusinessArea;
+  
+  @UI.identification: [ {
+    position: 650 
+  } ]
+  @UI.lineItem: [ {
+    position: 650 
+  } ]
+  @UI.selectionField: [ {
+    position: 650 
+  } ]
+  ControllingArea;
+  
+  @UI.identification: [ {
+    position: 660 
+  } ]
+  @UI.lineItem: [ {
+    position: 660 
+  } ]
+  @UI.selectionField: [ {
+    position: 660 
+  } ]
+  FiscalYearPeriod;
+  
+  @UI.identification: [ {
+    position: 670 
+  } ]
+  @UI.lineItem: [ {
+    position: 670 
+  } ]
+  @UI.selectionField: [ {
+    position: 670 
+  } ]
+  FiscalYearVariant;
+  
+  @UI.identification: [ {
+    position: 680 
+  } ]
+  @UI.lineItem: [ {
+    position: 680 
+  } ]
+  @UI.selectionField: [ {
+    position: 680 
+  } ]
+  GoodsMovementRefDocType;
+  
+  @UI.identification: [ {
+    position: 690 
+  } ]
+  @UI.lineItem: [ {
+    position: 690 
+  } ]
+  @UI.selectionField: [ {
+    position: 690 
+  } ]
+  IsCompletelyDelivered;
+  
+  @UI.identification: [ {
+    position: 700 
+  } ]
+  @UI.lineItem: [ {
+    position: 700 
+  } ]
+  @UI.selectionField: [ {
+    position: 700 
+  } ]
+  MaterialDocumentItemText;
+  
+  @UI.identification: [ {
+    position: 710 
+  } ]
+  @UI.lineItem: [ {
+    position: 710 
+  } ]
+  @UI.selectionField: [ {
+    position: 710 
+  } ]
+  IsAutomaticallyCreated;
+  
+  @UI.identification: [ {
+    position: 720 
+  } ]
+  @UI.lineItem: [ {
+    position: 720 
+  } ]
+  @UI.selectionField: [ {
+    position: 720 
+  } ]
+  SerialNumbersAreCreatedAutomly;
+  
+  @UI.identification: [ {
+    position: 730 
+  } ]
+  @UI.lineItem: [ {
+    position: 730 
+  } ]
+  @UI.selectionField: [ {
+    position: 730 
+  } ]
+  GoodsReceiptType;
+  
+  @UI.identification: [ {
+    position: 740 
+  } ]
+  @UI.lineItem: [ {
+    position: 740 
+  } ]
+  @UI.selectionField: [ {
+    position: 740 
+  } ]
+  ConsumptionPosting;
+  
+  @UI.identification: [ {
+    position: 750 
+  } ]
+  @UI.lineItem: [ {
+    position: 750 
+  } ]
+  @UI.selectionField: [ {
+    position: 750 
+  } ]
+  MultiAcctAssgmtOriglMatlDocItm;
+  
+  @UI.identification: [ {
+    position: 760 
+  } ]
+  @UI.lineItem: [ {
+    position: 760 
+  } ]
+  @UI.selectionField: [ {
+    position: 760 
+  } ]
+  MultipleAccountAssignmentCode;
+  
+  @UI.identification: [ {
+    position: 770 
+  } ]
+  @UI.lineItem: [ {
+    position: 770 
+  } ]
+  @UI.selectionField: [ {
+    position: 770 
+  } ]
+  GoodsMovementIsCancelled;
+  
+  @UI.identification: [ {
+    position: 780 
+  } ]
+  @UI.lineItem: [ {
+    position: 780 
+  } ]
+  @UI.selectionField: [ {
+    position: 780 
+  } ]
+  IssuingOrReceivingStockType;
+  
+  @UI.identification: [ {
+    position: 790 
+  } ]
+  @UI.lineItem: [ {
+    position: 790 
+  } ]
+  @UI.selectionField: [ {
+    position: 790 
+  } ]
+  ManufacturingOrder;
+  
+  @UI.identification: [ {
+    position: 800 
+  } ]
+  @UI.lineItem: [ {
+    position: 800 
+  } ]
+  @UI.selectionField: [ {
+    position: 800 
+  } ]
+  ManufacturingOrderItem;
+  
+  @UI.identification: [ {
+    position: 810 
+  } ]
+  @UI.lineItem: [ {
+    position: 810 
+  } ]
+  @UI.selectionField: [ {
+    position: 810 
+  } ]
+  MaterialDocumentLine;
+  
+  @UI.identification: [ {
+    position: 820 
+  } ]
+  @UI.lineItem: [ {
+    position: 820 
+  } ]
+  @UI.selectionField: [ {
+    position: 820 
+  } ]
+  MaterialDocumentParentLine;
+  
+  @UI.identification: [ {
+    position: 830 
+  } ]
+  @UI.lineItem: [ {
+    position: 830 
+  } ]
+  @UI.selectionField: [ {
+    position: 830 
+  } ]
+  SpecialStockIdfgSalesOrder;
+  
+  @UI.identification: [ {
+    position: 840 
+  } ]
+  @UI.lineItem: [ {
+    position: 840 
+  } ]
+  @UI.selectionField: [ {
+    position: 840 
+  } ]
+  SpecialStockIdfgSalesOrderItem;
+  
+  @UI.identification: [ {
+    position: 850 
+  } ]
+  @UI.lineItem: [ {
+    position: 850 
+  } ]
+  @UI.selectionField: [ {
+    position: 850 
+  } ]
+  SpecialStockIdfgWBSElement;
+  
+  @UI.identification: [ {
+    position: 860 
+  } ]
+  @UI.lineItem: [ {
+    position: 860 
+  } ]
+  @UI.selectionField: [ {
+    position: 860 
+  } ]
+  QtyInPurchaseOrderPriceUnit;
+  
+  @UI.identification: [ {
+    position: 870 
+  } ]
+  @UI.lineItem: [ {
+    position: 870 
+  } ]
+  @UI.selectionField: [ {
+    position: 870 
+  } ]
+  QuantityInDeliveryQtyUnit;
+  
+  @UI.identification: [ {
+    position: 880 
+  } ]
+  @UI.lineItem: [ {
+    position: 880 
+  } ]
+  @UI.selectionField: [ {
+    position: 880 
+  } ]
+  ProfitCenter;
+  
+  @UI.identification: [ {
+    position: 890 
+  } ]
+  @UI.lineItem: [ {
+    position: 890 
+  } ]
+  @UI.selectionField: [ {
+    position: 890 
+  } ]
+  ProductStandardID;
+  
+  @UI.identification: [ {
+    position: 900 
+  } ]
+  @UI.lineItem: [ {
+    position: 900 
+  } ]
+  @UI.selectionField: [ {
+    position: 900 
+  } ]
+  GdsMvtExtAmtInCoCodeCrcy;
+  
+  @UI.identification: [ {
+    position: 910 
+  } ]
+  @UI.lineItem: [ {
+    position: 910 
+  } ]
+  @UI.selectionField: [ {
+    position: 910 
+  } ]
+  ReferenceDocumentFiscalYear;
+  
+  @UI.identification: [ {
+    position: 920 
+  } ]
+  @UI.lineItem: [ {
+    position: 920 
+  } ]
+  @UI.selectionField: [ {
+    position: 920 
+  } ]
+  InvtryMgmtReferenceDocument;
+  
+  @UI.identification: [ {
+    position: 930 
+  } ]
+  @UI.lineItem: [ {
+    position: 930 
+  } ]
+  @UI.selectionField: [ {
+    position: 930 
+  } ]
+  InvtryMgmtRefDocumentItem;
+  
+  @UI.identification: [ {
+    position: 940 
+  } ]
+  @UI.lineItem: [ {
+    position: 940 
+  } ]
+  @UI.selectionField: [ {
+    position: 940 
+  } ]
+  EWMWarehouse;
+  
+  @UI.identification: [ {
+    position: 950 
+  } ]
+  @UI.lineItem: [ {
+    position: 950 
+  } ]
+  @UI.selectionField: [ {
+    position: 950 
+  } ]
+  EWMStorageBin;
+  
+  @UI.identification: [ {
+    position: 960 
+  } ]
+  @UI.lineItem: [ {
+    position: 960 
+  } ]
+  @UI.selectionField: [ {
+    position: 960 
+  } ]
+  MaterialDocumentPostingType;
+  
+  @UI.identification: [ {
+    position: 970 
+  } ]
+  @UI.lineItem: [ {
+    position: 970 
+  } ]
+  @UI.selectionField: [ {
+    position: 970 
+  } ]
+  OriginalMaterialDocumentItem;
+  
+  @EndUserText.label: '_AccountAssignmentCategory'
+  @UI.identification: [ {
+    position: 980 , 
+    label: '_AccountAssignmentCategory'
+  } ]
+  @UI.lineItem: [ {
+    position: 980 , 
+    label: '_AccountAssignmentCategory'
+  } ]
+  @UI.selectionField: [ {
+    position: 980 
+  } ]
+  _AccountAssignmentCategory;
+  
+  @EndUserText.label: '_BPStockOwner'
+  @UI.identification: [ {
+    position: 990 , 
+    label: '_BPStockOwner'
+  } ]
+  @UI.lineItem: [ {
+    position: 990 , 
+    label: '_BPStockOwner'
+  } ]
+  @UI.selectionField: [ {
+    position: 990 
+  } ]
+  _BPStockOwner;
+  
+  @EndUserText.label: '_BusinessArea'
+  @UI.identification: [ {
+    position: 1000 , 
+    label: '_BusinessArea'
+  } ]
+  @UI.lineItem: [ {
+    position: 1000 , 
+    label: '_BusinessArea'
+  } ]
+  @UI.selectionField: [ {
+    position: 1000 
+  } ]
+  _BusinessArea;
+  
+  @EndUserText.label: '_BusinessPartner'
+  @UI.identification: [ {
+    position: 1010 , 
+    label: '_BusinessPartner'
+  } ]
+  @UI.lineItem: [ {
+    position: 1010 , 
+    label: '_BusinessPartner'
+  } ]
+  @UI.selectionField: [ {
+    position: 1010 
+  } ]
+  _BusinessPartner;
+  
+  @EndUserText.label: '_CompanyCode'
+  @UI.identification: [ {
+    position: 1020 , 
+    label: '_CompanyCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 1020 , 
+    label: '_CompanyCode'
+  } ]
+  @UI.selectionField: [ {
+    position: 1020 
+  } ]
+  _CompanyCode;
+  
+  @EndUserText.label: '_ControllingArea'
+  @UI.identification: [ {
+    position: 1030 , 
+    label: '_ControllingArea'
+  } ]
+  @UI.lineItem: [ {
+    position: 1030 , 
+    label: '_ControllingArea'
+  } ]
+  @UI.selectionField: [ {
+    position: 1030 
+  } ]
+  _ControllingArea;
+  
+  @EndUserText.label: '_CostCenter'
+  @UI.identification: [ {
+    position: 1040 , 
+    label: '_CostCenter'
+  } ]
+  @UI.lineItem: [ {
+    position: 1040 , 
+    label: '_CostCenter'
+  } ]
+  @UI.selectionField: [ {
+    position: 1040 
+  } ]
+  _CostCenter;
+  
+  @EndUserText.label: '_Currency'
+  @UI.identification: [ {
+    position: 1050 , 
+    label: '_Currency'
+  } ]
+  @UI.lineItem: [ {
+    position: 1050 , 
+    label: '_Currency'
+  } ]
+  @UI.selectionField: [ {
+    position: 1050 
+  } ]
+  _Currency;
+  
+  @EndUserText.label: '_Customer'
+  @UI.identification: [ {
+    position: 1060 , 
+    label: '_Customer'
+  } ]
+  @UI.lineItem: [ {
+    position: 1060 , 
+    label: '_Customer'
+  } ]
+  @UI.selectionField: [ {
+    position: 1060 
+  } ]
+  _Customer;
+  
+  @EndUserText.label: '_CustomerCompanyByPlant'
+  @UI.identification: [ {
+    position: 1070 , 
+    label: '_CustomerCompanyByPlant'
+  } ]
+  @UI.lineItem: [ {
+    position: 1070 , 
+    label: '_CustomerCompanyByPlant'
+  } ]
+  @UI.selectionField: [ {
+    position: 1070 
+  } ]
+  _CustomerCompanyByPlant;
+  
+  @EndUserText.label: '_DebitCreditCode'
+  @UI.identification: [ {
+    position: 1080 , 
+    label: '_DebitCreditCode'
+  } ]
+  @UI.lineItem: [ {
+    position: 1080 , 
+    label: '_DebitCreditCode'
+  } ]
+  @UI.selectionField: [ {
+    position: 1080 
+  } ]
+  _DebitCreditCode;
+  
+  @EndUserText.label: '_DeliveryDocument'
+  @UI.identification: [ {
+    position: 1090 , 
+    label: '_DeliveryDocument'
+  } ]
+  @UI.lineItem: [ {
+    position: 1090 , 
+    label: '_DeliveryDocument'
+  } ]
+  @UI.selectionField: [ {
+    position: 1090 
+  } ]
+  _DeliveryDocument;
+  
+  @EndUserText.label: '_DeliveryDocumentItem'
+  @UI.identification: [ {
+    position: 1100 , 
+    label: '_DeliveryDocumentItem'
+  } ]
+  @UI.lineItem: [ {
+    position: 1100 , 
+    label: '_DeliveryDocumentItem'
+  } ]
+  @UI.selectionField: [ {
+    position: 1100 
+  } ]
+  _DeliveryDocumentItem;
+  
+  @EndUserText.label: '_EntryUnit'
+  @UI.identification: [ {
+    position: 1110 , 
+    label: '_EntryUnit'
+  } ]
+  @UI.lineItem: [ {
+    position: 1110 , 
+    label: '_EntryUnit'
+  } ]
+  @UI.selectionField: [ {
+    position: 1110 
+  } ]
+  _EntryUnit;
+  
+  @EndUserText.label: '_GLAccount'
+  @UI.identification: [ {
+    position: 1120 , 
+    label: '_GLAccount'
+  } ]
+  @UI.lineItem: [ {
+    position: 1120 , 
+    label: '_GLAccount'
+  } ]
+  @UI.selectionField: [ {
+    position: 1120 
+  } ]
+  _GLAccount;
+  
+  @EndUserText.label: '_GoodsMovementType'
+  @UI.identification: [ {
+    position: 1130 , 
+    label: '_GoodsMovementType'
+  } ]
+  @UI.lineItem: [ {
+    position: 1130 , 
+    label: '_GoodsMovementType'
+  } ]
+  @UI.selectionField: [ {
+    position: 1130 
+  } ]
+  _GoodsMovementType;
+  
+  @EndUserText.label: '_InventorySpecialStockType'
+  @UI.identification: [ {
+    position: 1140 , 
+    label: '_InventorySpecialStockType'
+  } ]
+  @UI.lineItem: [ {
+    position: 1140 , 
+    label: '_InventorySpecialStockType'
+  } ]
+  @UI.selectionField: [ {
+    position: 1140 
+  } ]
+  _InventorySpecialStockType;
+  
+  @EndUserText.label: '_InventoryStockType'
+  @UI.identification: [ {
+    position: 1150 , 
+    label: '_InventoryStockType'
+  } ]
+  @UI.lineItem: [ {
+    position: 1150 , 
+    label: '_InventoryStockType'
+  } ]
+  @UI.selectionField: [ {
+    position: 1150 
+  } ]
+  _InventoryStockType;
+  
+  @EndUserText.label: '_InventoryValuationType'
+  @UI.identification: [ {
+    position: 1160 , 
+    label: '_InventoryValuationType'
+  } ]
+  @UI.lineItem: [ {
+    position: 1160 , 
+    label: '_InventoryValuationType'
+  } ]
+  @UI.selectionField: [ {
+    position: 1160 
+  } ]
+  _InventoryValuationType;
+  
+  @EndUserText.label: '_IssgOrRcvgSpclStockInd'
+  @UI.identification: [ {
+    position: 1170 , 
+    label: '_IssgOrRcvgSpclStockInd'
+  } ]
+  @UI.lineItem: [ {
+    position: 1170 , 
+    label: '_IssgOrRcvgSpclStockInd'
+  } ]
+  @UI.selectionField: [ {
+    position: 1170 
+  } ]
+  _IssgOrRcvgSpclStockInd;
+  
+  @EndUserText.label: '_IssuingOrReceivingPlant'
+  @UI.identification: [ {
+    position: 1180 , 
+    label: '_IssuingOrReceivingPlant'
+  } ]
+  @UI.lineItem: [ {
+    position: 1180 , 
+    label: '_IssuingOrReceivingPlant'
+  } ]
+  @UI.selectionField: [ {
+    position: 1180 
+  } ]
+  _IssuingOrReceivingPlant;
+  
+  @EndUserText.label: '_IssuingOrReceivingStorageLoc'
+  @UI.identification: [ {
+    position: 1190 , 
+    label: '_IssuingOrReceivingStorageLoc'
+  } ]
+  @UI.lineItem: [ {
+    position: 1190 , 
+    label: '_IssuingOrReceivingStorageLoc'
+  } ]
+  @UI.selectionField: [ {
+    position: 1190 
+  } ]
+  _IssuingOrReceivingStorageLoc;
+  
+  @EndUserText.label: '_ManufacturingOrder'
+  @UI.identification: [ {
+    position: 1200 , 
+    label: '_ManufacturingOrder'
+  } ]
+  @UI.lineItem: [ {
+    position: 1200 , 
+    label: '_ManufacturingOrder'
+  } ]
+  @UI.selectionField: [ {
+    position: 1200 
+  } ]
+  _ManufacturingOrder;
+  
+  @EndUserText.label: '_MaterialBaseUnit'
+  @UI.identification: [ {
+    position: 1210 , 
+    label: '_MaterialBaseUnit'
+  } ]
+  @UI.lineItem: [ {
+    position: 1210 , 
+    label: '_MaterialBaseUnit'
+  } ]
+  @UI.selectionField: [ {
+    position: 1210 
+  } ]
+  _MaterialBaseUnit;
+  
+  @EndUserText.label: '_PersonWorkAgreement'
+  @UI.identification: [ {
+    position: 1220 , 
+    label: '_PersonWorkAgreement'
+  } ]
+  @UI.lineItem: [ {
+    position: 1220 , 
+    label: '_PersonWorkAgreement'
+  } ]
+  @UI.selectionField: [ {
+    position: 1220 
+  } ]
+  _PersonWorkAgreement;
+  
+  @EndUserText.label: '_Plant'
+  @UI.identification: [ {
+    position: 1230 , 
+    label: '_Plant'
+  } ]
+  @UI.lineItem: [ {
+    position: 1230 , 
+    label: '_Plant'
+  } ]
+  @UI.selectionField: [ {
+    position: 1230 
+  } ]
+  _Plant;
+  
+  @EndUserText.label: '_SalesOrder'
+  @UI.identification: [ {
+    position: 1240 , 
+    label: '_SalesOrder'
+  } ]
+  @UI.lineItem: [ {
+    position: 1240 , 
+    label: '_SalesOrder'
+  } ]
+  @UI.selectionField: [ {
+    position: 1240 
+  } ]
+  _SalesOrder;
+  
+  @EndUserText.label: '_SalesOrderItem'
+  @UI.identification: [ {
+    position: 1250 , 
+    label: '_SalesOrderItem'
+  } ]
+  @UI.lineItem: [ {
+    position: 1250 , 
+    label: '_SalesOrderItem'
+  } ]
+  @UI.selectionField: [ {
+    position: 1250 
+  } ]
+  _SalesOrderItem;
+  
+  @EndUserText.label: '_SalesOrderScheduleLine'
+  @UI.identification: [ {
+    position: 1260 , 
+    label: '_SalesOrderScheduleLine'
+  } ]
+  @UI.lineItem: [ {
+    position: 1260 , 
+    label: '_SalesOrderScheduleLine'
+  } ]
+  @UI.selectionField: [ {
+    position: 1260 
+  } ]
+  _SalesOrderScheduleLine;
+  
+  @EndUserText.label: '_StockType_2'
+  @UI.identification: [ {
+    position: 1270 , 
+    label: '_StockType_2'
+  } ]
+  @UI.lineItem: [ {
+    position: 1270 , 
+    label: '_StockType_2'
+  } ]
+  @UI.selectionField: [ {
+    position: 1270 
+  } ]
+  _StockType_2;
+  
+  @EndUserText.label: '_StorageLocation'
+  @UI.identification: [ {
+    position: 1280 , 
+    label: '_StorageLocation'
+  } ]
+  @UI.lineItem: [ {
+    position: 1280 , 
+    label: '_StorageLocation'
+  } ]
+  @UI.selectionField: [ {
+    position: 1280 
+  } ]
+  _StorageLocation;
+  
+  @EndUserText.label: '_Supplier'
+  @UI.identification: [ {
+    position: 1290 , 
+    label: '_Supplier'
+  } ]
+  @UI.lineItem: [ {
+    position: 1290 , 
+    label: '_Supplier'
+  } ]
+  @UI.selectionField: [ {
+    position: 1290 
+  } ]
+  _Supplier;
+  
+  @EndUserText.label: '_SupplierCompanyByPlant'
+  @UI.identification: [ {
+    position: 1300 , 
+    label: '_SupplierCompanyByPlant'
+  } ]
+  @UI.lineItem: [ {
+    position: 1300 , 
+    label: '_SupplierCompanyByPlant'
+  } ]
+  @UI.selectionField: [ {
+    position: 1300 
+  } ]
+  _SupplierCompanyByPlant;
+}

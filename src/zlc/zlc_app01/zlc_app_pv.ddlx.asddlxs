@@ -1,0 +1,110 @@
+@Metadata.layer: #PARTNER
+
+@UI:{
+headerInfo: { typeName: 'Customer LC',
+              typeNamePlural: 'Customer LCs',
+              title: {  type: #STANDARD, label: 'Customer LC Details', value: 'Lnum'  },
+              description: { type: #STANDARD, label: 'Customer LC' } },
+              presentationVariant: [{ sortOrder: [{ by: 'Lnum', direction: #ASC }] }]
+ }
+@Search.searchable: true
+
+annotate entity ZLC_APP_PV
+    with 
+{
+ @UI.facet: [{ id: 'Lcdata', purpose: #STANDARD,
+                type: #IDENTIFICATION_REFERENCE  } ]
+  @UI: { lineItem: [{ position: 10, label: 'LC Number' } ], //{ type: #FOR_ACTION, dataAction: 'UpdateAmounts' , label: 'Refresh'  ,position: 10 }],
+  identification: [{ position: 10, label: 'LC Number' }]    }
+  @Search.defaultSearchElement: true
+    Lnum;
+     @UI: { lineItem: [{ position: 20, label: 'Validity From' }],
+  identification: [{ position: 20, label: 'Validity From' }]    }
+  
+    Valfrm;
+    @UI: { lineItem: [{ position: 15, label: 'Project Name' }],
+  identification: [{ position: 15, label: 'Project Name' }]    }
+       Project;
+         @UI: { lineItem: [{ position: 18, label: 'Applicant Bank' }],
+  identification: [{ position: 18, label: 'Applicant Bank' }]    }
+   Applicant;
+    @UI: { lineItem: [{ position: 30, label: 'Validity To' }],
+  identification: [{ position: 30, label: 'Validity To' }]    } 
+    Valto;
+     @UI: { lineItem: [{ position: 40, label: 'LC issue Date' }],
+  identification: [{ position: 40, label: 'LC issue Date' }]    }
+    Lcissdt;
+     @UI: { lineItem: [{ position: 50, label: 'Bank Name' }],
+  identification: [{ position: 50, label: 'Bank Name' }]    }
+    Banknam;
+    @UI: { lineItem: [{ position: 60, label: 'Bank Branch' }],
+  identification: [{ position: 60, label: 'Bank Branch' }]    }
+    Bank_Branch;
+    @UI: { lineItem: [{ position: 70, label: 'Customer' }],
+  identification: [{ position: 70, label: 'Customer' }]    }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZLC_APP_CUS', element: 'Customer' },
+   additionalBinding: [ {localElement: 'Stp_Name', element: 'CustomerName' } ] }]
+  @Consumption.filter: { selectionType : #SINGLE, multipleSelections : false}
+    Stp;
+     @UI: { lineItem: [{ position: 80, label: 'Party Name' }],
+  identification: [{ position: 80, label: 'Party Name' }]    }
+    Stp_Name;
+    @UI: { lineItem: [{ position: 90, label: 'LC Expiry Date' }],
+  identification: [{ position: 90, label: 'LC Expiry Date' }]    }
+    Lc_Expdt;
+       @UI: { lineItem: [{ position: 95, label: 'Last Date Of Dispatch' }],
+  identification: [{ position: 95, label: 'Last Date Of Dispatch' }]    }
+    Ldd;
+    @UI: { lineItem: [{ position: 100, label: 'LC Amount' }],
+  identification: [{ position: 100, label: 'LC Amount' }]    }
+    Lc_Amt;
+    @UI: { lineItem: [{ position: 110, label: 'LC Utilization' }],
+  identification: [{ position: 110, label: 'LC Utilization' }]    }
+    Lc_Utilz;
+    @UI: { lineItem: [{ position: 120, label: 'Balance' }],
+  identification: [{ position: 120, label: 'Balance' }]    }             
+    Tot_Balance;
+
+    @UI.hidden: true
+    Lc_Curr;
+    @UI.hidden: true
+    Status;
+//     @UI: { lineItem: [{ position: 170, label: 'ATTACHMENT' }],
+//  identification: [{ position: 170, label: 'ATTACHMENT' }]    } 
+ @UI.hidden: true
+  Zattachment; 
+@UI: { lineItem: [{ position: 170, label: 'Boe No' }],
+  identification: [{ position: 170, label: 'Boe No' }]    } 
+
+   Boeno;
+   @UI: { lineItem: [{ position: 180, label: 'Boe Date' }],
+  identification: [{ position: 180, label: 'Boe Date' }]    } 
+   Boedt;
+   @UI: { lineItem: [{ position: 190, label: 'Due Date' }],
+  identification: [{ position: 190, label: 'Due Date' }]    } 
+   Dudt;
+   @UI: { lineItem: [{ position: 200, label: 'Boe Amount' }],
+  identification: [{ position: 200, label: 'Boe Amount' }]    } 
+   Boeamt;
+ @UI.hidden: true
+   Boecurr;
+   @UI: { lineItem: [{ position: 210, label: 'No of days' }],
+  identification: [{ position: 210, label: 'No of days' }]    } 
+   Noofdays;
+   @UI: { lineItem: [{ position: 220, label: 'Status' }],
+  identification: [{ position: 220, label: 'Status' }]    } 
+   Accbstus;
+       @UI: { lineItem: [{ position: 230, label: 'Created by' }],
+  identification: [{ position: 230, label: 'Created by' }]    }             
+    Createdby;
+    @UI: { lineItem: [{ position: 240, label: 'Created on' }],
+  identification: [{ position: 240, label: 'Created on' }]    }             
+    Createdon;
+    @UI: { lineItem: [{ position: 250, label: 'Last Changed by' }],
+  identification: [{ position: 250, label: 'Last Changed by' }]    }             
+    Lastchangedby;
+    @UI: { lineItem: [{ position: 260, label: 'Last Changed on' }],
+  identification: [{ position: 260, label: 'Last Changed on' }]    }             
+    Lastchangedon;
+    
+}

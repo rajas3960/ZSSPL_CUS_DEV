@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Sales Order List Report",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Sales Order List Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zsdorderlistrp01"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_20346C89A1036BCC11DB874F1F7E89C73AED39DD_TM",
+    "semanticObject": "YY1_SDORDERR01",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_20346C89A1036BCC11DB874F1F7E89C73AED39DD_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Sales Order List Report"
+      }
+    }
+  ]
+}

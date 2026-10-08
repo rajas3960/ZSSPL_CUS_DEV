@@ -1,0 +1,9 @@
+CLASS zbp_pp_apps06_re DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zpp_apps06_re.
+CLASS-DATA :
+           gt_hdr type table of zpp_apps05_htb.
+ENDCLASS.
+
+
+
+CLASS ZBP_PP_APPS06_RE IMPLEMENTATION.
+ENDCLASS.

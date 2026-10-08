@@ -1,0 +1,72 @@
+@Metadata.layer: #PARTNER
+@UI.createHidden: true
+@UI.updateHidden: true
+@UI.deleteHidden: true
+@UI: { headerInfo: {
+typeName: 'Mark Nos. Planning Selection',
+typeNamePlural: 'Mark Nos. Planning Selection',
+title: { type: #STANDARD, value: 'Uuid'        } }     }
+annotate entity ZPP_APPS05_IPV1
+    with 
+{
+
+@UI.facet: [ { id:              'Item',
+                       purpose:         #STANDARD,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Jobsheet Material Selected',
+                       position:        10 } ]
+@UI.hidden: true
+Uuid;
+@UI: { lineItem: [{ position: 10, label: 'Order No'},{ type: #FOR_ACTION , dataAction: 'GtSelec' ,label: 'Select' }],
+  identification: [{ position: 10, label: 'Order No' } ] }
+Orderno;
+@UI: { lineItem: [{ position: 20, label: 'Length'}],
+  identification: [{ position: 20, label: 'Length' } ] }
+Length;
+@UI: { lineItem: [{ position: 30, label: 'Width'}],
+  identification: [{ position: 30, label: 'Width' } ] }
+Width;
+@UI.hidden: true
+Plant;
+@UI: { lineItem: [{ position: 40, label: 'Mark No'}],
+  identification: [{ position: 40, label: 'Mark No' } ] }
+Matnr;
+@UI.hidden: true
+Maktx;
+//@UI.hidden: true
+//Smatnr;
+//@UI.hidden: true
+//@UI: { lineItem: [{ position: 90, label: 'Net Wight'}],
+//  identification: [{ position:110, label: 'Net Wight' } ] }
+//Netwt;
+@UI: { lineItem: [{ position: 50, label: 'Planned Quantity'}],
+  identification: [{ position: 50, label: 'Planned Quantity' } ] }
+Plnqty;
+@UI.hidden: true
+Uom;
+@UI: { lineItem: [{ position: 60, label: 'Request Quantity'}],
+  identification: [{ position: 60, label: 'Request Quantity' } ] }
+Reqty;
+@UI: { lineItem: [{ position: 80, label: 'Total Requested Quantity'}],
+  identification: [{ position: 100, label: 'Total Requested Quantity' } ] }
+Totreqty;
+@UI: { lineItem: [{ position: 70, label: 'Total Pending Quantity'}],
+  identification: [{ position: 90, label: 'Total Pending Quantity' } ] }
+Totopnqty;
+@UI: { lineItem: [{ position: 85, label: 'Weight'}],
+  identification: [{ position: 85, label: 'Weight' } ] }
+Netwt;
+@UI: { 
+  identification: [{ position: 70, label: 'Sales Order' } ] }
+Vbeln;
+@UI: {  identification: [{ position: 80, label: 'Sales Order Item' } ] }
+Soitem;
+@UI.hidden: true
+Rsnum;
+@UI: { lineItem: [{ position: 100, label: 'Operation'}] }
+Operation;
+@UI.hidden: true
+/* Associations */
+_hdr;
+    
+}

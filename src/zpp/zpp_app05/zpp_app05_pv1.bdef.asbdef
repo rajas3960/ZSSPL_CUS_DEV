@@ -1,0 +1,42 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZPP_APP05_PV1 //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Closejob;
+  use action matval;
+  use action salvalje;
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+  use association _item1 { create; with draft; }
+  use association _item2 { create; with draft; }
+}
+
+define behavior for ZPP_APP05_IPV1 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use action matvh;
+  use action sovh;
+  use action addmat;
+
+  use association _hdr { with draft; }
+}
+
+define behavior for ZPP_APP05_IPV2 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+}

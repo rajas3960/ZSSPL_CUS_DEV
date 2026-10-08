@@ -1,0 +1,30 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZPP_APP01_HPV //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Relase;
+  use action PGI;
+  use action GRN;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+  use association _Mitem { create; with draft; }
+}
+
+define behavior for ZPP_APP01_IPV //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Mhdr { with draft; }
+}

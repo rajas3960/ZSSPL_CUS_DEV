@@ -1,0 +1,110 @@
+projection;
+strict ( 1 );
+use draft;
+use side effects;
+
+define behavior for ZPP_APPS05_PV //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use action GtMark;
+  use action GtLent;
+  use action GtStok;
+  use action GtPrint;
+  use action GtIntc;
+  use action GtOpers;
+  use action GtCheck;
+  use action GtDelete;
+  use action Gtcheckst;
+  use action Gtstockclr;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+
+  use association _itemgtmark { create; with draft; }
+  use association _itemftmark { create; with draft; }
+  use association _itemgtlet { create; with draft; }
+  use association _itemgtstock { create; with draft; }
+  use association _itemftstock {create; with draft; }
+  use association _itemrsult {create; with draft; }
+  use association _itemsumry {create; with draft; }
+}
+
+define behavior for ZPP_APPS05_IPV1 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use action GtSelec;
+  side effects { action GtSelec affects entity _Hdr._itemgtstock ;}
+
+  use association _hdr { with draft; }
+}
+
+define behavior for ZPP_APPS05_IPV2 //alias <alias_name>
+{
+  use update;
+  use delete;
+  use action deletes;
+
+  use association _hdr { with draft; }
+}
+
+define behavior for ZPP_APPS05_IPV3 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+}
+
+define behavior for ZPP_APPS05_IPV4 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Hdr { with draft; }
+}
+
+define behavior for ZPP_APPS05_IPV5 //alias <alias_name>
+
+{
+  use update;
+  use delete;
+  use action Gtselc;
+
+  side effects { action Gtselc affects entity _Hdr._itemgtstock ;}
+
+  use association _Hdr { with draft; }
+}
+define behavior for ZPP_APPS05_IPV6 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+  use association _citem {create ; with draft; }
+}
+
+define behavior for ZPP_APPS05_IPV7 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Hdr { with draft; }
+  use association _itemrsult {with draft; }
+}
+define behavior for ZPP_APPS05_IPV8 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Hdr { with draft; }
+
+}

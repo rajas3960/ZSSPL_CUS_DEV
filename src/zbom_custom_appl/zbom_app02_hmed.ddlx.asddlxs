@@ -1,0 +1,77 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'CUSTOM BOM Excel App',
+typeNamePlural: 'Custom BOM Application',
+title: { type: #STANDARD, value: 'Suid' },
+         description: { type: #STANDARD, value: 'Status' }  } }
+annotate entity ZBOM_APP02_PV2
+    with 
+{
+   @UI.facet: [ 
+//                        {
+//                       id: 'Header',
+//                       purpose: #STANDARD,
+//                       type: #LINEITEM_REFERENCE,  
+//                       label: 'Attachments',
+//                       position: 10                            
+//                        },
+                        
+                         {
+                        id:              'Items',
+                        purpose:         #STANDARD,
+                        type:            #LINEITEM_REFERENCE,
+                        label:           'Instance',
+                        position:        20,
+                        targetElement:   '_ITEM'
+                        } ,
+//                         {
+//                        id:              'Header',
+//                        purpose:         #STANDARD,
+//                        type:            #LINEITEM_REFERENCE,
+//                        label:           'Header',
+//                        position:        30,
+//                        targetElement:   '_HRD'
+//                        } ]
+                        {  
+
+                        id:              'ATTCH',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'Attachment',
+                        position:        10,
+                        targetQualifier: 'ATT'
+                        }  ]
+                        
+
+
+                        
+  @UI.hidden: true
+  Suid;
+  @UI.identification: [{ position: 10,label: 'Attachment',importance: #HIGH ,qualifier: 'ATT'},
+  { type: #FOR_ACTION, dataAction: 'loadexcl' , label: 'Excel Upload',position: 10  },
+   { type: #FOR_ACTION, dataAction: 'create_bom' , label: 'CREATE BOM',position: 20  }]
+//   { type: #FOR_ACTION, dataAction: 'calc_error_count' , label: 'ERROR',position: 30  }]
+   
+  Attachment;
+//    @UI.identification: [{ position: 15,label: 'Attachment',importance: #HIGH ,qualifier: 'ATT'},
+//  { type: #FOR_ACTION, dataAction: 'loadexcl' , label: 'Excel Upload'  ,position: 10 }]
+//  AttachmentItem;
+  @UI.hidden: true
+  Minetype;
+  @UI.hidden: true
+  Filename;
+  @UI.lineItem: [{ position: 20,label: 'Status'  }]
+  @UI.dataPoint: { qualifier: 'fileupd', title: 'Status'}
+  Status;
+  @UI.lineItem: [{ position: 30,label: 'Created By'  }]
+  @UI.dataPoint: { qualifier: 'crtdby', title: 'Created By'}
+  Createdby;
+  @UI.lineItem: [{ position: 40,label: 'Created On'  }]
+  @UI.dataPoint: { qualifier: 'crtdon', title: 'Created On'}
+  Createdon;
+
+  /* Associations */
+  @UI.hidden: true
+  _ITEM;
+    
+}

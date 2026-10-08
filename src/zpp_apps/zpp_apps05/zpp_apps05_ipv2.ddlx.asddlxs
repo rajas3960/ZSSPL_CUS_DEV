@@ -1,0 +1,67 @@
+@Metadata.layer: #PARTNER
+@UI.createHidden: true
+@UI.updateHidden: true
+@UI.deleteHidden: true
+@UI: { headerInfo: {
+typeName: 'Mark Nos. Planning Selected',
+typeNamePlural: 'Mark Nos. Planning Selected',
+title: { type: #STANDARD, value: 'Uuid'        } }     }
+annotate entity ZPP_APPS05_IPV2
+    with 
+{
+ @UI.facet: [ { id:              'Item',
+                       purpose:         #STANDARD,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Jobsheet Material Selected',
+                       position:        10 } ]
+@UI.hidden: true
+Uuid;
+@UI: { lineItem: [{ position: 10, label: 'Sno'},{ type: #FOR_ACTION , dataAction: 'deletes',label: 'Delete' }],
+  identification: [{ position: 10, label: 'Sno' } ] }
+Sno;
+@UI: { lineItem: [{ position: 20, label: 'Order no'}],
+  identification: [{ position: 20, label: 'Order no' } ] }
+Orderno;
+@UI.hidden: true
+Plant;
+@UI: { lineItem: [{ position: 30, label: 'Mark No.'}],
+  identification: [{ position: 30, label: 'Mark No.' } ] }
+Matnr;
+@UI.hidden: true
+Maktx;
+@UI: { lineItem: [{ position: 40, label: 'Planned Quantity'}],
+  identification: [{ position: 40, label: 'Planned Quantity' } ] }
+Plnqty;
+@UI: { lineItem: [{ position: 50, label: 'Requested Quanity'}],
+  identification: [{ position: 50, label: 'Requested Quanity' } ] }
+Reqty;
+@UI: { lineItem: [{ position: 25, label: 'Length'}],
+  identification: [{ position: 25, label: 'Length' } ] }
+Length;
+@UI: { lineItem: [{ position: 27, label: 'Width'}],
+  identification: [{ position: 27, label: 'Width' } ] }
+Width;
+@UI: { lineItem: [{ position: 60, label: 'Net Weight'}],
+  identification: [{ position: 60, label: 'Net Weight' } ] }
+Netwt;
+@UI: { lineItem: [{ position: 70, label: 'Operation'}],
+  identification: [{ position: 70, label: 'Operation' } ] }
+Operation;
+@UI.hidden: true
+Uom;
+@UI.hidden: true
+Vbeln;
+
+@UI: { lineItem: [{ position: 80, label: 'Wt/Pc'}],
+  identification: [{ position: 80, label: 'Wt/Pc' } ] }
+Wetpc;
+@UI: { lineItem: [{ position: 90, label: 'Jobsheet No'}],
+  identification: [{ position: 90, label: 'Jobsheet No' } ] }
+Jobsht;
+@UI.hidden: true
+
+/* Associations */
+_hdr;
+    
+    
+}

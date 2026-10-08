@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Custom Bom Template Uploader"
+  },
+  "ui5AppDetails": {
+    "appId": "zpbomtmp"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_67098237F388BAD41B72780ECF618462F809F42D_TM",
+    "semanticObject": "YY1_TBOM_RP01",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_67098237F388BAD41B72780ECF618462F809F42D_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Custom Bom Template Uploader",
+        "subtitle": "Application"
+      }
+    }
+  ]
+}

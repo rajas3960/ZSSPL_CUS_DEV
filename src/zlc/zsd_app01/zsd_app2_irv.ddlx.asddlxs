@@ -1,0 +1,34 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZSD_APP2_IRV
+    with 
+{
+  @UI.facet: [ { id:              'Item',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Standard Items',
+                   position:        10 } ]
+  @UI.hidden: true
+  SalesDocument;
+  @UI: { lineItem: [{ position: 10, label: 'Item No' }],
+  identification: [{ position: 10, label: 'Item No'  }] }
+  SalesDocumentItem;
+   @UI: { lineItem: [{ position: 20, label: 'Product' }],
+  identification: [{ position: 20, label: 'Product'  }] }
+  Material;
+@UI.hidden: true
+  Product;
+   @UI: { lineItem: [{ position: 30, label: 'Batch' }],
+  identification: [{ position: 30, label: 'Batch'  }] }
+  Batch;
+   @UI: { lineItem: [{ position: 40, label: 'Item No' }],
+  identification: [{ position: 40, label: 'Item No'  }] }
+  OrderQuantity;
+  @UI.hidden: true
+  OrderQuantityUnit;
+   @UI: { lineItem: [{ position: 50, label: 'NetPriceAmount' }],
+  identification: [{ position: 50, label: 'NetPriceAmount'  }] }
+  NetPriceAmount;
+    @UI.hidden: true
+  TransactionCurrency;
+    
+}

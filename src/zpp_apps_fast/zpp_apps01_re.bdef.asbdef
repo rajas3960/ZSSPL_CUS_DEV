@@ -1,0 +1,105 @@
+managed implementation in class zbp_pp_apps01_re unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPP_APPS01_RE alias  _hdr
+with unmanaged save
+draft table zpp_apps01_db
+//persistent table zpp_apps01_tb
+lock master
+total etag Createdon
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update(features : instance);
+  delete(features : instance);
+
+  draft action Resume;
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  determination gt_data1 on save { create; }
+  action(features : instance) gt_section result [1] $self;
+  action(features : instance) get_Jc result [1] $self;
+  action(features : instance) GtSect result [1] $self;
+  action(features : instance) Valditaion result [1] $self ;
+  action(features : instance) porel result [1] $self;
+  action(features : instance) secpro result [1] $self;
+  side effects {
+  action gt_section affects entity _item;
+  action Valditaion affects entity _item1, field checkstatus, field Totqty;
+  action porel affects entity _item1,entity _item;
+  action secpro affects entity _op;
+  }
+  field ( readonly,numbering : managed ) Uuid;
+  field (mandatory) Material,Plant,Jcseries,Batch,grnno,Totqty;
+  field ( readonly ) Unitwt,Jcnum,Createdby,Createdon,makts,length,checkstatus;
+//  field (readonly : update) Totqty;
+  association _item { create; with draft; }
+  association _item1 { create; with draft; }
+  association _mat {create; with draft;}
+  association _op {create; with draft;}
+  mapping for zpp_apps01_tb corresponding;
+}
+
+define behavior for ZPP_APPS01_IRV alias _item
+//persistent table zpp_apps01_itb
+draft table zpp_apps01_idb
+with unmanaged save
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  action(features : instance) gt_selection result [1] $self;
+  side effects { action gt_selection affects entity _hdr._item1 ,field _hdr.Totqty, field _hdr.Uom; }
+  field ( readonly ) Uuid, Saleorder, Saleorderitem,Meins,Menge,Palnpc,Productionorder,Productionorderitem,Unitwt,material,rawmaterial,batch;
+  association _hdr{with draft;}
+  mapping for zpp_apps01_itb corresponding;
+}
+
+define behavior for ZPP_APPS01_IRV02 alias _item1
+//persistent table zpp_apps01_itb01
+draft table zpp_apps01_idb01
+with unmanaged save
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Saleorder, Saleorderitem,Duedate,Maktx,Matnr,Meins,Menge,Pcs,Productionorder,Productionorderitem,Srno,Unitwt;
+  association _hdr{with draft;}
+  mapping for zpp_apps01_itb01 corresponding;
+}
+define behavior for ZPP_MATERIAL_RV alias _mat
+//persistent table zpp_apps01_itb01
+draft table zpp_material_db
+with unmanaged save
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Matnr,Plant,Batch,Qty;
+  association _hdr{with draft;}
+  mapping for zpp_apps01_itb01 corresponding;
+}
+define behavior for ZPP_OPERATION_RV alias _op
+//persistent table zpp_apps01_itb01
+draft table zpp_operation_df
+with unmanaged save
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Process,Machine;
+  association _hdr{with draft;}
+  mapping for zpp_operation_db corresponding;
+}

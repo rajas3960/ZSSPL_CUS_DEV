@@ -1,0 +1,59 @@
+@Metadata.layer: #PARTNER
+annotate entity ZIPV2_LC_LN with
+{
+  @UI.facet: [{ id: 'Lcdata',
+           purpose: #STANDARD,
+           type: #IDENTIFICATION_REFERENCE,
+           label: 'LC Details', position: 10     } ]
+  @UI.hidden: true
+  Recguid;
+  @UI.hidden: true
+  Sonum;
+  @UI.hidden: true
+  Soldto;
+  @UI: { lineItem: [{ position: 10, label: 'LC Number' }],
+  identification: [{ position: 10, label: 'LC Number' }]}
+  Lcnumber;
+  @UI: { lineItem: [{ position: 20, label: 'Valid From' }],
+  identification: [{ position: 20, label: 'Valid From' }]}
+  Vfdate;
+  @UI: { lineItem: [{ position: 30, label: 'Valid To' }],
+  identification: [{ position: 30, label: 'Valid To' }]}
+  Vtdate;
+  @UI: { lineItem: [{ position: 40, label: 'LC Date' }],
+  identification: [{ position: 40, label: 'LC Date' }]}
+  Lcdate;
+  //  @UI: { lineItem: [{ position: 0, label: '' }],
+  //  identification: [{ position: 0, label: '' }]}
+  @UI.hidden: true
+  Lcvdate;
+  @UI: { lineItem: [{ position: 50, label: 'Bank Name' }],
+  identification: [{ position: 50, label: 'Bank Name' }]}
+  Bankname;
+  @UI: { lineItem: [{ position: 60, label: 'Bank Branch' }],
+  identification: [{ position: 60, label: 'Bank Branch' }]}
+  Bnkbrch;
+  @UI: { lineItem: [{ position: 70, label: 'Total LC Amount' }],
+  identification: [{ position: 70, label: 'Total LC Amount' }]}
+  Lcamt;
+  @UI: { lineItem: [{ position: 80, label: 'Utilized Amount' }],
+  identification: [{ position: 80, label: 'Utilized Amount' }]}
+  Lcutamt;
+  @UI: { lineItem: [{ position: 90, label: 'Balance Available' }],
+  identification: [{ position: 90, label: 'Balance Available' }]}
+  Lcbcamt;
+  @UI: { lineItem: [{ position: 100, label: 'Assigned Amount' }],
+  identification: [{ position: 100, label: 'Assigned Amount' }]}
+  Lcselamt;
+  @UI.hidden: true
+  Lccuky;
+  @UI.hidden: true
+  Status;
+  @UI: { lineItem: [{ position: 110, label: 'Selected' }],
+  identification: [{ position: 110, label: 'Selected' }]}
+  Mark;
+  /* Associations */
+  @UI.hidden: true
+  _hdr;
+
+}

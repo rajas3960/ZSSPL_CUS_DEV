@@ -1,0 +1,50 @@
+managed implementation in class zbp_sd_lc_rcv_ev unique;
+strict ( 2 );
+with draft;
+define behavior for ZSD_LC_RCV alias lc_rcv //alias <alias_name>
+persistent table zlc_tb_1
+draft table zlc_dtb_1
+lock master total etag lcnum
+authorization master ( instance )
+//etag master <field_name>
+{
+  field ( mandatory : create ) Lcnum, stp;
+  field ( readonly : update ) lcnum, stp, Stp_Name;
+  field ( readonly : update ) Lc_Amt;
+  field ( readonly ) Tot_Balance, Lc_Utilz;
+  field (readonly )createdby,createdon,lastchangedby,lastchangedon;
+
+  create;
+  update;
+  delete;
+
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  action UpdateAmounts result [1] $self;
+
+  mapping for zlc_tb_1 control zlc_cx_tb_1
+    {
+      Banknam     = banknam;
+      Bank_Branch = bank_branch;
+      Lc_Amt      = lc_amt;
+      Lc_Curr     = lc_curr;
+      Lc_Expdt    = lc_expdt;
+      Lc_Utilz    = lc_utilz;
+      Lcissdt     = lcissdt;
+      Lcnum       = lcnum;
+      Stp         = stp;
+      Stp_Name    = stp_name;
+      Tot_Balance = tot_balance;
+      Valfrm      = valfrm;
+      Valto       = valto;
+      createdby = createdby;
+      createdon = createdon;
+      lastchangedby = lastchangedby;
+      lastchangedon = lastchangedon;
+    }
+}

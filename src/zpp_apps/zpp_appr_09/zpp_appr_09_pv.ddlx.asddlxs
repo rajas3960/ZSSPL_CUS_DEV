@@ -1,0 +1,37 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_APPR_09_PV
+    with 
+{
+  @UI.facet: [ 
+    { id: 'General',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Product Master Price',
+      position: 10 } 
+  ]
+@UI.selectionField: [{ position: 10 }]
+  @UI: { 
+    lineItem: [
+      { position: 10, label: 'Product' },
+      { type: #FOR_ACTION, dataAction: 'active', label: 'Active 😁', inline: true, emphasized: true },
+      { type: #FOR_ACTION, dataAction: 'inactive', label: 'Inactive 😒', inline: false, emphasized:false  },
+      { type: #FOR_ACTION, dataAction: 'price', label: 'Update Price', inline:false, emphasized: false }
+    ],
+    identification: [{ position: 10, label: 'Product' }]
+  }
+  @EndUserText.label: 'Product'
+ Product;
+ @UI: { 
+    lineItem: [{ position: 20, label: 'Price' }],
+    identification: [{ position: 20, label: 'Price' }]
+  }
+  @EndUserText.label: 'Price'
+ Price;
+  @UI: { 
+    lineItem: [{ position: 30, label: 'Mark' }],
+    identification: [{ position: 30, label: 'Mark' }]
+  }
+  @EndUserText.label: 'Mark'
+ Mark;
+    
+}

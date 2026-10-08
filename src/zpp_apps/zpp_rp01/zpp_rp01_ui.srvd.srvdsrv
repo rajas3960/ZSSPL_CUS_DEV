@@ -1,0 +1,4 @@
+@EndUserText.label: 'BOM Report - UI'
+define service ZPP_RP01_UI {
+  expose ZPP_RP01_pv as Mainpage;
+}

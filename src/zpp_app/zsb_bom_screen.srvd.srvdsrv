@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service defination of  Bill of material screen'
+define service ZSB_BOM_SCREEN {
+  expose ZPP_BOM_HPV as Mainpage;
+  expose ZPP_BOM_IPV;
+}

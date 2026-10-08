@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Manage Mass Transport Posting"
+  },
+  "ui5AppDetails": {
+    "appId": "zmmuapps01.zmmuapps01"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_C1843F7B0CF2234736309552770002AC3E6D01CD_TM",
+    "semanticObject": "ZMM_UAPPS01",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_C1843F7B0CF2234736309552770002AC3E6D01CD_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Manage Mass Transport Posting",
+        "subtitle": "Details"
+      }
+    }
+  ]
+}

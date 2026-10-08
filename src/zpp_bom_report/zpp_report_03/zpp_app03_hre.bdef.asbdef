@@ -1,0 +1,65 @@
+managed implementation in class zbp_pp_app03_hre unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPP_APP03_HRE alias hdr
+with unmanaged save
+//persistent table zpp_app03_db
+draft table zpp_app03_df
+lock master
+total etag Createon
+authorization master ( instance )
+//etag master Createon
+{
+  create ( authorization : global );
+  update(features : instance);
+  delete(features : instance);
+
+  draft action Resume;
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  determination gt_data1 on save { create; }
+  action(features : instance) gt_section result [1] $self;
+  action(features : instance) Gen_pt result [1] $self;
+  side effects { action gt_section affects entity  item;}
+  field ( readonly,numbering : managed ) Uuid;
+  field (readonly)Reldocno,Realeasdt,Maktx;
+  field ( readonly : update ) Matnr,reldocs,Preparedby;
+  association item { create; with draft;}
+  association item2 { create; with draft;}
+  mapping for zpp_app03_db corresponding;
+}
+
+define behavior for ZPP_APP03_IRE alias item
+//persistent table zpp_app03_idb
+with unmanaged save
+draft table ZPP_APP03_Idf
+lock dependent by hdr
+authorization dependent by hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid,Proj,srno,Towertype,Ttdesc,Ttsdesc,Ttsub;
+  determination DELDE on modify { delete; field Srno; }
+  action ( features : instance ) get_select result [1] $self;
+  side effects { action get_select affects entity hdr.item2  ;}
+  association hdr {with draft;}
+  mapping for zpp_app03_idb corresponding;
+}
+define behavior for zpp_app03_ire2 alias item2
+with unmanaged save
+//persistent table zpp_app03_idb02
+draft table zpp_app03_idf02
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid,Proj,Srno,Towertype,Ttsub,Ttsdesc,Ttdesc,Bom,mark,str,strdesc;
+  association _hdr {with draft;}
+  mapping for zpp_app03_idb02 corresponding;
+}

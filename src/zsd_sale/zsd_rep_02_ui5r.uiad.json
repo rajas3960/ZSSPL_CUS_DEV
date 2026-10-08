@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Sales List Report",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Sales List Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zsdsalesrpv2"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_9B10D7AE8AC8468B5EBCFE46ED33AA570AF2E587_TM",
+    "semanticObject": "yy1_sales_rep02",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_9B10D7AE8AC8468B5EBCFE46ED33AA570AF2E587_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Sales List Report"
+      }
+    }
+  ]
+}

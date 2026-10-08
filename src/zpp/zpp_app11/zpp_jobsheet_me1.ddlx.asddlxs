@@ -1,0 +1,61 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Jobsheet',
+                typeNamePlural: 'Jobsheet',
+                title: { type: #STANDARD, label: 'Jobsheet', value: 'JobnsheetNo' } }}
+  //presentationVariant: [{ sortOrder: [{ by: 'jobsheetNo', direction:  #DESC }] }] }
+annotate view zpp_jobsheet_pv with
+{
+  @UI.facet: [ { id:              'Jobnsheetno',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Jobsheet',
+                // targetElement: 'Jobnsheetno',
+                 position:        10 }]
+                   
+  @UI: {  lineItem:       [ { position: 10, label: 'Jobsheet No' } ],
+          identification: [ { position: 10, label: 'Jobsheet No' } ]}
+         // selectionField: [ { position: 10}  ]}
+  Jobnsheetno;
+  
+  @UI: {  lineItem:       [ { position: 20, label: 'Order No' } ],
+          identification: [ { position: 20, label: 'Order No' } ] }
+  Orderno;
+  
+ @UI: {  lineItem:       [ { position: 30, label: 'Material SFG' } ],
+          identification: [ { position: 30, label: 'Material SFG' } ] }
+  MaterialSFG;
+
+ @UI: {  lineItem:       [ { position: 40, label: 'Order Item No' } ],
+          identification: [ { position: 40, label: 'Order Item No' } ] }
+  Orderitemno;
+  
+  @UI: {  lineItem:       [ { position: 50, label: 'Reservation No' } ],
+          identification: [ { position: 50, label: 'Reservation No' } ] }
+  Reservationo;
+  
+  @UI: {  lineItem:       [ { position: 60, label: 'Planned QTY' } ],
+          identification: [ { position: 60, label: 'Planeed QTY' } ] }
+  Plannedqty;
+  
+  @UI: {  lineItem:       [ { position: 70, label: 'Requested QTY' } ],
+          identification: [ { position: 70, label: 'Requested QTY' } ] }
+  Requestedqty;
+  
+  @UI: {  lineItem:       [ { position: 80, label: 'Status' } ],
+          identification: [ { position: 80, label: 'Status' } ] }
+  Status;
+  
+  @UI: {  lineItem:       [ { position: 90, label: 'Deletion Mark' } ],
+          identification: [ { position: 90, label: 'Deletion Mark' } ] }
+  Deletionmark;
+  
+  @UI: {  lineItem:       [ { position: 100, label: 'Created By' } ],
+          identification: [ { position: 100, label: 'Created By' } ] }
+  Createdby;
+  
+  @UI: {  lineItem:       [ { position: 110, label: 'Created On' } ],
+          identification: [ { position: 110, label: 'Created On' } ] }
+  Createdon;
+   
+}

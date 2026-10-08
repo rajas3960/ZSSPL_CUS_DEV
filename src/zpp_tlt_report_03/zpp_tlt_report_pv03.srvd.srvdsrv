@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service defination of Job sheet Release Report'
+define service ZPP_TLT_REPORT_PV03 {
+  expose ZPP_TLT_REPORT_PV03 as mainpage;
+}

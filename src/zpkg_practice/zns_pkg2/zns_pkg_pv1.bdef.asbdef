@@ -1,0 +1,27 @@
+projection;
+strict ( 2 );
+use draft;
+use side effects;
+define behavior for ZNS_PKG_PV1 //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+  use action loadexl;
+
+  use action Edit;
+  use action Resume;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+  use association _item { create; with draft; }
+}
+
+define behavior for ZNS_PKG_IPV2 //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+}

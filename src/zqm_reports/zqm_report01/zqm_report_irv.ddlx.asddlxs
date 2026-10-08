@@ -1,0 +1,82 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Project Wise Mark No Summary Report',
+                typeNamePlural: 'Project Wise Mark No Summary Reports',
+                title: { type: #STANDARD, label: 'Project Wise Section Summary Report', value: 'YY1_Project_SDH' } },
+                presentationVariant: [{ sortOrder: [{ by: 'YY1_Project_SDH', direction:  #ASC }] }] }
+annotate entity ZQM_REPORT_IPV
+    with 
+{
+    @UI.facet: [ { id:              'ITEM',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Mark Number Details',
+                   position:        10 } ]
+                   
+    
+    @UI: { lineItem: [{ position: 10, label: 'Mark No'}],
+    identification: [{ position: 10, label: 'Mark No' } ] }
+    @EndUserText.label: 'Mark No' 
+    Product;
+     @UI: { lineItem: [{ position: 20, label: 'Project'}],
+    identification: [{ position: 20, label: 'Project' } ] }
+    @EndUserText.label: 'Project'
+    YY1_Project_SDH;
+    @UI: { lineItem: [{ position: 30, label: 'Po No'}],
+    identification: [{ position: 30, label: 'Po No' } ] }
+    @EndUserText.label: 'Po No' 
+    YY1_PriorityPONos_SDH;
+     @UI: { lineItem: [{ position: 40, label: 'Sale Order'}],
+    identification: [{ position: 40, label: 'Sale Order' } ] }
+    @EndUserText.label: 'Sale Order'
+    SalesDocument;
+     @UI: { lineItem: [{ position: 50, label: 'Section'}],
+    identification: [{ position: 50, label: 'Section' } ] }
+    @EndUserText.label: 'Section'
+    BillOfMaterialComponent;
+     @UI: { lineItem: [{ position: 60, label: 'SubType'}],
+    identification: [{ position: 60, label: 'SubType' } ] }
+    @EndUserText.label: 'SubType'
+    Material;
+      @UI: { lineItem: [{ position: 70, label: 'Batch Wt'}],
+    identification: [{ position: 70, label: 'Batch Wt' } ] }
+    @EndUserText.label: 'Batch Wt'
+    Mark_wt;
+     @UI: { lineItem: [{ position: 80, label: 'Plan Wt'}],
+    identification: [{ position: 80, label: 'Plan Wt' } ] }
+    @EndUserText.label: 'Plan Wt'
+    totoal_planwt;
+   
+     @UI: { lineItem: [{ position: 90, label: 'Bal Plan Wt'}],
+    identification: [{ position: 90, label: 'Bal Plan Wt' } ] }
+    @EndUserText.label: 'Bal Plan Wt'
+    Blance_wt;
+     @UI: { lineItem: [{ position: 100, label: 'Prod Wt'}],
+    identification: [{ position: 100, label: 'Prod Wt' } ] }
+    @EndUserText.label: 'Prod Wt'
+    gin_wt;
+     @UI: { lineItem: [{ position: 110, label: 'Bal Prod Wt'}],
+    identification: [{ position: 110, label: 'Bal Prod Wt' } ] }
+    @EndUserText.label: 'Bal Prod Wt'
+    balgin_wt;
+     @UI: { lineItem: [{ position: 120, label: 'Gal Wt'}],
+    identification: [{ position: 120, label: 'Gal Wt' } ] }
+    @EndUserText.label: 'Gal Wt'
+    gal_wt;
+     @UI: { lineItem: [{ position: 130, label: 'Bal Gal Wt'}],
+    identification: [{ position: 130, label: 'Bal Gal Wt' } ] }
+    @EndUserText.label: 'Bal Gal Wt'
+    balgal_wt;
+     @UI: { lineItem: [{ position: 140, label: 'Din Wt'}],
+    identification: [{ position: 140, label: 'Din Wt' } ] }
+    @EndUserText.label: 'Din Wt'
+    din_wt;
+     @UI: { lineItem: [{ position: 150, label: 'Bal Din Wt'}],
+    identification: [{ position: 150, label: 'Bal Din Wt' } ] }
+    @EndUserText.label: 'Bal Din Wt'
+    baldin_wt;
+    @UI.hidden: true
+    /* Associations */
+    hdr;
+    
+}

@@ -1,0 +1,28 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Process Details',
+typeNamePlural: 'Process Details' }     }
+@UI.presentationVariant: [{ sortOrder: [{ by: 'processno' , direction: #ASC }] }]
+annotate entity ZPP_OPERATION_PV
+    with 
+{
+    @UI.facet: [ { id:              'Process',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Process Details',
+                      position:        30 } ]
+@UI.hidden: true
+    Uuid;
+ @UI: { lineItem: [{ position: 10, label: 'Sr No'}],
+  identification: [{ position: 10, label: 'Sr No' } ] }
+  @EndUserText.label: 'Sr No'
+  processno;
+        @UI: { lineItem: [{ position: 20, label: 'Process'}],
+  identification: [{ position: 20, label: 'Process' } ] }
+  @EndUserText.label: 'Process'
+    Process;
+    @UI: { lineItem: [{ position: 30, label: 'Machine'}],
+  identification: [{ position: 30, label: 'Machine' } ] }
+  @EndUserText.label: 'Machine'
+    Machine;    
+}

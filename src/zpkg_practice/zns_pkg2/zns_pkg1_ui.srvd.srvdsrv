@@ -1,0 +1,7 @@
+@EndUserText.label: 'ZNS_PKG1_UI'
+define service ZNS_PKG1_UI {
+  expose ZNS_PKG_PV1  as mainpage;
+  expose ZNS_PKG_IPV2;
+  expose ZSTUSS;
+  expose zstatus_f;
+}

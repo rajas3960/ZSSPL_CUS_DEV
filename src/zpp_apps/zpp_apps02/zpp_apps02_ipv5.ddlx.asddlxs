@@ -1,0 +1,43 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_APPS02_IPV5 with
+{
+  @UI.facet: [ { id:              'STOCKS',
+                    purpose:         #STANDARD,
+                    type:            #IDENTIFICATION_REFERENCE,
+                    label:           'Stocks Selection',
+                    position:        10 } ]
+
+  @UI.hidden: true
+  Uuid;
+  @UI.hidden: true
+  Mblnr;
+  @UI.hidden: true
+  Yea;
+  @UI.hidden: true
+  Item;
+  @UI: { lineItem: [{ position: 5, label: 'Length'}],
+  identification: [{ position: 5, label: 'Length' } ] }
+  Length;
+  @UI: { lineItem: [{ position: 10, label: 'Grade'}],
+  identification: [{ position: 10, label: 'Grade' } ] }
+  Grade;
+  @UI: { lineItem: [{ position: 15, label: 'Project'}],
+  identification: [{ position: 15, label: 'Project' } ] }
+  Project;
+  @UI: { lineItem: [{ position: 25, label: 'Irno'}],
+  identification: [{ position: 25, label: 'Irno' } ] }
+  Irno;
+  @UI: { lineItem: [{ position: 35, label: 'BalAqty'}],
+  identification: [{ position: 35, label: 'BalAqty' } ] }
+  Balaqty;
+  @UI: { lineItem: [{ position: 45, label: 'Balqty'}],
+  identification: [{ position: 45, label: 'Balqty' } ] }
+  Balqty;
+  @UI: { lineItem: [{ position: 55, label: 'Remarks'}],
+  identification: [{ position: 55, label: 'Remarks' } ] }
+  Remarks;
+  @UI.hidden: true
+  /* Associations */
+  _hdr;
+
+}

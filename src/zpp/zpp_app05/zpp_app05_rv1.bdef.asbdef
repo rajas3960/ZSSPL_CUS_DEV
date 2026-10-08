@@ -1,0 +1,74 @@
+managed implementation in class zbp_pp_app05_rv15 unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPP_APP05_RV1 alias _hdr
+//persistent table zpp_app03_tb1
+draft table zpp_app05_dt1
+with unmanaged save
+lock master
+total etag Createdon
+authorization master ( instance )
+etag master Createdon
+//early numbering
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field (readonly : update) Jobshtnum,Werks,Jobdesc;
+//  field (mandatory : update) Werks;
+//  field ( mandatory : create ) Jobshtnum , Werks;
+//  field (readonly : update) Jobdesc;
+//  field ( readonly )  Status;
+  draft action Resume;
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+  action ( features : instance ) Closejob result [1] $self;
+  action ( features : instance ) matval parameter ZPP_MATSTVH_AE result [1] $self;
+  action ( features : instance ) salvalje parameter ZPP_MATSTVH_AE result [1] $self;
+  determination gtdata1 on save { create; field Werks,Jobshtnum ;}
+
+  association _Item1 { create; with draft; }
+  association _Item2 { create; with draft; }
+
+ mapping for zpp_app03_tb1 corresponding;
+}
+
+define behavior for ZPP_APP05_IRV1 alias _item1
+//persistent table zpp_app03_itb1
+with unmanaged save
+draft table zpp_app05_idt11
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Jobshtnum, Orderno, plant;
+  association _hdr { with draft; }
+  static action(authorization : global) matvh parameter ZPP_MATSTVH_AE result[1] $self;
+   static action(authorization : global) sovh parameter ZPP_SALESVH_AE result[1] $self;
+
+   action(features :instance ) addmat result[1]$self;
+   determination gtidata1 on save {  field Reqty ;}
+    mapping for zpp_app03_itb1 corresponding;
+
+}
+
+define behavior for ZPP_APP05_IRV2 alias _item2
+//persistent table zpp_app03_itb2
+with unmanaged save
+draft table zpp_app05_idt22
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Jobsheet, Sno, Orderno, plant;
+  association _hdr { with draft; }
+      mapping for zpp_app05_itb2 corresponding;
+}

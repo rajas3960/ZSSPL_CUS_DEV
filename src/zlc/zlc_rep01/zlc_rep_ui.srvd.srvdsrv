@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service defination of LC'
+define service ZLC_REP_UI {
+  expose ZLC_REP_PV  as Main;
+  expose ZLC_REP_IPV as Item;
+}

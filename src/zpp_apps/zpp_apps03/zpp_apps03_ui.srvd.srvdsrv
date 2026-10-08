@@ -1,0 +1,8 @@
+@EndUserText.label: 'Planning And Optimization'
+define service ZPP_APPS03_UI {
+  expose ZPP_APPS03_PV   as Mainpage;
+  expose ZPP_APPS03_IPV;
+  expose ZPP_APPS03_IPV2;
+  expose ZPP_APPS03_PLDV;
+  expose ZPP_APPS03_IPV3;
+}

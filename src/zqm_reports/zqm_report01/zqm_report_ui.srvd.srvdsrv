@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service defination of Section Summary'
+define service ZQM_REPORT_UI {
+  expose ZQM_REPORT_PV;
+  expose ZQM_REPORT_IPV;
+}

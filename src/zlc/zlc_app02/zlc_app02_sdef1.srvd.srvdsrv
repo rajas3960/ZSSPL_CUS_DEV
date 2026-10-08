@@ -1,0 +1,7 @@
+@EndUserText.label: 'LC Master Maintainence'
+define service ZLC_APP02_SDEF1 {
+  expose ZLC_APP02_RPV  as Mainpage;
+  expose ZLC_APP02_IPV1;
+  expose ZLC_APP02_VVH;
+  expose ZLC_APP02_IPV2;
+}

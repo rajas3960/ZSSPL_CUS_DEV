@@ -1,0 +1,63 @@
+@Metadata.layer: #PARTNER
+annotate entity ZPP_APPS06_IPV
+    with 
+{
+    @UI.facet: [ { id:              'Item',
+                       purpose:         #STANDARD,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Marks Numbers And Jobsheets',
+                       position:        10 } ]
+@UI.hidden: true
+Uuid;
+@UI: { lineItem: [{ position: 10, label: 'Sno'}],
+  identification: [{ position: 10, label: 'Sno' } ] }
+Sno;
+@UI: { lineItem: [{ position: 20, label: 'Order no'}],
+  identification: [{ position: 20, label: 'Order no' } ] }
+Orderno;
+@UI.hidden: true
+Plant;
+@UI: { lineItem: [{ position: 30, label: 'Mark No.'}],
+  identification: [{ position: 30, label: 'Mark No.' } ] }
+Matnr;
+@UI.hidden: true
+Maktx;
+//@UI: { lineItem: [{ position: 40, label: 'Planned Quantity'}],
+//  identification: [{ position: 40, label: 'Planned Quantity' } ] }
+@UI.hidden: true
+Plnqty;
+@UI: { lineItem: [{ position: 50, label: 'Requested Quanity'}],
+  identification: [{ position: 50, label: 'Requested Quanity' } ] }
+Reqty;
+@UI: { lineItem: [{ position: 25, label: 'Length'}],
+  identification: [{ position: 25, label: 'Length' } ] }
+Length;
+@UI: { lineItem: [{ position: 27, label: 'Width'}],
+  identification: [{ position: 27, label: 'Width' } ] }
+Width;
+@UI: { lineItem: [{ position: 60, label: 'Net Weight'}],
+  identification: [{ position: 60, label: 'Net Weight' } ] }
+Netwt;
+@UI: { lineItem: [{ position: 70, label: 'Operation'}],
+  identification: [{ position: 70, label: 'Operation' } ] }
+Operation;
+@UI.hidden: true
+Uom;
+@UI.hidden: true
+Vbeln;
+
+@UI: { lineItem: [{ position: 80, label: 'Wt/Pc'}],
+  identification: [{ position: 80, label: 'Wt/Pc' } ] }
+Wetpc;
+@UI: { lineItem: [{ position: 5, label: 'Jobsheet No'}],
+  identification: [{ position: 5, label: 'Jobsheet No' } ] }
+Jobsht;
+@UI: { lineItem: [{ position: 2, label: 'Order Released',criticality: 'OrderIsReleasedc'}],
+  identification: [{ position: 2, label: 'Order Released' } ] }
+OrderIsReleased;
+@UI.hidden: true
+
+/* Associations */
+_hdr;
+    
+}

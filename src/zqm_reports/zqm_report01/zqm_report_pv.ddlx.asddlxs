@@ -1,0 +1,118 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Project Wise Section Summary Report',
+                typeNamePlural: 'Project Wise Section Summary Reports',
+                title: { type: #STANDARD, label: 'Project Wise Section Summary Report', value: 'Project' } },
+                presentationVariant: [{ sortOrder: [{ by: 'Project', direction:  #ASC }] }] }
+annotate entity ZQM_REPORT_PV
+    with 
+{
+    @UI.facet: [ { id:              'SectionSummary',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Project Wise Section Summary',
+                   position:        10 },
+                   { id:              'MarknoSummary',
+                   purpose:         #STANDARD,
+                   type:            #LINEITEM_REFERENCE,
+                   label:           'Project Wise Mark No Summary',
+                   position:        20,
+                   targetElement:   'item' }]
+      @UI: {  lineItem:       [ { position: 10, label: 'Sale Order' } ],
+     identification: [ { position: 10, label: 'Sale Order'} ] }
+  @EndUserText.label: 'Sale Order'
+  @UI.selectionField: [{ position: 10 }]               
+    SalesDocument;
+    @UI: {  lineItem:       [ { position: 20, label: 'Project' } ],
+     identification: [ { position: 20, label: 'Project'} ] }
+  @EndUserText.label: 'Project'
+  @UI.selectionField: [{ position: 20 }] 
+    Project;
+    @UI: {  lineItem:       [ { position: 30, label: 'Project Name' } ],
+     identification: [ { position: 30, label: 'Project Name'} ] }
+  @EndUserText.label: 'Project Name'
+    ProductName;
+    @UI: {  lineItem:       [ { position: 40, label: 'Po No' } ],
+     identification: [ { position: 40, label: 'Po No'} ] }
+  @EndUserText.label: 'Po No'
+  @UI.selectionField: [{ position: 30 }] 
+    po;
+    @UI: {  lineItem:       [ { position: 50, label: 'Subtype' } ],
+     identification: [ { position: 50, label: 'Subtype'} ] }
+  @EndUserText.label: 'Subtype'
+    Subtype;
+     @UI: {  lineItem:       [ { position: 60, label: 'Tower Subtype Desc' } ],
+     identification: [ { position: 60, label: 'Tower Subtype Desc'} ] }
+  @EndUserText.label: 'Tower Subtype Desc'
+    Subtypedesc;
+    @UI: {  lineItem:       [ { position: 63, label: 'Customer Reference' } ],
+     identification: [ { position: 63, label: 'Customer Reference'} ] }
+  @EndUserText.label: 'Customer Reference'
+    PurchaseOrderByCustomer;
+    @UI: {  lineItem:       [ { position: 66, label: 'Customer Reference Date' } ],
+     identification: [ { position: 66, label: 'Customer Reference Date'} ] }
+  @EndUserText.label: 'Customer Reference Date'
+    CustomerPurchaseOrderDate;
+//    @UI: {  lineItem:       [ { position: 60, label: 'Structure' } ],
+//     identification: [ { position: 60, label: 'Structure'} ] }
+//  @EndUserText.label: 'Structure' 
+//    Structure;
+    @UI: {  lineItem:       [ { position: 90, label: 'Set' } ],
+     identification: [ { position: 90, label: 'Set'} ] }
+  @EndUserText.label: 'Set'
+    RequestedQuantity;
+    @UI: {  lineItem:       [ { position: 70, label: 'Section' } ],
+     identification: [ { position: 70, label: 'Section'} ] }
+  @EndUserText.label: 'Section'    
+    BillOfMaterialComponent;
+    @UI: {  lineItem:       [ { position: 80, label: 'Section Name' } ],
+     identification: [ { position: 80, label: 'Section Name'} ] }
+  @EndUserText.label: 'Section Name'
+    SalesDocumentItemText;
+   @UI.hidden: true
+    BaseUnit;
+    @UI.hidden: true
+    bat_wt;
+    @UI: {  lineItem:       [ { position: 100, label: 'Batch Wt (MT)' } ],
+     identification: [ { position: 100, label: 'Batch Wt (MT)'} ] }
+  @EndUserText.label: 'Batch Wt (MT)'
+    sec_kg;
+    @UI: {  lineItem:       [ { position: 110, label: 'Plan Wt (MT)' } ],
+     identification: [ { position: 110, label: 'Plan Wt (MT)'} ] }
+  @EndUserText.label: 'Plan Wt (MT)'
+    totoal_planwt;
+    @UI: {  lineItem:       [ { position: 120, label: 'Bal Plan Wt (MT)' } ],
+     identification: [ { position: 120, label: 'Bal Plan Wt (MT)'} ] }
+  @EndUserText.label: 'Bal Plan Wt (MT)'
+    Bal_PlanWt;
+    @UI: {  lineItem:       [ { position: 130, label: 'Prod (MT)' } ],
+     identification: [ { position: 130, label: 'Prod (MT)'} ] }
+  @EndUserText.label: 'Prod (MT)'
+    prod_wt;
+    @UI: {  lineItem:       [ { position: 140, label: 'Bal prod Wt (MT)' } ],
+     identification: [ { position: 140, label: 'Bal prod Wt (MT)'} ] }
+  @EndUserText.label: 'Bal prod Wt (MT)'
+    Bal_Prodwt;
+    @UI: {  lineItem:       [ { position: 150, label: 'Gal Wt (MT)' } ],
+     identification: [ { position: 150, label: 'Gal Wt (MT)'} ] }
+  @EndUserText.label: 'Gal Wt (MT)'
+    Glava;
+    @UI: {  lineItem:       [ { position: 160, label: 'Bal Galv Wt (MT)' } ],
+     identification: [ { position: 160, label: 'Bal Galv Wt (MT)'} ] }
+  @EndUserText.label: 'Bal Galv Wt (MT)'
+    Bal_galwt;
+    @UI: {  lineItem:       [ { position: 170, label: 'Din WT (MT)' } ],
+     identification: [ { position: 170, label: 'Din WT (MT)'} ] }
+  @EndUserText.label: 'Din WT (MT)'
+    Dispin_wt;
+    @UI: {  lineItem:       [ { position: 180, label: 'Bal Din WT (MT)' } ],
+     identification: [ { position: 180, label: 'Bal Din WT (MT)'} ] }
+  @EndUserText.label: 'Bal Din WT (MT)'
+    Bal_dinwt;
+    @UI: {  lineItem:       [ { position: 190, label: 'Desp Wt (MT)' } ],
+     identification: [ { position: 190, label: 'Desp Wt (MT)'} ] }
+  @EndUserText.label: 'Desp Wt (MT)'
+    dispwt;    
+    @UI.hidden: true
+    item;
+}

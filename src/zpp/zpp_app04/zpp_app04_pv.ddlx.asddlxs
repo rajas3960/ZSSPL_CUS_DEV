@@ -1,0 +1,43 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Jobsheet Production Order',
+typeNamePlural: 'Jobsheet Production Order',
+title: { type: #STANDARD, value: 'Jobsheet' }         } }
+annotate entity ZPP_APP04_PV
+    with 
+{
+ @UI.facet: [ { id:              'Header',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Jobsheet Production Order',
+                      position:        10 } ,
+                    { id:              'Items',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'Jonsheet Production Order Item',
+                      position:        20,
+                      targetElement:   '_Item'} ]
+                      
+     @UI: { lineItem: [{ position: 10, label: 'Jobsheet No'}],
+  identification: [{ position: 10, label: 'Jobsheet No' } ] }                  
+   Jobsheet;
+   @UI: { lineItem: [{ position: 20, label: 'Plant'}],
+  identification: [{ position: 20, label: 'Plant' } ] }  
+   Plant;
+   @UI: { lineItem: [{ position: 30, label: 'Material'}],
+  identification: [{ position: 30, label: 'Material' } ] }  
+   Matnr;
+   @UI: { lineItem: [{ position: 40, label: 'Sales Order No'}],
+  identification: [{ position: 40, label: 'Sales Order No' } ] }  
+   Vblen;
+   @UI: { lineItem: [{ position: 50, label: 'Created By'}],
+  identification: [{ position: 50, label: 'Created By' } ] }  
+   Createdby;
+   @UI: { lineItem: [{ position: 60, label: 'Created On'}],
+  identification: [{ position: 60, label: 'Created On' } ] }  
+   Createdon;
+   @UI.hidden: true
+   /* Associations */
+   _Item;
+    
+}

@@ -1,0 +1,29 @@
+managed implementation in class zbp_sd_lc_rce1 unique;
+strict ( 2 );
+with draft;
+define behavior for ZSD_LC_RCE  alias lc_re
+persistent table zlc_tb1
+draft table zlc_dtb1
+lock master total etag lnum
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( mandatory:create ) Lnum,Stp,Lc_Amt;
+  field (readonly:update)Lnum,Stp,Stp_Name,Lc_Amt;
+  field (readonly) Tot_Balance,Lc_Utilz,Createdby,Createdon,Lastchangedby,Lastchangedon;
+
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  //action UpdateAmounts result [1] $self;
+
+  mapping for zlc_tb1 corresponding;
+}

@@ -1,0 +1,40 @@
+managed implementation in class zbp_pp_bom_hrv unique;
+strict ( 2 );
+with draft;
+define behavior for ZPP_BOM_HRV alias _hdr
+//with unmanaged save
+draft table zpp_bom_hdf
+persistent table zpp_bom_db
+lock master
+total etag Createdat
+authorization master ( instance )
+etag master Lastchangedby
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly, numbering : managed ) Uuid;
+  draft action Resume;
+  draft action(features : instance) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+  association _item { create; with draft; }
+  mapping for ZPP_BOM_DB corresponding;
+}
+
+define behavior for ZPP_BOM_IRV alias _item
+persistent table zpp_bom_idb
+//with unmanaged save
+draft table zpp_bom_idf
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly:update,mandatory : create ) Uuid, Itemno;
+  association _hdr;
+  mapping for ZPP_BOM_IDB corresponding;
+}

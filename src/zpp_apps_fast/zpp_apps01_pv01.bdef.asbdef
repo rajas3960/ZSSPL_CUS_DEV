@@ -1,0 +1,60 @@
+projection;
+strict ( 2 );
+use draft;
+use side effects;
+define behavior for ZPP_APPS01_PV01 alias _hdr
+{
+  use create;
+  use update;
+  use delete;
+
+  use action gt_section;
+  use action get_Jc;
+  use action Valditaion;
+  use action porel;
+  use action secpro;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+  use association _item {  with draft; }
+  use association _item1 {  with draft; }
+  use association _mat {  with draft;}
+  use association _op {  with draft; }
+}
+
+define behavior for ZPP_APPS01_IPV alias _item
+{
+  use update;
+  use delete;
+
+  use action gt_selection;
+
+  use association _hdr { with draft; }
+}
+
+define behavior for ZPP_APPS01_Ipv02 alias _item1
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+}
+
+define behavior for ZPP_MATERIAL_PV alias _mat
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+}
+define behavior for ZPP_OPERATION_PV alias _op
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+}

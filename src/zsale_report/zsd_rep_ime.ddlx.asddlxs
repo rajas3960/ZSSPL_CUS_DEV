@@ -1,0 +1,66 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Sales Document Item',
+typeNamePlural: 'Sales Document Items',
+title: { type: #STANDARD, value: 'SalesDocument' } } }
+annotate entity ZSD_REP_IPV
+    with 
+{
+    @UI.facet: [ { id:              'Item',
+                 purpose:         #STANDARD,
+                 type:            #COLLECTION,
+                 label:           'SalesDocumentITEM',
+                 position:        10 },
+    {
+      id: 'MaterialDetails',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Item Details',
+      position: 20,
+      parentId: 'Item',
+      targetElement: 'Item1'
+    } ]
+     @UI: { lineItem: [{ position: 10, label: 'Sales Document'}],
+    identification: [{ position: 10, label: 'Sales Document' } ] }
+    @EndUserText.label: 'Sales Document'
+    SalesDocument;
+     @UI: { lineItem: [{ position: 20, label: 'Material'}],
+    identification: [{ position: 20, label: 'Material' } ] }
+    @EndUserText.label: 'Material'
+    MainItemPricingRefProduct;
+     @UI: { lineItem: [{ position: 25, label: 'Materia Desc'}],
+    identification: [{ position: 25, label: 'Material Desc' } ] }
+    @EndUserText.label: 'Material Desc'
+    SalesDocumentItemText;
+     @UI: { lineItem: [{ position: 30, label: 'HSN Code'}],
+    identification: [{ position: 30, label: 'HSN Code' } ] }
+    @EndUserText.label: 'HSN Code'
+    ConsumptionTaxCtrlCode;
+    @UI: { lineItem: [{ position: 40, label: 'Total Price'}],
+    identification: [{ position: 40, label: 'Total Price' } ] }
+    @EndUserText.label: 'Total Price'
+    TotalPrice;
+    @UI: { lineItem: [{ position: 50, label: 'Quantity'}],
+    identification: [{ position: 50, label: 'Quantity' } ] }
+    @EndUserText.label: 'Quantity Unit'
+    RequestedQuantity;
+    @UI.hidden: true
+//    @UI: { lineItem: [{ position: 50, label: 'Quantity Unit'}],
+//    identification: [{ position: 50, label: 'Quantity Unit' } ] }
+//    @EndUserText.label: 'Quantity Unit'
+    RequestedQuantityUnit;
+    @UI: { lineItem: [{ position: 60, label: 'Total Weight'}],
+    identification: [{ position: 60, label: 'Total Weight' } ] }
+    @EndUserText.label: 'Total Weight'
+    TotalWeight;
+//     @UI: { lineItem: [{ position: 70, label: 'BillOfMaterial'}],
+//    identification: [{ position: 70, label: 'BillOfMaterial' } ] }
+//    @EndUserText.label: 'BillOfMaterial'
+    @UI.hidden: true
+    BillOfMaterial;
+ 
+    @UI.hidden: true
+    /* Associations */
+    _hdr;
+    
+}

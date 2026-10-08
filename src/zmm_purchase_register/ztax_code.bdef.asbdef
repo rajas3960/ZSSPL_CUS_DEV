@@ -1,0 +1,22 @@
+managed implementation in class zbp_tax_code unique;
+strict ( 1 );
+with draft;
+
+define behavior for ZTAX_CODE //alias <alias_name>
+persistent table ztaxcodetb
+draft table ztaxcodetb_draft
+lock master total etag lastchangedat
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+ // field ( readonly ) TaxCode;
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  mapping for ztaxcodetb corresponding ;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Defination - UI4'
+define service ZMAT_DOC_UI {
+  expose ZMAT_DOC_RPV  as MainPage;
+  expose ZMAT_DOC_IPV1 as Item;
+}

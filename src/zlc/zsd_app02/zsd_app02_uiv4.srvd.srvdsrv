@@ -1,0 +1,8 @@
+@EndUserText.label: 'Service Defincation Of Sales Utlization'
+define service ZSD_APP02_UIV4 {
+  expose ZSD_APP02_HPV   as Mainpage;
+  expose ZSD_APP02_IPV;
+  expose ZSD_APP02_VH;
+  expose ZSD_APP02_VH_LC;
+  expose ZSD_APP02_ITRV;
+}

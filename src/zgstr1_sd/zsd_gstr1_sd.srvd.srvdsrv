@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Defination - GSTR1'
+define service Zsd_gstr1_sd {
+  expose ZSD_GSTR1_PV           as GSTR1main;
+  expose zfi_journalentry_data  as grpjournl;
+  expose ZSD_BILLING_PRCDELEMT1;
+}

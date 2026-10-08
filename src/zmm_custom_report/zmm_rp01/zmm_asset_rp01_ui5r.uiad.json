@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Asset Register Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zmmassetrp01"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_F4CE0C51280B6A12807C354661856EEDD4FD99A3_TM",
+    "semanticObject": "YY1_ASSET_RP01",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_F4CE0C51280B6A12807C354661856EEDD4FD99A3_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Asset Register Report"
+      }
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Job Sheet Release Report',
+typeNamePlural: 'Job Sheet Release Reports',
+title: { type: #STANDARD, value: 'Vrno' }         } }
+annotate entity ZPP_TLT_REPORT_PV03 with
+{
+  @UI.facet: [ { id:              'JobsheetReport',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Job Sheet Release Report',
+                 position:        10 }]
+
+
+  @UI: {  lineItem:       [ { position: 10, label: 'SL No.' } ],
+  identification: [ { position: 10, label: 'SL No.'} ] }
+  @EndUserText.label: 'SL No.'
+  Sno;
+  @UI: {  lineItem:       [ { position: 20, label: 'Vr Number' } ],
+  identification: [ { position: 20, label: 'Vr Number'} ] }
+  @EndUserText.label: 'Vr Number'
+  @UI.selectionField: [{ element: 'Vrno',position: 10 }]
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'zpp_vrno_vh',element: 'Vrno' } }]
+  Vrno;
+  @UI: {  lineItem:       [ { position: 30, label: 'Project' } ],
+  identification: [ { position: 30, label: 'Project'} ] }
+  @EndUserText.label: 'Project'
+  Project;
+
+  @UI: {  lineItem:       [ { position: 40, label: 'Project Name' } ],
+  identification: [ { position: 40, label: 'Project Name'} ] }
+  @EndUserText.label: 'Project Name'
+  Projectname;
+  @UI: {  lineItem:       [ { position: 50, label: 'PO No' } ],
+  identification: [ { position: 50, label: 'PO No'} ] }
+  @EndUserText.label: 'PO No'
+  Purno;
+  @UI: {  lineItem:       [ { position: 60, label: 'Section Material' } ],
+  identification: [ { position: 60, label: 'Section Material'} ] }
+  @EndUserText.label: 'Section Material'
+  Sectmat;
+
+  @UI: {  lineItem:       [ { position: 70, label: 'Section Material Desc' } ],
+  identification: [ { position: 70, label: 'Section Material Desc'} ] }
+  @EndUserText.label: 'Section Material Desc'
+  Secdesc;
+  @UI: {  lineItem:       [ { position: 71, label: 'Planning Date' } ],
+  identification: [ { position: 71, label: 'Planning Date'} ] }
+  @EndUserText.label: 'Planning Date'
+  Plndt;
+  @UI: {  lineItem:       [ { position: 72, label: 'Contractor' } ],
+  identification: [ { position: 72, label: 'Contractor'} ] }
+  @EndUserText.label: 'Contractor'  
+  Contr;
+  @UI: {  lineItem:       [ { position: 73, label: 'Contractor Name' } ],
+  identification: [ { position: 73, label: 'Contractor Name'} ] }
+  @EndUserText.label: 'Contractor Name'  
+  Contrname;
+  @UI: {  lineItem:       [ { position: 75, label: 'Job Sheet No' } ],
+  identification: [ { position: 75, label: 'Job Sheet No'} ] }
+  @EndUserText.label: 'Job Sheet No'
+  Jobsht;
+  @UI: {  lineItem:       [ { position: 80, label: 'Order no' } ],
+  identification: [ { position: 80, label: 'Order no'} ] }
+  @EndUserText.label: 'Order no'
+  Orderno;
+  @UI.hidden: true
+  Plant;
+  @UI: {  lineItem:       [ { position: 90, label: 'Mark No' } ],
+  identification: [ { position: 90, label: 'Mark No'} ] }
+  @EndUserText.label: 'Mark No'
+  Matnr;
+  @UI.hidden: true
+  Maktx;
+  @UI.hidden: true
+  Plnqty;
+  @UI: {  lineItem:       [ { position: 100, label: 'Length' } ],
+  identification: [ { position: 100, label: 'Length'} ] }
+  @EndUserText.label: 'Length'
+  Length;
+  @UI: {  lineItem:       [ { position: 110, label: 'Width' } ],
+  identification: [ { position: 110, label: 'Width'} ] }
+  @EndUserText.label: 'Width'
+  Width;
+  @UI: {  lineItem:       [ { position: 120, label: 'Requested Qty' } ],
+  identification: [ { position: 120, label: 'Requested Qty'} ] }
+  @EndUserText.label: 'Requested Qty'
+  Reqty;
+  @UI.hidden: true
+  Uom;
+  @UI.hidden: true
+  Vbeln;
+  @UI: {  lineItem:       [ { position: 130, label: 'Net Weight' } ],
+   identification: [ { position: 130, label: 'Net Weight'} ] }
+  @EndUserText.label: 'Net Weight'
+  Netwt;
+  @UI: {  lineItem:       [ { position: 140, label: 'Wt/PC' } ],
+  identification: [ { position: 140, label: 'Wt/PC'} ] }
+  @EndUserText.label: 'Wt/PC'
+  Wetpc;
+
+  @UI: {  lineItem:       [ { position: 150, label: 'Operation' } ],
+  identification: [ { position: 150, label: 'Operation'} ] }
+  @EndUserText.label: 'Operation'
+  Operation;
+  @UI: {  lineItem:       [ { position: 170, label: 'OrderIsReleasedc' } ],
+  identification: [ { position: 170, label: 'OrderIsReleasedc'} ] }
+  @EndUserText.label: 'OrderIsReleasedc'
+  OrderIsReleasedc;
+  @UI: {  lineItem:       [ { position: 160, label: 'Order Released' } ],
+  identification: [ { position: 160, label: 'Order Released'} ] }
+  @EndUserText.label: 'Order Released'
+  OrderIsReleased;
+
+}

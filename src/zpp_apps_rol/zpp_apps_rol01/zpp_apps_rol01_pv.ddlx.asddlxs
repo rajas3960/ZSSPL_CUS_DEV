@@ -1,0 +1,79 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Production Planning Report',
+typeNamePlural: 'Production Planning Report',
+title: { type: #STANDARD, value: 'YY1_PriorityPONO_PDH' }         } }
+annotate entity ZPP_APPS_ROL01_PV with
+{
+  @UI.facet: [ { id:              'Purchase',
+                       purpose:         #STANDARD,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Production Planning Report',
+                       position:        10 } ]
+
+  @UI: { lineItem: [{ position: 10, label: 'Purchase / Sales Order '}],
+    identification: [{ position: 10, label: 'Purchase / Sales Order ' } ] }
+  @EndUserText.label: 'Purchase / Sales Order '
+  PurchaseOrder;
+  @UI: { lineItem: [{ position: 20, label: 'Purchase Order Item'}],
+    identification: [{ position: 20, label: 'Purchase Order Item' } ] }
+  @EndUserText.label: 'Purchase Order Item'
+  PurchaseOrderItem;
+  @UI: { lineItem: [{ position: 30, label: 'Priority Po No'}],
+    identification: [{ position: 30, label: 'Priority Po No' } ] }
+  @EndUserText.label: 'Priority Po No'
+  YY1_PriorityPONO_PDH;
+  @UI: { lineItem: [{ position: 35, label: 'Material'}],
+    identification: [{ position: 35, label: 'Material' } ] }
+  @EndUserText.label: 'Material'
+  Material;
+  @UI: { lineItem: [{ position: 36, label: 'Material Desc.'}],
+  identification: [{ position: 36, label: 'Material Desc.' } ] }
+  @EndUserText.label: 'Material Desc.'
+  @UI.selectionField: [{ position: 10 }]
+  PurchaseOrderItemText;
+  @UI: { lineItem: [{ position: 40, label: 'Supplying Plant'}],
+    identification: [{ position: 40, label: 'Supplying Plant' } ] }
+  @EndUserText.label: 'SupplyingPlant'
+  SupplyingPlant;
+  @UI: { lineItem: [{ position: 50, label: 'Reciving Plant / Customer'}],
+    identification: [{ position: 50, label: 'Reciving Plant / Customer' } ] }
+  @EndUserText.label: 'Reciving Plant / Customer'
+  Plant;
+  @UI: { lineItem: [{ position: 60, label: 'Length'}],
+    identification: [{ position: 60, label: 'Length' } ] }
+  @EndUserText.label: 'Length'
+  YY1_Length_PDI;
+  @UI: { lineItem: [{ position: 70, label: 'Width'}],
+    identification: [{ position: 70, label: 'Width' } ] }
+  @EndUserText.label: 'Width'
+  YY1_Width_PDI;
+  @UI: { lineItem: [{ position: 80, label: 'Pieces'}],
+    identification: [{ position: 80, label: 'Pieces' } ] }
+  @EndUserText.label: 'Pieces'
+  YY1_Pieces_PDI;
+  @UI: { lineItem: [{ position: 90, label: 'Order Quantity'}],
+    identification: [{ position: 90, label: 'Order Quantity' } ] }
+  @EndUserText.label: 'Order Quantity'
+  OrderQuantity;
+  @UI.hidden: true
+  PurchaseOrderQuantityUnit;
+    @UI: { lineItem: [{ position: 100, label: 'Delivery Date'}],
+    identification: [{ position: 100, label: 'Delivery Date' } ] }
+  @EndUserText.label: 'Delivery Date'
+  SchedLineStscDeliveryDate;
+     @UI: { lineItem: [{ position: 110, label: 'Planned Order Number'}],
+    identification: [{ position: 110, label: 'Planned Order Number' } ] }
+  @EndUserText.label: 'Planned Order Number'
+Plannedorder;
+   @UI: { lineItem: [{ position: 120, label: 'Planning Quanity'}],
+    identification: [{ position: 120, label: 'Planning Quanity' } ] }
+  @EndUserText.label: 'Planning Quanity'
+  menge;
+ @UI: { lineItem: [{ position: 130, label: 'Production Order'}],
+    identification: [{ position: 130, label: 'Production Order' } ] }
+  @EndUserText.label: 'Production Order'
+  mod;
+
+
+}

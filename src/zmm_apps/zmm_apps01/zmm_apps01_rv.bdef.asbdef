@@ -1,0 +1,67 @@
+managed implementation in class zbp_mm_apps01_rv unique;
+strict ( 2 );
+with draft;
+
+
+define behavior for ZMM_APPS01_RV alias _hdr
+with unmanaged save
+draft table zmm_apps01_dhtb
+lock master
+total etag LastChangedAt
+authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create ( authorization : global );
+  update;
+  delete(features : instance);
+
+  field ( readonly, numbering : managed ) Uuid;
+
+  draft action Resume;
+  draft action(features : instance) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+  field ( readonly ) Purreqnum, Currency, Prtypdesc, Totnet, Totitms, Status, Purreqdesc;
+
+  field ( mandatory ) Purreqtyp;
+
+  determination GetData1 on save { create; update; }
+  action ( features : instance ) CrtPr result [1] $self;
+
+    action( features : instance ) upexl deep parameter ZMM_APPS01_EXLP result [1] entity ZMM_APPS01_RV;
+    side effects { action upexl affects entity _item ; }
+
+
+
+
+  association _item { create; with draft; }
+
+  mapping for zmm_apps01_htb corresponding;
+}
+
+define behavior for ZMM_APPS01_IRV alias _item
+//persistent table zmm_apps01_itb
+with unmanaged save
+draft table zmm_apps01_ditb
+lock dependent by _hdr
+authorization dependent by _hdr
+etag master ItemLastChangedAt
+//early numbering
+
+//etag master <field_name>
+{
+
+  update;
+  delete;
+  field ( readonly ) Uuid, Purreqitm;
+  field ( mandatory : create, readonly : update ) Plant, Material;
+  field(features : instance) Length , Width,Pices;
+  association _hdr { with draft; }
+  determination gtidata1 on save { create; field  Material , Plant ; }
+ static action upexl deep parameter ZMM_APPS01_EXLP result [1] $self  ;
+
+
+  mapping for zmm_apps01_itb corresponding;
+}

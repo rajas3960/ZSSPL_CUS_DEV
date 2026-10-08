@@ -1,0 +1,144 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Production Planning Report',
+typeNamePlural: 'Production Planning Report'}}
+annotate entity ZPP_REP_PV02
+    with 
+{
+@UI.facet: [ { id:              'ProductionPlanning',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Production Planning Report',
+                   position:        10 } ]
+                   
+    @UI.hidden: true
+    id;
+    @UI: { lineItem: [{ position: 10, label: 'Plant'}],
+  identification: [{ position: 10, label: 'Plant' } ] }
+  @EndUserText.label: 'Plant'
+    plant;
+     @UI: { lineItem: [{ position: 20, label: 'Purchase Order'}],
+  identification: [{ position: 20, label: 'Purchase Order' } ] }
+  @EndUserText.label: 'Purchase Order'
+    purchaseorder;
+     @UI: { lineItem: [{ position: 30, label: 'Priority PO No'}],
+  identification: [{ position: 30, label: 'Priority PO No' } ] }
+  @EndUserText.label: 'Priority PO No'    
+    prioritypo;
+    @UI: { lineItem: [{ position: 40, label: 'Material'}],
+  identification: [{ position: 40, label: 'Material' } ] }
+  @EndUserText.label: 'Material'
+    material;
+    @UI: { lineItem: [{ position: 50, label: 'Unit Weight'}],
+  identification: [{ position: 50, label: 'Unit Weight' } ] }
+  @EndUserText.label: 'Unit Weight'    
+    density;
+//    @UI: { lineItem: [{ position: 60, label: 'Receiving Plant/ Party Details'}],
+//  identification: [{ position: 60, label: 'Receiving Plant/ Party Details' } ] }
+//  @EndUserText.label: 'Receiving Plant/ Party Details'
+//    Recplt;
+//    @UI: { lineItem: [{ position: 70, label: 'Requirement Qty'}],
+//  identification: [{ position: 70, label: 'Requirement Qty' } ] }
+//  @EndUserText.label: 'Requirement Qty'
+//    Menge;
+     @UI: { lineItem: [{ position: 80, label: 'Planned Order No'}],
+  identification: [{ position: 80, label: 'Planned Order No' } ] }
+  @EndUserText.label: 'Planned Order No'
+    Plannedorder;
+     @UI: { lineItem: [{ position: 90, label: 'Production Order No'}],
+  identification: [{ position: 90, label: 'Production Order No' } ] }
+  @EndUserText.label: 'Production Order No'
+  @UI.selectionField: [{ element: 'productionorder',position: 20 }]
+    productionorder;
+     @UI: { lineItem: [{ position: 100, label: 'Planned Length'}],
+  identification: [{ position: 100, label: 'Planned Length' } ] }
+  @EndUserText.label: 'Planned Length'
+    length;
+    @UI: { lineItem: [{ position: 110, label: 'Planned Pieces'}],
+  identification: [{ position: 110, label: 'Planned Pieces' } ] }
+  @EndUserText.label: 'Planned Pieces'
+    pcs;
+     @UI: { lineItem: [{ position: 120, label: 'Actual Length'}],
+  identification: [{ position: 120, label: 'Actual Length' } ] }
+  @EndUserText.label: 'Actual Length'
+    lengthmtr;
+    @UI: { lineItem: [{ position: 130, label: 'Actual Pieces'}],
+  identification: [{ position: 130, label: 'Actual Pieces' } ] }
+  @EndUserText.label: 'Actual Pieces'
+    piece;
+    @UI: { lineItem: [{ position: 145, label: 'Actual ProducedQty in KGs'}],
+  identification: [{ position: 145, label: 'Actual ProducedQty in KGs' } ] }
+  @EndUserText.label: 'Actual ProducedQty in KGs'
+    quantity;
+     @UI: { lineItem: [{ position: 140, label: 'Storage Location for Act Production Qty'}],
+  identification: [{ position: 140, label: 'Storage Location for Act Production Qty' } ] }
+  @EndUserText.label: 'Storage Location for Act Production Qty'
+    storagelocation;
+    
+     @UI: { lineItem: [{ position: 150, label: 'Planned vs Act Shortage/Excess in Pieces'}],
+  identification: [{ position: 150, label: 'Planned vs Act Shortage/Excess in Pieces' } ] }
+  @EndUserText.label: 'Planned vs Act Shortage/Excess in Pieces'
+    asqty;
+    @UI: { lineItem: [{ position: 160, label: 'Batch of Actual Production'}],
+  identification: [{ position: 160, label: 'Batch of Actual Production' } ] }
+  @EndUserText.label: 'Batch of Actual Production'
+    batch;
+     @UI: { lineItem: [{ position: 170, label: 'RSP Qty'}],
+  identification: [{ position: 170, label: 'RSP Qty' } ] }
+  @EndUserText.label: 'RSP Qty'
+    rspqty;
+    @UI: { lineItem: [{ position: 180, label: 'W&S Qty'}],
+  identification: [{ position: 180, label: 'W&S Qty' } ] }
+  @EndUserText.label: 'W&S Qty'
+    wsqty;
+     @UI: { lineItem: [{ position: 190, label: 'Actual Billet / Bloom Consumed Qty'}],
+  identification: [{ position: 190, label: 'Actual Billet / Bloom Consumed Qty' } ] }
+  @EndUserText.label: 'Actual Billet / Bloom Consumed Qty'
+    Qtybur;
+    @UI: { lineItem: [{ position: 200, label: 'Batch of R/M'}],
+  identification: [{ position: 200, label: 'Batch of R/M' } ] }
+  @EndUserText.label: 'Batch of R/M'
+    heatnumber;
+    @UI: { lineItem: [{ position: 210, label: 'Reference ID'}],
+  identification: [{ position: 210, label: 'Reference ID' } ] }
+  @EndUserText.label: 'Reference ID'
+    referenceid;
+     @UI: { lineItem: [{ position: 220, label: 'Planned Produced Qty in KGs'}],
+  identification: [{ position: 220, label: 'Planned Produced Qty in KGs' } ] }
+  @EndUserText.label: 'Planned Produced Qty in KGs'
+    orderquantity;
+     @UI: { lineItem: [{ position: 230, label: 'Actual Produced Qty in KGs'}],
+  identification: [{ position: 230, label: 'Actual Produced Qty in KGs' } ] }
+  @EndUserText.label: 'Actual Produced Qty in KGs'
+    totalpostquantity;
+     @UI: { lineItem: [{ position: 240, label: 'No. of (Batches) Billets/Blooms Consumed'}],
+  identification: [{ position: 240, label: 'No. of (Batches) Billets/Blooms Consumed' } ] }
+  @EndUserText.label: 'No. of (Batches) Billets/Blooms Consumed'
+    noofbatches;
+     @UI: { lineItem: [{ position: 250, label: 'Total Billet / Bloom Qty after B/L'}],
+  identification: [{ position: 250, label: 'Total Billet / Bloom Qty after B/L' } ] }
+  @EndUserText.label: 'Total Billet / Bloom Qty after B/L'
+    heatquantity;
+    @UI: { lineItem: [{ position: 260, label: 'Total Produced Section Qty'}],
+  identification: [{ position: 260, label: 'Total Produced Section Qty' } ] }
+  @EndUserText.label: 'Total Produced Section Qty'
+    billetquantity; 
+     @UI: { lineItem: [{ position: 270, label: 'Short / Excess Quantity in KG'}],
+  identification: [{ position: 270, label: 'Short / Excess Quantity in KG' } ] }
+  @EndUserText.label: 'Short / Excess Quantity in KG'
+    shortqty;
+   @UI: { lineItem: [{ position: 280, label: 'Total Produced By-Product Qty'}],
+  identification: [{ position: 280, label: 'Total Produced By-Product Qty' } ] }
+  @EndUserText.label: 'Total Produced By-Product Qty'
+    byproductquantity; 
+    @UI: { lineItem: [{ position: 290, label: 'Yield'}],
+  identification: [{ position: 290, label: 'Yield' } ] }
+  @EndUserText.label: 'Yield'
+    yieldpercentage;
+    
+     @UI: { lineItem: [{ position: 300, label: 'Posting Date'}],
+  identification: [{ position: 300, label: 'Posting Date' } ] }
+  @EndUserText.label: 'Posting Date'
+  @UI.selectionField: [{ element: 'postingdate',position: 10 }]
+    postingdate;
+}

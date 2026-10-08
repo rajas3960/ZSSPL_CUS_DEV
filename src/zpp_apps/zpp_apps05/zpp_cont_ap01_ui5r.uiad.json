@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Contractor"
+  },
+  "ui5AppDetails": {
+    "appId": "zppcontractrp01"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_0EA85FA5A69AE17F2079345EEE12CC89F181D5F5_TM",
+    "semanticObject": "YY1_CONT_AP01",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_0EA85FA5A69AE17F2079345EEE12CC89F181D5F5_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Contractor",
+        "subtitle": "Application"
+      }
+    }
+  ]
+}

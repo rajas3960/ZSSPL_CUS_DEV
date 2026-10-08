@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service defination of Production for 1010 and 1020'
+define service ZPP_REP_UIV2 {
+  expose ZPP_REP_PV02 as Mainpage;
+}

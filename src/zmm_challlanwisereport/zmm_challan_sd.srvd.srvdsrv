@@ -1,0 +1,9 @@
+@EndUserText.label: 'Challan Wise Service Defination'
+define service ZMM_CHALLAN_SD {
+  expose ZMM_CHALLAN_PV      as Mainview;
+  expose ZMM_MATERIAL_CONV;
+  expose ZMM_MATERIAL_BILL;
+  expose zmm_material_cov;
+  expose ZMM_MATERIAL_PROCES;
+  expose ZMM_CHALLAN_GV;
+}

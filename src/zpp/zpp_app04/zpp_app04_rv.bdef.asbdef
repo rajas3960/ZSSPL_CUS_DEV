@@ -1,0 +1,43 @@
+managed implementation in class zbp_pp_app04_rv unique;
+strict ( 2 );
+with draft;
+
+
+define behavior for ZPP_APP04_RV alias _Hdr
+with unmanaged save
+draft table zpp_app04_dt1
+lock master
+total etag Createdon
+authorization master ( instance )
+etag master Createdon
+{
+
+  create ( authorization : global );
+  update ;
+  delete;
+  field ( readonly ) Createdby,Createdon,Jobsheet;
+  field(features : instance) plant,Matnr,Vblen;
+  draft action Resume;
+  draft action(features : instance) Edit ;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  association _Item { create;with draft; }
+
+  determination Gtdata_1 on save {create; field Jobsheet;}
+
+}
+
+define behavior for ZPP_APP04_IRV alias _Itm
+with unmanaged save
+draft table zpp_app04_dt2
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update(features : instance);
+  delete(features : instance);
+  field ( readonly ) Jobsheet, Sfgordnum,Sfgmatnr,Sfgmaktx,Sfgordnitm,Sfgordtyp,Sfgplndqty,Sfgplndunt;
+  association _Header { with draft; }
+  determination Gtitmdata_1 on save { field Reqty;}
+}

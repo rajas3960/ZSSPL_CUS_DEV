@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Defination For UI'
+define service ZMM_UAPPS01_UI {
+  expose ZMM_UAPPS01_PV  as Mainpage;
+  expose ZMM_UAPPS01_IPV;
+}

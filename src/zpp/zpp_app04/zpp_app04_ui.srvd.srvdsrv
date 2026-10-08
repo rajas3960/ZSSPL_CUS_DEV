@@ -1,0 +1,6 @@
+@EndUserText.label: 'UI 4 Service Defination'
+define service ZPP_APP04_UI {
+  expose ZPP_APP04_PV     as Mainpage;
+  expose ZPP_APP04_IPV;
+  expose ZPP_Orderitem_Rv;
+}

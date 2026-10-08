@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination - PURIND'
+define service ZMM_PUR_IND_SD {
+  expose ZMM_PUR_IND_P as Indentform;
+}

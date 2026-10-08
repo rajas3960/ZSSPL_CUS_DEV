@@ -1,0 +1,61 @@
+managed implementation in class zbp_pp_app02_hrv unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPP_APP02_HRV alias _MHdr
+with unmanaged save
+draft table zpp_app02_dtb
+lock master
+total etag Createdon
+authorization master ( instance )
+etag master Createdon
+{
+  create;
+  update;
+  delete;
+  field ( readonly,numbering : managed ) Uuid;
+  association _Item { create; with draft;}
+
+   draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+    determination GetData on save { create; update; field Plant,Mat,Salesno; }
+    mapping for zpp_app02_htb corresponding;
+}
+
+define behavior for ZPP_APP02_IRV alias _Mitem
+//persistent table zpp_app02_itb1
+with unmanaged save
+draft table zpp_app02_dtb1
+lock dependent by _Hdr
+authorization dependent by _Hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Item;
+  association _Hdr{with draft;}
+  association _Citem { create; with draft;}
+  mapping for zpp_app02_itb1 corresponding;
+  action(features : instance) Relase  result  [1] $self  ;
+  action(features : instance) PGI  result  [1] $self  ;
+  action(features : instance) GRN  result  [1] $self  ;
+}
+
+define behavior for ZPP_APP02_IRV2 alias _CMitem
+//persistent table zpp_app02_itb2
+with unmanaged save
+draft table zpp_app02_dtb2
+lock dependent by _Hdr
+authorization dependent by _Hdr
+//etag master
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Item, Citem;
+  association _Shdr{  with draft;}
+  association _Hdr{with draft;}
+  mapping for zpp_app02_itb2 corresponding;
+}

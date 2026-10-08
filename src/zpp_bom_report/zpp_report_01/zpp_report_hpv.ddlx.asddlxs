@@ -1,0 +1,44 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Projct Summary Report',
+typeNamePlural: 'Projct Summary Report' }}
+annotate entity ZPP_REPORT_Hpv
+    with 
+{
+     @UI.facet: [  {
+                        id:  'Header',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'Attachment',
+                        position:        10
+                        },
+                         {
+                        id:              'Items',
+                        purpose:         #STANDARD,
+                        type:            #LINEITEM_REFERENCE,
+                        label:           ' Items',
+                        position:        20,
+                        targetElement:   'Item'
+                        }]
+    @UI: { lineItem: [{ position: 10, label: 'Material'}],
+  identification: [{ position: 10, label: 'Material' },{ type: #FOR_ACTION, dataAction: 'PrintBom', label: 'Print Bom' } ] }
+  @EndUserText.label: 'Material'  
+  @UI.selectionField: [{ position: 10  }]             
+    Material;
+//    @UI: { lineItem: [{ position: 20, label: 'Structure'}],
+//  identification: [{ position: 20, label: 'Structure' } ] }
+//  @EndUserText.label: 'Structure'
+//    Structure;
+    @UI: { lineItem: [{ position: 20, label: 'Material Desc'}],
+  identification: [{ position: 20, label: 'Material Desc' } ] }
+  @EndUserText.label: 'Material Desc'
+    Desc_name;
+    @UI: { lineItem: [{ position: 30, label: 'Attachment'}],
+  identification: [{ position: 30, label: 'Attachment' } ] }
+    @EndUserText.label: 'Attachment'
+    Attachment;
+    /* Associations */
+    @UI.hidden: true
+    Item;
+    
+}

@@ -1,0 +1,104 @@
+managed implementation in class zbp_pp_apps02_rv unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPP_APPS02_RV alias _hdr
+with unmanaged save
+//persistent table zpp_apps02_htb1
+draft table zpp_apps02_hdt1
+lock master
+total etag Lastchangedon
+authorization master ( instance )
+etag master Lastchangedon
+{
+  create ( authorization : global );
+  update;
+  delete;
+  determination gt_data1 on save { create; update; }
+
+  action(features : instance) seltitem result [1] $self;
+
+  side effects { action seltitem affects entity _Item2 ;}
+
+
+
+
+   draft action Resume;
+  draft action(features : instance) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+  field ( readonly,numbering : managed ) Uuid;
+  association _Item1 { create; with draft; }
+  association _Item2 { create; with draft; }
+  association _lengt { create;  with draft;}
+  association _stock { create;  with draft;}
+  association _stocksec { create; with draft; }
+}
+
+define behavior for ZPP_APPS02_IRV alias _item1
+//persistent table zpp_apps02_itb1
+with unmanaged save
+draft table zpp_apps02_ditb1
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Orderno;
+  association _hdr{ with draft; }
+}
+
+define behavior for ZPP_APPS02_IRV2 alias _item2
+with unmanaged save
+draft table zpp_apps02_ditb2
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Orderno, Sno;
+  association _hdr{ with draft; }
+}
+
+define behavior for ZPP_APPS02_IRV3 alias _item3
+with unmanaged save
+draft table zpp_apps02_ditb3
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Sno;
+  association _hdr{ with draft; }
+}
+
+define behavior for ZPP_APPS02_IRV4 alias _item4
+with unmanaged save
+draft table zpp_apps02_ditb4
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Sno;
+  association _hdr{ with draft; }
+}
+
+define behavior for ZPP_APPS02_IRV5 alias _item5
+with unmanaged save
+draft table zpp_apps02_ditb5
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Mblnr, Yea, Item;
+  association _hdr{ with draft; }
+}

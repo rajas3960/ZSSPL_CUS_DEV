@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Manage Stock Material"
+  },
+  "ui5AppDetails": {
+    "appId": "zppstockpv.zppstockpv"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_99EF4650CEC2E0D554E5CDFB74AE1277763EC654_TM",
+    "semanticObject": "ZPP_STOCK_REPORT",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_99EF4650CEC2E0D554E5CDFB74AE1277763EC654_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Manage Stock Material",
+        "subtitle": "Report"
+      }
+    }
+  ]
+}

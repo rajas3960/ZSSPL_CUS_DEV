@@ -1,0 +1,10 @@
+CLASS zbp_pp_appr_09_rv DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zpp_appr_09_rv.
+PUBLIC SECTION.
+class-DATA : gt_hdr type table of zpp_appr_09_htb.
+
+ENDCLASS.
+
+
+
+CLASS ZBP_PP_APPR_09_RV IMPLEMENTATION.
+ENDCLASS.

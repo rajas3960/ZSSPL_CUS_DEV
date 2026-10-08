@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Purchase Indent Report",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Purchase Indent Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zmmpurreq03"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_9C8FACA5353D51D3FB04A8B28B92FA069724A9C9_TM",
+    "semanticObject": "YY1_PURREQ_03",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_9C8FACA5353D51D3FB04A8B28B92FA069724A9C9_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Purchase Indent Report"
+      }
+    }
+  ]
+}

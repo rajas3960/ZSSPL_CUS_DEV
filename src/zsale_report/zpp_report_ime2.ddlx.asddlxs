@@ -1,0 +1,60 @@
+@Metadata.layer: #PARTNER
+annotate entity ZSD_REPORT_IPV2
+    with 
+{
+@UI.facet: [ { id:              'ITEM1',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Mark Number Details',
+                   position:        10 } ]
+     @UI: { lineItem: [{ position: 10, label: 'SalesDocument'}],
+    identification: [{ position: 10, label: 'SalesDocument' } ] }
+    @EndUserText.label: 'SalesDocument'               
+    SalesDocument;
+    @UI.hidden: true
+    BillOfMaterial;
+    @UI: { lineItem: [{ position: 20, label: 'Material'}],
+    identification: [{ position: 20, label: 'Material' } ] }
+    @EndUserText.label: 'Material' 
+    Material;
+    @UI: { lineItem: [{ position: 25, label: 'Material Desc'}],
+    identification: [{ position: 25, label: 'Material Desc' } ] }
+    @EndUserText.label: 'Material Desc' 
+    ProductName;
+    @UI: { lineItem: [{ position: 30, label: 'Quantity'}],
+    identification: [{ position: 30, label: 'Quantity' } ] }
+    @EndUserText.label: 'Quantity' 
+    RequestedQuantity;
+    @UI.hidden: true
+    RequestedQuantityUnit;
+    @UI: { lineItem: [{ position: 40, label: 'Unit Wt'}],
+    identification: [{ position: 40, label: 'Unit Wt' } ] }
+    @EndUserText.label: 'Unit Wt'
+    YY1_UNIT_WGT_PRD;
+    @UI: { lineItem: [{ position: 50, label: 'Length'}],
+    identification: [{ position: 50, label: 'Length' } ] }
+    @EndUserText.label: 'Length'
+    YY1_LENGTH_MM_PRD;
+    @UI: { lineItem: [{ position: 60, label: 'Width'}],
+    identification: [{ position: 60, label: 'Width' } ] }
+    @EndUserText.label: 'Width'
+    YY1_WIDTH_MM_PRD;
+    @UI: { lineItem: [{ position: 70, label: 'Weight Per Piece'}],
+    identification: [{ position: 70, label: 'Weight Per Piece' } ] }
+    @EndUserText.label: 'Weight Per Piece'
+    YY1_WGT_PC_PRD;
+    @UI: { lineItem: [{ position: 75, label: 'Price Per Kg'}],
+    identification: [{ position: 75, label: 'Price Per Kg' } ] }
+    @EndUserText.label: 'Price Per Kg'
+    NetPriceAmount;
+    @UI: { lineItem: [{ position: 80, label: 'Weight Qty'}],
+    identification: [{ position: 80, label: 'Weight Qty' } ] }
+    @EndUserText.label: 'Weight Qty'
+    Totalwt;
+    /* Associations */
+    @UI.hidden: true
+    item;
+    @UI.hidden: true
+    _hdr;
+    
+}

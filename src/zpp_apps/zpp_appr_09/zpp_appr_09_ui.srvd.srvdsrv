@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination For UI STRUCTURE'
+define service ZPP_APPR_09_UI {
+  expose ZPP_APPR_09_PV as mainpage;
+}

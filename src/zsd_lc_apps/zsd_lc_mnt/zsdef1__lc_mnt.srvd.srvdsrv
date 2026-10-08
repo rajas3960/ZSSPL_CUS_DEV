@@ -1,0 +1,5 @@
+@EndUserText.label: 'Customer LC Data Maintanence'
+define service ZSDEF1__LC_MNT {
+  expose ZRPV_LC_MNT     as MAINPAGE;
+  expose ZI_CUSTOMER_VH1;
+}

@@ -1,0 +1,27 @@
+@Metadata.layer: #PARTNER
+annotate entity ZPP_BOM_REPV
+    with 
+{
+    @UI.hidden: true
+    Uuid;
+    @UI.hidden: true
+    Srno;
+     @UI: { lineItem: [{ position: 20, label: 'Project'}],
+  identification: [{ position: 20, label: 'Project' } ] }
+  @EndUserText.label: 'Project'
+    Proj;
+     @UI: { lineItem: [{ position: 30, label: 'Structure'}],
+  identification: [{ position: 30, label: 'Structure' } ] }
+  @EndUserText.label: 'Structure'
+    BillOfMaterialComponent;
+     @UI: { lineItem: [{ position: 40, label: 'Bom No'}],
+  identification: [{ position: 40, label: 'Bom No' } ] }
+  @EndUserText.label: 'Bom No'
+    BOM;
+     @UI: { lineItem: [{ position: 50, label: 'Mark No'}],
+  identification: [{ position: 50, label: 'Mark No' } ] }
+  @EndUserText.label: 'Mark No'
+    mark;
+   
+    
+}

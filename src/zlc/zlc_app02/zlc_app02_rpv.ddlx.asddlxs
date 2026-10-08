@@ -1,0 +1,206 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+//title.iconUrl: 'IMAGES',
+imageUrl: 'IMAGES',
+typeName: 'Customer LC',
+typeNamePlural: 'Customer LC',
+ 
+title: { type: #STANDARD, value: 'Lnum' },
+         description: { type: #STANDARD, value: 'StpName' }
+         } }
+annotate entity ZLC_APP02_RPV with
+{
+  @UI.facet: [       {
+                      label: 'Header Information',
+                      id: 'Headerinfo',
+                      type: #COLLECTION,
+                      position: 10
+                      },
+                     
+                     { 
+                      id:  'Header',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'LC Header',
+                      parentId: 'Headerinfo',
+                      position:        10 
+                      } ,
+                      
+                      
+                      { 
+                      id:              'Items',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'LC Line Items',
+                      position:        20,
+                      targetElement:   '_Line'
+                      },
+                                            { 
+                      id:              'Itemsboi',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'BOE Line Items',
+                      position:        30,
+                      targetElement:   '_Lineboi'
+                      },
+                      
+                      {   
+                          id: 'HeaderLcBalance',
+                          purpose: #HEADER,
+                          type: #DATAPOINT_REFERENCE,
+                          position: 10,
+                          targetQualifier: 'Balance' 
+                       },
+                       
+                       {
+     					 id: 'Banks',
+     					 purpose: #STANDARD,
+     					 type: #FIELDGROUP_REFERENCE,
+     					 parentId: 'Headerinfo',
+     					 label: 'Banks Details',
+     					 position: 30,
+     					 targetQualifier: 'BankGroup'
+    					},
+    					
+    				    {
+                         id: 'Cust',
+                         purpose: #STANDARD,
+                         type: #FIELDGROUP_REFERENCE,
+                         parentId: 'Headerinfo',
+                         label: 'Customer Detials',
+                         position: 20,
+                         targetQualifier: 'CustGroup'
+                        },
+                           {
+                         id: 'Lcamts',
+                         purpose: #STANDARD,
+                         type: #FIELDGROUP_REFERENCE,
+                         parentId: 'Headerinfo',
+                         label: 'LC Amounts',
+                         position: 40,
+                         targetQualifier: 'LcamtGrp'
+                        },
+                         {
+                         id: 'Creted',
+                         purpose: #STANDARD,
+                         type: #FIELDGROUP_REFERENCE,
+                         parentId: 'Headerinfo',
+                         label: 'Users Detials',
+                         position: 60,
+                         targetQualifier: 'UserGrp'
+                        },
+                        {
+                         id: 'Others',
+                         purpose: #STANDARD,
+                         type: #FIELDGROUP_REFERENCE,
+                         parentId: 'Headerinfo',
+                         label: 'Others Details',
+                         position: 50,
+                         targetQualifier: 'OthrsGrp'
+                        }
+    					
+    					
+                       ]
+
+
+  @UI: { lineItem: [{ position: 10, label: 'LC Number'}] }
+  //  @UI: { identification: [{ position: 10, label: 'LC Number:' } ] }
+
+  Lnum;
+  @UI: { lineItem: [{ position: 20, label: 'LC Issue date'}] }
+  @UI: { identification: [{ position: 20, label: 'LC Issue date' } ] }
+  Valfrm;
+  @UI: { lineItem: [{ position: 30, label: 'LC Expiry date'}] }
+  @UI: { identification: [{ position: 30, label: 'LC Expiry date' } ] }
+  Valto;
+  @UI: { lineItem: [{ position: 40, label: 'Bank Name'}] }
+  //  @UI: { identification: [{ position: 40, label: 'Bank Name:' } ] }
+  @UI.fieldGroup: [{ qualifier: 'BankGroup', position: 10,label: 'Bank Name' }]
+  Banknam;
+  //  @UI: { identification: [{ position: 50, label: 'Bank Branch:' } ] }
+  @UI.fieldGroup: [{ qualifier: 'BankGroup', position: 20,label: 'Bank Branch:' }]
+  BankBranch;
+//  @UI: { identification: [{ position: 60, label: 'Customer No:' } ] }
+   @UI.fieldGroup: [{ qualifier: 'CustGroup', position: 10,label: 'Customer No:' }]
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZLC_APP_CUS', element: 'Customer' },
+  additionalBinding: [ {localElement: 'StpName', element: 'CustomerName' } ] }]
+  @Consumption.filter: { selectionType : #SINGLE, multipleSelections : false}
+  Stp;
+  @UI: { lineItem: [{ position: 70, label: 'Customer Name:'}] }
+//  @UI: { identification: [{ position: 70, label: 'Customer Name:' } ] }
+   @UI.fieldGroup: [{ qualifier: 'CustGroup', position: 20,label: 'Customer Name:' }]
+  StpName;
+//  @UI: { identification: [{ position: 80, label: 'Total LC Amount:' } ] }
+
+  @UI.fieldGroup: [{ qualifier: 'LcamtGrp', position: 10,label: 'Planned LC Amount :' }]
+  TlcAmt;
+    @UI.fieldGroup: [{ qualifier: 'LcamtGrp', position: 12,label: 'Actual LC Received(Total BOE Value) :' }]
+    Aclcamt;
+      @UI.fieldGroup: [{ qualifier: 'LcamtGrp', position: 15,label: 'Planned Balance' }]
+       @UI.dataPoint: { qualifier: 'Balance', title: 'Planned Balance'}
+      Planlcamt;
+//          @UI.fieldGroup: [{ qualifier: 'LcamtGrp', position: 18,label: 'Total BOE Value' }] 
+@UI.hidden: true 
+     Totboeamt; 
+  
+//  @UI: { identification: [{ position: 90, label: 'Utilized Amount:' } ] }
+//  @UI.fieldGroup: [{ qualifier: 'LcamtGrp', position: 20,label: 'SO Assigned Value' }]
+  @UI.hidden: true 
+  TlcUtilz;
+//  @UI: { identification: [{ position: 100, label: 'Balance:' } ] }
+//  @UI.fieldGroup: [{ qualifier: 'LcamtGrp', position: 30,label: 'Total Balance:' }]
+//  @UI.dataPoint: { qualifier: 'Balance', title: 'Total Balance'}
+  @UI.hidden: true 
+  TotBalance;
+  @UI.hidden: true
+  LcCurr;
+  @UI: { lineItem: [{ position: 50, label: 'Created By'}] }
+//  @UI: { identification: [{ position: 180, label: 'Created By:' } ] }
+  @UI.fieldGroup: [{ qualifier: 'UserGrp', position: 10,label: 'Created By' }]
+  Createdby;
+  @UI: { lineItem: [{ position: 60, label: 'Created On'}] }
+//  @UI: { identification: [{ position: 190, label: 'Created On:' } ] }
+@UI.fieldGroup: [{ qualifier: 'UserGrp', position: 20,label: 'Created On' }]
+  Createdon;
+  @UI.hidden: true
+  Lastchangedby;
+  @UI.hidden: true
+  Lastchangedon;
+//  @UI: { identification: [{ position: 110, label: 'Project:' } ] }
+@UI.fieldGroup: [{ qualifier: 'OthrsGrp', position: 30,label: 'Project:' }]
+  Project;
+  //  @UI: { identification: [{ position: 111, label: 'Beneficiary' } ] }
+  @UI.fieldGroup: [{ qualifier: 'BankGroup', position: 30, label: 'Beneficiary' }]
+  Beneficiary;
+  //  @UI: { identification: [{ position: 120, label: 'Applicant:' } ] ,fieldGroup: [{ qualifier: 'BankGroup', position: 40, label: 'Applicant:'  }]}
+  @UI.fieldGroup: [{ qualifier: 'BankGroup', position: 40, label: 'Applicant:'  }]
+  Applicant;
+  @UI: { identification: [{ position: 130, label: 'Last Date of Despatch:' } ] }
+  Ldd;
+//  @UI: { identification: [{ position: 140, label: 'Inco Terms' } ] }
+  @UI.fieldGroup: [{ qualifier: 'OthrsGrp', position: 20,label: 'Inco Terms' }]
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_IncotermsClassification',element: 'IncotermsClassification' } }]
+  Incoterm;
+//  @UI: { identification: [{ position: 150, label: 'Remarks' } ] }
+@UI.fieldGroup: [{ qualifier: 'OthrsGrp', position: 50,label: 'Remarks' }]
+  Remark;
+//  @UI: { identification: [{ position: 160, label: 'Total Quantity' } ] }
+//  @UI.fieldGroup: [{ qualifier: 'LcamtGrp', position: 40,label: 'Total Quantity' }]
+@UI.hidden: true
+  Totalqty;
+//  @UI: { identification: [{ position: 170, label: 'PO/PI No' } ] }
+  @UI.fieldGroup: [{ qualifier: 'OthrsGrp', position: 10,label: 'PO/PI No' }]
+  Popi;
+  @UI.hidden: true
+  Mark;
+  /* Associations */
+  @UI.hidden: true
+  _Line;
+   @UI.hidden: true
+  _Lineboi;
+  
+//  @UI: { identification: [{ position: 140, label: 'Torlence' } ] }
+   @UI.fieldGroup: [{ qualifier: 'LcamtGrp', position: 90,label: 'Torlence' }]
+  Torlce;
+
+}

@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service defination of Job Card'
+define service ZPP_APPS01_SCE {
+  expose ZPP_APPS01_HCE;
+  expose ZPP_APPS01_ICE;
+  expose ZPP_OPERATION_CE;
+}

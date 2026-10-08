@@ -1,0 +1,67 @@
+managed implementation in class zbp_pp_appsr_rv unique;
+strict(2) ;
+with draft;
+
+
+define behavior for ZPP_APPSR_RV alias _hdr
+//with unmanaged save
+persistent table zpp_appsr_htb
+draft table zpp_appsr_dhtb
+lock master
+total etag Createdon
+authorization master ( instance )
+etag master Createdon
+{
+  create ( authorization : global );
+  update(features : instance);
+  delete(features : instance);
+
+  draft action Resume;
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  determination gt_data1 on save { create; }
+  action(features : instance) gt_section result [1] $self;
+  action(features : instance) GtSect result [1] $self;
+
+  side effects { action gt_section affects entity _itemselc  ;}
+  field ( readonly,numbering : managed ) Uuid;
+  field(mandatory:create,readonly : update)Secmat,Plant,Frmdt,Todt;
+  field(readonly)Createdby,Createdon,Plannedorder,Uom,Totqty,Status,ManufacturingOrder,unitwt;
+  association _itemselc { create; with draft; }
+  association _itemseld { create; with draft; }
+  mapping for ZPP_APPSR_HTB corresponding;
+}
+
+define behavior for ZPP_APPSR_IRV alias _item
+persistent table zpp_appsr_itb1
+draft table zpp_appsr_ditb1
+//with unmanaged save
+lock dependent by _hdr
+authorization dependent by _hdr
+{
+  update;
+  delete;
+   action(features : instance) gt_selection result [1] $self;
+ side effects { action gt_selection affects entity _hdr._itemseld , field _hdr.Totqty , field _hdr.Uom,
+ field _hdr._itemselc.Mark ;}
+  field ( readonly ) Uuid, Purchaseorder, Purchaseitm, Length,Maktx,Mark,Matnr,Meins,Menge,Pcs,Prioritypo,Recplt,Width;
+  association _hdr{with draft;}
+  mapping for zpp_appsr_itb1 corresponding;
+}
+
+define behavior for ZPP_APPSR_IRV2 alias _itemwe
+persistent table zpp_appsr_itb2
+draft table zpp_appsr_ditb2
+//with unmanaged save
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Purchaseorder, Purchaseitm,Length,Maktx,Mark,Matnr,Meins,Menge,Pcs,Plannedorder,Prioritypo,Recplt,Width;
+  association _hdr{with draft;}
+   mapping for zpp_appsr_itb2 corresponding;
+}

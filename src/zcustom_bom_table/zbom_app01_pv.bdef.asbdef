@@ -1,0 +1,29 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZBOM_APP01_PV //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use action loadexcl;
+  side effects { action loadexcl affects entity _ITEM; }
+
+  use action Edit;
+  use action Resume;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+  use association _ITEM { create; with draft; }
+}
+
+define behavior for ZBOM_APP01_IPV //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _HDR { with draft; }
+}

@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Operational WIP Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zppwiprepv2.zppwiprepv2"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_226C3BB9AB97B3F525884FDD51CA214CEBE7697F_TM",
+    "semanticObject": "ZPP_WIP_REPORT_V2",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_226C3BB9AB97B3F525884FDD51CA214CEBE7697F_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Operational WIP Report",
+        "subtitle": "Version - 2"
+      }
+    }
+  ]
+}

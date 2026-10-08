@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service defination of  BOM chield entity'
+define service ZPP_BOM_HD_CE {
+  expose ZPP_BOM_H_CE;
+  expose ZPP_BOM_I_CE;
+  expose ZPP_BOM_SECTION_CE;
+  expose ZPP_SUBTYPE_CE;
+}

@@ -1,0 +1,102 @@
+managed implementation in class zbp_pp_apps01_rv unique;
+strict ( 1 );
+with draft;
+
+
+define behavior for ZPP_APPS01_RV alias _Hdr
+with unmanaged save
+draft table zpp_apps01_hdtb1
+lock master
+total etag Lastchangedon
+authorization master ( instance )
+etag master Lastchangedon
+{
+  create ( authorization : global );
+  update;
+  delete;
+  draft action Resume;
+  draft action(features : instance) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  field ( readonly, numbering : managed ) Uuid;
+  field (mandatory : create) Werks , Jobdesc;
+  field (readonly :update ) Werks,Jobdesc;
+  field(readonly)Jobsheetno,Status,Delmark,Attachmentsul,Mimetypeul,Filenameul;
+  determination gtdata1 on save { create; field Werks, Jobdesc; }
+  action ( features : instance ) Genjob result [1] $self;
+  action ( features : instance ) matval parameter ZPP_MATSTVH_AE result [1] $self;
+  action (features : instance ) poval parameter ZPP_APPS01_POV4 result [1] $self;
+  action (features : instance ) confimjob result[1] $self;
+  action ( features : instance ) getitems result [1] $self;
+  action getpdf parameter ZPP_APPS01_PRINT result[1] $self;
+
+  side effects
+  { action Genjob affects field Jobsheetno;
+    action matval affects entity _Item2;
+    action poval affects entity _Item2;
+    action getitems affects entity _Item._citem; }
+  association _Item { create(features : instance); with draft; }
+  association _Item2 { create(features : instance); with draft; }
+  mapping for zpp_apps01_htb1 corresponding ;
+}
+
+define behavior for ZPP_APPS01_IRV1 alias _Item
+//persistent table zpp_apps01_itb1
+with unmanaged save
+draft table zpp_apps01_idtb1
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+
+  field ( readonly ) Uuid, Orderno, Sno,Maktx,Matlent,Matlentuom,Matnr,Matwidth,Matwidthuom,Operation,Orderitem,Plant,Plnqty,Reqty,Rsnum,Totwgh,Totwghuom,Untwgh,Untwghuom,Uom,Vbeln,Wgtpc,Wgtpcuom;
+  association _hdr { with draft; }
+  association _citem { create; with draft; }
+   mapping for zpp_apps01_itb1 corresponding ;
+}
+
+define behavior for ZPP_APPS01_IRV3 alias _Item2
+with unmanaged save
+draft table zpp_apps01_ditb3
+lock dependent by _hdr
+authorization dependent by _hdr
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Orderno,Matnr,Maktx,Operation,Orderitem,Plant,Plnqty,Rsnum,Soitem,Totopnqty,Totreqty,Uom,Vbeln,Secon;
+  action ( features : instance ) grpitm result [1] $self;
+  action ( features : instance ) getoprt result [1] $self;
+  field (features : instance) Reqty;
+
+   validation reqty_val on save {create; update; field Reqty ;}
+  determine action validreqty {validation reqty_val ;}
+
+  determination gtidata1 on save { create; update; field Reqty; }
+
+  side effects
+  { action grpitm affects entity _hdr._Item;
+    determine action validreqty executed on field Reqty affects messages; }
+  association _hdr { with draft; }
+     mapping for zpp_apps01_itb3 corresponding ;
+
+}
+
+
+define behavior for ZPP_APPS01_IRV2 alias _Citem
+//persistent table zpp_apps01_itb2
+with unmanaged save
+draft table zpp_apps01_ditb2
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Orderno, Sno, Sno1,Baseqty,Baseuom,Comqty,Comuom,Maktx,Matnr;
+  association _hdr { with draft; }
+  association _item { with draft; }
+     mapping for zpp_apps01_itb2 corresponding ;
+}

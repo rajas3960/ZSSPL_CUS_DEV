@@ -1,0 +1,33 @@
+@Metadata.layer: #PARTNER
+@UI.createHidden: true
+@UI.updateHidden: true
+@UI.deleteHidden: true
+@UI: { headerInfo: {
+typeName: 'Manage Jobsheet Master',
+typeNamePlural: 'Manage Jobsheet Master',
+title: { type: #STANDARD, value: 'Uuid'        } }     }
+annotate entity ZPP_APPS05_IPV4
+    with 
+{
+  @UI.facet: [ { id:              'StockOverView',
+                       purpose:         #STANDARD,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Stock Over View',
+                       position:        10 } ]
+@UI.hidden: true
+
+    Uuid;
+ @UI: { lineItem: [{ position: 10, label: 'S.no'}],
+  identification: [{ position: 10, label: 'S.no' } ] }
+    Sno;
+ @UI: { lineItem: [{ position: 20, label: 'Length'}],
+  identification: [{ position: 20, label: 'Length' } ] }
+    Length;
+     @UI: { lineItem: [{ position: 30, label: 'Quantity'}],
+  identification: [{ position: 30, label: 'Quantity' } ] }
+    Quantity;
+    @UI.hidden: true
+    /* Associations */
+    _Hdr;
+    
+}

@@ -1,0 +1,27 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZNS_PKG_IPV2
+    with 
+{
+    @UI.facet: [ { id:              'Item',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Items',
+                   position:        10 } ]
+@UI.hidden: true
+    Uuid;
+@UI.lineItem: [{ position: 10,label: 'Item No' }]
+    Item;
+    @UI.lineItem: [{ position: 20,label: 'Sales Order No' }]
+    Sonumber;
+    @UI.lineItem: [{ position: 30,label: 'Plant No' }]
+    Plant;
+    @UI.lineItem: [{ position: 40,label: 'Customer No' }]
+    Soldtoparty;
+    @UI.lineItem: [{ position: 50,label: 'Phone No' }]
+    Phoneno;
+    @UI.lineItem: [{ position: 60,label: 'Email Id' }]
+    Email;
+    @UI.hidden: true
+    /* Associations */
+    _hdr;
+}

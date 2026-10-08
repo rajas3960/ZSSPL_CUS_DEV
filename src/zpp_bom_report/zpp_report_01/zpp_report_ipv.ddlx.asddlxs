@@ -1,0 +1,48 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Projct Summary Item Details',
+typeNamePlural: 'Projct Summary Details' }}
+
+annotate entity ZPP_REP_IPV01 with
+{
+  @UI.facet: [
+    {
+      id: 'ItemCollection',
+      purpose: #STANDARD,
+      type: #COLLECTION,
+      label: 'Items',
+      position: 10
+    },
+    {
+      id: 'MaterialDetails',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Material Details',
+      position: 20,
+      parentId: 'ItemCollection',
+      targetElement: 'Item1'
+    }
+  ]
+
+  @UI.lineItem: [{ position: 10, label: 'Material' }]
+  @UI.identification: [{ position: 10, label: 'Material' }]
+  Material;
+
+  @UI.lineItem: [{ position: 20, label: 'Tower Type' }]
+  @UI.identification: [{ position: 20, label: 'Tower Type' }]
+  Structure;
+
+//  @UI.lineItem: [{ position: 30, label: 'Sub Type' }]
+//  @UI.identification: [{ position: 30, label: 'Sub Type' }]
+//  Tower_type;
+
+  @UI.lineItem: [{ position: 40, label: 'Tower Type Desc' }]
+  @UI.identification: [{ position: 40, label: 'Tower Type Desc' }]  
+  ProductName;
+
+  @UI.hidden: true
+  Item1;
+
+  @UI.hidden: true
+  _hdr;
+}

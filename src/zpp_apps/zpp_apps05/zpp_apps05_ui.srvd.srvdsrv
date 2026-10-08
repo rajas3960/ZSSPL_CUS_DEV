@@ -1,0 +1,35 @@
+@EndUserText.label: 'Jobsheet Creation Application - Service Defination'
+define service ZPP_APPS05_UI {
+  expose ZPP_APPS05_PV      as Mainpage;
+  expose ZPP_APPS05_IPV1    as itemgtmark;
+  expose ZPP_APPS05_IPV2    as itemftmark;
+  expose ZPP_APPS05_IPV3    as itemgtlet;
+  expose ZPP_APPS05_IPV4    as itemgtstock;
+  expose ZPP_APPS05_IPV5    as itemftstock;
+  expose ZPP_APPS05_PUR;
+  expose ZPP_APPS05_PRJV;
+  expose ZPP_APPS05_ORV;
+  expose ZPP_APPS05_PROV;
+  expose ZPP_APPS05_POLV;
+  expose ZPP_APPS05_OPV;
+  expose ZPP_APPS05_CE;
+  expose ZPP_APPS05_ITMS;
+  expose ZPP_APPS05_SUITEMV;
+  expose ZPP_APPS05_RM;
+  expose ZPP_APPS05_RMITM;
+  expose ZPP_APPS05_IPV6    as itemrsult;
+  expose ZPP_APPS05_IPV7    as citem;
+  expose ZPP_APPS05_RMCAV;
+  expose ZPP_APPS05_RMITEM;
+  expose ZPP_APPS05_RMCITEM;
+  expose ZPP_APPS06_RE;
+  expose ZPP_APPS05_IPV8    as itemsumry;
+  expose ZPP_APPS05_ITEM8;
+  expose zmm_length_ve;
+  expose ZPP_APPS05_Cp01;
+  expose ZPP_APPS05_COTt;
+  expose ZPP_APPS05_OPITMC;
+  expose ZPP_APPS05_PURVH;
+  expose ZPP_APPS05_PUVH;
+  expose ZPP_APPS05_RAWS;
+}

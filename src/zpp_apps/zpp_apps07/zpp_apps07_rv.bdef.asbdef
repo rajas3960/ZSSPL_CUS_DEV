@@ -1,0 +1,49 @@
+managed implementation in class zbp_pp_apps07_rv unique;
+strict ( 1 );
+
+define behavior for ZPP_APPS07_RV //alias <alias_name>
+//persistent table <???>
+with unmanaged save
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  //  create ( authorization : global );
+  //  update;
+  //  delete;
+  field ( readonly ) Vrno, Werks, Uuid, Project, Projectname, Sectmat, Unitwet, Purno,
+  Delmark, Status, Statusr, Statusgi, Statusgr, Relusr, Pgiusr, Pgrusr;
+  association _Item { create; }
+  association _Rawitm {create;}
+  action ( features : instance ) GImat result [1] $self;
+  action ( features : instance ) GRmat result [1] $self;
+  side effects { action GImat affects field Pgiusr , field Statusgi ;
+
+  action GRmat affects field Pgrusr ,field Statusgr; }
+
+}
+
+define behavior for ZPP_APPS07_IRV //alias <alias_name>
+//persistent table zpp_apps05_itb2
+with unmanaged save
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  //  update;
+  //  delete;
+  field ( readonly ) Vrno, Pardtm, Sno, Jobsht, Length, Maktx, Matnr, Netwt, Operation, Orderno, Plant, Plnqty, Reqty, Uom, Uuid, Vbeln, Wetpc;
+  association _hdr;
+}
+define behavior for ZPP_APPS07_IRV2 //alias <alias_name>
+//persistent table zpp_apps05_itb2
+with unmanaged save
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  //  update;
+  //  delete;
+  field ( readonly ) Vrno, Sno, Apcs,Batch,Irno,Length,Matnr,Netwst,Plant,Quanwt,Wasper,Used,Uqty,Storagelocation,Rtrn,Rqty;
+  association _hdr;
+}

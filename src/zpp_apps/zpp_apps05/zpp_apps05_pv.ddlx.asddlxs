@@ -1,0 +1,315 @@
+@Metadata.layer: #PARTNER
+@UI.deleteHidden: true
+@UI: { headerInfo: {
+typeName: 'Manage Job-Sheet Master',
+typeNamePlural: 'Manage Job-Sheet Master',
+title: { type: #STANDARD, value: 'Uuid'        } }     }
+annotate entity ZPP_APPS05_PV with
+{
+  @UI.facet: [      {
+               label: 'Mark Nos. Planning Items',
+               id: 'GeneralInfo',
+               type: #COLLECTION,
+               position: 10 },
+               {  id:              'Plan',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Section Planning Header',
+                 position:        10 } ,
+
+                { id:              'PLAN_I',
+             parentId: 'GeneralInfo',
+               purpose:         #STANDARD,
+               type:           #LINEITEM_REFERENCE,
+  //                 label:           'Seleciton',
+               position:        30 ,
+               targetElement: '_itemgtmark'},
+               {
+               id:              'PLAN_II',
+             parentId: 'GeneralInfo',
+               purpose:         #STANDARD,
+               type:           #LINEITEM_REFERENCE,
+  //                 label:           'Pending',
+               position:        40 ,
+               targetElement: '_itemftmark'},
+
+               {
+
+                     id:              'LOT_H2',
+                  parentId: 'GeneralInfo',
+                 purpose:         #STANDARD,
+                 type:           #IDENTIFICATION_REFERENCE,
+             label:           'Plan Weight Vs Raw Material Weight Details',
+                 position:        50 ,
+                 targetQualifier: 'Remark1'
+
+               } ,
+                {
+               id:              'LENGTH',
+               purpose:         #STANDARD,
+               type:           #LINEITEM_REFERENCE,
+                 label:           'Length and Pieces Details',
+               position:        50 ,
+               targetElement: '_itemgtlet'} ,
+               {
+                 id:              'Stock',
+               purpose:         #STANDARD,
+               type:           #LINEITEM_REFERENCE,
+                 label:           'Raw Material Stock Details',
+               position:        60 ,
+               targetElement: '_itemftstock'} ,
+             {
+    id:                'Stockst',
+  //    parentId:          'StockBlock',
+    type:              #LINEITEM_REFERENCE,
+    purpose:           #STANDARD,
+    label:             'Selected Stock',
+    position:          65,
+    targetElement:     '_itemgtstock'
+  },
+  {
+   id:                'Stock1',
+    type:              #LINEITEM_REFERENCE,
+    purpose:           #STANDARD,
+    label:             'Cut-logic Integration Details',
+    position:          80,
+    targetElement:     '_itemrsult'
+  },
+  {
+     id:                'Summary',
+    type:              #LINEITEM_REFERENCE,
+    purpose:           #STANDARD,
+    label:             'Stock Summary Details',
+    position:          90,
+    targetElement:     '_itemsumry'
+  }
+               ]
+  //@UI.facet: [
+  //  /* ================= Planning Option ================= */
+  //  {
+  //    id:        'GeneralInfo',
+  //    type:      #COLLECTION,
+  //    label:     'Planning Option',
+  //    position:  10
+  //  },
+  //  {
+  //    id:                'PLAN_H',
+  //    parentId:          'GeneralInfo',
+  //    type:              #IDENTIFICATION_REFERENCE,
+  //    purpose:           #STANDARD,
+  //    position:          20,
+  //    targetQualifier:   'Planningopt'
+  //  },
+  //  {
+  //    id:                'PLAN_I',
+  ////    parentId:          'GeneralInfo',
+  //    type:              #LINEITEM_REFERENCE,
+  //    purpose:           #STANDARD,
+  //    label:             'Selection Marks To Cut',
+  //    isMap: true,
+  //    isPartOfPreview: true,
+  //    isSummary: true,
+  //
+  //    position:          30,
+  //    targetElement:     '_itemgtmark'
+  //  },
+  //  {
+  //    id:                'PLAN_II',
+  ////    parentId:          'GeneralInfo',
+  //    type:              #LINEITEM_REFERENCE,
+  //    purpose:           #STANDARD,
+  //    label:             'Pending Marks To Cut',
+  //    position:          40,
+  //    targetElement:     '_itemftmark'
+  //  },
+  //
+  //  /* ================= Length & Stock ================= */
+  //
+  //  {
+  //    id:                'LENGTH',
+  ////    parentId:          'StockBlock',
+  //    type:              #LINEITEM_REFERENCE,
+  //    purpose:           #STANDARD,
+  //    label:             'Length',
+  //    position:          50,
+  //    targetElement:     '_itemgtlet'
+  //  },
+  //  {
+  //    id:                'Stock',
+  //
+  ////    parentId:          'StockBlock',
+  //    type:              #LINEITEM_REFERENCE,
+  //    purpose:           #STANDARD,
+  //    label:             'Selection Stock',
+  //    position:          60,
+  //    targetElement:     '_itemftstock'
+  //  },
+  //  {
+  //    id:                'Stockst',
+  ////    parentId:          'StockBlock',
+  //    type:              #LINEITEM_REFERENCE,
+  //    purpose:           #STANDARD,
+  //    label:             'Selected Stock',
+  //    position:          65,
+  //    targetElement:     '_itemgtstock'
+  //  },
+  //
+  //  {
+  //   id:                'Stock1',
+  //    type:              #LINEITEM_REFERENCE,
+  //    purpose:           #STANDARD,
+  //    label:             'Result',
+  //    position:          80,
+  //    targetElement:     '_itemrsult'
+  //  },
+  //  {
+  //     id:                'Summary',
+  //    type:              #LINEITEM_REFERENCE,
+  //    purpose:           #STANDARD,
+  //    label:             'Summary Stock',
+  //    position:          90,
+  //    targetElement:     '_itemsumry'
+  //  }
+  //]
+
+  @UI.hidden: true
+  Uuid;
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZPP_APPS05_DOV',element: 'name' } }]
+
+  @UI: {
+    lineItem: [
+      { position: 10, label: 'VR Series' }
+    ],
+    identification: [
+      { position: 10, label: 'VR Series'  },
+
+      { type: #FOR_ACTION, dataAction: 'GtMark',  label: 'Get Mark Number',      position: 20 },
+      { type: #FOR_ACTION, dataAction: 'GtLent',  label: 'Get Length Details',   position: 30 },
+      { type: #FOR_ACTION, dataAction: 'GtOpers', label: 'Group Operations',     position: 70 },
+      { type: #FOR_ACTION, dataAction: 'Gtcheckst', label : 'Stock Check',position: 65 },
+      { type: #FOR_ACTION, dataAction: 'GtStok',  label: 'Fetch Stock Details',  position: 50 },
+      { type: #FOR_ACTION, dataAction: 'GtIntc',  label: 'Integrate Cut Logic',  position: 60 },
+      { type: #FOR_ACTION, dataAction: 'GtPrint', label: 'Generate Prints',      position: 90 },
+      { type: #FOR_ACTION, dataAction: 'GtDelete', label: 'Delete' ,position: 10 },
+      { type: #FOR_ACTION, dataAction: 'GtCheck', label: 'Check',      position: 80 }
+    ]
+  }
+
+  Vrcuting;
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_PlantStdVH',element: 'Plant' } }]
+  @UI: { lineItem: [{ position: 20, label: 'Plant'}],
+   identification: [{ position: 20, label: 'Plant'  } ] }
+  Werks;
+  @Consumption.valueHelpDefinition: [ { entity: { name: 'ZPP_APPS05_PRJV', element: 'Product' }  } ]
+  @UI: { lineItem: [{ position: 30, label: 'Project'}],
+  identification: [{ position: 30, label: 'Project'  ,importance: #HIGH} ] }
+  @EndUserText.label: 'Project'
+  Project;
+  @UI.hidden: true
+  Projectname;
+  @UI: { lineItem: [{ position: 111, label: 'Vr Number'}],
+  identification: [{ position: 111, label: 'Vr Number'  } ] }
+  Vrno;
+
+  //                 Vbeln;
+  //                 Prod;
+  @UI: { lineItem: [{ position: 70, label: 'Section Material'}],
+  identification: [{ position: 70, label: 'Section Material'  } ] }
+  @EndUserText.label: 'Section Material'
+  Sectmat;
+  @UI: { lineItem: [{ position: 80, label: 'Unit W/t'}],
+  identification: [{ position: 80, label: 'Unit W/t'  } ] }
+  Unitwet;
+  @Consumption.valueHelpDefinition: [
+    {
+      entity: { name: 'ZPP_APPS05_PUVH', element: 'Pono' },
+      additionalBinding: [
+        { localElement: 'Sectmat', element: 'Material', usage:#RESULT }
+//        { localElement: 'Unitwet', element: 'Unitwt', usage: #RESULT }
+      ]
+    }
+  ]
+  @UI: { lineItem: [{ position: 60, label: 'Purchase Lot Number'}],
+  identification: [{ position: 60, label: 'Purchase Lot Number'  } ] }
+  Purno;
+  //  @UI: { lineItem: [{ position: 90, label: 'Deletion Mark'}],
+  //  identification: [{ position: 90, label: 'Deletion Mark' } ] }
+  //  Delmark;
+  //  @UI: { lineItem: [{ position: 100, label: 'Status'}],
+  //  identification: [{ position: 100, label: 'Status'  } ] }
+  //  Status;
+  @UI: { lineItem: [{ position: 130, label: 'Plan Weight'}], identification: [{ position: 130, label: 'Total Mark Weight' ,qualifier: 'Remark1' } ] } //,qualifier: 'Remark1'
+  Totwithmk;
+  @UI: { lineItem: [{ position: 140, label: 'Raw Material Weight'}], identification: [{ position: 140, label: 'Total Stock Weight' ,qualifier: 'Remark1' } ] }
+  Totwithst;
+  //                 Gengt;
+  @UI: { lineItem: [{ position: 110, label: 'Created By'}]}
+  Createdby;
+  @UI: { lineItem: [{ position: 120, label: 'Created On'}] }
+
+  Createdon;
+  @UI: { lineItem: [{ position: 130, label: 'Last Changed By'}] }
+
+  Lastchangedby;
+  @UI: { lineItem: [{ position: 140, label: 'Last Changed On'}] }
+  Lastchangedon;
+  @UI: { lineItem: [{ position: 120, label: 'Attachment'}],
+  identification: [{ position: 120, label: 'Attachment'  } ] }
+  Attachment;
+  @Consumption.valueHelpDefinition: [
+  {
+    entity: { name: 'ZPP_APPS05_COTt', element: 'BusinessPartner' },
+    additionalBinding: [
+      { localElement: 'Contrname', element: 'BusinessPartnerName', usage: #RESULT }
+    ]
+  }
+  ]
+  @UI: { lineItem: [{ position: 150, label: 'Contractor'}],
+ identification: [{ position: 150, label: 'Contractor'  } ] }
+  Contr;
+  @UI: { lineItem: [{ position: 160, label: 'Contractor Name'}],
+  identification: [{ position: 160, label: 'Contractor Name'  } ] }
+  Contrname;
+  @UI: { lineItem: [{ position: 170, label: 'Material Document No'}],
+   identification: [{ position: 170, label: 'Material Document No'  } ] }
+  Matno;
+  @UI: { lineItem: [{ position: 180, label: 'Remark'}],
+  identification: [{ position: 180, label: 'Remark' ,importance: #HIGH } ] }
+  @UI.multiLineText: true
+  Remark;
+  @UI.hidden: true
+  _itemgtmark;
+  @UI.hidden: true
+  _itemftmark;
+  @UI.hidden: true
+  _itemgtlet;
+  @UI.hidden: true
+  _itemgtstock;
+  @UI.hidden: true
+  _itemftstock;
+  @UI.hidden: true
+  _itemrsult;
+  @UI.hidden: true
+  _itemsumry;
+  @UI.hidden: true
+  Mimetype;
+  @UI: { lineItem: [{ position: 180, label: 'PGI User'}] }
+  @EndUserText.label: 'PGI User'
+  Pgiusr;
+  @UI: { lineItem: [{ position: 190, label: 'PGR User'}] }
+  @EndUserText.label: 'PGR User'
+  Pgrusr;
+  @UI: { lineItem: [{ position: 200, label: 'Planning Date'}] }
+  @EndUserText.label: 'Planning Date'
+  Plndt;
+  @UI: { lineItem: [{ position: 210, label: 'Release User'}] }
+  @EndUserText.label: 'Release User'
+  Relusr;
+  @UI: { lineItem: [{ position: 220, label: 'GI Status'}]}
+  @EndUserText.label: 'GI Status'
+  Statusgi;
+  @UI: { lineItem: [{ position: 230, label: 'Release Status'}]}
+  @EndUserText.label: 'Release Status'
+  Statusr;
+
+}

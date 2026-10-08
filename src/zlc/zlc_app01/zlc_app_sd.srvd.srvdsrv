@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Defination Of LC'
+define service ZLC_APP_SD {
+  expose ZLC_APP_PV       as mainpage;
+  expose ZLC_APP_VIEWHELP;
+}

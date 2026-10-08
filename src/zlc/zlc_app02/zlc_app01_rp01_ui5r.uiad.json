@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "LC Master Maintenance",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "LC Master Maintenance"
+  },
+  "ui5AppDetails": {
+    "appId": "zlcapp01rp01"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_615EC826FFCE4435B6205573805D4BED4D83A377_TM",
+    "semanticObject": "YY1_LCAPP01_RP01",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_615EC826FFCE4435B6205573805D4BED4D83A377_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "LC Master Maintenance"
+      }
+    }
+  ]
+}

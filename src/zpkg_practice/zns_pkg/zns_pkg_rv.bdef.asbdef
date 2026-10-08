@@ -1,0 +1,25 @@
+managed implementation in class zbp_ns_pkg_rv unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZNS_PKG_RV //alias <alias_name>
+with unmanaged save
+draft table zns_pkg_dtb
+//persistent table zlc_app_tb
+
+lock master total etag Createdon
+authorization master ( instance )
+etag master Createdon
+{
+  create;
+  update;
+  delete;
+  field ( readonly : update) Sono;
+static action uploadexcel result [1] $self;
+
+  draft action Edit;
+  draft action Resume;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+}

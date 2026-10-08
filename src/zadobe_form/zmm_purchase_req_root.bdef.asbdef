@@ -1,0 +1,20 @@
+managed implementation in class zbp_mm_purchase_req_root unique;
+strict ( 2 );
+
+define behavior for ZMM_PURCHASE_REQ_Root //alias <alias_name>
+with unmanaged save
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+//  create;
+//  update;
+//  delete;
+  field ( readonly ) purreq_no;
+  field ( readonly ) purreq_itno,BaseUnit,costname,CostCenter,GLAccount,GRDocument,reqdate,itemtext
+  ,Hdesc,remarks,net_amt,PurchasingDocument,PurchasingDocumentItem,req,REQDays,VendorName,dept,indetdate;
+  action (features : instance) preview result[1]$self;
+
+
+}

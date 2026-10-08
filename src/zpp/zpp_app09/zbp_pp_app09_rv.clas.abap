@@ -1,0 +1,11 @@
+CLASS zbp_pp_app09_rv DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zpp_app09_rv.
+PUBLIC SECTION.
+CLASS-DATA :  cv_mat_doc TYPE RESPONSE FOR MAPPED I_MaterialDocumentTP,
+              gtitem type table of zpp_app09_itb2.
+
+ENDCLASS.
+
+
+
+CLASS ZBP_PP_APP09_RV IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,31 @@
+managed implementation in class zbp_sd_rep_rv unique;
+strict ;
+
+define behavior for ZSD_REP_RV alias _HDR
+with unmanaged save
+//persistent table ZSD_REP_HDB
+lock master
+authorization master ( instance )
+{
+  field ( readonly ) SalesDocument;
+
+  association Item;
+  action ( features : instance ) Printso result [1] $self;
+
+  mapping for ZSD_REP_RV
+    corresponding;
+}
+
+define behavior for ZSD_REPORT alias item
+with unmanaged save
+//persistent table ZSD_REP_HDB
+lock dependent by _hdr
+authorization master ( instance )
+{
+  field ( readonly ) SalesDocument,BillOfMaterial;
+
+  association _hdr;
+
+  mapping for ZSD_REPORT
+    corresponding;
+}

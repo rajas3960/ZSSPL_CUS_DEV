@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Defination For Goods Receipts - APP'
+define service ZPP_APP10_SD {
+  expose ZPP_APP10_pv   as mainpage;
+  expose zpp_app10_ipv1;
+  expose zpp_app10_irv2;
+}

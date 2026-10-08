@@ -1,0 +1,44 @@
+@Metadata.layer: #CUSTOMER
+@UI.createHidden: true
+@UI.updateHidden: true
+@UI.deleteHidden: true
+annotate entity ZPP_APPS05_IPV7
+    with 
+{
+   @UI.facet: [ { id:              'Alock',
+                       purpose:         #STANDARD,
+                       importance: #HIGH,
+                       isPartOfPreview: true,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Allocation Length',
+                       position:        10 } ]
+@UI.hidden: true
+Uuid;
+@UI.hidden: true
+Srcid;
+@UI.hidden: true
+Parid;
+@UI.hidden: true
+Vrno;
+@UI: { lineItem: [{ position: 10, label: 'Mark No.'}],
+  identification: [{ position: 10, label: 'Mark No.' } ] }
+Marno;
+@UI: { lineItem: [{ position: 20, label: 'Length'}],
+  identification: [{ position: 20, label: 'Length' } ] }
+Length;
+@UI: { lineItem: [{ position: 30, label: 'Process'}],
+  identification: [{ position: 30, label: 'Process' } ] }
+Process;
+@UI: { lineItem: [{ position: 40, label: 'Pcs'}],
+  identification: [{ position: 40, label: 'Pcs' } ] }
+Pcs;
+@UI: { lineItem: [{ position: 50, label: 'Bal. Pcs'}],
+  identification: [{ position: 50, label: 'Bal. Pcs' } ] }
+Balpcs;
+@UI.hidden: true
+/* Associations */
+_hdr;
+@UI.hidden: true
+_itemrsult;
+    
+}

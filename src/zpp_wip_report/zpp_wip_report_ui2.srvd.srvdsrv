@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service defination of Version'
+define service ZPP_WIP_REPORT_UI2 {
+  expose ZPP_WIP_REPORT_PV2 as WIP_VERSION2;
+}

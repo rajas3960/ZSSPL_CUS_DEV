@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Sales Order Utilization",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Sales Order Utilization"
+  },
+  "ui5AppDetails": {
+    "appId": "zsdapp01rp01"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_4AB1E2BC22577AAB7FBD87B53480B4841C354C59_TM",
+    "semanticObject": "YY1_SDAPP01_RP01",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_4AB1E2BC22577AAB7FBD87B53480B4841C354C59_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Sales Order Utilization"
+      }
+    }
+  ]
+}

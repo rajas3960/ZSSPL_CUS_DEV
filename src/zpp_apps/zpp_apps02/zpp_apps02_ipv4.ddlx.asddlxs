@@ -1,0 +1,25 @@
+@Metadata.layer: #PARTNER
+annotate entity ZPP_APPS02_IPV4
+    with 
+{
+      @UI.facet: [ { id:              'STck',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'Stocks Items',
+                        position:        10 } ]
+@UI.hidden: true
+  Uuid;
+@UI: { lineItem: [{ position: 5, label: 'SNo'}],
+  identification: [{ position: 5, label: 'SNo' } ] }
+  Sno;
+@UI: { lineItem: [{ position: 10, label: 'Length'}],
+  identification: [{ position: 10, label: 'Length' } ] }
+  Length;
+  @UI: { lineItem: [{ position: 20, label: 'Quntity'}],
+  identification: [{ position: 20, label: 'Quntity' } ] }
+  Quantity;
+  @UI.hidden: true
+  /* Associations */
+  _hdr;
+    
+}

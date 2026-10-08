@@ -1,0 +1,14 @@
+@EndUserText.label: 'Custom entity For Jobsheet'
+define service ZPP_APPS05_UICE {
+  expose ZPP_APPS05_CE;
+  expose ZPP_APPS05_ITMS;
+  expose ZPP_APPS05_SUITEMV;
+  expose ZPP_APPS05_RM;
+  expose ZPP_APPS05_RMITM;
+  expose ZPP_APPS05_RMCAV;
+  expose ZPP_APPS05_RMITEM;
+  expose ZPP_APPS05_RMCITEM;
+  expose ZPP_APPS05_ITEM8;
+  expose zmm_length_ve;
+  expose ZPP_APPS05_OPITMC;
+}

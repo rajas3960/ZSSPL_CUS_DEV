@@ -1,0 +1,9 @@
+projection;
+strict ( 2 );
+use side effects;
+
+define behavior for ZPP_STOCK_PV alias HDR
+{
+
+  use action Gtlegth;
+}

@@ -1,0 +1,131 @@
+
+projection;
+strict (1);
+use draft;
+use side effects;
+
+define behavior for ZBOM_APP02_PV2
+{
+  use create;
+  use update;
+  use delete;
+
+  use action loadexcl;
+  side effects { action loadexcl affects entity _ITEM; }
+
+  use action Edit;
+  use action Resume;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+  use action create_bom;
+
+
+  use association _ITEM { create; with draft; }
+//  use association _HRD  { create; with draft; }
+}
+
+//define behavior for ZBOM_APP02_HPV2
+//{
+//  use update;
+//  use delete;
+//
+//  use association _HDR { with draft; }
+//}
+
+define behavior for ZBOM_APP02_IPV
+{
+  use update;
+  use delete;
+
+  use association _HDR { with draft; }
+}
+
+//projection;
+//strict ( 2 );
+//use draft;
+//use side effects;
+//
+//define behavior for ZBOM_APP02_PV2
+//{
+//  use create;
+//  use update;
+//  use delete;
+//
+//  use action loadexcl;
+//  side effects { action loadexcl affects entity _ITEM; }
+//
+////Draft actions are USED, not defined
+//  use action Edit;
+//  use action Resume;
+//  use action Activate;
+//  use action Discard;
+//  use action Prepare;
+//
+//  use association _ITEM { create; }
+//  use association _HRD  { create; }
+//}
+//
+//define behavior for ZBOM_APP02_HPV2
+//{
+//  use update;
+//  use delete;
+//
+//  use association _HDR;
+//}
+//
+//define behavior for ZBOM_APP02_IPV
+//{
+//  use update;
+//  use delete;
+//
+//  use association _HDR;
+//}
+
+
+
+
+
+
+
+
+
+
+//projection;
+//strict ( 2 );
+//use draft;
+//use side effects;
+//
+//define behavior for ZBOM_APP02_PV2 //alias <alias_name>
+//{
+//  use create;
+//  use update;
+//  use delete;
+//  use action loadexcl;
+//  side effects { action loadexcl affects entity _ITEM ;}
+//
+//    use action Edit;
+//  use action Resume;
+//  use action Activate;
+//  use action Discard;
+//  use action Prepare;
+//
+//  use association _ITEM { create; }
+//  use association _HRD { create; }
+//}
+//
+//define behavior for ZBOM_APP02_HPV2 //alias <alias_name>
+//{
+//  use update;
+//  use delete;
+//
+//  use association _HDR;
+//}
+//
+//define behavior for ZBOM_APP02_IPV //alias <alias_name>
+//{
+//  use update;
+//  use delete;
+//
+//  use association _HDR;
+//}

@@ -1,0 +1,30 @@
+managed implementation in class zbp_mm_purreq_hrv unique;
+strict ( 2 );
+
+define behavior for ZMM_PURREQ_HRV alias Header
+//persistent table <???>\\
+with unmanaged save
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+//  create;
+//  update;
+//  delete;
+  field ( readonly ) indentno,indentdate,dept,Req_type,Name,LastChangeDateTime,images,Header_dec,Costname,Plant;
+  association _item { create; }
+  action (features : instance) preview result[1]$self;
+}
+
+define behavior for ZMM_PURREQ_IRV alias Item
+//persistent table <???>
+with unmanaged save
+lock dependent by _header
+authorization dependent by _header
+//etag master <field_name>
+{
+//  update;
+//  delete;
+  field ( readonly ) purreq_no, purreq_itno;
+  association _header;
+}

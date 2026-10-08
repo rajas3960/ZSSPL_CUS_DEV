@@ -1,0 +1,10 @@
+@EndUserText.label: 'Service defination of Job Card'
+define service ZPP_APPS01_UI01 {
+  expose ZPP_APPS01_PV01  as Mainpage;
+  expose ZPP_APPS01_IPV   as item;
+  expose ZPP_APPS01_Ipv02 as item1;
+  expose ZPP_MATERIAL_PV  as mat;
+  expose ZPP_MAT_VH       as mat_vh;
+  expose ZPP_APPS01_OPERV;
+  expose ZPP_OPERATION_PV;
+}

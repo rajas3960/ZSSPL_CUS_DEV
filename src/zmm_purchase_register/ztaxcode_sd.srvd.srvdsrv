@@ -1,0 +1,4 @@
+@EndUserText.label: 'Tax CodeService Definition'
+define service ZTAXCODE_SD {
+  expose ZTAXCODE_PJV;
+}

@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Raw Material Length Wise"
+  },
+  "ui5AppDetails": {
+    "appId": "zpprmrreport.zpprmrreport"
+  },
+  "navigation": {
+    "targetMappingId": "ZPP_RMR_REPORT_UI5R_TM",
+    "semanticObject": "zpp_rmr_report",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "ZPP_RMR_REPORT_UI5R_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Raw Material Length Wise",
+        "subtitle": "Report"
+      }
+    }
+  ]
+}

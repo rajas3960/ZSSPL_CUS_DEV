@@ -1,0 +1,60 @@
+@Metadata.layer: #PARTNER
+@UI:{
+headerInfo: { typeName: 'Customer LC',
+              typeNamePlural: 'Customer LCs',
+              title: {  type: #STANDARD, label: 'Customer LC Details', value: 'Lcnumber'  },
+              description: { type: #STANDARD, label: 'Customer LC' } },
+              presentationVariant: [{ sortOrder: [{ by: 'Lcnumber', direction: #ASC }] }]
+ }
+@Search.searchable: true
+annotate entity ZRPV_LC_MNT with
+{
+  @UI.facet: [{ id: 'Lcdata', purpose: #STANDARD,
+                type: #IDENTIFICATION_REFERENCE  } ]
+  @UI: { lineItem: [{ position: 10, label: 'LC Number' }],
+  identification: [{ position: 10, label: 'LC Number' }]    }
+  @Search.defaultSearchElement: true
+  Lcnumber;
+  @UI: { lineItem: [{ position: 20, label: 'Validity From' }],
+  identification: [{ position: 20, label: 'Validity From' }]    }
+  Vfdate;
+  @UI: { lineItem: [{ position: 30, label: 'Validity To' }],
+  identification: [{ position: 30, label: 'Validity To' }]    }
+  Vtdate;
+  @UI: { lineItem: [{ position: 40, label: 'LC Issue Date' }],
+  identification: [{ position: 40, label: 'LC Issue Date' }]    }  
+  Lcdate;
+  @UI: { lineItem: [{ position: 50, label: 'LC Expiry Date' }],
+  identification: [{ position: 50, label: 'LC Expiry Date' }]    }
+  Lcvdate;
+  @UI: { lineItem: [{ position: 60, label: 'Bank Name' }],
+  identification: [{ position: 60, label: 'Bank Name' }]    }
+  Bankname;
+  @UI: { lineItem: [{ position: 70, label: 'Branch' }],
+  identification: [{ position: 70, label: 'Branch' }]    }
+  Bnkbrch;
+  @UI: { lineItem: [{ position: 80, label: 'Sold to Party' }],
+  identification: [{ position: 80, label: 'Sold to Party' }] }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_CUSTOMER_VH1', element: 'Customer' },
+   additionalBinding: [ {localElement: 'Cusname', element: 'CustomerName' } ] }]
+  @Consumption.filter: { selectionType : #SINGLE, multipleSelections : false}
+  Soldto;
+  @UI: { lineItem: [{ position: 90, label: 'Customer Name' }],
+  identification: [{ position: 90, label: 'Customer Name' }]    }
+  Cusname;
+  @UI: { lineItem: [{ position: 100, label: 'LC Amount' }],
+  identification: [{ position: 100, label: 'LC Amount' }]    }
+  Lcamt;
+  @UI: { lineItem: [{ position: 110, label: 'Utilization Amount' }],
+  identification: [{ position: 110, label: 'Utilization Amount' }]    }
+  Lcutamt;
+  @UI: { lineItem: [{ position: 120, label: 'Balance' }],
+  identification: [{ position: 120, label: 'Balance' }]    }
+  Lcbcamt;
+  @UI.hidden: true
+  //  @UI: { lineItem: [{ position: 105, label: 'Currency' }],
+  //    identification: [{ position: 105, label: 'Currency' }]    }
+  Lccuky;
+  @UI.hidden: true
+  Status;
+}

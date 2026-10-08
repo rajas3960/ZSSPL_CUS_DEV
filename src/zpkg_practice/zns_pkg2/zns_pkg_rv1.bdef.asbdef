@@ -1,0 +1,43 @@
+managed implementation in class zbp_ns_pkg_rv1 unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZNS_PKG_RV1 alias _hdr
+with unmanaged save
+draft table zns_pkg_dt1
+lock master total etag Lastchangedon
+authorization master ( instance )
+etag master Lastchangedon
+{
+  create;
+  update;
+  delete;
+  field ( readonly ,numbering : managed) Uuid;
+  association _item { create; with draft;}
+  determination ondata on modify { field Createdby ;}
+  determination ondata2 on modify { field Attachment;}
+  action loadexl result [1] $self;
+
+    draft action Edit;
+  draft action Resume;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  mapping for zns_pkg_tb1 corresponding ;
+  side effects { field Attachment affects field Decs ;}
+}
+
+define behavior for ZNS_PKG_IV2 alias _item
+//persistent table zns_pkg_tb2
+with unmanaged save
+draft table zns_pkg_dt2
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Item;
+  association _hdr{with draft;}
+    mapping for zns_pkg_tb2 corresponding ;
+}

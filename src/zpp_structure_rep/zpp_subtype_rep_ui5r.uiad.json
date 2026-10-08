@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Subtype Weight Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zppsubtyperep.zppsubtyperep"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_EABD55671768BCE4E2FBA0E0D7B3228AE53144CB_TM",
+    "semanticObject": "ZPP_STRUCTURE_REP",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_EABD55671768BCE4E2FBA0E0D7B3228AE53144CB_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Subtype Weight Report",
+        "subtitle": "Details"
+      }
+    }
+  ]
+}

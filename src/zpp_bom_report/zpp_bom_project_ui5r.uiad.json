@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Project BOM Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zppbomproject.zppbomproject"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_1DD50430F41BE2DBD6B5613B0B092F4C0B4B0D01_TM",
+    "semanticObject": "zpp_bom_project_report",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_1DD50430F41BE2DBD6B5613B0B092F4C0B4B0D01_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Project BOM Report",
+        "subtitle": "Details"
+      }
+    }
+  ]
+}

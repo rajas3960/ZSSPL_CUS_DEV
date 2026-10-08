@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "LC Report Details",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Letter of Credit"
+  },
+  "ui5AppDetails": {
+    "appId": "zsdlcreport.zsdlc"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_8FFBC5F72E85E76FBF6A601F292815105DB272F5_TM",
+    "semanticObject": "ZSD_LC_REPORT",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_8FFBC5F72E85E76FBF6A601F292815105DB272F5_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Letter of Credit",
+        "subtitle": "Report"
+      }
+    }
+  ]
+}

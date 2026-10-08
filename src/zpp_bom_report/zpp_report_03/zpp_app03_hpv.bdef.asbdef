@@ -1,0 +1,38 @@
+projection;
+strict ( 2 );
+use draft;
+use side effects;
+define behavior for ZPP_APP03_Hpv alias hdr
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+  use action gt_section;
+  use action Gen_pt;
+
+  use association item { with draft; }
+  use association item2 { with draft; }
+}
+
+define behavior for ZPP_APP03_IPV alias item
+{
+  use update;
+  use delete;
+  use action get_select;
+  use association hdr { with draft; }
+}
+
+define behavior for zpp_app03_ipv02 alias item2
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+}

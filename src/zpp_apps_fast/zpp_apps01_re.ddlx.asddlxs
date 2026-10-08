@@ -1,0 +1,148 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Job Card Creation',
+typeNamePlural: 'Job Card Creation',
+title: { type: #STANDARD, value: 'Uuid'        } }     }
+annotate entity ZPP_APPS01_PV01
+    with 
+{
+ @UI.facet: [ { id:              'Jobcardplaning',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Job Card Planning',
+                      position:        10 } ,
+                    { id:              'Jobcardplaningitemw',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'Job Card Planning Selection Items',
+                      position:        20,
+                      targetElement:   '_item'},
+                      { id:              'Jobcardplaningitem',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'Job Card Planning Selected Items',
+                      position:        30,
+                      targetElement:   '_item1'},
+                      { id:              'Process',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'Process Details',
+                      position:        40,
+                      targetElement:   '_op'} ]
+    @UI.hidden: true                  
+    Uuid;
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZPP_APPS01_JC',element: 'name' } }]
+    @UI: { lineItem: [{ position: 10, label: 'JC Series'}],
+  identification: [{ position: 10, label: 'JC Series' },{ type: #FOR_ACTION , dataAction: 'gt_section',label: 'Fetch So' ,position: 10},
+  { type: #FOR_ACTION , dataAction: 'get_Jc',label: 'Print JC' ,position: 30},
+  { type: #FOR_ACTION , dataAction: 'secpro',label: 'Fetch Process',position: 15 },
+  { type: #FOR_ACTION, dataAction: 'Valditaion', label: 'Check',position: 20 },
+  { type: #FOR_ACTION, dataAction: 'porel', label: 'Order Release',position: 40 } ] }
+  
+  @EndUserText.label: 'JC Series'
+    Jcseries;
+      @UI: { lineItem: [{ position: 15, label: 'JC Number'}],
+  identification: [{ position: 15, label: 'JC Number' } ] }
+  @EndUserText.label: 'JC Number'
+    Jcnum;
+//     @UI: { lineItem: [{ position: 15, label: 'Machine Name'}],
+//  identification: [{ position: 15, label: 'Machine Name' } ] }
+//  @EndUserText.label: 'Machine Name'  
+@UI.hidden: true
+    machine;
+//     @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZPP_MAT_VH',element: 'Product' } }]
+@Consumption.valueHelpDefinition: [{
+  entity: {
+    name: 'ZPP_BATCH_F4',
+    element: 'matnr'
+  },
+  additionalBinding: [{
+    localElement: 'Batch',
+    element: 'Batch'
+  },{
+    localElement: 'grnno',
+    element: 'mat'
+  },{
+    localElement: 'Totqty',
+    element: 'Totqt',usage: #RESULT
+  }]
+}]
+     @UI: { lineItem: [{ position: 20, label: 'Material'}],
+  identification: [{ position: 20, label: 'Material' } ] }
+  @EndUserText.label: 'Material'     
+    Material;
+//    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZPP_BATCH_VH',element: 'Batch' } }]
+
+@UI: {
+  lineItem: [{ position: 30, label: 'Batch' }],
+  identification: [{ position: 30, label: 'Batch' }]
+}
+@EndUserText.label: 'Batch'
+Batch;
+    @UI: { lineItem: [{ position: 25, label: 'Material Desc'}],
+  identification: [{ position: 25, label: 'Material Desc' } ] }
+  @EndUserText.label: 'Material Desc'     
+    makts;
+ @Consumption.valueHelpDefinition: [
+  {
+    entity: { name: 'ZPP_APPS_PLANT', element: 'plant' },
+    additionalBinding: [
+      {
+        localElement: 'Plantdesc',
+        element: 'plantd',
+        usage: #RESULT
+      }
+    ]
+  }
+]
+  @UI: { lineItem: [{ position: 35, label: 'Plant'}],
+   identification: [{ position: 35, label: 'Plant'  } ] }
+    Plant;
+//    @UI: { lineItem: [{ position: 40, label: 'Plant Desc'}],
+//   identification: [{ position: 40, label: 'Plant Desc'  } ] }
+@UI.hidden: true
+    Plantdesc;
+//     @Consumption.valueHelpDefinition: [{ entity: { name: 'ZPP_BATCH_VH', element: 'MaterialDocument' } }]
+    @UI: { lineItem: [{ position: 45, label: 'Supplier Heat No'}],
+   identification: [{ position: 45, label: 'Supplier Heat No'  } ] }
+   @EndUserText.label: 'Supplier Heat No'
+    grnno;
+     @UI: { lineItem: [{ position: 60, label: 'Coil Weight'}],
+  identification: [{ position: 60, label: 'Coil Weight' } ] }
+  @EndUserText.label: 'Coil Weight'
+//    @UI.hidden: true
+    Totqty;
+    @UI.hidden: true
+    Uom;
+//     @UI: { lineItem: [{ position: 70, label: 'Unit Wt'}],
+//  identification: [{ position: 70, label: 'Unit Wt' } ] }
+//  @EndUserText.label: 'Unit Wt'
+    @UI.hidden: true
+    Unitwt;
+    
+    
+     @UI: { lineItem: [{ position: 100, label: 'Attachment'}],
+  identification: [{ position: 100, label: 'Attachment' } ] }
+  @EndUserText.label: 'Attachment'
+  Attachment;
+   @UI: { lineItem: [{ position: 100, label: 'Remark'}],
+  identification: [{ position: 100, label: 'Remark' } ] }
+  @EndUserText.label: 'Remark'
+  remark;
+  @UI: { lineItem: [{ position: 110, label: 'Check Status'}],
+  identification: [{ position: 110, label: 'Check Status' } ] }
+  @EndUserText.label: 'Check Status'
+  checkstatus;
+  @UI: { lineItem: [{ position: 120, label: 'Created by'}] }
+  @EndUserText.label: 'Created by'
+    Createdby;
+    @UI: { lineItem: [{ position: 90, label: 'Created On'}]}
+  @EndUserText.label: 'Created On'
+    Createdon;
+    /* Associations */
+    @UI.hidden: true
+    _item;
+    @UI.hidden: true
+    _item1;
+    
+}

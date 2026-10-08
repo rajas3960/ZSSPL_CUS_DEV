@@ -1,0 +1,54 @@
+@Metadata.layer: #CUSTOMER
+@UI.createHidden: true
+@UI.updateHidden: true
+@UI.deleteHidden: true
+annotate entity ZPP_APPS05_IPV6
+    with 
+{
+     @UI.facet: [ { id:              'Itemsrc',
+                       purpose:         #STANDARD,
+                       importance: #HIGH,
+                       isPartOfPreview: true,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Result',
+                       position:        10 } ,
+                     { id:              'Citem',
+                       purpose:         #STANDARD,
+                       importance: #HIGH,
+                       isPartOfPreview: true,
+                       type:            #LINEITEM_REFERENCE,
+                       label:           'Allocation Lengths',
+                       position:        20,
+                       targetElement:   '_citem'} ]
+@UI.hidden: true
+Uuid;
+@UI.hidden: true
+Srcid;
+@UI.hidden: true
+Vrno;
+@UI: { lineItem: [{ position: 10, label: 'Length'}],
+  identification: [{ position: 10, label: 'Length' } ] }
+Srclent;
+@UI: { lineItem: [{ position: 20, label: 'Pieces'}],
+  identification: [{ position: 20, label: 'Pieces' } ] }
+Srcpcs;
+@UI: { lineItem: [{ position: 30, label: 'Length Str.'}],
+  identification: [{ position: 30, label: 'Length Str.' } ] }
+Lengthstr;
+@UI.hidden: true
+Actlent;
+@UI: { lineItem: [{ position: 40, label: 'Rest'}],
+  identification: [{ position: 40, label: 'Rest' } ] }
+Wast;
+@UI.hidden: true
+Rtnlent;
+@UI.hidden: true
+Wastepr;
+@UI.hidden: true
+Trmwste;
+@UI.hidden: true
+Totlen;
+@UI.hidden: true
+_hdr;
+    
+}

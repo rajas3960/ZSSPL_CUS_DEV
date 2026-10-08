@@ -1,0 +1,6 @@
+@EndUserText.label: 'Production Order Goods Receipt App'
+define service ZPP_APP06_UI {
+  expose ZPP_APP06_PV1  as Mainpage;
+  expose ZPP_APP06_IPV1;
+  expose ZPP_APP06_IPV2;
+}

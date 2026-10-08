@@ -1,0 +1,195 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Update Sales Order',
+typeNamePlural: 'Update Sales Order',
+title: { type: #STANDARD, value: 'SalesDocument' },
+         description: { type: #STANDARD, value: 'TotalNetAmount' }  } }
+annotate entity ZSD_APP2_PRV with
+{
+  @UI.facet: [ { id:              'Header',
+                          purpose:         #STANDARD,
+                          type:            #IDENTIFICATION_REFERENCE,
+                          label:           'Sales Order Header',
+//                          type: #FIELDGROUP_REFERENCE,
+                          position:        10 
+                          },
+//                          { id: 'LC1', type: #FIELDGROUP_REFERENCE, label: 'LC Set 1', targetQualifier: 'LC1', position: 30 },
+                           { id:              'Items',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'Sales Order Item',
+                      position:        20,
+                      targetElement:   '_SDI'} ]
+  @UI: { lineItem: [{ position: 10, label: 'Sales Order' }],
+    identification: [{ position: 10, label: 'Sales Order' }]}
+  SalesDocument;
+  @UI: { lineItem: [{ position: 20, label: 'Sold To Party' }],
+  identification: [{ position: 20, label: 'Sold To Party' }]}
+  SoldToParty;
+  @UI: { lineItem: [{ position: 30, label: 'Sales Doc Date' }],
+  identification: [{ position: 30, label: 'Sales Doc Date' }]}
+  SalesDocumentDate;
+  @UI: { lineItem: [{ position: 40, label: 'Reference' }],
+  identification: [{ position: 40, label: 'Reference' }]}
+  PurchaseOrderByCustomer;
+  @UI: { lineItem: [{ position: 50, label: 'Total NetAmount' }],
+  identification: [{ position: 50, label: 'Total  NetAmount' }]}
+  TotalNetAmount;
+  @UI.hidden: true
+  TransactionCurrency;
+  @UI: { lineItem: [{ position: 60, label: 'Incoterms' }],
+  identification: [{ position: 60, label: 'Incoterms' }]}
+  IncotermsClassification;
+  @UI: { lineItem: [{ position: 70, label: 'FiscalYear' }],
+  identification: [{ position: 70, label: 'FiscalYear' }]}
+  FiscalYear;
+  @UI.hidden: true
+  FiscalPeriod;
+  @UI: { lineItem: [{ position: 80, label: 'LC Number 1' }],
+       identification: [{ position: 80, label: 'LC Number 1' }] }
+//   @UI.fieldGroup: [{qualifier: 'LC2',position: 10 }]
+//@Consumption.valueHelpDefinition: [{ entity:{ name: 'zlc_viewhelp',element: 'Lnum' },additionalBinding:[{ localElement: 'YY1_LCAMOUNT_1_SDH',element: 'Tot_Balance',usage: #RESULT },
+//                                                                                                { localElement: 'YY1_LCAMOUNT_1_SDHC',element: 'Lc_Curr',usage: #RESULT }] }]
+@Consumption.valueHelpDefinition: [{
+  entity: {
+    name: 'ZLC_APP_VHH',
+    element: 'Lnum'
+  },
+  additionalBinding: [
+//    { localElement: 'YY1_LCAMOUNT_1_SDH', element: 'Tot_Balance', usage: #RESULT },
+    { localElement: 'YY1_LCAMOUNT_1_SDHC', element: 'Lc_Curr', usage: #RESULT }
+  ]
+}]
+YY1_LCNUMBER_1_SDH;
+ 
+@UI: { lineItem: [{ position: 85, label: 'LC Amount 1' }],
+       identification: [{ position: 85, label: 'LC Amount 1' }] }
+//          @UI.fieldGroup: [{qualifier: 'LC2',position: 20 }]
+YY1_LCAMOUNT_1_SDH;
+ 
+@UI: { lineItem: [{ position: 90, label: 'Currency 1' }],
+       identification: [{ position: 90, label: 'Currency 1' }] }
+//       @UI.fieldGroup: [{qualifier: 'LC2',position: 20 }]
+YY1_LCAMOUNT_1_SDHC;
+ 
+@UI: { lineItem: [{ position: 100, label: 'LC Number 2' }],
+       identification: [{ position: 100, label: 'LC Number 2' }] }
+YY1_LCNUMBER_2_SDH;
+ 
+@UI: { lineItem: [{ position: 105, label: 'LC Amount 2' }],
+       identification: [{ position: 105, label: 'LC Amount 2' }] }
+YY1_LCAMOUNT_2_SDH;
+ 
+@UI: { lineItem: [{ position: 110, label: 'Currency 2' }],
+       identification: [{ position: 110, label: 'Currency 2' }] }
+YY1_LCAMOUNT_2_SDHC;
+ 
+@UI: { lineItem: [{ position: 120, label: 'LC Number 3' }],
+       identification: [{ position: 120, label: 'LC Number 3' }] }
+YY1_LCNUMBER_3_SDH;
+ 
+@UI: { lineItem: [{ position: 125, label: 'LC Amount 3' }],
+       identification: [{ position: 125, label: 'LC Amount 3' }] }
+YY1_LCAMOUNT_3_SDH;
+ 
+@UI: { lineItem: [{ position: 130, label: 'Currency 3' }],
+       identification: [{ position: 130, label: 'Currency 3' }] }
+YY1_LCAMOUNT_3_SDHC;
+ 
+@UI: { lineItem: [{ position: 140, label: 'LC Number 4' }],
+       identification: [{ position: 140, label: 'LC Number 4' }] }
+YY1_LCNUMBER_4_SDH;
+ 
+@UI: { lineItem: [{ position: 145, label: 'LC Amount 4' }],
+       identification: [{ position: 145, label: 'LC Amount 4' }] }
+YY1_LCAMOUNT_4_SDH;
+ 
+@UI: { lineItem: [{ position: 150, label: 'Currency 4' }],
+       identification: [{ position: 150, label: 'Currency 4' }] }
+YY1_LCAMOUNT_4_SDHC;
+ 
+@UI: { lineItem: [{ position: 160, label: 'LC Number 5' }],
+       identification: [{ position: 160, label: 'LC Number 5' }] }
+YY1_LCNUMBER_5_SDH;
+ 
+@UI: { lineItem: [{ position: 165, label: 'LC Amount 5' }],
+       identification: [{ position: 165, label: 'LC Amount 5' }] }
+YY1_LCAMOUNT_5_SDH;
+ 
+@UI: { lineItem: [{ position: 170, label: 'Currency 5' }],
+       identification: [{ position: 170, label: 'Currency 5' }] }
+YY1_LCAMOUNT_5_SDHC;
+ 
+@UI: { lineItem: [{ position: 180, label: 'LC Number 6' }],
+       identification: [{ position: 180, label: 'LC Number 6' }] }
+YY1_LCNUMBER_6_SDH;
+ 
+@UI: { lineItem: [{ position: 185, label: 'LC Amount 6' }],
+       identification: [{ position: 185, label: 'LC Amount 6' }] }
+YY1_LCAMOUNT_6_SDH;
+ 
+@UI: { lineItem: [{ position: 190, label: 'Currency 6' }],
+       identification: [{ position: 190, label: 'Currency 6' }] }
+YY1_LCAMOUNT_6_SDHC;
+ 
+@UI: { lineItem: [{ position: 200, label: 'LC Number 7' }],
+       identification: [{ position: 200, label: 'LC Number 7' }] }
+YY1_LCNUMBER_7_SDH;
+ 
+@UI: { lineItem: [{ position: 205, label: 'LC Amount 7' }],
+       identification: [{ position: 205, label: 'LC Amount 7' }] }
+YY1_LCAMOUNT_7_SDH;
+ 
+@UI: { lineItem: [{ position: 210, label: 'Currency 7' }],
+       identification: [{ position: 210, label: 'Currency 7' }] }
+YY1_LCAMOUNT_7_SDHC;
+ 
+@UI: { lineItem: [{ position: 220, label: 'LC Number 8' }],
+       identification: [{ position: 220, label: 'LC Number 8' }] }
+YY1_LCNUMBER_8_SDH;
+ 
+@UI: { lineItem: [{ position: 225, label: 'LC Amount 8' }],
+       identification: [{ position: 225, label: 'LC Amount 8' }] }
+YY1_LCAMOUNT_8_SDH;
+ 
+@UI: { lineItem: [{ position: 230, label: 'Currency 8' }],
+       identification: [{ position: 230, label: 'Currency 8' }] }
+YY1_LCAMOUNT_8_SDHC;
+ 
+@UI: { lineItem: [{ position: 240, label: 'LC Number 9' }],
+       identification: [{ position: 240, label: 'LC Number 9' }] }
+YY1_LCNUMBER_9_SDH;
+ 
+@UI: { lineItem: [{ position: 245, label: 'LC Amount 9' }],
+       identification: [{ position: 245, label: 'LC Amount 9' }] }
+YY1_LCAMOUNT_9_SDH;
+ 
+@UI: { lineItem: [{ position: 250, label: 'Currency 9' }],
+       identification: [{ position: 250, label: 'Currency 9' }] }
+YY1_LCAMOUNT_9_SDHC;
+ 
+@UI: { lineItem: [{ position: 260, label: 'LC Number 10' }],
+       identification: [{ position: 260, label: 'LC Number 10' }] }
+YY1_LCNUMBER_10_SDH;
+ 
+@UI: { lineItem: [{ position: 265, label: 'LC Amount 10' }],
+       identification: [{ position: 265, label: 'LC Amount 10' }] }
+YY1_LCAMOUNT_10_SDH;
+ 
+@UI: { lineItem: [{ position: 270, label: 'Currency 10' }],
+       identification: [{ position: 270, label: 'Currency 10' }] }
+YY1_LCAMOUNT_10_SDHC;
+ 
+  @UI.hidden: true
+  CreatedByUser;
+  @UI.hidden: true
+  CreationDate;
+  @UI.hidden: true
+  LastChangedByUser;
+  @UI.hidden: true
+  LastChangeDateTime;
+  /* Associations */
+  @UI.hidden: true
+  _SDI;
+ 
+}

@@ -1,0 +1,241 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { 
+    typeName: 'BOM Mark and Section',
+    typeNamePlural: 'BOM Mark and Section',
+    title: { type: #STANDARD, label: 'BOM Mark and Section', value: 'bom' } } }
+
+annotate entity ZPP_RP01_pv
+    with 
+{
+//  @UI.facet: [
+//    { id: 'ZSalesOrder',
+//      purpose: #STANDARD,
+//      type: #IDENTIFICATION_REFERENCE,
+//      label: 'BOM Mark and Section',
+//      position: 10
+//    } ]
+//@UI.hidden: true
+//  @UI.lineItem: [{ position: 10, label: 'Bill Of Material Category'}]
+//  @UI.identification: [{ position: 10, label: 'Bill Of Material Category' }]
+//    BillOfMaterialCategory;
+//  @UI.lineItem: [{ position: 20, label: 'Bill Of Material'}]
+//  @UI.identification: [{ position: 20, label: 'Bill Of Material' }]
+//   bom;
+//    @UI.hidden: true
+//    BillOfMaterialItemNodeNumber;
+//    @UI.hidden: true
+//    BOMItemInternalChangeCount;
+//    @UI.hidden: true
+//    BillOfMaterialVariant;
+//      @UI.lineItem: [{ position: 30, label: 'Material'}]
+//  @UI.identification: [{ position: 30, label: 'Material' }]
+//    Material;
+//     @UI.lineItem: [{ position: 40, label: 'Plant'}]
+//  @UI.identification: [{ position: 40, label: 'Plant' }]
+//    Plant;
+//    @UI.hidden: true
+//    BillOfMaterialVariantUsage;
+//    @UI.hidden: true
+//    BillOfMaterialItemUUID;
+//    @UI.hidden: true
+//    InheritedNodeNumberForBOMItem;
+//    @UI.hidden: true
+//    InheritedNodeNumberVersionBOM;
+//         @UI.lineItem: [{ position: 50, label: 'Validity Start Date'}]
+//  @UI.identification: [{ position: 50, label: 'Validity Start Date' }]
+//    ValidityStartDate;
+//          @UI.lineItem: [{ position: 60, label: 'Validity End Date'}]
+//  @UI.identification: [{ position: 60, label: 'Validity End Date' }]
+//    ValidityEndDate;
+//    @UI.hidden: true
+//    EngineeringChangeDocument;
+//    @UI.hidden: true
+//    ChgToEngineeringChgDocument;
+//    @UI.hidden: true
+//    BOMItemRecordCreationDate;
+//    @UI.hidden: true
+//    BOMItemCreatedByUser;
+//    @UI.hidden: true
+//    BOMItemLastChangeDate;
+//    @UI.hidden: true
+//    BOMItemLastChangedByUser;
+//     @UI.lineItem: [{ position: 70, label: 'Bill Of Material Component'}]
+//  @UI.identification: [{ position: 70, label: 'Bill Of Material Component' }]
+//    BillOfMaterialComponent;
+//    @UI.hidden: true
+//    BillOfMaterialItemCategory;
+//
+//    @UI.hidden: true
+//    BillOfMaterialItemUnit;
+//    @UI.hidden: true
+//    BillOfMaterialItemQuantity;
+//    @UI.hidden: true
+//    IsSubItem;
+//    @UI.hidden: true
+//    BOMItemSorter;
+//    @UI.hidden: true
+//    FixedQuantity;
+//    @UI.hidden: true
+//    PurchasingGroup;
+//    @UI.hidden: true
+//    Currency;
+//    @UI.hidden: true
+//    MaterialComponentPrice;
+//    @UI.hidden: true
+//    IdentifierBOMItem;
+//    @UI.hidden: true
+//    MaterialPriceUnitQty;
+//    @UI.hidden: true
+//    ComponentScrapInPercent;
+//    @UI.hidden: true
+//    OperationScrapInPercent;
+//    @UI.hidden: true
+//    IsNetScrap;
+//    @UI.hidden: true
+//    NumberOfVariableSizeItem;
+//    @UI.hidden: true
+//    QuantityVariableSizeItem;
+//    @UI.hidden: true
+//    FormulaKey;
+//    @UI.hidden: true
+//    BOMItemText1;
+//    @UI.hidden: true
+//    BOMItemText2;
+//    @UI.hidden: true
+//    MaterialGroup;
+//    @UI.hidden: true
+//    DocumentType;
+//    @UI.hidden: true
+//    DocNumber;
+//    @UI.hidden: true
+//    DocumentVersion;
+//    @UI.hidden: true
+//    DocumentPart;
+//    @UI.hidden: true
+//    ClassNumber;
+//    @UI.hidden: true
+//    ClassType;
+//    @UI.hidden: true
+//    ResultingItemCategory;
+//    @UI.hidden: true
+//    DependencyObjectNumber;
+//    @UI.hidden: true
+//    ObjectType;
+//    @UI.hidden: true
+//    IsClassificationRelevant;
+//    @UI.hidden: true
+//    IsBulkMaterial;
+//    @UI.hidden: true
+//    BOMItemIsSparePart;
+//    @UI.hidden: true
+//    BOMItemIsSalesRelevant;
+//    @UI.hidden: true
+//    IsProductionRelevant;
+//    @UI.hidden: true
+//    BOMItemIsPlantMaintRelevant;
+//    @UI.hidden: true
+//    BOMItemIsCostingRelevant;
+//    @UI.hidden: true
+//    IsEngineeringRelevant;
+//    @UI.hidden: true
+//    SpecialProcurementType;
+//    @UI.hidden: true
+//    IsBOMRecursiveAllowed;
+//    @UI.hidden: true
+//    OperationLeadTimeOffset;
+//    @UI.hidden: true
+//    OpsLeadTimeOffsetUnit;
+//    @UI.hidden: true
+//    IsMaterialProvision;
+//    @UI.hidden: true
+//    BOMIsRecursive;
+//    @UI.hidden: true
+//    DocumentIsCreatedByCAD;
+//    @UI.hidden: true
+//    DistrKeyCompConsumption;
+//    @UI.hidden: true
+//    DeliveryDurationInDays;
+//    @UI.hidden: true
+//    Creditor;
+//    @UI.hidden: true
+//    CostElement;
+//    @UI.hidden: true
+//    Size1;
+//    @UI.hidden: true
+//    Size2;
+//    @UI.hidden: true
+//    Size3;
+//    @UI.hidden: true
+//    UnitOfMeasureForSize1To3;
+//    @UI.hidden: true
+//    GoodsReceiptDuration;
+//    @UI.hidden: true
+//    PurchasingOrganization;
+//    @UI.hidden: true
+//    RequiredComponent;
+//    @UI.hidden: true
+//    MultipleSelectionAllowed;
+//    @UI.hidden: true
+//    ProdOrderIssueLocation;
+//    @UI.hidden: true
+//    MaterialIsCoProduct;
+//    @UI.hidden: true
+//    ExplosionType;
+//    @UI.hidden: true
+//    FollowUpGroup;
+//    @UI.hidden: true
+//    DiscontinuationGroup;
+//    @UI.hidden: true
+//    ReinsurContrOrgUnit;
+//    @UI.hidden: true
+//    IsConfigurableBOM;
+//    @UI.hidden: true
+//    ReferencePoint;
+//    @UI.hidden: true
+//    LeadTimeOffset;
+//    @UI.hidden: true
+//    IsSoftwareComponent;
+//    @UI.hidden: true
+//    ProductionSupplyArea;
+//    @UI.hidden: true
+//    IsDeleted;
+//    @UI.hidden: true
+//    IsALE;
+//    @UI.hidden: true
+//    AlternativeItemGroup;
+//    @UI.hidden: true
+//    AlternativeItemPriority;
+//    @UI.hidden: true
+//    AlternativeItemStrategy;
+//    @UI.hidden: true
+//    UsageProbabilityPercent;
+//    @UI.hidden: true
+//    CAT;
+//    @UI.hidden: true
+//    IsConfiguredMaterial;
+//    @UI.hidden: true
+//    MaterialBOMObjectID;
+//    @UI.hidden: true
+//    CreatedByUser;
+//    @UI.hidden: true
+//    LastChangedByUser;
+//    @UI.hidden: true
+//    /* Associations */
+//    _BillOfMaterialUsage;
+//    @UI.hidden: true
+//    _BOMItemCategory;
+//    @UI.hidden: true
+//    _BOMItemCategoryText;
+//    @UI.hidden: true
+//    _Currency;
+//    @UI.hidden: true
+//    _DocumentText;
+//    @UI.hidden: true
+//    _Product;
+//    @UI.hidden: true
+//    _ProductText;
+//    @UI.hidden: true
+//    _UnitOfMeasure;
+//    
+}

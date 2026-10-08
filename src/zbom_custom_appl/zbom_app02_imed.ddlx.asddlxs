@@ -1,0 +1,127 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'CUSTOM BOM Excel App',
+typeNamePlural: 'Custom BOM Application',
+title: { type: #STANDARD, value: 'Suid' }
+         } }
+annotate entity ZBOM_APP02_IPV
+    with 
+{
+    @UI.facet: [ { 
+                     id:              'Item',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Items',
+                   position:        20 } ]
+
+@UI.hidden: true
+suid;
+@UI.lineItem: [{ position: 10,label: 'Material Number ' }]
+   @UI.identification: [{ position: 10,label: 'Material Number ' }]
+   materialNumber;
+   @UI.lineItem: [{ position: 20,label: 'Plant ' }]
+   @UI.identification: [{ position: 20,label: 'Plant ' }]
+   plant;
+   @UI.lineItem: [{ position: 50,label: 'bom usage' }]
+   @UI.identification: [{ position: 50,label: 'bom usage ' }]
+   bomusage;  
+   @UI.lineItem: [{ position: 80,label: 'Alternative bom ' }]
+   @UI.identification: [{ position: 80,label: 'Alternative bom ' }]
+   alternativebom;
+   @UI.lineItem: [{ position: 100,label: 'Item id ' }]
+   @UI.identification: [{ position: 100,label: 'Item id' }]
+   itemid;  
+   @UI.lineItem: [{ position: 120,label: 'Internal item identification' }]
+   @UI.identification: [{ position: 120,label: 'Internal item identification' }]
+   Internalitemidentification;
+   @UI.lineItem: [{ position: 140,label: 'valid from date' }]
+   @UI.identification: [{ position: 140,label: 'valid from date' }]
+   validfromdate;
+   @UI.lineItem: [{ position: 150,label: 'bom status' }]
+   @UI.identification: [{ position: 150,label: 'bom status' }]
+   bomstatus;
+   @UI.lineItem: [{ position: 160,label: 'change number' }]
+   @UI.identification: [{ position: 160,label: 'change number' }]
+   changenumber;
+   @UI.lineItem: [{ position: 170,label: 'Base quantity' }]
+   @UI.identification: [{ position: 170,label: 'Base quantity' }]
+   basequantity;
+   @UI.lineItem: [{ position: 180,label: 'Base unit of measure for bom' }]
+   @UI.identification: [{ position: 180,label: 'Base unit of measure for bom' }]
+   baseunitofmeasureforbom;
+   @UI.lineItem: [{ position: 190,label: 'Bom description' }]
+   @UI.identification: [{ position: 190,label: 'Bom description' }]
+   bomdescription;
+   @UI.lineItem: [{ position: 200,label: 'Bom item number' }]
+   @UI.identification: [{ position: 200,label: 'Bom item number' }]
+   bomitemnumber;
+   @UI.lineItem: [{ position: 210,label: 'Item category' }]
+   @UI.identification: [{ position: 210,label: 'Item category' }]
+   itemcategory;
+   @UI.lineItem: [{ position: 220,label: 'Bom component' }]
+   @UI.identification: [{ position: 220,label: 'Bom component' }]
+   bomcomponent;
+   @UI.lineItem: [{ position: 230,label: 'Component quantity' }]
+   @UI.identification: [{ position: 230,label: 'Component quantity' }]
+   componentquantity;
+   @UI.lineItem: [{ position: 240,label: 'component unit of measure' }]
+   @UI.identification: [{ position: 240,label: 'component unit of measure' }]
+   componentunitofmeasure;
+   @UI.lineItem: [{ position: 250,label: 'indicator relevancy to costing' }]
+   @UI.identification: [{ position: 250,label: 'indicator relevancy to costing' }]
+   indicatorrelevancytocosting;
+   @UI.lineItem: [{ position: 260,label: 'production relevant' }]
+   @UI.identification: [{ position: 260,label: 'production relevant' }]
+   productionrelevant;
+   @UI.lineItem: [{ position: 270,label: 'indicator item relevant to sales' }]
+   @UI.identification: [{ position: 270,label: 'indicator item relevant to sales' }]
+   indicatoritemrelevanttosales;
+   @UI.lineItem: [{ position: 280,label: 'item relevant to engineering' }]
+   @UI.identification: [{ position: 280,label: 'item relevant to engineering' }]
+   itemrelevanttoengineering;
+   @UI.lineItem: [{ position: 290,label: 'operation scrap' }]
+   @UI.identification: [{ position: 290,label: 'operation scrap' }]
+   operationscrap;
+   @UI.lineItem: [{ position: 300,label: 'component scrap inpercent' }]
+   @UI.identification: [{ position: 300,label: 'component scrap inpercent' }]
+   componentscrapinpercent;
+   @UI.lineItem: [{ position: 310,label: 'indicator net scrap' }]
+   @UI.identification: [{ position: 310,label: 'indicator net scrap' }]
+   indicatornetscrap;
+   @UI.lineItem: [{ position: 320,label: 'alternative item group' }]
+   @UI.identification: [{ position: 320,label: 'alternative item group' }]
+   alternativeitemgroup;
+   @UI.lineItem: [{ position: 330,label: 'alternative item ranking order' }]
+   @UI.identification: [{ position: 330,label: 'alternative item ranking order' }]
+   alternativeitemrankingorder;
+   @UI.lineItem: [{ position: 340,label: 'alternative item strategy' }]
+   @UI.identification: [{ position: 340,label: 'alternative items trategy' }]
+   alternativeitemstrategy;
+   @UI.lineItem: [{ position: 350,label: 'alternative item usage probabilit' }]
+   @UI.identification: [{ position: 350,label: 'alternative item usage probabilit' }]
+   alternativeitemusageprobabilit;
+//    @UI.lineItem: [{ position: 360,label: 'storageLocation' }]
+//   @UI.identification: [{ position: 360,label: 'storageLocation' }]
+//   storageLocation;
+//   @UI.lineItem: [{ position: 200,label: 'wt pcinkg' }]
+//   @UI.identification: [{ position: 200,label: 'wt pcinkg' }]
+//   itemrelevanttosales;
+//   @UI.lineItem: [{ position: 200,label: 'wt pcinkg' }]
+//   @UI.identification: [{ position: 200,label: 'wt pcinkg' }]
+//   wtpcinkg;
+//   @UI.lineItem: [{ position: 210,label: 'product width in mm' }]
+//   @UI.identification: [{ position: 210,label: 'product width in mm' }]
+//   productwidthinmm;
+//   @UI.lineItem: [{ position: 220,label: 'total weight in kg' }]
+//   @UI.identification: [{ position: 220,label: 'total weight in kg' }]
+//   totalweightinkg;
+//   @UI.lineItem: [{ position: 230,label: 'unit weight in kgm' }]
+//   @UI.identification: [{ position: 230,label: 'unit weight in kgm' }]
+//   unitweightinkgm;
+//   @UI.lineItem: [{ position: 240,label: 'product length in mm' }]
+//   @UI.identification: [{ position: 240,label: 'product length in mm' }]
+//   productlengthinmm;
+@UI.hidden: true
+/* Associations */
+_HDR;
+}

@@ -1,0 +1,51 @@
+managed implementation in class zbp_pp_app09_rv unique;
+strict ( 2 );
+with draft;
+
+
+define behavior for ZPP_APP09_RV alias _hdr
+draft table zpp_app09_dt1
+with unmanaged save
+lock master
+total etag Lastchangedon
+authorization master ( instance )
+etag master Lastchangedon
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) Werks, Jobshtnum;
+
+  draft action Resume;
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action  Prepare;
+
+  action (features : instance ) goodissue result [1] $self;
+side effects { action goodissue affects entity _item2 ;}
+
+
+
+
+  association _item2 { create; with draft; }
+
+}
+
+define behavior for ZPP_APP09_IRV2 alias _item2
+draft table zpp_app09_idt2
+with unmanaged save
+
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Jobshtnum, Sno ,Werks;
+  determination gtidata1 on save { field Comqty ;}
+  action (features : instance ) goodissue result [1] $self;
+  association _hdr{with draft;}
+    mapping for zpp_app09_itb2 corresponding;
+}

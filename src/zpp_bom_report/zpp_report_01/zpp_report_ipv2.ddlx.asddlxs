@@ -1,0 +1,59 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Material Weight Details',
+typeNamePlural: 'Material Weight Details'}}
+annotate entity ZPP_REP_IPV02
+    with 
+{
+@UI.facet: [ { id:              'ITEM',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Material Weight Details',
+                   position:        10 } ]
+     @UI: { lineItem: [{ position: 10, label: 'Material'}],
+  identification: [{ position: 10, label: 'Material' } ] }
+  @EndUserText.label: 'Material'                
+    Material;
+     @UI: { lineItem: [{ position: 20, label: 'Structure'}],
+  identification: [{ position: 20, label: 'Structure' } ] }
+  @EndUserText.label: 'Structure' 
+    Structure;
+     @UI: { lineItem: [{ position: 30, label: 'Tower Type'}],
+  identification: [{ position: 30, label: 'Tower Type' } ] }
+  @EndUserText.label: 'Tower Type' 
+    Tower_Type;
+     @UI: { lineItem: [{ position: 40, label: 'HT Material'}],
+  identification: [{ position: 40, label: 'HT Material' } ] }
+  @EndUserText.label: 'HT Material' 
+    BOM_HT;
+     @UI: { lineItem: [{ position: 50, label: 'MS Material'}],
+  identification: [{ position: 50, label: 'MS Material' } ] }
+  @EndUserText.label: 'MS Material' 
+    BOM_MS;
+     @UI: { lineItem: [{ position: 60, label: 'BN Material'}],
+  identification: [{ position: 60, label: 'BN Material' } ] }
+  @EndUserText.label: 'BN Material' 
+    BOM_BN;
+     @UI: { lineItem: [{ position: 70, label: 'HT Weight'}],
+  identification: [{ position: 70, label: 'HT Weight' } ] }
+  @EndUserText.label: 'HT Weight' 
+    HT_Weight;
+     @UI: { lineItem: [{ position: 80, label: 'MS Weight'}],
+  identification: [{ position: 80, label: 'MS Weight' } ] }
+  @EndUserText.label: 'MS Weight' 
+    MS_Weight;
+     @UI: { lineItem: [{ position: 90, label: 'BN Weight'}],
+  identification: [{ position: 90, label: 'BN Weight' } ] }
+  @EndUserText.label: 'BN Weight' 
+    BN_Weight;
+     @UI: { lineItem: [{ position: 100, label: 'Mark No'}],
+  identification: [{ position: 100, label: 'Mark No' } ] }
+  @EndUserText.label: 'Mark No' 
+    Mark_No;
+    /* Associations */
+    @UI.hidden: true
+    item;
+    @UI.hidden: true
+    _hdr;
+    
+}

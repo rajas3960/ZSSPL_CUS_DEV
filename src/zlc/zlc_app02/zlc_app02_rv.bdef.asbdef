@@ -1,0 +1,75 @@
+managed implementation in class zbp_lc_app02_rv unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZLC_APP02_RV alias Header
+//persistent table zlc_app02_tb1
+with unmanaged save
+draft table zlc_app02_dt1
+lock master
+total etag Lastchangedon
+authorization master ( instance )
+etag master Lastchangedon
+{
+  create;
+  update;
+  delete;
+  field ( readonly : update) Lnum,Stp,StpName;
+  field ( readonly )TlcAmt, TlcUtilz, TotBalance, Valto,  Createdby,Torlce, Createdon,Lastchangedby,Lastchangedon,Planlcamt,Aclcamt,Totavamt,Totboeamt;
+  association _Line { create; with draft; }
+  association _Lineboi{ create(features : instance);  with draft;  }
+
+  determination fill_hdata on save { create; field StpName; }
+
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare; //{ validation ( always )  ; }
+
+  mapping for zlc_app02_tb1 corresponding;
+}
+
+define behavior for ZLC_APP02_IV1 alias Line
+//persistent table zlc_app02_tb2
+with unmanaged save
+draft table zlc_app02_dt2
+lock dependent by _Hdr
+authorization dependent by _Hdr
+//etag master <field_name>
+
+{
+  update;
+  delete;
+  field ( readonly ) Lnum,Valfrm, Lcline,Createdby,Createdon,Tlcamt,Tboeamt,Amtdt;
+  association _Hdr { with draft; }
+
+  determination fill_ldata on save { create;  field Lcline; }
+  determination updt_ldata on save {field Valto ,LcAmt;}
+
+  mapping for zlc_app02_tb2 corresponding;
+}
+define behavior for ZLC_APP02_IV2 alias _Lineboi
+//persistent table zlc_app02_tb2
+with unmanaged save
+draft table zlc_app02_dt3
+lock dependent by _Hdr
+authorization dependent by _Hdr
+//etag master Createdon
+{
+//draft determine action Prepare;
+  update(features : instance);
+  delete;
+  field (readonly : update) Boeno;
+  field ( readonly ) Lnum, Lcline,Createdby,Createdon,Tboeamt;
+  association _Hdr { with draft; }
+//  determine action prepare;
+validation V1_boeamt on save { create; field Tboeamt ;}
+ determination fill_ldata1 on save  { create;  field Lcline; }
+ determination gt_updt on save{ field Dudt ;}
+ determination boeamt on modify { field Boeamt,Fright,Instdebt; create; }
+//  determination updt_ldata on save {field Valto ,LcAmt;}
+side effects { field Boeamt affects field Tboeamt;}
+
+  mapping for zlc_app02_tb3 corresponding;
+}

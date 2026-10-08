@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "MSME_REPORTS",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "MSME_REPORTS"
+  },
+  "ui5AppDetails": {
+    "appId": "msmereport"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_87E38271BBB888DF040961C0A8B2E514FCDF8E81_TM",
+    "semanticObject": "Z_MSME_REPORTS",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_87E38271BBB888DF040961C0A8B2E514FCDF8E81_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "MSME_REPORTS"
+      }
+    }
+  ]
+}

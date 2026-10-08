@@ -1,0 +1,58 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Mass Trasfer Posting 309',
+typeNamePlural: 'Mass Trasfer Posting 309'
+         } }
+annotate entity ZMM_UAPPS01_PV
+    with 
+{
+  @UI.facet: [ { id:              'Header',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'Material Document Header',
+                        position:        10 } ,
+                      { id:              'Items',
+                        purpose:         #STANDARD,
+                        type:            #LINEITEM_REFERENCE,
+                        label:           'Document Item',
+                        position:        20,
+                        targetElement:   '_Item'}]
+  @UI.hidden: true
+  Uuid;
+  @UI: { lineItem: [{ position: 10, label: 'Document Date'}],
+  identification: [{ position: 10, label: 'Document Date' },
+  { type: #FOR_ACTION, dataAction: 'PostGI', label: 'Post GI' } ] }
+  Documentdate;
+  @UI: { lineItem: [{ position: 20, label: 'Posting Date'}],
+  identification: [{ position: 20, label: 'Posting Date' } ] }
+  Postingdate;
+  @UI: { lineItem: [{ position: 5, label: 'Material Document'}],
+    identification: [{ position: 5, label: 'Material Document' } ] }
+  Docno;
+    @UI: { lineItem: [{ position: 30, label: 'Attachment'}],
+    identification: [{ position: 30, label: 'Attachment' } ] }
+  Attachment;
+  @UI.hidden: true
+  Status;
+  @UI.hidden: true
+  Itmcnt;
+  @UI.hidden: true
+  Mark;
+  @UI: { lineItem: [{ position: 60, label: 'Created By'}],
+  identification: [{ position: 60, label: 'Created By' } ] }
+  Createdby;
+  @UI: { lineItem: [{ position: 70, label: 'Created On'}],
+  identification: [{ position: 70, label: 'Created On' } ] }
+  Createdat;
+  @UI: { lineItem: [{ position: 80, label: 'Last Changed By'}],
+  identification: [{ position: 80, label: 'Last Changed By' } ] }
+  Lastchangedby;
+  @UI: { lineItem: [{ position: 90, label: 'Last Changed Date'}],
+  identification: [{ position: 90, label: 'Last Changed Date' } ] }
+  //  @UI.hidden: true
+  Lastchangedat;
+  /* Associations */
+  @UI.hidden: true
+  _Item;
+    
+}

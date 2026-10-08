@@ -1,0 +1,27 @@
+managed implementation in class zbp_pp_appr_09_rv unique;
+strict ( 2 );
+
+define behavior for ZPP_APPR_09_RV alias hdr
+with unmanaged save
+lock master
+authorization master ( instance )
+//persistent table <???>
+//lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  //  create ( authorization : global );
+  //  update;
+  //  delete;
+  field ( readonly ) Product;
+  action ( features : instance ) active;
+  action ( features : instance ) inactive;
+  action ( features : instance ) price parameter ZPP_APPR_09_RT;
+
+  side effects
+  { action active affects field Mark, $self;
+    action inactive affects field Mark, $self;
+    action price affects field Price, $self;
+  }
+
+}

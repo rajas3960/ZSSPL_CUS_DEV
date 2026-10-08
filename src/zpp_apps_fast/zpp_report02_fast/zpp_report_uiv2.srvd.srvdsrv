@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service defination of Balance To Plan Report'
+define service ZPP_REPORT_UIV2 {
+  expose ZPP_REPORT_PV1;
+}

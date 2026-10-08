@@ -1,0 +1,76 @@
+@Metadata.layer: #PARTNER
+@UI.headerInfo: {
+  typeName: 'Released Document Report',
+  typeNamePlural: 'Released Document Report',
+  title: {
+    type: #STANDARD,
+    value: 'Srno'
+  }
+}
+
+@UI.presentationVariant: [{
+  sortOrder: [{
+    by: 'Srno',
+    direction: #ASC
+  }]
+}]
+annotate entity zpp_app03_ipv02 with
+{
+  @UI.facet: [ { id:              'Item',
+               purpose:         #STANDARD,
+               type:            #IDENTIFICATION_REFERENCE,
+               label:           'Release Document Item',
+               position:        10 } ]
+  @UI.hidden: true
+  Uuid;
+
+  @UI: { lineItem: [{ position: 10, label: 'Sr No'}],
+  identification: [{ position: 10, label: 'Sr No' } ] }
+  @EndUserText.label: 'Sr No'
+  Srno;
+  @UI: { lineItem: [{ position: 20, label: 'Project'}],
+  identification: [{ position: 20, label: 'Project' } ] }
+  @EndUserText.label: 'Project'
+  Proj;
+  @UI: { lineItem: [{ position: 30, label: 'Tower Type'}],
+  identification: [{ position: 30, label: 'Tower Type' } ] }
+  @EndUserText.label: 'Tower Type'
+  Towertype;
+  @UI: { lineItem: [{ position: 40, label: 'Tower Type Desc'}],
+  identification: [{ position: 40, label: 'Tower Type Desc' } ] }
+  @EndUserText.label: 'Tower Type Desc'
+  Ttdesc;
+  @UI: { lineItem: [{ position: 50, label: 'Tower Sub Type'}],
+  identification: [{ position: 50, label: 'Tower Sub Type' } ] }
+  @EndUserText.label: 'Tower Sub Type'
+  Ttsub;
+  @UI: { lineItem: [{ position: 60, label: 'Tower Sub Type Desc'}],
+  identification: [{ position: 60, label: 'Tower Sub Type Desc' } ] }
+  @EndUserText.label: 'Tower Sub Type Desc'
+  Ttsdesc;
+   @UI: { lineItem: [{ position: 70, label: 'Structure'}],
+  identification: [{ position: 70, label: 'Structure' } ] }
+  @EndUserText.label: 'Structure'
+  str;
+   @UI: { lineItem: [{ position: 80, label: 'Structure Desc'}],
+  identification: [{ position: 80, label: 'Structure Desc' } ] }
+  @EndUserText.label: 'Structure Desc'
+  strdesc;
+   @UI: { lineItem: [{ position: 90, label: 'Bom Number'}],
+  identification: [{ position: 90, label: 'Bom Number' } ] }
+  @EndUserText.label: 'Bom Number'
+  Bom;
+  @UI: { lineItem: [{ position: 95, label: 'Mark No'}],
+  identification: [{ position: 95, label: 'Mark No' } ] }
+  @EndUserText.label: 'Mark No'
+  mark;
+    @UI: { lineItem: [{ position: 100, label: 'Combination'}],
+  identification: [{ position: 100, label: 'Combination' } ] }
+  @EndUserText.label: 'Combination'
+   Combi;
+   @ui.hidden: true
+   mk;
+  @UI.hidden: true
+  _hdr;
+
+}

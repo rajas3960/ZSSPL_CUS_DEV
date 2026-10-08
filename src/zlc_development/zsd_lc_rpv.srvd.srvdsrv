@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Defination - LC Development'
+define service ZSD_LC_RPV {
+  expose ZSD_LC_RCEV    as mainpage;
+  expose ZSD_CUST_SDVTH;
+}

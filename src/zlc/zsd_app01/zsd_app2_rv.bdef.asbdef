@@ -1,0 +1,38 @@
+managed implementation in class zbp_sd_app2_rv unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZSD_APP2_RV alias _Hdr
+with unmanaged save
+//persistent table <???>
+draft table zsd_app2_dt
+lock master total etag LastChangeDateTime
+authorization master ( instance )
+etag master LastChangeDateTime
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) SalesDocument,SalesDocumentDate,FiscalYear,FiscalPeriod,CreationDate,CreatedByUser,LastChangeDateTime,LastChangedByUser,IncotermsClassification,PurchaseOrderByCustomer,SoldToParty,TotalNetAmount,TransactionCurrency;
+  determination GetData1 on save { field yy1_lcnumber_1_sdh,yy1_lcnumber_2_sdh,yy1_lcnumber_3_sdh,yy1_lcnumber_4_sdh,yy1_lcnumber_5_sdh,yy1_lcnumber_6_sdh,yy1_lcnumber_7_sdh,
+  yy1_lcnumber_8_sdh,yy1_lcnumber_9_sdh,yy1_lcnumber_10_sdh,yy1_lcamount_1_sdh, yy1_lcamount_1_sdhc,yy1_lcamount_2_sdh, yy1_lcamount_2_sdhc,yy1_lcamount_3_sdh, yy1_lcamount_3_sdhc,
+  yy1_lcamount_4_sdh, yy1_lcamount_4_sdhc,yy1_lcamount_5_sdh, yy1_lcamount_5_sdhc,yy1_lcamount_6_sdh, yy1_lcamount_6_sdhc,yy1_lcamount_7_sdh, yy1_lcamount_7_sdhc,yy1_lcamount_8_sdh, yy1_lcamount_8_sdhc,
+  yy1_lcamount_9_sdh, yy1_lcamount_9_sdhc,yy1_lcamount_10_sdh, yy1_lcamount_10_sdhc; }
+    determination GetSales on save { field yy1_lcnumber_1_sdh,yy1_lcnumber_2_sdh,yy1_lcnumber_3_sdh,yy1_lcnumber_4_sdh,yy1_lcnumber_5_sdh,yy1_lcnumber_6_sdh,yy1_lcnumber_7_sdh,
+  yy1_lcnumber_8_sdh,yy1_lcnumber_9_sdh,yy1_lcnumber_10_sdh,yy1_lcamount_1_sdh, yy1_lcamount_1_sdhc,yy1_lcamount_2_sdh, yy1_lcamount_2_sdhc,yy1_lcamount_3_sdh, yy1_lcamount_3_sdhc,
+  yy1_lcamount_4_sdh, yy1_lcamount_4_sdhc,yy1_lcamount_5_sdh, yy1_lcamount_5_sdhc,yy1_lcamount_6_sdh, yy1_lcamount_6_sdhc,yy1_lcamount_7_sdh, yy1_lcamount_7_sdhc,yy1_lcamount_8_sdh, yy1_lcamount_8_sdhc,
+  yy1_lcamount_9_sdh, yy1_lcamount_9_sdhc,yy1_lcamount_10_sdh, yy1_lcamount_10_sdhc; }
+//  determination Getsales on save { field
+   action(features : instance) Updsal result [1] $self;
+   determination lc_1 on modify{field yy1_lcamount_1_sdh,yy1_lcamount_2_sdh,yy1_lcamount_3_sdh,yy1_lcamount_4_sdh
+   ,yy1_lcamount_5_sdh,yy1_lcamount_6_sdh,yy1_lcamount_7_sdh,yy1_lcamount_8_sdh,yy1_lcamount_9_sdh,yy1_lcamount_10_sdh;}
+   draft action (features : instance) Edit ;
+  draft action Resume;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare { validation LC1 ; }
+  validation LC1 on save { create; update; field yy1_lcamount_1_sdh ;}
+
+
+mapping for zsd_app2_tb corresponding;
+}

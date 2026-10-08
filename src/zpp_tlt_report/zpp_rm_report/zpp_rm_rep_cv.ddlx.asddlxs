@@ -1,0 +1,53 @@
+@Metadata.layer: #PARTNER
+
+@UI: {
+  headerInfo: {
+    typeName: 'Raw Material Requsition',
+    typeNamePlural: 'Raw Material Requsitions',title: {type: #STANDARD,label: 'Raw Material Requsition', value: 'uuid'}},
+  presentationVariant: [ {sortOrder: [{ by: 'uuid', direction: #DESC }]  } ]}
+annotate entity ZPP_RM_REP_CV
+    with 
+{
+@UI.facet: [ { id:              'RMR',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Raw Material Requsition',
+                   position:        10 } ]
+    @UI.hidden: true
+    uuid;
+     @UI: { lineItem: [{ position: 10, label: 'Project'}],
+    identification: [{ position: 10, label: 'Project' } ] }
+    @EndUserText.label: 'Project' 
+    @UI.selectionField: [{element: 'project'}]
+    project;
+    @UI: { lineItem: [{ position: 20, label: 'Vr Number'}],
+    identification: [{ position: 20, label: 'Vr Number' } ] }
+    @EndUserText.label: 'Vr Number'
+    vrno;
+    @UI: { lineItem: [{ position: 30, label: 'Section Material'}],
+    identification: [{ position: 30, label: 'Section Material' } ] }
+    @EndUserText.label: 'Section Material' 
+    sectmat;   
+    @UI: { lineItem: [{ position: 40, label: 'Section Material Desc'}],
+    identification: [{ position: 40, label: 'Section Material Desc' } ] }
+    @EndUserText.label: 'Section Material Desc'
+    ProductName;
+    @UI: { lineItem: [{ position: 50, label: 'IR No.'}],
+    identification: [{ position: 50, label: 'IR No.' } ] }
+    @EndUserText.label: 'IR No.'
+    irno;
+    
+    @UI: { lineItem: [{ position: 60, label: 'Length'}],
+    identification: [{ position: 60, label: 'Length' } ] }
+    @EndUserText.label: 'Length'     
+    length;
+    @UI: { lineItem: [{ position: 70, label: 'Pcs'}],
+    identification: [{ position: 70, label: 'Pcs' } ] }
+    @EndUserText.label: 'Pcs'
+    used;
+    @UI: { lineItem: [{ position: 80, label: 'Quantity (kgs)'}],
+    identification: [{ position: 80, label: 'Quantity (kgs)' } ] }
+    @EndUserText.label: 'Quantity (kgs)'
+    uqty;
+    
+}

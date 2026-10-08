@@ -1,0 +1,124 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'STOCK REPORT',
+                typeNamePlural: 'STOCK REPORTS',
+                title: { type: #STANDARD, label: 'STOCK REPORTS', value: 'MaterialDocument' } },
+  presentationVariant: [{ sortOrder: [{ by: 'MaterialDocument', direction:  #DESC }] }] }
+annotate entity ZPP_STOCK_PV
+    with 
+{
+@UI.facet: [ { id:              'STOCK REPORT',
+                     purpose:         #STANDARD,
+                     type:            #IDENTIFICATION_REFERENCE,
+                     label:           'STOCK REPORT',
+                     position:        10 }]
+  @UI: {  lineItem:       [ { position: 5, label: 'MaterialDocumentYear' } ],
+        identification: [ { position: 5, label: 'MaterialDocumentYear' } ] }
+  @EndUserText.label: 'MaterialDocumentYear' 
+ MaterialDocumentYear;
+ @UI: {  lineItem:       [ { position: 10, label: 'Material Number/ Section' },
+ { type: #FOR_ACTION,dataAction: 'Gtlegth',label: 'Update Length',position: 10 } ],
+        identification: [ { position: 10, label: 'Material Number/ Section' }, { type: #FOR_ACTION,dataAction: 'Gtlegth',label: 'Update Length',position: 10 } ] }
+  @EndUserText.label: 'Material Number/ Section' 
+ Product;
+ @UI: {  lineItem:       [ { position: 20, label: 'Material Description' } ],
+        identification: [ { position: 20, label: 'Material Description' } ] }
+  @EndUserText.label: 'Material Description' 
+  ProductName;
+  @UI: {  lineItem:       [ { position: 30, label: 'Plant' } ],
+        identification: [ { position: 30, label: 'Plant' } ] }
+  @EndUserText.label: 'Plant'
+  Plant;
+  @UI: {  lineItem:       [ { position: 40, label: 'Storage Location' } ],
+        identification: [ { position: 40, label: 'Storage Location' } ] }
+  @EndUserText.label: 'Storage Location'
+  StorageLocation;
+  @UI: {  lineItem:       [ { position: 50, label: 'MaterialGroup' } ],
+        identification: [ { position: 50, label: 'MaterialGroup' } ] }
+  @EndUserText.label: 'Material Group'
+  MaterialGroup;
+  @UI: {  lineItem:       [ { position: 60, label: 'GRN No' } ],
+        identification: [ { position: 60, label: 'GRN No' } ] }
+  @EndUserText.label: 'GRN No'
+ MaterialDocument;
+ @UI: {  lineItem:       [ { position: 65, label: 'MaterialDocumentItem' } ],
+        identification: [ { position: 65, label: 'MaterialDocumentItem' } ] }
+  @EndUserText.label: 'MaterialDocumentItem' 
+ MaterialDocumentItem;
+   @UI: {  lineItem:       [ { position: 70, label: 'PO No' } ],
+        identification: [ { position: 70, label: 'PO No' } ] }
+  @EndUserText.label: 'PO No'
+ PurchaseOrder;
+ @UI: {  lineItem:       [ { position: 71, label: 'PO Priority No.' } ],
+        identification: [ { position: 71, label: 'PO Priority No.' } ] }
+  @EndUserText.label: 'PO Priority No.'
+ YY1_PriorityPONO_PDH;
+  @UI: {  lineItem:       [ { position: 72, label: 'PO Priority No./GRN No' } ],
+        identification: [ { position: 72, label: 'PO Priority No./GRN No' } ] }
+  @EndUserText.label: 'PO Priority No./GRN No'
+    IRNno;
+ @UI.hidden: true
+ PurchaseOrderItem;
+  @UI: {  lineItem:       [ { position: 80, label: 'Batch' } ],
+        identification: [ { position: 80, label: 'Batch' } ] }
+  @EndUserText.label: 'Batch'
+ Batch;
+ @UI.hidden: true
+ Currency;
+   @UI: {  lineItem:       [ { position: 90, label: 'Length' } ],
+        identification: [ { position: 90, label: 'Length' } ] }
+  @EndUserText.label: 'Length'
+ YY1_Length_No_MMI;
+   @UI: {  lineItem:       [ { position: 100, label: 'Width' } ],
+        identification: [ { position: 100, label: 'Width' } ] }
+  @EndUserText.label: 'Width'
+ YY1_WidthNo_MMI;
+   @UI: {  lineItem:       [ { position: 110, label: 'Pieces' } ],
+        identification: [ { position: 110, label: 'Pieces' } ] }
+  @EndUserText.label: 'Pieces'
+ YY1_Pieces_No_MMI;
+    @UI: {  lineItem:       [ { position: 110, label: 'Avilabe Qty in Kg' } ],
+        identification: [ { position: 110, label: 'Avilabe Qty in Kg' } ] }
+  @EndUserText.label: 'Avilabe Qty in Kg'
+ QuantityInBaseUnit;
+    @UI: {  lineItem:       [ { position: 120, label: 'Commited Qty in Kg' } ],
+        identification: [ { position: 120, label: 'Commited Qty in Kg' } ] }
+  @EndUserText.label: 'Commited Qty in kg'
+ QuantityInEntryUnit;
+ @UI.hidden: true
+ MaterialBaseUnit;
+ @UI.hidden: true
+ EntryUnit;
+    @UI: {  lineItem:       [ { position: 130, label: 'Available Weight in Kgs' } ],
+        identification: [ { position: 130, label: 'Available Weight in Kgs' } ] }
+  @EndUserText.label: 'MatlWrhsStkQtyInMatlBaseUnit'
+ MatlWrhsStkQtyInMatlBaseUnit;
+ @UI: {  lineItem:       [ { position: 140, label: 'Unit Weight in Kg' } ],
+        identification: [ { position: 140, label: 'Unit Weight in Kg' } ] }
+  @EndUserText.label: 'Unit Weight in Kg'
+     YY1_UNIT_WGT_PRD;
+      @UI: {  lineItem:       [ { position: 150, label: 'Balance Qty' } ],
+        identification: [ { position: 150, label: 'Balance Qty' } ] }
+  @EndUserText.label: 'Balance Qty'
+     balance;
+      @UI: {  lineItem:       [ { position: 160, label: 'Custom Length' } ],
+        identification: [ { position: 160, label: 'Custom Length' } ] }
+  @EndUserText.label: 'Custom Length'
+     length;
+      @UI: {  lineItem:       [ { position: 170, label: 'Custom Width' } ],
+        identification: [ { position: 170, label: 'Custom Width' } ] }
+  @EndUserText.label: 'Custom Width'
+  width;
+   @UI: {  lineItem:       [ { position: 180, label: 'Custom Pieces' } ],
+        identification: [ { position: 180, label: 'Custom Pieces' } ] }
+  @EndUserText.label: 'Custom Pieces'
+  pcs; 
+     @UI: {  lineItem:       [ { position: 190, label: 'DeliveryDocument' } ],
+        identification: [ { position: 190, label: 'DeliveryDocument' } ] }
+  @EndUserText.label: 'DeliveryDocument'
+  DeliveryDocument;
+     @UI: {  lineItem:       [ { position: 200, label: 'DeliveryDocumentItem' } ],
+        identification: [ { position: 200, label: 'DeliveryDocumentItem' } ] }
+  @EndUserText.label: 'DeliveryDocumentItem'
+  DeliveryDocumentItem;    
+}

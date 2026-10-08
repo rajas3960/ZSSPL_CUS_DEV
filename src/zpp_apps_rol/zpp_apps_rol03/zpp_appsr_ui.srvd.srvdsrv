@@ -1,0 +1,11 @@
+@EndUserText.label: 'Service Denifnation Planning UI'
+define service ZPP_APPSR_UI {
+  expose ZPP_APPSR_PV    as Mainpage;
+  expose ZPP_APPSR_IPV;
+  expose ZPP_APPSR_IPV2;
+  expose ZPP_APPSR_PSCHV;
+  expose ZPP_APPSR_SSCHV;
+  expose ZPP_APPS_PLNVH;
+  expose ZPP_APPS_MANU;
+  expose ZPP_APPSR_IRV2T;
+}

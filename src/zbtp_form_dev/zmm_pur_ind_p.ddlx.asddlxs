@@ -1,0 +1,115 @@
+@Metadata.layer: #PARTNER
+//@Search.searchable: true
+@UI.headerInfo: {
+    typeName: 'Details Indent',
+    typeNamePlural: 'Details Indent',
+    title: {
+        type: #STANDARD,
+        label: 'Substation',
+        value: 'Purcreq'
+    }
+}
+
+annotate entity ZMM_PUR_IND_P with
+{
+
+@UI.facet: [{ id: 'Purcreq',
+       type: #IDENTIFICATION_REFERENCE,
+       label: 'Detail' ,
+       position: 10
+       },{type: #DATAPOINT_REFERENCE ,
+       qualifier: 'Preview',
+       purpose: #HEADER
+       }
+       ]
+
+  @UI.selectionField: [{position: 20  }]
+  @UI.lineItem: [{ position: 20 },
+   { navigationAvailable:  false },
+   { type: #FOR_ACTION, dataAction: 'preview' , label: 'Issue output' ,position: 20 }]
+    @UI.identification: [{ position: 20 , label: 'Purchase Requestion No' }]
+    @UI.dataPoint.qualifier: 'Preview'
+  @EndUserText.label: 'Purchase Requestion No'
+  PURCREQ;
+  @UI.selectionField: [{ position: 10 }]
+  @UI.identification: [{ position: 10 , label: 'Purchase Requestion Item No' }]
+  @EndUserText.label: 'Purchase Requestion Item No'
+  purreqitno;
+  @UI.lineItem: [{ position: 30 }]
+   @UI.identification: [{ position: 30 , label: 'Purchase Requestion Description' }]
+  @EndUserText.label: 'Purchase Requestion Description'
+  Hdesc;
+  @UI.lineItem: [{ position: 40 }]
+   @UI.identification: [{ position: 40 , label: 'Item Text' }]
+  @EndUserText.label: 'Item Text'
+  itemtext;
+  @UI.lineItem: [{ position: 50 }]
+   @UI.identification: [{ position: 50 , label: 'Requested Quantity' }]
+  @EndUserText.label: 'Requested Quantity'
+  REQ;
+  @UI.lineItem: [{ position: 60 }]
+   @UI.identification: [{ position: 60 , label: 'Base Unit' }]
+  @EndUserText.label: 'Base Unit'
+  BaseUnit;
+  @UI.lineItem: [{ position: 70 }]
+   @UI.identification: [{ position: 70 , label: 'Per Price' }]
+  @EndUserText.label: 'Per Price'
+  PERPRICE;
+  @UI.lineItem: [{ position: 80 }]
+   @UI.identification: [{ position: 20 , label: 'Net Amount' }]
+  @EndUserText.label: 'Net Amount'
+  NETAMT;
+  @UI.lineItem: [{ position: 90 }]
+   @UI.identification: [{ position: 90 , label: 'Cost Center' }]
+//  @UI.selectionField: [{ position: 10 }]
+  @EndUserText.label: 'Cost Center'
+  CostCenter;
+  @UI.lineItem: [{ position: 100 }]
+   @UI.identification: [{ position: 100 , label: 'GL Acccount' }]
+  @UI.selectionField: [{ position: 10 }]
+  @EndUserText.label: 'GL Acccount'
+  GLAccount;
+  @UI.lineItem: [{ position: 110 }]
+   @UI.identification: [{ position: 20 , label: 'Cost Name' }]
+  @UI.selectionField: [{ position: 10 }]
+  @EndUserText.label: 'Cost Name'
+  COSTNAME;
+  @UI.lineItem: [{ position: 120 }]
+   @UI.identification: [{ position: 120 , label: 'Remarks' }]
+  @EndUserText.label: 'Remarks'
+  remarks;
+  @UI.lineItem: [{ position: 130 }]
+   @UI.identification: [{ position: 130 , label: 'Requestion Date' }]
+  @EndUserText.label: 'Requestion Date'
+  reqdate;
+  @UI.lineItem: [{ position: 140 }]
+   @UI.identification: [{ position: 140 , label: 'Indent Date' }]
+  @EndUserText.label: 'Indent Date'
+  indetdate;
+  @UI.lineItem: [{ position: 150 }]
+   @UI.identification: [{ position: 150 , label: 'Department' }]
+  @EndUserText.label: 'Department'
+  dept;
+//  @UI.lineItem: [{ position: 160 }]
+//   @UI.identification: [{ position: 160 , label: 'GR Document' }]
+//  @EndUserText.label: 'GR Document'
+//  GRDocument;
+//  @UI.lineItem: [{ position: 170 }]
+//   @UI.identification: [{ position: 170 , label: 'Purchase Requestion No' }]
+//  @EndUserText.label: 'Vendor Name'
+//  VendorName;
+  @UI.selectionField: [{ position: 30 }]
+   @UI.identification: [{ position: 20 , label: 'Purchase Order No' }]
+  @UI.lineItem: [{ position: 20 }]
+  @EndUserText.label: 'Purchase Order No'
+  PurchasingDocument;
+  @UI.lineItem: [{ position: 30 }]
+   @UI.identification: [{ position: 30 , label: 'Purchasing Document Item' }]
+  @EndUserText.label: 'Purchasing Document Item'
+  PurchasingDocumentItem;
+  @UI.lineItem: [{ position: 180 }]
+   @UI.identification: [{ position: 180 , label: 'Requestion Days' }]
+  @EndUserText.label: 'Requestion Days'
+  REQDays;
+  
+}

@@ -1,0 +1,52 @@
+ managed implementation in class zbp_sd_app_hrv unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZSD_APP_HRV alias Salesheader//alias <alias_name>
+with unmanaged save
+//persistent table zsd_app_h
+draft table zsd_app_h_dt
+lock master total etag Lastchangedon
+authorization master ( instance )
+etag master Lastchangedon
+{
+  create;
+  update;
+  delete (features : instance);
+
+  field ( readonly,numbering : managed ) Recguid;
+  field(readonly) Salesorderno, Createdby, Createdon, Lastchangedby, Lastchangedon;
+  field(mandatory : create)Ordertype,Salesorg,Div,Dist,Soldto;
+//  field(readonly : update) Lcnumber2,Lcamount2,Lcnumber3,Lcamount3,Lcnumber4,Lcamount4,Lcnumber5,Lcamount5;
+  association _SalesItem { create; with draft;}
+  /* Draft Action */
+  draft action (features : instance) Edit ;
+  draft action Resume;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  determination GetData1 on save { field Recguid; }
+  validation Validatelcamt on save {field Lcamount,Lcamount2,Lcamount3,Lcamount4,Lcamount5,Lcamount6,Lcamount7,Lcamount8,Lcamount9,Lcamount10;create;}
+ // determination GetData2 on save { field Lcnumber; create;}
+  //action (features : instance) SalesOn result [1] $self;
+
+mapping for zsd_app_h corresponding;
+
+
+}
+
+define behavior for ZSD_APP_IRV alias SalesItem//alias <alias_name>
+draft table zsd_app_idf
+persistent table zsd_app_itb
+lock dependent by _SalesHeader
+authorization dependent by _SalesHeader
+//etag master <field_name>
+{
+  update(features : instance);
+  delete(features : instance);
+  field ( readonly ) Recguid;
+  field(readonly : update)Item;
+  association _SalesHeader{with draft;}
+
+  mapping for zsd_app_itb corresponding;
+}

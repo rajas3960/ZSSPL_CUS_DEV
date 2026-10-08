@@ -1,0 +1,121 @@
+
+@Metadata.layer: #PARTNER
+
+@UI: {
+  headerInfo: {
+    typeName: 'BOM Header',
+    typeNamePlural: 'BOM Headers',
+    title: { value: 'suid' }
+  }
+}
+
+annotate entity ZBOM_APP02_HPV2
+with
+{
+
+  @UI.facet: [
+    {
+      id: 'HeaderFacet',
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Header',
+      position: 10
+    }
+  ]
+  @UI.hidden: true
+  Suid;
+  @UI.lineItem: [{ position: 80,label: 'Material Number' }]
+  @UI.identification: [{ position: 80,label: 'Material Number' }]
+  materialnumber;
+  @UI.lineItem: [{ position: 90,label: 'plant' }]
+  @UI.identification: [{ position: 90,label: 'plant' }]
+  plant;
+  @UI.lineItem: [{ position: 110,label: 'bom usage' }]
+  @UI.identification: [{ position: 110,label: 'bom usage' }]
+  bomusage;
+  @UI.lineItem: [{ position: 130,label: 'alternative bom' }]
+  @UI.identification: [{ position: 130,label: 'alternative bom' }]
+  alternativebom;
+  @UI.lineItem: [{ position: 140,label: 'valid from date' }]
+  @UI.identification: [{ position: 140,label: 'valid from date' }]
+  validfromdate;
+  @UI.lineItem: [{ position: 150,label: 'bom status' }]
+  @UI.identification: [{ position: 150,label: 'bom status' }]
+  bomstatus;
+  @UI.lineItem: [{ position: 160,label: 'changenumber' }]
+  @UI.identification: [{ position: 160,label: 'changenumber' }]
+  changenumber;
+  @UI.lineItem: [{ position: 170,label: ' base quantity' }]
+  @UI.identification: [{ position: 170,label: ' base quantity' }]
+  basequantity;
+//  @UI.lineItem: [{ position: 180,label: 'base unit of measure for bom' }]
+//  @UI.identification: [{ position: 180,label: 'base unit of measure for bom' }]
+//  baseunitofmeasureforbom;
+  @UI.lineItem: [{ position: 190,label: ' bom description' }]
+  @UI.identification: [{ position: 190,label: ' bom description' }]
+  bomdescription;
+    
+}
+  
+
+
+
+
+//@Metadata.layer: #CUSTOMER
+//
+//@UI: {
+//  headerInfo: {
+//    typeName: 'BOM Header',
+//    typeNamePlural: 'BOM Headers',
+//    title: { value: 'Suid' }
+//  }
+//}
+//
+//annotate entity ZBOM_APP02_HPV2
+//with
+//{
+//
+//  @UI.facet: [
+//    {
+//      id: 'HeaderFacet',
+//      type: #IDENTIFICATION_REFERENCE,
+//      label: 'Header',
+//      position: 10
+//    }
+//  ]
+//
+////annotate entity ZBOM_APP02_HPV2
+////    with 
+////{
+//
+//  
+//  @UI.hidden: true
+//  Suid;
+//  @UI.lineItem: [{ position: 80,label: 'Material Number' }]
+//  @UI.identification: [{ position: 80,label: 'Material Number' }]
+//  materialnumber;
+//  @UI.lineItem: [{ position: 80,label: 'plant' }]
+//  @UI.identification: [{ position: 80,label: 'plant' }]
+//  plant;
+//  @UI.lineItem: [{ position: 80,label: 'bom usage' }]
+//  @UI.identification: [{ position: 80,label: 'bom usage' }]
+//  bomusage;
+//  @UI.lineItem: [{ position: 90,label: 'alternative bom' }]
+//  @UI.identification: [{ position: 90,label: 'alternative bom' }]
+//  alternativebom;
+//  @UI.lineItem: [{ position: 100,label: 'valid from date' }]
+//  @UI.identification: [{ position: 100,label: 'valid from date' }]
+//  validfromdate;
+//  @UI.lineItem: [{ position: 110,label: 'bom status' }]
+//  @UI.identification: [{ position: 110,label: 'bom status' }]
+//  bomstatus;
+//  @UI.lineItem: [{ position: 120,label: ' base quantity' }]
+//  @UI.identification: [{ position: 120,label: ' base quantity' }]
+//  basequantity;
+//  @UI.lineItem: [{ position: 140,label: 'base unit of measure for bom' }]
+//  @UI.identification: [{ position: 140,label: 'base unit of measure for bom' }]
+//  baseunitofmeasureforbom;
+//  @UI.lineItem: [{ position: 180,label: ' bom description' }]
+//  @UI.identification: [{ position: 180,label: ' bom description' }]
+//  bomdescription;
+//    
+//}

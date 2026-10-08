@@ -1,0 +1,44 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Material Details',
+typeNamePlural: 'Material Details',
+title: { type: #STANDARD, value: 'Uuid'        } }     }
+@UI.createHidden: true
+@UI.updateHidden: true
+@UI.deleteHidden: true
+annotate entity ZPP_MATERIAL_PV
+    with 
+{
+    @UI.facet: [ { id:              'JobcardPlanningItem',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Material Details',
+                      position:        30 } ]
+    
+    @UI.hidden: true
+    uuid;
+    @UI: { lineItem: [{ position: 10, label: 'Material'}],
+  identification: [{ position: 10, label: 'Material' } ] }
+  @EndUserText.label: 'Material'
+    Matnr;
+    @UI: { lineItem: [{ position: 20, label: 'Plant'}],
+  identification: [{ position: 20, label: 'Plant' } ] }
+  @EndUserText.label: 'Material'
+    Plant;
+    @UI: { lineItem: [{ position: 30, label: 'Batch Number'}],
+  identification: [{ position: 30, label: 'Batch Number' } ] }
+  @EndUserText.label: 'Batch Number'
+    Batch;
+    @UI: { lineItem: [{ position: 40, label: 'Material Qty'}],
+  identification: [{ position: 40, label: 'Material Qty' } ] }
+  @EndUserText.label: 'Material Qty'
+    Qty;
+    @UI.hidden: true
+    Uom;
+    @UI.hidden: true
+    Createdon;
+    /* Associations */
+    @UI.hidden: true
+    _hdr;
+    
+}

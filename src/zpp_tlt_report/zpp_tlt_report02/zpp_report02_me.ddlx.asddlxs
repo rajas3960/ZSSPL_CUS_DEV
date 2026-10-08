@@ -1,0 +1,99 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'MIS Report',
+                typeNamePlural: 'MIS Reports',
+                title: { type: #STANDARD, label: 'MIS Reports', value: 'YY1_Project_SDH' } },
+                presentationVariant: [{ sortOrder: [{ by: 'YY1_Project_SDH', direction:  #ASC }] }] }
+annotate entity ZPP_REPORT02_pV2
+    with 
+{
+    @UI.facet: [ { id:              'MISReport',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Mis Report',
+                 position:        10 }]
+  @UI: {  lineItem:       [ { position: 10, label: 'Sale Order' } ],
+ identification: [ { position: 10, label: 'Sale Order'} ] }
+  @EndUserText.label: 'Sale Order'
+  @Consumption.valueHelpDefinition: [
+  {
+    entity: {
+      name: 'ZPP_REPORT02_F4',
+      element: 'SalesDocument'
+    }
+  }
+  ]
+  @UI.selectionField: [{ position: 10 }]
+  SalesDocument;
+  @UI: {  lineItem:       [ { position: 20, label: 'Priority Po' } ],
+   identification: [ { position: 20, label: 'Priority Po'} ] }
+  @EndUserText.label: 'Priority Po'
+  @Consumption.valueHelpDefinition: [
+  {
+    entity: {
+      name: 'ZPP_REPORT02_F4',
+      element: 'Po'
+    }
+  }
+  ]
+  @UI.selectionField: [{ position: 20 }]
+  YY1_PriorityPONos_SDH;
+  @UI: {  lineItem:       [ { position: 30, label: 'Project' } ],
+   identification: [ { position: 30, label: 'Project'} ] }
+  @EndUserText.label: 'Project'
+  @Consumption.valueHelpDefinition: [
+  {
+    entity: {
+      name: 'ZPP_REPORT02_F4',
+      element: 'Project'
+    }
+  }
+  ]
+  @UI.selectionField: [{ position: 30 }]
+  YY1_Project_SDH;
+    @UI: {  lineItem:       [ { position: 35, label: 'Project Name' } ],
+   identification: [ { position: 35, label: 'Project Name'} ] }
+  @EndUserText.label: 'Project Name'
+  ProductName;
+  @UI: {  lineItem:       [ { position: 40, label: 'Batch Wt (MT)' } ],
+   identification: [ { position: 40, label: 'Batch Wt (MT)'} ] }
+  @EndUserText.label: 'Batch Wt (MT)'
+  batch_wt;
+  @UI: {  lineItem:       [ { position: 50, label: 'Plan Wt (MT)' } ],
+   identification: [ { position: 50, label: 'Plan Wt (MT)'} ] }
+  @EndUserText.label: 'Plan Wt (MT)'
+  Plan_wt;
+  @UI: {  lineItem:       [ { position: 60, label: 'Balance Wt (MT)' } ],
+   identification: [ { position: 60, label: 'Balance Wt (MT)'} ] }
+  @EndUserText.label: 'Balance Wt (MT)'
+  Balance_Wt;
+  @UI: {  lineItem:       [ { position: 70, label: 'Prod Wt (Mt)' } ],
+   identification: [ { position: 70, label: 'Prod Wt (Mt)'} ] }
+  @EndUserText.label: 'Prod Wt (Mt)'
+  Glava_in;
+  @UI: {  lineItem:       [ { position: 75, label: 'Bal Prod Wt (Mt)' } ],
+   identification: [ { position: 75, label: 'Bal Prod Wt (Mt)'} ] }
+  @EndUserText.label: 'Bal Prod Wt (Mt)'
+  Balglvin_wt;
+  @UI: {  lineItem:       [ { position: 80, label: 'Gal Wt(MT)' } ],
+   identification: [ { position: 80, label: 'Gal Wt (MT)'} ] }
+  @EndUserText.label: 'Gal Weight'
+  Glalva_wt;
+  @UI: {  lineItem:       [ { position: 90, label: 'Bal Galv Wt (Mt)' } ],
+   identification: [ { position: 90, label: 'Bal Galv Wt (Mt)'} ] }
+  @EndUserText.label: 'Bal Galv Wt (Mt)'
+  Balglv_wt;
+  @UI: {  lineItem:       [ { position: 100, label: 'FG Y Recd Wt (MT)' } ],
+   identification: [ { position: 100, label: 'FG Y Recd Wt (MT)'} ] }
+  @EndUserText.label: 'FG Y Recd Wt (MT)'
+  Despatch_wt;
+  @UI: {  lineItem:       [ { position: 110, label: 'Bal to Rec Wt(MT)' } ],
+   identification: [ { position: 110, label: 'Bal to Rec Wt(MT)'} ] }
+  @EndUserText.label: 'Bal to Rec Wt(MT)'
+  Balrdispatch_wt;
+  @UI: {  lineItem:       [ { position: 120, label: 'Desp Wt (MT)' } ],
+   identification: [ { position: 120, label: 'Desp Wt (MT)'} ] }
+  @EndUserText.label: 'Desp Wt (MT)'
+  TotSP_Wt;
+    
+}

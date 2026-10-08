@@ -1,0 +1,94 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Sales Order BOM Report',
+typeNamePlural: 'Sales Order BOM Report',
+title: { type: #STANDARD, value: 'SalesDocument' }         } }
+annotate entity ZSD_REP_PV
+    with 
+{
+    @UI.facet: [ { id:              'SalesDocument',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Sales Header',
+                      position:        10 } ,
+                    { id:              'SalesDocumentItem',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'Sales Document Item',
+                      position:        20,
+                      targetElement:   'Item'} ]
+     @UI: { lineItem: [{ position: 10, label: 'Sales Document'}],
+  identification: [{ position: 10, label: 'Sales Document' },{ type: #FOR_ACTION, dataAction: 'Printso', label: 'Print So' }  ] }
+  @EndUserText.label: 'Sales Document'
+  @UI.selectionField: [{element: 'SalesDocument'}]
+    SalesDocument;
+     @UI: { lineItem: [{ position: 20, label: 'Sales Document Date'}],
+  identification: [{ position: 20, label: 'Sales Document Date' } ] }
+  @EndUserText.label: 'Sales Document Date'
+    SalesDocumentDate;
+     @UI: { lineItem: [{ position: 30, label: 'Customer Ref No'}],
+  identification: [{ position: 30, label: 'Customer Ref No' } ] }
+  @EndUserText.label: 'Customer Ref No'
+    PurchaseOrderByCustomer;
+     @UI: { lineItem: [{ position: 40, label: 'Customer Ref Date'}],
+  identification: [{ position: 40, label: 'Customer Ref Date' } ] }
+  @EndUserText.label: 'Customer Ref Date'
+    CustomerPurchaseOrderDate;
+     @UI: { lineItem: [{ position: 50, label: 'Bill to'}],
+  identification: [{ position: 50, label: 'Bill to' } ] }
+  @EndUserText.label: 'Bill to'
+    SoldToParty;
+     @UI: { lineItem: [{ position: 60, label: 'CustomerName'}],
+  identification: [{ position: 60, label: 'CustomerName' } ] }
+  @EndUserText.label: 'CustomerName'
+    CustomerName;
+     @UI: { lineItem: [{ position: 70, label: 'BPAddrStreetName'}],
+  identification: [{ position: 70, label: 'BPAddrStreetName' } ] }
+  @EndUserText.label: 'BPAddrStreetName'
+    BPAddrStreetName;
+     @UI: { lineItem: [{ position: 80, label: 'PostalCode'}],
+  identification: [{ position: 80, label: 'PostalCode' } ] }
+  @EndUserText.label: 'PostalCode'
+    PostalCode;
+     @UI: { lineItem: [{ position: 90, label: 'CityName'}],
+  identification: [{ position: 90, label: 'CityName' } ] }
+  @EndUserText.label: 'CityName'
+    CityName;
+     @UI: { lineItem: [{ position: 100, label: 'GSTIN No'}],
+  identification: [{ position: 100, label: 'GSTIN No' } ] }
+  @EndUserText.label: 'GSTIN No'
+    YY1_Gstno_sd_SDH;
+     @UI: { lineItem: [{ position: 110, label: 'State Name'}],
+  identification: [{ position: 110, label: 'State Name' } ] }
+  @EndUserText.label: 'State Name'
+    YY1_Statename_Sd_SDH;
+     @UI: { lineItem: [{ position: 120, label: 'ShipToCustomer'}],
+  identification: [{ position: 120, label: 'ShipToCustomer' } ] }
+  @EndUserText.label: 'ShipToCustomer'
+    ShipToCustomer;
+     @UI: { lineItem: [{ position: 130, label: 'Customer_Name'}],
+  identification: [{ position: 130, label: 'Customer_Name' } ] }
+  @EndUserText.label: 'Customer_Name'
+    Customer_Name;
+     @UI: { lineItem: [{ position: 140, label: 'StreetName'}],
+  identification: [{ position: 140, label: 'StreetName' } ] }
+  @EndUserText.label: 'SalesDocument'
+    StreetName;
+     @UI: { lineItem: [{ position: 150, label: 'Postal Code'}],
+  identification: [{ position: 150, label: 'Postal Code' } ] }
+  @EndUserText.label: 'Postal Code'
+    Postal_Code;
+     @UI: { lineItem: [{ position: 160, label: 'City_Name'}],
+  identification: [{ position: 160, label: 'City_Name' } ] }
+  @EndUserText.label: 'City_Name'
+    City_Name;
+     @UI: { lineItem: [{ position: 170, label: 'Attachment'}],
+  identification: [{ position: 170, label: 'Attachment' } ] }
+    @EndUserText.label: 'Attachment'
+    Attachment;
+    @UI.hidden: true
+    /* Associations */
+    Item;
+   
+    
+}

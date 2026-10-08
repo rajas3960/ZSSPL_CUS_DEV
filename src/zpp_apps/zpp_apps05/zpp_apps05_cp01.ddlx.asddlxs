@@ -1,0 +1,39 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_APPS05_Cp01
+with 
+{
+
+  @UI.facet: [ 
+    { id: 'General',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Business Partner',
+      position: 10 } 
+  ]
+@UI.selectionField: [{ position: 10 }]
+  @UI: { 
+    lineItem: [
+      { position: 10, label: 'Business Partner' },
+      { type: #FOR_ACTION, dataAction: 'contract', label: 'Is Contractor 😁', inline: false, emphasized: false },
+      { type: #FOR_ACTION, dataAction: 'nocontract', label: 'Not Contractor 😒', inline: true, emphasized: true }
+    ],
+    identification: [{ position: 10, label: 'Business Partner' }]
+  }
+  @EndUserText.label: 'Business Partner'
+  BusinessPartner;
+
+  @UI: { 
+    lineItem: [{ position: 20, label: 'Business Partner Name' }],
+    identification: [{ position: 20, label: 'Business Partner Name' }]
+  }
+  @EndUserText.label: 'Business Partner Name'
+  BusinessPartnerName;
+
+  @UI: { 
+    lineItem: [{ position: 30, label: 'Contractor' }],
+    identification: [{ position: 30, label: 'Contractor' }]
+  }
+  @EndUserText.label: 'Contractor'
+  contract;
+
+}

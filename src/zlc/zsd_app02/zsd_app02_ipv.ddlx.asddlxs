@@ -1,0 +1,50 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZSD_APP02_IPV
+    with 
+{
+@UI.facet: [ { id:              'Item',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'LC Utilzation Amt',
+                   position:        10 } ]
+@UI.hidden: true
+    Salesdocument;
+@UI: { lineItem: [{ position: 20, label: 'LC Number' }],
+identification : [{ position: 20, label: 'LC Number' }]  }
+@Consumption.valueHelpDefinition: [{
+  entity: {
+    name: 'ZLC_APP02_VVH',
+    element: 'Lnum'
+  },
+  additionalBinding: [
+    { localElement: 'Lcurr',       element: 'Currency',usage: #RESULT },
+    { localElement: 'Lcamount',    element: 'Balance', usage: #RESULT },
+    { localElement: '_SalesHeader.SoldToParty', element: 'Cust', usage: #FILTER_AND_RESULT }
+  ]
+}]
+    Lnum;
+@UI: { lineItem: [{ position: 10, label: 'Line Item' }],
+identification : [{ position: 10, label: 'Line Item' }]  }  
+    Lcline;
+   @UI: { lineItem: [{ position: 30, label: 'LC Amount' }],
+identification : [{ position: 30, label: 'LC Amount' }]  }   
+    Lcamount;
+    @UI.hidden: true
+    Lcurr;
+    @UI.hidden: true
+    Mark;
+@UI: { lineItem: [{ position: 40, label: 'Created By' }],
+identification : [{ position: 40, label: 'Created By' }]  }  
+    Createdby;
+@UI: { lineItem: [{ position: 50, label: 'Created On' }],
+identification : [{ position: 50, label: 'Created On' }]  } 
+    Createdon;
+    @UI.hidden: true 
+    Lastchangedbyuser;
+  @UI.hidden: true
+Lastchangedatetime;
+@UI.hidden: true 
+    /* Associations */
+    _SalesHeader;
+    
+}

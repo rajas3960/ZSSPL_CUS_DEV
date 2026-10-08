@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Defination of invoice report'
+define service ZFI_INVOICE_SD {
+  expose ZFI_INVOICE_PV  as invoice_report;
+  expose ZFI_SUPPLIER_VH;
+}

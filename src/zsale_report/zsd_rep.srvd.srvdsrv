@@ -1,0 +1,8 @@
+@EndUserText.label: 'Service defination of  Sales Report'
+define service Zsd_rep {
+  expose ZSD_REP_PV      as Hdr;
+  expose ZSD_REP_IPV     as Item;
+  expose ZSD_REPORT_IPV2 as mark;
+  expose ZSD_REP_HCE     as main;
+  expose ZSD_REP_ICE;
+}

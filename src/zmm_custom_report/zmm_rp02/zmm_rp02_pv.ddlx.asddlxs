@@ -1,0 +1,245 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: { typeName: 'Asset Register',
+                typeNamePlural: 'Purchase Register Report',
+                title: { type: #STANDARD, label: 'Purchase Register Report', value: 'PurchaseOrder' } },
+  presentationVariant: [{ sortOrder: [{ by: 'PurchaseOrder', direction:  #DESC }] }] }
+  
+annotate entity ZMM_RP02_PV
+    with 
+{
+@UI.facet: [ { id:              'Purchse',
+                  purpose:         #STANDARD,
+                  type:            #IDENTIFICATION_REFERENCE,
+                  label:           'Purchase Register Report',
+                  position:        10 }]
+
+
+  @UI: {  lineItem:       [ { position: 10, label: 'Purchase Order' } ],
+          identification: [ { position: 10, label: 'Purchase Order' } ] }
+          @EndUserText.label: 'Purchase Order'
+            @UI.selectionField: [{ element: 'PurchaseOrder',position: 10 }]
+    PurchaseOrder;
+    
+  @UI: {  lineItem:       [ { position: 20, label: 'Purchase Order Item' } ],
+          identification: [ { position: 20, label: 'Purchase Order Item' } ] }
+           @EndUserText.label: 'Purchase Order Item'
+
+    PurchaseOrderItem;
+  @UI: {  lineItem:       [ { position: 30, label: 'GRN Document' } ],
+          identification: [ { position: 30, label: 'GRN Document' } ] }
+            @EndUserText.label: 'GRN Document'
+    MaterialDocument;
+      @UI: {  lineItem:       [ { position: 40, label: 'GRN Document Item' } ],
+          identification: [ { position: 40, label: 'GRN Document Item' } ] }
+          @EndUserText.label: 'GRN Document Item'
+    MaterialDocumentItem;
+    @UI: {  lineItem:       [ { position: 40, label: 'GRN Document Year' } ],
+          identification: [ { position: 40, label: 'GRN Document Year' } ] }
+           @EndUserText.label: 'GRN Document Year'
+    MaterialDocumentYear;
+    @UI: {  lineItem:       [ { position: 50, label: 'Journal Entry No' } ],
+          identification: [ { position: 50, label: 'Journal Entry No' } ] }
+          @EndUserText.label: 'Journal Entry No'
+    AccountingDocument;
+    @UI.hidden: true
+    TaxItemGroup;
+      @UI: {  lineItem:       [ { position: 60, label: 'Service Entry Sheet No' } ],
+          identification: [ { position: 60, label: 'Service Entry Sheet No' } ] }
+          @EndUserText.label: 'Service Entry Sheet No'
+    ServiceEntrySheet;
+       @UI: {  lineItem:       [ { position: 70, label: 'Service Entry Sheet Item' } ],
+          identification: [ { position: 70, label: 'Service Entry Sheet Item' } ] }
+          @EndUserText.label: 'Service Entry Sheet Item'
+    ServiceEntrySheetItem;
+     @UI: {  lineItem:       [ { position: 80, label: 'Fiscal Year' } ],
+          identification: [ { position: 80, label: 'Fiscal Year' } ] }
+          @EndUserText.label: 'Fiscal Year'
+    FiscalYear;
+    @UI: {  lineItem:       [ { position: 90, label: 'Original Reference Document' } ],
+          identification: [ { position: 90, label: 'Original Reference Document' } ] }
+          @EndUserText.label: 'Original Reference Document'
+    OriginalReferenceDocument;
+        @UI: {  lineItem:       [ { position: 94, label: 'Journal Entry Date' } ],
+          identification: [ { position: 94, label: 'Journal Entry Date' } ] }
+          @EndUserText.label: 'Journal Entry Date' 
+    Invoicedate;    
+        @UI: {  lineItem:       [ { position: 95, label: 'Document Reference ID' } ],
+          identification: [ { position: 95, label: 'Document Reference ID' } ] }
+          @EndUserText.label: 'Document Reference ID'
+    DocumentReferenceID;
+    @UI: {  lineItem:       [ { position: 96, label: 'Vendor Code' } ],
+          identification: [ { position: 96, label: 'Vendor Code' } ] }
+          @EndUserText.label: 'Vendor Code'
+    SUPPLIER;
+     @UI: {  lineItem:       [ { position: 97, label: 'Vendor Name' } ],
+          identification: [ { position: 97, label: 'Vendor Name' } ] }
+          @EndUserText.label: 'Vendor Name'
+    SupplierName;
+      @UI: {  lineItem:       [ { position: 21, label: 'Purchase Order Date' } ],
+          identification: [ { position: 21, label: 'Purchase Order Date' } ] }
+          @EndUserText.label: 'Purchase Order Date'
+    PurchaseOrderDate;
+    @UI: {  lineItem:       [ { position: 51, label: 'GRN Document Date' } ],
+          identification: [ { position: 51, label: 'GRN Document Date' } ] }
+          @EndUserText.label: 'GRN Document Date'
+    DocumentDate;
+     @UI: {  lineItem:       [ { position: 52, label: 'GRN Posting Date' } ],
+          identification: [ { position: 52, label: 'GRN Posting Date' } ] }
+          @EndUserText.label: 'GRN Posting Date'
+Grnpostingdate;
+    
+      @UI: {  lineItem:       [ { position: 91, label: 'MIRO Posting Date' } ],
+          identification: [ { position: 91, label: 'MIRO Posting Date' } ] }
+          @EndUserText.label: 'MIRO Posting Date'
+    PostingDate;
+     @UI: {  lineItem:       [ { position: 22, label: 'Purchase Order Type' } ],
+          identification: [ { position: 22, label: 'Purchase Order Type' } ] }
+          @EndUserText.label: 'Purchase Order Type'
+    PurchaseOrderType;
+    @UI: {  lineItem:       [ { position: 23, label: 'Purchasing Group' } ],
+          identification: [ { position: 23, label: 'Purchasing Group' } ] }
+          @EndUserText.label: 'Purchasing Group'
+    PurchasingGroup;
+     @UI: {  lineItem:       [ { position: 100, label: 'HSN No' } ],
+          identification: [ { position: 100, label: 'HSN No' } ] }
+          @EndUserText.label: 'HSN No'
+    hsnno;
+    @UI: {  lineItem:       [ { position: 110, label: 'Material Type' } ],
+          identification: [ { position: 110, label: 'Material Type' } ] }
+          @EndUserText.label: 'Material Type'
+    MaterialType;
+       @UI: {  lineItem:       [ { position: 120, label: 'GLCode' } ],
+          identification: [ { position: 120, label: 'GLCode' } ] }
+          @EndUserText.label: 'GLCode'
+    GLCode;
+     @UI: {  lineItem:       [ { position: 130, label: 'GLDescription' } ],
+          identification: [ { position: 130, label: 'GLDescription' } ] }
+          @EndUserText.label: 'GLDescription'
+    GLDescription;
+         @UI: {  lineItem:       [ { position: 140, label: 'Material Group' } ],
+          identification: [ { position: 140, label: 'Material Group' } ] }
+          @EndUserText.label: 'Material Group'
+    MaterialGroup;
+    @UI.hidden: true
+    BaseUnit;
+    @UI: {  lineItem:       [ { position: 150, label: 'Purchase Order Quantity' } ],
+          identification: [ { position: 150, label: 'Purchase Order Quantity' } ] }
+          @EndUserText.label: 'Purchase Order Quantity'
+    OrderQuantity;
+      @UI: {  lineItem:       [ { position: 160, label: 'Plant' } ],
+          identification: [ { position: 160, label: 'Plant' } ] }
+          @EndUserText.label: 'Plant'
+    Plant;
+    @UI: {  lineItem:       [ { position: 170, label: 'Purchase Order Rate' } ],
+          identification: [ { position: 170, label: 'Purchase Order Rate' } ] }
+          @EndUserText.label: 'Purchase Order Rate'
+    Rate;
+    @UI.hidden: true
+    DocumentCurrency;
+       @UI: {  lineItem:       [ { position: 180, label: 'Goods Movement Type' } ],
+          identification: [ { position: 180, label: 'Goods Movement Type' } ] }
+          @EndUserText.label: 'Goods Movement Type'
+    GoodsReceiptType;
+     @UI: {  lineItem:       [ { position: 190, label: 'Storage Location' } ],
+          identification: [ { position: 190, label: 'Storage Location' } ] }
+          @EndUserText.label: 'Goods Movement Type'
+    StorageLocation;
+    @UI.hidden: true
+    MaterialBaseUnit;
+    @UI.hidden: true
+    EntryUnit;
+    @UI: {  lineItem:       [ { position: 200, label: 'GRN Quantity' } ],
+          identification: [ { position: 200, label: 'GRN Quantity' } ] }
+          @EndUserText.label: 'GRN Quantity'
+    GRNQuantity;
+    @UI: {  lineItem:       [ { position: 210, label: 'Debit Credit Code' } ],
+          identification: [ { position: 210, label: 'Debit Credit Code' } ] }
+          @EndUserText.label: 'Debit Credit Code'
+    DebitCreditCode;
+    @UI.hidden: true
+    CompanyCodeCurrency;
+     
+    @UI: {  lineItem:       [ { position: 211, label: 'Tax code' } ],
+          identification: [ { position: 211, label: 'Tax code' } ] }
+          @EndUserText.label: 'Tax code'
+    taxcode;
+        @UI: {  lineItem:       [ { position: 212, label: 'Tax Description' } ],
+          identification: [ { position: 212, label: 'Tax Description' } ] }
+          @EndUserText.label: 'Tax Description'
+    TaxCodeName;
+    
+    @UI: {  lineItem:       [ { position: 213, label: 'GL Code Value' } ],
+          identification: [ { position: 213, label: 'GL Code Value' } ] }
+          @EndUserText.label: 'GL Code Value'
+    Extravalue;
+    
+    
+     @UI: {  lineItem:       [ { position: 215, label: 'Taxable Value' } ],
+          identification: [ { position: 215, label: 'Taxable Value' } ] }
+          @EndUserText.label: 'Taxable Value'
+    AmountInCompanyCodeCurrency;
+     @UI: {  lineItem:       [ { position: 220, label: 'CGST Value' } ],
+          identification: [ { position: 220, label: 'CGST Value' } ] }
+          @EndUserText.label: 'CGST Value'
+    CGST_C;
+     @UI: {  lineItem:       [ { position: 230, label: 'SGST Value' } ],
+          identification: [ { position: 230, label: 'SGST Value' } ] }
+          @EndUserText.label: 'SGST Value'
+    SGST_C;
+     @UI: {  lineItem:       [ { position: 240, label: 'IGST Value' } ],
+          identification: [ { position: 240, label: 'IGST Value' } ] }
+          @EndUserText.label: 'IGST Value'
+    IGST_C;
+        @UI: {  lineItem:       [ { position: 250, label: 'Gross Value' } ],
+          identification: [ { position: 250, label: 'Gross Value' } ] }
+          @EndUserText.label: 'Gross Value'
+    grossvalue;
+    @UI: {  lineItem:       [ { position: 1, label: 'AccountingDocumentType' } ],
+          identification: [ { position:1, label: 'AccountingDocumentType' } ] }
+          @EndUserText.label: 'AccountingDocumentType'
+     AccountingDocumentType;
+         @UI: {  lineItem:       [ { position: 900, label: 'GoodsMovementIsCancelled' } ],
+          identification: [ { position:900, label: 'GoodsMovementIsCancelled' } ] }
+          @EndUserText.label: 'GoodsMovementIsCancelled'
+     GoodsMovementIsCancelled;
+       @UI: {  lineItem:       [ { position: 25, label: 'Purchase Order Item Text' } ],
+          identification: [ { position:25, label: 'Purchase Order Item Text' } ] }
+          @EndUserText.label: 'Purchase Order Item Text'
+       PurchaseOrderItemText;
+          @UI: {  lineItem:       [ { position: 25, label: 'Fixed Asset Desc' } ],
+          identification: [ { position:25, label: 'Fixed Asset Desc' } ] }
+          @EndUserText.label: 'Purchase Order Item Text'
+FixedAssetDescription;
+   @UI: {  lineItem:       [ { position: 260, label: 'Description of Asset' } ],
+          identification: [ { position:260, label: 'Description of Asset' } ] }
+          @EndUserText.label: 'Description of Asset'
+FixedAssetExternalID;
+   @UI: {  lineItem:       [ { position: 270, label: 'Block' } ],
+          identification: [ { position:270, label: 'Block' } ] }
+          @EndUserText.label: 'Block'
+AssetAdditionalDescription;
+@UI.hidden: true
+ Assetdec;
+    @UI: {  lineItem:       [ { position: 280, label: 'Reciver Main Asset' } ],
+          identification: [ { position:280, label: 'Reciver Main Asset' } ] }
+          @EndUserText.label: 'Reciver Main Asset'
+  MasterFixedAsset1;
+     @UI: {  lineItem:       [ { position: 290, label: 'Capltalilization Date' } ],
+          identification: [ { position:290, label: 'Capltalilization Date' } ] }
+          @EndUserText.label: 'Capltalilization Date'
+PostingDate1;
+   @UI: {  lineItem:       [ { position: 23, label: 'Asset No' } ],
+          identification: [ { position:23, label: 'Asset No' } ] }
+          @EndUserText.label: 'Asset No'
+
+MasterFixedAsset;
+@UI: {  lineItem:       [ { position: 27, label: 'GRN Accounting Document' } ],
+          identification: [ { position:27, label: 'GRN Accounting Document' } ] }
+          @EndUserText.label: 'GRN Accounting Document'
+accuoun1;
+    
+    
+    
+    
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def for  Purchase Requestion'
+define service ZMM_PURCHASE_REQ_ROOT {
+  expose ZMM_PURCHASE_REQ_Root;
+}

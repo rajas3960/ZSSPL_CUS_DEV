@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service defination of  Material'
+define service ZPP_MAT_UI {
+  expose ZPP_MAT_PV;
+}

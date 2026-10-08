@@ -1,0 +1,44 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Prodcution Order Header',
+typeNamePlural: 'Prodcution Order Header',
+title: { type: #STANDARD, value: 'Plant' }         } }
+annotate entity ZPP_APP02_HPV
+    with 
+{
+ @UI.facet: [ { id:              'Header',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Selection',
+                      position:        10 } ,
+                    { id:              'Items',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'Production Order item',
+                      position:        20,
+                      targetElement:   '_Item'} ]
+@UI.hidden: true
+    Uuid;
+  @UI: { lineItem: [{ position: 20, label: 'Plant'}],
+  identification: [{ position: 20, label: 'Plant' } ] }
+    Plant;
+    @UI: { lineItem: [{ position: 30, label: 'Material'}],
+  identification: [{ position: 30, label: 'Material' } ] }
+    Mat;
+    @UI: { lineItem: [{ position: 40, label: 'Sales Order No'}],
+  identification: [{ position: 40, label: 'Sales Order No' } ] }
+//  @UI.selectionField: [{ position: 10  }]
+@Consumption.valueHelpDefinition: [{ entity:{ name: 'I_SalesOrderStdVH',element: 'SalesOrder' } }]
+@Consumption.filter : { selectionType : #SINGLE, multipleSelections : true}
+    Salesno;
+    @UI: { lineItem: [{ position: 50, label: 'Created By'}],
+  identification: [{ position: 50, label: 'Created By' } ] }
+    Createdby;
+    @UI: { lineItem: [{ position: 60, label: 'Created On'}],
+  identification: [{ position: 60, label: 'Created On' } ] }
+    Createdon;
+    @UI.hidden: true
+  /* Associations */
+  _Item;
+    
+}

@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Balance to plan report"
+  },
+  "ui5AppDetails": {
+    "appId": "zpprepfast.zpprepfast"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_997538C828C9C12ADC9AE50418D54FAEB6A77BED_TM",
+    "semanticObject": "zpp_rep_fast",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_997538C828C9C12ADC9AE50418D54FAEB6A77BED_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Balance to plan report",
+        "subtitle": "Details(1040)"
+      }
+    }
+  ]
+}

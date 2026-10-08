@@ -1,0 +1,19 @@
+managed implementation in class zbp_mm_pur_ind_r unique;
+strict ( 2 );
+//strict;
+
+define behavior for ZMM_PUR_IND_R //alias <alias_name>
+with unmanaged save
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+//  create;
+//  update;
+//  delete;
+  field ( readonly ) Purcreq;
+  field ( readonly ) purreqitno,BaseUnit,costname,CostCenter,GLAccount,GRDocument,reqdate,itemtext
+  ,Hdesc,remarks,netamt,PurchasingDocument,PurchasingDocumentItem,req,REQDays,VendorName,dept,indetdate;
+  action (features : instance) preview result[1]$self;
+}

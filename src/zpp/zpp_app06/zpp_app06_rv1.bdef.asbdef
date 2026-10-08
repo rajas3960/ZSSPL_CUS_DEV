@@ -1,0 +1,75 @@
+managed implementation in class zbp_pp_app06_rv1 unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPP_APP06_RV1 alias _hdr
+draft table zpp_app06_dt1
+with unmanaged save
+lock master
+total etag Lastchangedon
+authorization master ( instance )
+etag master Lastchangedon
+{
+  create ( authorization : global );
+  update;
+  delete;
+
+  field ( readonly : update ) Werks, Jobdesc, Jobshtnum, Status;
+
+  draft action Resume;
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+  action ( features : instance ) load_item result [1] $self;
+
+  side effects { action load_item affects entity _Item1; }
+
+  association _Item1 { create ( features : instance ); with draft; }
+  association _Item2 { create ( features : instance ); with draft; }
+
+  mapping for zpp_app03_tb1 corresponding;
+}
+
+define behavior for ZPP_APP06_IRV1 alias _item1
+with unmanaged save
+draft table zpp_app06_idt1
+lock dependent by _hdr
+authorization dependent by _hdr
+{
+  update;
+  delete ( features : instance );
+  field ( readonly ) Jobshtnum, matnr, plant, maktx, totopnqty, totreceiptqty, totreqty, uom, createdby, createdon;
+
+  field ( features : instance ) receiptqty;
+
+  validation rcptqty_val on save { create; update; field receiptqty; }
+  determine action validrcptqty { validation rcptqty_val; }
+
+  association _hdr { with draft; }
+
+  action ( features : instance ) goodsreceipt result [1] $self;
+
+  side effects { determine action validrcptqty executed on field receiptqty affects messages;
+                 action goodsreceipt affects entity _hdr._Item1; }
+
+  determination save_item on save { create; update; field receiptqty; }
+
+  mapping for zpp_app06_itb1 corresponding;
+}
+
+define behavior for ZPP_APP06_IRV2 alias _item2
+with unmanaged save
+draft table zpp_app06_idt2
+lock dependent by _hdr
+authorization dependent by _hdr
+{
+  update;
+  delete ( features : instance );
+  field ( readonly ) Jobsheet, Sno, Orderno, plant, Reqty, Matnr, Uom;
+
+  association _hdr { with draft; }
+
+  mapping for zpp_app03_itb2 corresponding;
+}

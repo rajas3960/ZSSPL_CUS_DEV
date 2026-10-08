@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service defination of  Structure Of BOM'
+define service ZSD_REP_STR {
+  expose ZPV_REP as Structure;
+}

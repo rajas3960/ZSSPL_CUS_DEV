@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination of Sales ORDER LIST'
+define service ZSD_SALESORDER_V4 {
+  expose ZSD_SALES_ORDERLIST_PV as SalesOrderList;
+}

@@ -1,0 +1,7 @@
+@EndUserText.label: 'Asset Register Report UI'
+define service ZMM_RP01_UI {
+  expose ZMM_RP01_PV   as Mainpage;
+  expose ZMM_RP01_INV;
+  expose ZMM_RP01_INGA;
+  expose zmm_rp01_jv;
+}

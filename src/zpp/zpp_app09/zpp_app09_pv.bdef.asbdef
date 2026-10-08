@@ -1,0 +1,29 @@
+projection;
+strict ( 2 );
+use draft;
+use side effects;
+
+define behavior for ZPP_APP09_PV //alias <alias_name>
+{
+//  use create;
+  use update;
+  use delete;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+  use action goodissue;
+  side effects { action goodissue affects entity _item2 ;}
+  use association _item2 { create; with draft; }
+}
+
+define behavior for ZPP_APP09_IPV2 //alias <alias_name>
+{
+  use update;
+  use delete;
+  use action goodissue;
+
+  use association _hdr { with draft; }
+}

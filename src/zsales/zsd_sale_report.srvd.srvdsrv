@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination _ v4'
+define service ZSD_SALE_REPORT {
+  expose ZSD_SALE_PV as Sales;
+}

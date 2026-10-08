@@ -1,0 +1,8 @@
+@EndUserText.label: 'Service Defination for Purchase Tegister'
+define service ZMM_PURC_REG_SD {
+  expose zmm_purc_reg_PV as PURCHASEREGISTER;
+  expose ZMM_SUP_GRP;
+  expose ZMM_GRP_SER_1;
+  expose ZMM_GRP_SUP_1;
+  expose ZOPERATIONAL_RV;
+}

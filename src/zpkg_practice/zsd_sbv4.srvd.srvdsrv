@@ -1,0 +1,5 @@
+@EndUserText.label: 'dfsadfasdfad'
+define service Zsd_sbv4 {
+  expose ZSD_SALES_RV_TEST as sales;
+  expose ZPP_PRODU_ITEM_RV;
+}

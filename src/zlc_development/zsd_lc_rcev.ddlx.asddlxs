@@ -1,0 +1,73 @@
+@Metadata.layer: #PARTNER
+@UI:{
+headerInfo: { typeName: 'Customer LC',
+              typeNamePlural: 'Customer LCs',
+              title: {  type: #STANDARD, label: 'Customer LC Details', value: 'Lnum'  },
+              description: { type: #STANDARD, label: 'Customer LC' } },
+              presentationVariant: [{ sortOrder: [{ by: 'Lnum', direction: #ASC }] }]
+ }
+@Search.searchable: true
+
+annotate entity ZSD_LC_RCEV
+    with 
+{
+ @UI.facet: [{ id: 'Lcdata', purpose: #STANDARD,
+                type: #IDENTIFICATION_REFERENCE  } ]
+  @UI: { lineItem: [{ position: 10, label: 'LC Number' } ], //{ type: #FOR_ACTION, dataAction: 'UpdateAmounts' , label: 'Refresh'  ,position: 10 }],
+  identification: [{ position: 10, label: 'LC Number' }]    }
+  @Search.defaultSearchElement: true
+    Lnum;
+     @UI: { lineItem: [{ position: 20, label: 'Validity From' }],
+  identification: [{ position: 20, label: 'Validity From' }]    }
+    Valfrm;
+    @UI: { lineItem: [{ position: 30, label: 'Validity To' }],
+  identification: [{ position: 30, label: 'Validity To' }]    } 
+    Valto;
+     @UI: { lineItem: [{ position: 40, label: 'LC issue Date' }],
+  identification: [{ position: 40, label: 'LC issue Date' }]    }
+    Lcissdt;
+     @UI: { lineItem: [{ position: 50, label: 'Bank Name' }],
+  identification: [{ position: 50, label: 'Bank Name' }]    }
+    Banknam;
+    @UI: { lineItem: [{ position: 60, label: 'Bank Branch' }],
+  identification: [{ position: 60, label: 'Bank Branch' }]    }
+    Bank_Branch;
+    @UI: { lineItem: [{ position: 70, label: 'Sold to Party' }],
+  identification: [{ position: 70, label: 'Sold to Party' }]    }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZSD_CUST_SDVTH', element: 'Customer' },
+   additionalBinding: [ {localElement: 'Stp_Name', element: 'CustomerName' } ] }]
+  @Consumption.filter: { selectionType : #SINGLE, multipleSelections : false}
+    Stp;
+     @UI: { lineItem: [{ position: 80, label: 'Party Name' }],
+  identification: [{ position: 80, label: 'Party Name' }]    }
+    Stp_Name;
+    @UI: { lineItem: [{ position: 90, label: 'LC Expiry Date' }],
+  identification: [{ position: 90, label: 'LC Expiry Date' }]    }
+    Lc_Expdt;
+    @UI: { lineItem: [{ position: 100, label: 'LC Amount' }],
+  identification: [{ position: 100, label: 'LC Amount' }]    }
+    Lc_Amt;
+    @UI: { lineItem: [{ position: 110, label: 'LC Utilization' }],
+  identification: [{ position: 110, label: 'LC Utilization' }]    }
+    Lc_Utilz;
+    @UI: { lineItem: [{ position: 120, label: 'Balance' }],
+  identification: [{ position: 120, label: 'Balance' }]    }             
+    Tot_Balance;
+    @UI: { lineItem: [{ position: 130, label: 'Created by' }],
+  identification: [{ position: 130, label: 'Created by' }]    }             
+    Createdby;
+    @UI: { lineItem: [{ position: 140, label: 'Created on' }],
+  identification: [{ position: 140, label: 'Created on' }]    }             
+    Createdon;
+    @UI: { lineItem: [{ position: 150, label: 'Last Changed by' }],
+  identification: [{ position: 150, label: 'Last Changed by' }]    }             
+    Lastchangedby;
+    @UI: { lineItem: [{ position: 160, label: 'Last Changed on' }],
+  identification: [{ position: 160, label: 'Last Changed on' }]    }             
+    Lastchangedon;
+    @UI.hidden: true
+    Lc_Curr;
+    @UI.hidden: true
+    status;
+    
+}

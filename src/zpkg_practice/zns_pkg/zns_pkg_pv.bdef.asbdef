@@ -1,0 +1,18 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZNS_PKG_PV //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+//  use action Loadexcel;
+
+  use action Edit;
+  use action Resume;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+}

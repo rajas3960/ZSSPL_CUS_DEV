@@ -1,0 +1,14 @@
+@EndUserText.label: 'Service Defination of Sales'
+define service Zsd_app_sd {
+  expose ZSD_APP_HPV        as SalesHeader;
+  expose ZSD_APP_IPV        as SalesItem;
+  expose ZSD_SALESORGN_STVH;
+  expose ZSD_DISTRI_STVH;
+  expose ZSD_DIVISION_STVH;
+  expose zsd_soldtoparty_vh;
+  expose zlc_viewhelp;
+  expose ZSD_APP2_IRV;
+  expose ZSD_APP2_PRV       as mainpage;
+  expose ZSD_APP02_HPV      as Mainpage2;
+  expose ZSD_APP02_IPV;
+}

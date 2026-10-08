@@ -1,0 +1,86 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'BILL OF MATERIAL HEADER',
+typeNamePlural: 'BILL OF MATERIAL HEADER',
+title: { type: #STANDARD, value: 'Cpno' }         } }
+annotate entity ZPP_BOM_HPV
+    with 
+{
+     @UI.facet: [ { id:              'Header',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'BOM HEADER',
+                      position:        10 } ,
+                    { id:              'Items',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'BOM ITEM',
+                      position:        20,
+                      targetElement:   '_item'} ]
+    @UI.hidden: true
+    Uuid;
+     @UI: { lineItem: [{ position: 20, label: 'CP NO'}],
+  identification: [{ position: 20, label: 'CP NO' } ] }
+  @EndUserText.label: 'CP NO'
+    Cpno;
+    @UI: { lineItem: [{ position: 30, label: 'PROJECT ID'}],
+  identification: [{ position: 30, label: 'PROJECT ID' } ] }
+  @EndUserText.label: 'PROJECT ID'
+    Projectid;
+    @UI: { lineItem: [{ position: 40, label: 'BOM NUMBER'}],
+  identification: [{ position: 40, label: 'BOM NUMBER' } ] }
+  @EndUserText.label: 'BOM NUMBER'
+    Bomnumber;
+    @UI: { lineItem: [{ position: 50, label: 'BOM REVISION'}],
+  identification: [{ position: 50, label: 'BOM REVISION' } ] }
+  @EndUserText.label: 'BOM REVISION'
+    Bomrevision;
+    @UI: { lineItem: [{ position: 60, label: 'BOM DATE'}],
+  identification: [{ position: 60, label: 'BOM DATE' } ] }
+  @EndUserText.label: 'BOM DATE'
+    Bomdate;
+    @UI: { lineItem: [{ position: 70, label: 'PROJECT'}],
+  identification: [{ position: 70, label: 'PROJECT' } ] }
+  @EndUserText.label: 'PROJECT'
+    Projectdesc;
+    @UI: { lineItem: [{ position: 80, label: 'CLIENT'}],
+  identification: [{ position: 80, label: 'CLIENT' } ] }
+  @EndUserText.label: 'CLIENT'
+    Clientname;
+    @UI: { lineItem: [{ position: 90, label: 'CONTRACTOR'}],
+  identification: [{ position: 90, label: 'CONTRACTOR' } ] }
+  @EndUserText.label: 'CONTRACTOR'
+    Contractor;
+    @UI: { lineItem: [{ position: 100, label: 'MANUFACTURE'}],
+  identification: [{ position: 100, label: 'MANUFACTURE' } ] }
+  @EndUserText.label: 'MANUFACTURE'
+    Manufacturer;
+    @UI: { lineItem: [{ position: 110, label: 'STRUCTURE'}],
+  identification: [{ position: 110, label: 'STRUCTURE' } ] }
+  @EndUserText.label: 'STRUCTURE'
+    Structure;
+    @UI: { lineItem: [{ position: 120, label: 'REF.DRG.NO'}],
+  identification: [{ position: 120, label: 'REF.DRG.NO' } ] }
+  @EndUserText.label: 'REF.DRG.NO'
+    Refdrgno;
+    @UI: { lineItem: [{ position: 130, label: 'REF.NO'}],
+  identification: [{ position: 130, label: 'REF.NO' } ] }
+  @EndUserText.label: 'REF.NO'
+    Refno;
+    @UI: { lineItem: [{ position: 140, label: 'Createdby'}],
+  identification: [{ position: 140, label: 'Createdby' } ] }
+  @EndUserText.label: 'Createdby'
+    Createdby;
+    @UI: { lineItem: [{ position: 150, label: 'Createdat'}],
+  identification: [{ position: 150, label: 'Createdat' } ] }
+  @EndUserText.label: 'Createdat'
+    Createdat;
+    @UI: { lineItem: [{ position: 160, label: 'Lastchangedby'}],
+  identification: [{ position: 160, label: 'Lastchangedby' } ] }
+  @EndUserText.label: 'Lastchangedby'
+    Lastchangedby;
+    /* Associations */
+    @UI.hidden: true
+    _item;
+    
+}

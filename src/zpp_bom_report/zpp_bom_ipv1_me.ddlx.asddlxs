@@ -1,0 +1,47 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Section Details',
+    typeNamePlural: 'Section Details'
+  }
+}
+
+@UI.presentationVariant: [{
+  sortOrder: [
+    { by: 'Matnr', direction: #ASC }
+  ]
+}]
+
+annotate entity ZPP_BOM_IpV1
+    with 
+{
+@UI.facet: [ { id:              'Item1',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Section Details',
+                 position:        10 } ]
+    @UI.hidden: true             
+    Uuid;
+     @UI: { lineItem: [{ position: 10, label: 'Section'}],
+    identification: [{ position: 10, label: 'Section' } ] }
+    @EndUserText.label: 'Section'
+    Matnr;
+     @UI: { lineItem: [{ position: 20, label: 'Section Desc'}],
+    identification: [{ position: 20, label: 'Section Desc' } ] }
+    @EndUserText.label: 'Section Desc'
+    Maktx;
+     @UI: { lineItem: [{ position: 30, label: 'Unit Wt'}],
+    identification: [{ position: 30, label: 'Unit Wt' } ] }
+    @EndUserText.label: 'Unit Wt'
+    Unitwt;
+     @UI.hidden: true
+    Meins;
+     @UI: { lineItem: [{ position: 40, label: 'Total Qty in KG'}],
+    identification: [{ position: 40, label: 'Total Qty in KG' } ] }
+    @EndUserText.label: 'Total Qty in KG'
+    Totalqty;
+    /* Associations */
+    @UI.hidden: true
+    _hdr;
+    
+}

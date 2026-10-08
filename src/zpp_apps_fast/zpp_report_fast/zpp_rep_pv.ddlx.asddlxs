@@ -1,0 +1,222 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'MIS Report',
+                typeNamePlural: 'MIS Reports',
+                title: { type: #STANDARD, label: 'MIS Reports', value: 'Jcnum' } },
+                presentationVariant: [{ sortOrder: [{ by: 'Jcnum', direction:  #ASC }] }] }
+annotate entity ZPP_REP_PV with
+{
+  @UI.facet: [ { id:              'MISReport',
+           purpose:         #STANDARD,
+           type:            #IDENTIFICATION_REFERENCE,
+           label:           'Mis Report',
+           position:        10 }]
+  @UI: {  lineItem:       [ { position: 10, label: 'Jobcard No' } ],
+  identification: [ { position: 10, label: 'Jobcard No'} ] }
+  @EndUserText.label: 'Jobcard No'
+  @UI.selectionField: [{ position: 10 }]
+  Jcnum;
+  @UI: {  lineItem:       [ { position: 20, label: 'Raw Material' } ],
+  identification: [ { position: 20, label: 'Raw Material'} ] }
+  @EndUserText.label: 'Raw Material'
+   @UI.selectionField: [{ position: 20 }]
+  Material;
+  @UI: {  lineItem:       [ { position: 30, label: 'Raw Material Name' } ],
+  identification: [ { position: 30, label: 'Raw Material Name'} ] }
+  @EndUserText.label: 'Raw Material Name'
+  makts;
+  @UI: {  lineItem:       [ { position: 40, label: 'Batch' } ],
+  identification: [ { position: 40, label: 'Batch'} ] }
+  @EndUserText.label: 'Batch'
+  batch;
+  @UI: {  lineItem:       [ { position: 50, label: 'Plant' } ],
+  identification: [ { position: 50, label: 'Plant'} ] }
+  @EndUserText.label: 'Plant'
+  Plant;
+  @UI: {  lineItem:       [ { position: 60, label: 'Supplier Heat No' } ],
+  identification: [ { position: 60, label: 'Supplier Heat No'} ] }
+  @EndUserText.label: 'Supplier Heat No'
+  grnno;
+  @UI: {  lineItem:       [ { position: 70, label: 'Coil Weight' } ],
+  identification: [ { position: 70, label: 'Coil Weight'} ] }
+  @EndUserText.label: 'Coil Weight'
+  Totqty;
+  @UI.hidden: true
+  Uom;
+  @UI: {  lineItem:       [ { position: 80, label: 'Remark' } ],
+  identification: [ { position: 80, label: 'Remark'} ] }
+  @EndUserText.label: 'Remark'
+  remark;
+  @UI: {  lineItem:       [ { position: 83, label: 'Supplier' } ],
+  identification: [ { position: 80, label: 'Supplier'} ] }
+  @EndUserText.label: 'Supplier'
+  Supplier;
+  @UI: {  lineItem:       [ { position: 86, label: 'Supplier Name' } ],
+  identification: [ { position: 80, label: 'Supplier Name'} ] }
+  @EndUserText.label: 'Supplier Name'
+  SupplierName;
+  @UI: {  lineItem:       [ { position: 90, label: 'Created by' } ],
+  identification: [ { position: 90, label: 'Created by'} ] }
+  @EndUserText.label: 'Created by'
+  Createdby;
+  @UI: {  lineItem:       [ { position: 100, label: 'Created On' } ],
+  identification: [ { position: 100, label: 'Created On'} ] }
+  @EndUserText.label: 'Created On'
+  Createdon;
+  @UI: {  lineItem:       [ { position: 110, label: 'Material (Product)' } ],
+  identification: [ { position: 110, label: 'Material (Product)'} ] }
+  @EndUserText.label: 'Material (Product)'
+  Matnr;
+  @UI: {  lineItem:       [ { position: 120, label: 'Material Desc. (Product)' } ],
+  identification: [ { position: 120, label: 'Material Desc. (Product)'} ] }
+  @EndUserText.label: 'Material Desc. (Product)'
+  Maktx;
+  @UI: {  lineItem:       [ { position: 130, label: 'Sale Order Number' } ],
+  identification: [ { position: 130, label: 'Sale Order Number'} ] }
+  @EndUserText.label: 'Sale Order Number'
+  Saleorder;
+  @UI: {  lineItem:       [ { position: 140, label: 'Prod. Order Number' } ],
+  identification: [ { position: 140, label: 'Prod. Order Number'} ] }
+  @EndUserText.label: 'Prod. Order Number'
+  Productionorder;
+  @UI: {  lineItem:       [ { position: 150, label: 'Plan Qty in Nos' } ],
+  identification: [ { position: 150, label: 'Plan Qty in Nos'} ] }
+  @EndUserText.label: 'Plan Qty in Nos'
+  Pcs;
+  @UI: {  lineItem:       [ { position: 160, label: 'Plan Qty in Kgs' } ],
+  identification: [ { position: 160, label: 'Plan Qty in Kgs'} ] }
+  @EndUserText.label: 'Plan Qty in Kgs'
+  Menge;
+  @UI.hidden: true
+  Meins;
+  @UI: {  lineItem:       [ { position: 170, label: 'Forging Qty In Nos' } ],
+  identification: [ { position: 170, label: 'Forging Qty In Nos'} ] }
+  @EndUserText.label: 'Forging Qty In Nos'
+  Forging;
+  @UI: {  lineItem:       [ { position: 180, label: 'Forging Qty In Kgs' } ],
+  identification: [ { position: 180, label: 'Forging Qty In Kgs'} ] }
+  @EndUserText.label: 'Forging Qty In Kgs'
+  ForgingWt;
+  @UI.hidden: true
+  ConfirmationUnit;
+  @UI: {  lineItem:       [ { position: 183, label: 'Bal to Forging Qty in Nos' } ],
+  identification: [ { position: 183, label: 'Bal to Forging Qty in Nos'} ] }
+  @EndUserText.label: 'Bal to Forging Qty in Nos'
+  baltoForging;
+  @UI: {  lineItem:       [ { position: 186, label: 'Bal to Forging Qty in Kgs' } ],
+  identification: [ { position: 186, label: 'Bal to Forging Qty in Kgs'} ] }
+  @EndUserText.label: 'Bal to Forging Qty in Kgs'
+  balForgingWt;
+  @UI: {  lineItem:       [ { position: 188, label: 'Excess Forging Qty in Nos' } ],
+  identification: [ { position: 188, label: 'Excess Forging Qty in Nos'} ] }
+  @EndUserText.label: 'Excess Forging Qty in Nos'
+  acc_forgingpc;
+  @UI: {  lineItem:       [ { position: 189, label: 'Excess Forging Qty in Kgs' } ],
+  identification: [ { position: 189, label: 'Excess Forging Qty in Kgs'} ] }
+  @EndUserText.label: 'Excess Forging Qty in Kgs'
+  acc_forgingkg;
+  @UI: {  lineItem:       [ { position: 190, label: 'Forging Date' } ],
+  identification: [ { position: 190, label: 'Forging Date'} ] }
+  @EndUserText.label: 'Forging Date'
+  Forgingdt;
+  @UI: {  lineItem:       [ { position: 200, label: 'Drilling Qty In Nos' } ],
+  identification: [ { position: 200, label: 'Drilling Qty In Nos'} ] }
+  @EndUserText.label: 'Drilling Qty In Nos'
+  Drilling;
+  @UI: {  lineItem:       [ { position: 210, label: 'Drilling Qty In Kgs' } ],
+  identification: [ { position: 210, label: 'Drilling Qty In Kgs'} ] }
+  @EndUserText.label: 'Drilling Qty In Kgs'
+  Drillingwt;
+  @UI: {  lineItem:       [ { position: 214, label: 'Bal to Drilling Qty in Nos' } ],
+  identification: [ { position: 214, label: 'Bal to Drilling Qty in Nos'} ] }
+  @EndUserText.label: 'Bal to Drilling Qty in Nos'
+  baltoDrilling;
+  @UI: {  lineItem:       [ { position: 218, label: 'Bal to Drilling Qty in Kgs' } ],
+  identification: [ { position: 218, label: 'Bal to Drilling Qty in Kgs'} ] }
+  @EndUserText.label: 'Bal to Drilling Qty in Kgs'
+  baltoDrillingwz;
+  @UI: {  lineItem:       [ { position: 220, label: 'Drilling Date' } ],
+  identification: [ { position: 220, label: 'Drilling Date'} ] }
+  @EndUserText.label: 'Drilling Date'
+  Drillingdt;
+  @UI: {  lineItem:       [ { position: 230, label: 'Tapping Qty In Nos' } ],
+  identification: [ { position: 230, label: 'Tapping Qty In Nos'} ] }
+  @EndUserText.label: 'Tapping Qty In Nos'
+  Tapping;
+  @UI: {  lineItem:       [ { position: 240, label: 'Tapping Qty In Kgs' } ],
+  identification: [ { position: 240, label: 'Tapping Qty In Kgs'} ] }
+  @EndUserText.label: 'Tapping Qty In Kgs'
+  Tappingwt;
+  @UI: {  lineItem:       [ { position: 244, label: 'Bal to Tapping Qty in Nos' } ],
+  identification: [ { position: 244, label: 'Bal to Tapping Qty in Nos'} ] }
+  @EndUserText.label: 'Bal to Tapping Qty in Nos'
+  baltoTapping;
+  @UI: {  lineItem:       [ { position: 248, label: 'Bal to Tapping Qty in Kgs' } ],
+  identification: [ { position: 248, label: 'Bal to Tapping Qty in Kgs'} ] }
+  @EndUserText.label: 'Bal to Tapping Qty in Kgs'
+  baltoTappingwt;
+  @UI: {  lineItem:       [ { position: 250, label: 'Tapping Date' } ],
+  identification: [ { position: 250, label: 'Tapping Date'} ] }
+  @EndUserText.label: 'Tapping Date'
+  Tappingdt;
+  @UI: {  lineItem:       [ { position: 260, label: 'Heat Treatment Qty In Nos' } ],
+  identification: [ { position: 260, label: 'Heat Treatment Qty In Nos'} ] }
+  @EndUserText.label: 'Heat Treatment Qty In Nos'
+  Heattreatment;
+  @UI: {  lineItem:       [ { position: 270, label: 'Heat Treatment Qty In Kgs' } ],
+  identification: [ { position: 270, label: 'Heat Treatment Qty In Kgs'} ] }
+  @EndUserText.label: 'Heat Treatment Qty In Kgs'
+  htwt;
+  @UI: {  lineItem:       [ { position: 274, label: 'Bal to Heat Treatment Qty in Nos' } ],
+  identification: [ { position: 274, label: 'Bal to Heat Treatment Qty in Nos'} ] }
+  @EndUserText.label: 'Bal to Heat Treatment Qty in Nos'
+  baltoHeattreatment;
+  @UI: {  lineItem:       [ { position: 278, label: 'Bal to Heat Treatment Qty in Kgs' } ],
+  identification: [ { position: 278, label: 'Bal to Heat Treatment Qty in Kgs'} ] }
+  @EndUserText.label: 'Bal to Heat Treatment Qty in Kgs'
+  baltohtwt;
+  @UI: {  lineItem:       [ { position: 280, label: 'Heat Treatment Date' } ],
+  identification: [ { position: 280, label: 'Heat Treatment Date'} ] }
+  @EndUserText.label: 'Heat Treatment Date'
+  Heattreatmentdt;
+  @UI: {  lineItem:       [ { position: 290, label: 'Electro Plating Qty In Nos' } ],
+  identification: [ { position: 290, label: 'Electro Plating Qty In Nos'} ] }
+  @EndUserText.label: 'Electro Plating Qty In Nos'
+  Eleplating;
+  @UI: {  lineItem:       [ { position: 300, label: 'Electro Plating Qty In Kgs' } ],
+  identification: [ { position: 300, label: 'Electro Plating Qty In Kgs'} ] }
+  @EndUserText.label: 'Electro Plating Qty In Kgs'
+  epwt;
+  @UI: {  lineItem:       [ { position: 303, label: 'Bal to Electro Plating Qty In Nos' } ],
+  identification: [ { position: 303, label: 'Bal to Electro Plating Qty In Nos'} ] }
+  @EndUserText.label: 'Bal to Electro Plating Qty In Nos'
+  balep;
+  @UI: {  lineItem:       [ { position: 308, label: 'Bal to Electro Plating Qty In Kgs' } ],
+  identification: [ { position: 308, label: 'Bal to Electro Plating Qty In Kgs'} ] }
+  @EndUserText.label: 'Bal to Electro Plating Qty In Kgs'
+  balepwt;
+  @UI: {  lineItem:       [ { position: 330, label: 'Electro Plating Date' } ],
+  identification: [ { position: 330, label: 'Electro Plating Date'} ] }
+  @EndUserText.label: 'Electro Plating Date'
+  Eleplatingdt;
+  @UI: {  lineItem:       [ { position: 340, label: 'Galva Qty In Nos' } ],
+  identification: [ { position: 340, label: 'Galva Qty In Nos'} ] }
+  @EndUserText.label: 'Galva Qty In Nos'
+  Galva;
+  @UI: {  lineItem:       [ { position: 350, label: 'Galva Qty In Kgs' } ],
+  identification: [ { position: 350, label: 'Galva Qty In Kgs'} ] }
+  @EndUserText.label: 'Galva Qty In Kgs'
+  Galvawt;  
+  @UI: {  lineItem:       [ { position: 370, label: 'Bal To Galva Qty in Nos' } ],
+  identification: [ { position: 370, label: 'Bal To Galva Qty in Nos'} ] }
+  @EndUserText.label: 'Bal To Galva Qty in Nos'
+  baltoGalva;
+  @UI: {  lineItem:       [ { position: 380, label: 'Bal To Galva Qty in Kgs' } ],
+  identification: [ { position: 380, label: 'Bal To Galva Qty in Kgs'} ] }
+  @EndUserText.label: 'Bal To Galva Qty in Kgs'
+  baltoGalvawt;
+  @UI: {  lineItem:       [ { position: 390, label: 'Galva Date' } ],
+  identification: [ { position: 390, label: 'Galva Date'} ] }
+  @EndUserText.label: 'Galva Date'
+  Galvadt;
+}

@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Work Order Section-Wise Summary"
+  },
+  "ui5AppDetails": {
+    "appId": "zsdreppv.zsdreppv"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_A97363FAC2A23E92E662CC26144BF84A18E7793E_TM",
+    "semanticObject": "ZSALE_REPORT",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_A97363FAC2A23E92E662CC26144BF84A18E7793E_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Work Order Section-Wise Summary",
+        "subtitle": "Report"
+      }
+    }
+  ]
+}

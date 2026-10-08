@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Denifnation Planning UI'
+define service ZPP_APPS_ROL01_UI {
+  expose ZPP_APPS_ROL01_PV as Mainpage;
+  expose ZPP_APPS_ROL01_VH;
+  expose ZPP_APPS_PRV;
+}

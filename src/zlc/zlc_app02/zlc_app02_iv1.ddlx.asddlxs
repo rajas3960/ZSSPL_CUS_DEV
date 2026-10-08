@@ -1,0 +1,98 @@
+@Metadata.layer: #PARTNER
+annotate entity ZLC_APP02_IPV1
+    with 
+{
+  @UI.facet: [ { id:              'Item',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Standard Items',
+                   position:        10 } ]
+
+@UI: { lineItem: [{ position: 10, label: 'LC Number' }],
+identification : [{ position: 10, label: 'LC Number' }]  }
+    Lnum;
+    @UI: { lineItem: [{ position: 20, label: 'Line Items' }],
+    identification : [{ position: 20, label: 'Line Items' }]     }
+    Lcline;
+       @UI: { lineItem: [{ position: 30, label: 'Valid From' }] ,
+       identification : [{ position: 30, label: 'Valid From' }]  }
+   
+    Valfrm;
+//     @UI: { lineItem: [{ position: 32, label: 'LC Amendment' }] ,
+//       identification : [{ position: 32, label: 'LC Amendment' }]  }
+@UI.hidden: true
+     Amtdt;
+       @UI: { lineItem: [{ position: 40, label: 'Valid To' }],
+       identification : [{ position: 40, label: 'Valid To' }]    }
+    Valto;
+//       @UI: { lineItem: [{ position: 50, label: 'BOE No' }],
+//       identification : [{ position: 50, label: 'BOE No' }]    }
+@UI.hidden: true
+    Boeno;
+    
+//       @UI: { lineItem: [{ position: 60, label: 'BOE Date' }],
+//       identification : [{ position: 60, label: 'BOE Date' }]    }
+@UI.hidden: true
+    Boedt;
+//       @UI: { lineItem: [{ position: 70, label: 'Due Date' }] ,
+//       identification : [{ position: 70, label: 'Due Date' }]   }
+@UI.hidden: true
+    Dudt;
+//       @UI: { lineItem: [{ position: 80, label: 'BOE Amount' }] ,
+//       identification : [{ position: 80, label: 'BOE Amount' }]    }
+@UI.hidden: true
+    Boeamt;
+//        @UI: { lineItem: [{ position: 83, label: 'Fright' }] ,
+//       identification : [{ position: 83, label: 'Fright' }]    }
+@UI.hidden: true
+    Fright;
+//     @UI: { lineItem: [{ position: 85, label: 'Intrest Amount / Debit Note Amount' }] ,
+//       identification : [{ position: 85, label: 'Intrest Amount / Debit Note Amount' }]    }
+@UI.hidden: true
+    Instdebt;
+//         @UI: { lineItem: [{ position: 86, label: 'Total BOE Amount' }] ,
+//       identification : [{ position: 86, label: 'Total BOE Amount' }]    }
+@UI.hidden: true
+    Tboeamt;
+   @UI.hidden: true
+    Boecurr;
+       @UI: { lineItem: [{ position: 90, label: 'No Of Days' }] ,
+       identification : [{ position: 90, label: 'No Of Days' }]   }
+    Noofdays;
+       @UI: { lineItem: [{ position: 100, label: 'Status' }]  ,
+       identification : [{ position: 100, label: 'Status' }] }
+    Accbstus;
+       @UI: { lineItem: [{ position: 42, label: 'LC Amount' }] ,
+       identification : [{ position: 42, label: 'LC Amount' }]   }
+    LcAmt;
+        @UI: { lineItem: [{ position: 43, label: 'Torlence' }] ,
+       identification : [{ position: 43, label: 'Torlence' }]   }
+       Torlce;
+    @UI: { lineItem: [{ position: 44, label: 'Total LC Amount' }] ,
+       identification : [{ position: 44, label: 'Total LC Amount' }]   }
+    Tlcamt;
+    @UI.hidden: true
+    LcCurr;
+       @UI: { lineItem: [{ position: 120, label: 'Remarks' }] ,
+       identification : [{ position: 120, label: 'Remarks' }]   }
+    Remark;
+    @UI.hidden: true
+    Mark;
+       @UI: { lineItem: [{ position: 130, label: 'Created By' }] ,
+       identification : [{ position: 130, label: 'Created By' }]  }
+    Createdby;
+       @UI: { lineItem: [{ position: 140, label: 'Creation Date' }] ,
+       identification : [{ position: 140, label: 'Creation Date' }]    }
+    Createdon;
+     @UI: { lineItem: [{ position: 112, label: 'Interest %' }] ,
+       identification : [{ position: 112, label: 'Interest %' }]   }
+    Inst;
+//         @UI: { lineItem: [{ position: 88, label: 'BOE Quantity' }] ,
+//       identification : [{ position: 88, label: 'BOE Quantity' }]    }
+@UI.hidden: true
+    Boeqty;
+    /* Associations */
+    @UI.hidden: true
+    _Hdr;
+    
+}

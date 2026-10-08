@@ -1,0 +1,13 @@
+@EndUserText.label: 'Jobsheet Creation Application - Service Defination'
+define service ZPP_APPS02_UI {
+  expose ZPP_APPS02_PV   as Mainpage;
+  expose ZPP_APPS02_IPV;
+  expose ZPP_APPS02_OP;
+  expose ZPP_APPS02_IPV2;
+  expose ZPP_APPS02_IPV3;
+  expose ZPP_APPS02_IPV4;
+  expose ZPP_APPS02_IPV5;
+  expose ZPP_PRODUCT_VH4;
+  expose ZPP_APPS02_POV4;
+  expose ZPP_APPS02_SE;
+}

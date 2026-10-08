@@ -1,0 +1,25 @@
+projection;
+strict ( 2 );
+
+define behavior for ZPP_REPORT_Hpv alias hdr
+{
+
+
+  use action PrintBom;
+
+  use association Item { create; }
+}
+
+define behavior for ZPP_REP_IPV01 alias item
+{
+
+  use association _hdr;
+  use association Item1 { create; }
+}
+
+define behavior for ZPP_REP_IPV02 alias item1
+{
+
+  use association _hdr;
+  use association item;
+}

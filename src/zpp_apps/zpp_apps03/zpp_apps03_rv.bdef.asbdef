@@ -1,0 +1,96 @@
+managed implementation in class zbp_pp_apps03_rv unique;
+strict ( 1 );
+with draft;
+
+define behavior for ZPP_APPS03_RV alias _hdr
+with unmanaged save
+//persistent table zpp_apps03_htb
+draft table zpp_apps03_dtb
+lock master
+total etag Lastchangedon
+authorization master ( instance )
+etag master Lastchangedon
+{
+  create ( authorization : global );
+  update;
+  delete;
+  draft action Resume;
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+  determination gt_data1 on save { create; update; }
+
+  action ( features : instance ) seltitem result [1] $self;
+  action (features : instance) showleng result [1] $self;
+  action (features : instance) print result [1] $self;
+
+  side effects { action seltitem affects entity _Item;
+  action showleng affects entity _Item3 ;}
+
+  field ( readonly, numbering : managed ) Uuid;
+  field ( mandatory : create ) Vrcuting, Werks, Project, Projectname;
+  field ( readonly : update ) Vrcuting, Werks, Project, Projectname;
+  association _Item { create; with draft; }
+  association _Item2 { create; with draft; }
+  association _Item3 { create; with draft; }
+  mapping for zpp_apps03_htb corresponding;
+}
+
+define behavior for ZPP_APPS03_IRV alias _item1
+//persistent table zpp_apps03_itb1
+draft table zpp_apps03_ditb1
+with unmanaged save
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Orderno, Length, Width, Matnr, Maktx, Plant, Plnqty, Rsnum, Vbeln, Uom, Totreqty, Totopnqty, Soitem, Smatnr;
+  validation reqty_val on save { create; update; field Reqty; }
+  determine action validreqty { validation reqty_val; }
+
+  determination gtidata1 on save { create; update; field Reqty; }
+  action ( features : instance ) selectim result [1] $self;
+  action (features : instance ) selectionitm parameter ZPP_APPS01_POV4 result [1] $self;
+  side effects
+  { action selectim affects entity _hdr._Item2;
+    determine action validreqty executed on field Reqty affects messages; }
+  association _hdr { with draft; }
+  mapping for zpp_apps03_itb1 corresponding;
+}
+
+define behavior for ZPP_APPS_IRV2 alias _item2
+//persistent table zpp_apps03_itb2
+with unmanaged save
+draft table zpp_apps03_ditb2
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+
+  update;
+  delete;
+  field ( readonly ) Uuid, Sno, Length, Maktx, Matnr, Netwt, Orderno, Plant, Plnqty, Reqty, Width, Vbeln, Uom,Wetpc;
+  determination DELDE on modify { delete; field Sno; }
+  association _hdr { with draft; }
+  mapping for zpp_apps03_itb2 corresponding;
+}
+define behavior for ZPP_APPS03_IRV3 alias _item3
+//persistent table zpp_apps03_itb2
+with unmanaged save
+draft table zpp_apps03_ditb3
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+
+  update;
+  delete;
+  field ( readonly ) Uuid, Length, Quantity;
+  //  determination DELDE on modify { delete; field Sno ;}
+  association _hdr { with draft; }
+  mapping for zpp_apps3_itb3 corresponding;
+}

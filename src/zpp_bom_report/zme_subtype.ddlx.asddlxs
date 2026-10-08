@@ -1,0 +1,32 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Sub Type Report',
+typeNamePlural: 'Sub Type Reports',
+title: { type: #STANDARD, value: 'Bomnumber' }         } }
+annotate entity ZPP_SUBTYPE
+    with 
+{
+@UI.facet: [ { id:              'Subtype',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Material',
+                 position:        10 } ]
+    @UI: { lineItem: [{ position: 10, label: 'Sub Type'}],
+    identification: [{ position: 10, label: 'Sub Type' } ] }
+    @EndUserText.label: 'Sub Type'
+    @UI.selectionField: [{ position: 10 }]
+    Material;
+    @UI: { lineItem: [{ position: 20, label: 'Tower Type'}],
+    identification: [{ position: 20, label: 'Tower Type' } ] }
+    @EndUserText.label: 'Structure'
+    @UI.selectionField: [{ position: 20 }]
+    MarkNumber;
+    @UI: { lineItem: [{ position: 30, label: 'Total Weight'}],
+    identification: [{ position: 30, label: 'Total Weight' } ] }
+    @EndUserText.label: 'Total Weight'
+    total_weight;
+        @UI: { lineItem: [{ position: 40, label: 'material_suffix'}],
+    identification: [{ position: 30, label: 'material_suffix' } ] }
+    @EndUserText.label: 'material_suffix'
+    material_suffix;
+}

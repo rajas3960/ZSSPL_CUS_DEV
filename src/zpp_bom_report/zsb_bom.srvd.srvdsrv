@@ -1,0 +1,11 @@
+@EndUserText.label: 'Service defination of BOM'
+@ObjectModel.leadingEntity.name: 'ZPP_BOM_HDPV'
+define service ZSB_BOM {
+  expose ZPP_BOM_HDPV   as mainpage;
+  expose ZPP_BOM_IDPV;
+  expose ZPP_BOM_IpV1;
+  expose ZPP_BOM_I_CE;
+  expose ZPP_SUBTYPE;
+  expose ZPP_REPORT_IRV;
+  expose ZPP_MD_VH;
+}

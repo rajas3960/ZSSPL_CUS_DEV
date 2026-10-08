@@ -1,0 +1,78 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: {
+    typeName: 'Section Blance Report',
+    typeNamePlural: 'Section Blance Reports',title: {type: #STANDARD,label: 'Section Blance Report', value: 'BillOfMaterialComponent'}},
+  presentationVariant: [ {sortOrder: [{ by: 'YY1_Project_SDH', direction: #ASC },{ by: 'BillOfMaterialComponent',direction: #ASC }
+    ]  } ]}
+annotate entity zpp_report_pv01 with
+{
+  @UI.facet: [ { id:              'BalancetoPlan',
+  purpose:         #STANDARD,
+  type:            #IDENTIFICATION_REFERENCE,
+  label:           'Balance To Plan Section',
+  position:        10 } ,
+  { id:              'BalancetoPlanmark',
+  purpose:         #STANDARD,
+  type:            #LINEITEM_REFERENCE,
+  label:           'Balance To Plan Mark',
+  position:        20,
+  targetElement:   'item'} ]
+
+
+  @UI: {  lineItem:       [ { position: 10, label: 'Section Material' } ],
+     identification: [ { position: 10, label: 'Section Material'} ] }
+  @EndUserText.label: 'Section Material'
+  @UI.selectionField: [{ position: 10 }]
+  BillOfMaterialComponent;
+  @UI: {  lineItem:       [ { position: 30, label: 'Priority Po no' } ],
+   identification: [ { position: 30, label: 'Priority Po no'} ] }
+  @EndUserText.label: 'Priority Po no'
+  @UI.selectionField: [{ position: 30 }]
+  @Consumption.valueHelpDefinition: [
+  {
+  entity: {
+  name: 'ZPP_REPORT_VH',
+  element: 'Po'  }  }  ]
+  YY1_PriorityPONos_SDH;
+  @UI: {  lineItem:       [ { position: 40, label: 'Section Material Desc' } ],
+     identification: [ { position: 40, label: 'Section Material Desc'} ] }
+  @EndUserText.label: 'Section Material Desc'
+  ProductName;
+  @UI: {  lineItem:       [ { position: 50, label: 'Project' } ],
+     identification: [ { position: 50, label: 'Project'} ] }
+  @EndUserText.label: 'Project'
+  @UI.selectionField: [{ position: 20 }]
+  @Consumption.valueHelpDefinition: [
+  {
+  entity: {
+   name: 'ZPP_REPORT_VH',
+   element: 'Project'  }  }  ]
+  YY1_Project_SDH;
+  @UI: {  lineItem:       [ { position: 55, label: 'Sales order' } ],
+     identification: [ { position: 55, label: 'Sales order'} ] }
+  @EndUserText.label: 'Sales order'
+  @UI.selectionField: [{ position: 30 }]
+  @Consumption.valueHelpDefinition: [
+  {
+  entity: {
+   name: 'ZPP_REPORT_VH',
+   element: 'SalesDocument'  }  }  ]
+  SalesDocument;
+  @UI: {  lineItem:       [ { position: 60, label: 'Section Total Weight' } ],
+   identification: [ { position: 60, label: 'Section Total Weight'} ] }
+  @EndUserText.label: 'Section Total Weight'
+  Secwieght;
+  //  @UI: {  lineItem:       [ { position: 10, label: 'Production Order No.' } ],
+  //     identification: [ { position: 10, label: 'Production Order No.'} ] }
+  //  @EndUserText.label: 'Production Order No.'
+  //  total_wt;
+  @UI: {  lineItem:       [ { position: 65, label: 'Total Plan Weight' } ],
+     identification: [ { position: 65, label: 'Total Plan Weight'} ] }
+  @EndUserText.label: 'Total Plan Weight'
+  totoal_planwt;
+  @UI: {  lineItem:       [ { position: 70, label: 'Balance Weight' } ],
+     identification: [ { position: 70, label: 'Balance Weight'} ] }
+  @EndUserText.label: 'Balance Weight'
+  Blance_wt;
+}

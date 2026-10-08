@@ -1,0 +1,78 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Production Planning Creation Item',
+typeNamePlural: 'Production Planning Creation Item',
+title: { type: #STANDARD, value: 'Uuid'        } }     }
+@UI.createHidden: true
+@UI.updateHidden: true
+@UI.deleteHidden: true
+annotate entity ZPP_APPSR_IPV
+    with 
+{
+     @UI.facet: [ { id:              'ProductionPlanningItem',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Production Planning Selection Items',
+                      position:        20 } ]
+     
+   @UI.hidden: true               
+   Uuid;   
+    @UI: { lineItem: [{ position: 10, label: 'Purchase Order'},{ type: #FOR_ACTION , dataAction: 'gt_selection', label: 'Select'}],
+  identification: [{ position: 10, label: 'Purchase Order' } ] }
+  @EndUserText.label: 'Purchase Order'
+   Purchaseorder;
+    @UI: { lineItem: [{ position: 20, label: 'Purchase Order Item'}],
+  identification: [{ position: 20, label: 'Purchase Order Item' } ] }
+  @EndUserText.label: 'Purchase Order Item'
+   Purchaseitm;
+    @UI: { lineItem: [{ position: 30, label: 'Priority Po'}],
+  identification: [{ position: 30, label: 'Priority Po' } ] }
+  @EndUserText.label: 'Priority Po'
+   Prioritypo;
+    @UI: { lineItem: [{ position: 40, label: 'Receiving Plant/Customer'}],
+  identification: [{ position: 40, label: 'Receiving Plant/Customer' } ] }
+  @EndUserText.label: 'Receiving Plant/Customer'
+   Recplt;
+    @UI: { lineItem: [{ position: 50, label: 'Length'}],
+  identification: [{ position: 50, label: 'Length' } ] }
+  @EndUserText.label: 'Length'
+   Length;
+    @UI: { lineItem: [{ position: 60, label: 'Width'}],
+  identification: [{ position: 60, label: 'Width' } ] }
+  @EndUserText.label: 'Width'
+   Width;
+    @UI: { lineItem: [{ position: 70, label: 'Pieces'}],
+  identification: [{ position: 70, label: 'Pieces' } ] }
+  @EndUserText.label: 'Pices'
+   Pcs;
+    @UI: { lineItem: [{ position: 80, label: 'QTY'}],
+  identification: [{ position: 80, label: 'QTY' } ] }
+  @EndUserText.label: 'QTY'
+   Menge;
+    @UI: { lineItem: [{ position: 90, label: 'QTY Unit'}],
+  identification: [{ position: 90, label: 'QTY Unit' } ] }
+  @EndUserText.label: 'QTY Unit'
+   Meins;
+    @UI: { lineItem: [{ position: 100, label: 'Material'}],
+  identification: [{ position: 100, label: 'Material' } ] }
+  @EndUserText.label: 'Material'
+   Matnr;
+    @UI: { lineItem: [{ position: 110, label: 'Material Desc'}],
+  identification: [{ position: 110, label: 'Material Desc' } ] }
+  @EndUserText.label: 'Material Desc'
+   Maktx;
+//    @UI: { lineItem: [{ position: 120, label: 'Mark No'}],
+//  identification: [{ position: 120, label: 'Mark No' } ] }
+//  @EndUserText.label: 'Mark No'
+@UI.hidden: true
+   Mark;
+//     @UI: { lineItem: [{ position: 130, label: 'Unit Wt'}],
+//  identification: [{ position: 130, label: 'Unit Wt' } ] }
+//  @EndUserText.label: 'Unit Wt'
+@UI.hidden: true
+  Unitwt;
+   /* Associations */
+   @UI.hidden: true
+   _hdr;
+    
+}

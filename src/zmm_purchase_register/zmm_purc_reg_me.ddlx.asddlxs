@@ -1,0 +1,277 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Purchase Register',
+                typeNamePlural: 'Purchase Register',
+                title: { type: #STANDARD, label: 'Purchase Register', value: 'PurchaseOrder' } },
+  presentationVariant: [{ sortOrder: [{ by: 'PurchaseOrder', direction:  #DESC }] }] }
+annotate view zmm_purc_reg_PV with
+
+{
+ @UI.facet: [ { id:              'PurchaseRegister',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Purchase Register',
+                 position:        10 }]
+                   
+
+  @UI: {  lineItem:       [ { position: 10, label: 'GRN Year' } ],
+          identification: [ { position: 10, label: 'GRN Year' } ] }
+  GRYear;
+  
+  @UI: {  lineItem:       [ { position: 20, label: 'GRN Date' } ],
+          identification: [ { position: 20, label: 'GRN Date' } ],
+          selectionField: [ { position: 20}  ]}
+ GRNDate ;
+
+  @UI: {  lineItem:       [ { position: 30, label: 'GRN No.' } ],
+          identification: [ { position: 30, label: 'GRN No.' } ],
+          selectionField: [ { position: 30}  ]}
+  GRDocument;
+  
+  @UI: {  lineItem:         [ { position: 40, label: 'Purchase Order' } ],
+          identification:   [ { position: 40, label: 'Purchase Order' } ],
+          selectionField:   [ { position: 40}  ]}
+  PurchaseOrder;
+  
+  @UI: {  lineItem:         [ { position: 41, label: 'Purchase Order Item' } ],
+          identification:   [ { position: 41, label: 'Purchase Order Item' } ] }
+  PurchaseOrderItem;
+    
+  @UI: {  lineItem:         [ { position: 50, label: 'Purchase Order Type' } ],
+          identification:   [ { position: 50, label: 'Purchase Order Type' } ] }
+  PurchaseType;
+
+  @UI: {  lineItem:         [ { position: 60, label: 'Company Code' } ],
+          identification:   [ { position: 60, label: 'Company Code' } ],
+          selectionField:   [ { position: 50}  ]}
+  compcode;
+  
+  @UI: {  lineItem:         [ { position: 70, label: 'Supplier Invoice No.' } ],
+          identification:   [ { position: 70, label: 'Supplier Invoice No.' } ] }
+  SupplierInvoiceNo;
+
+  @UI: {  lineItem:         [ { position: 80, label: 'InvoiceDate' } ],
+          identification:   [ { position: 80, label: 'InvoiceDate,' } ] }
+  InvoiceDate;
+  
+  @UI: {  lineItem:         [ { position: 90, label: 'Posting Date' } ],
+          identification:   [ { position: 90, label: 'Posting Date' } ] }
+GRpostingDate;
+
+  
+ @UI: {  lineItem:         [ { position: 91, label: 'DocumentReferenceID' } ],
+          identification:   [ { position: 91, label: 'DocumentReferenceID' } ] }  
+  DocumentReferenceID;
+  
+//  @UI: {  lineItem:         [ { position: 91, label: 'Additional GlAccount' } ],
+//          identification:   [ { position: 91, label: 'Additional GlAccount' } ] }  
+// additionalglaccount;
+  
+  @UI: {  lineItem:         [ { position: 110, label: 'Vendor Code' } ],
+          identification:   [ { position: 110, label: 'Vendor Code' } ] }
+  Vendor;
+  
+  @UI: {  lineItem:         [ { position: 120, label: 'Vendor Name' } ],
+          identification:   [ { position: 120, label: 'Vendor Name' } ] }
+  VendorName;
+  
+  @UI: {  lineItem:         [ { position: 130, label: 'Vendor State Code' } ],
+          identification:   [ { position: 130, label: 'Vendor State Code' } ] }  
+  VendorRegion;
+  
+  @UI: {  lineItem:         [ { position: 140, label: 'Vendor GSTIN No.' } ],
+          identification:   [ { position: 140, label: 'Vendor GSTIN No.' } ] }
+  VendorTax;
+  
+  @UI: {  lineItem:         [ { position: 150, label: 'Vendor Country' } ],
+          identification:   [ { position: 150, label: 'Vendor Country' } ] }
+  VendorCountry;
+  
+  @UI: {  lineItem:         [ { position: 160, label: 'Vendor PAN No.' } ],
+          identification:   [ { position: 160, label: 'Vendor PAN No.' } ] }
+  VendorPanNumber;
+  
+//  @UI: {  lineItem:         [ { position: 160, label: 'Material' } ],
+//          identification:   [ { position: 160, label: 'Material' } ] }
+//  matrtial;
+  
+  @UI: {  lineItem:         [ { position: 170, label: 'Material Desc' } ],
+          identification:   [ { position: 170, label: 'material Desc' } ] }
+  MaterialDescription;
+  
+  @UI: {  lineItem:         [ { position: 180, label: 'HSN Code' } ],
+          identification:   [ { position: 180, label: 'HSN Code' } ] }
+  hsnno;
+
+  @UI: {  lineItem:         [ { position: 190, label: 'Purchase Order Date' } ],
+          identification:   [ { position: 190, label: 'Purchase Order Date' } ] }
+  Podate;
+  
+//  @UI: {  lineItem:         [ { position: 200, label: 'Basic Price' } ],
+//          identification:   [ { position: 200, label: 'Basic Price' } ] }
+//  pricebasic;
+
+  @UI: {  lineItem:         [ { position: 210, label: 'Purchase Order Group' } ],
+          identification:   [ { position: 210, label: 'Purchase Order Group' } ] }
+  Pogrp;
+  
+  @UI: {  lineItem:         [ { position: 211, label: 'Purchase Order Type' } ],
+          identification:   [ { position: 211, label: 'Purchase Order Type' } ] }  
+  POType;
+  
+  @UI: {  lineItem:         [ { position: 220, label: 'Material Type' } ],
+          identification:   [ { position: 220, label: 'Material Type' } ] }
+  MaterialType;
+  
+  @UI: {  lineItem:         [ { position: 230, label: 'GL Code' } ],
+          identification:   [ { position: 230, label: 'GL Code' } ] }
+          
+  GLCode;
+  @UI: {  lineItem:         [ { position: 231, label: 'GL Description' } ],
+          identification:   [ { position: 231, label: 'GL Description' } ] }
+          
+  GLDescription;
+  
+  @UI: {  lineItem:         [ { position: 232, label: 'Storage Location' } ],
+          identification:   [ { position: 232, label: 'Storage Location' } ] }
+ 
+  StgLoc;
+  
+  @UI: {  lineItem:         [ { position: 240, label: 'Material Group' } ],
+          identification:   [ { position: 240, label: 'Material Group' } ] }
+  Matgrp;
+  
+  @UI: {  lineItem:         [ { position: 250, label: 'Order Quantity' } ],
+          identification:   [ { position: 250, label: 'Order Quantity' } ] }
+ OrdQty;
+ 
+  @UI: {  lineItem:         [ { position: 260, label: 'Plant' } ],
+          identification:   [ { position: 260, label: 'Plant' } ] }
+  plant;
+
+  @UI: {  lineItem:         [ { position: 270, label: 'Tax Code' } ],
+          identification:   [ { position: 270, label: 'Tax Code' } ] }
+  taxcod;
+  
+    @UI: {  lineItem:         [ { position: 280, label: 'Tax Description' } ],
+          identification:   [ { position: 280, label: 'Tax Description' } ] }
+  
+   TaxDescription;
+  
+  @UI: {  lineItem:         [ { position: 320, label: 'Movement Type' } ],
+          identification:   [ { position: 320, label: 'Movement Type' } ] }
+  GoodsMovement;
+  
+//  @UI: {  lineItem:         [ { position: 290, label: 'Invoice Date' } ],
+//          identification:   [ { position: 290, label: 'Invoice Date' } ] }
+//InvoiceDate;
+
+// @UI: {  lineItem:         [ { position: 297, label: 'Delivery Date' } ],
+//          identification:   [ { position: 297, label: 'Delivery Date' } ] }
+//
+//
+//deliverydate;
+  
+  @UI: {  lineItem:         [ { position: 330, label: 'Entry Unit' } ],
+          identification:   [ { position: 330, label: 'Entry Unit' } ] }
+  EntryUnit;
+  
+  @UI: {  lineItem:         [ { position: 340, label: 'GRN Quantity' } ],
+          identification:   [ { position: 340, label: 'GRN Quantity' } ] }
+  GRNQuantity;
+  
+  @UI: {  lineItem:         [ { position: 350, label: 'Invoice Quantity' } ],
+          identification:   [ { position: 350, label: 'Invoice Quantity' } ] }
+ Quantity;
+ 
+  @UI: {  lineItem:         [ { position: 360, label: 'Base Unit' } ],
+          identification:   [ { position: 360, label: 'Base Unit' } ] } 
+  Baseunit;
+  
+  @UI: {  lineItem:         [ { position: 370, label: 'Debit Credit Code' } ],
+          identification:   [ { position: 370, label: 'Debit Credit Code' } ] }
+  dCCode;
+  
+  @UI: {  lineItem:         [ { position: 380, label: ' Accounting Doc Number' } ],
+          identification:   [ { position: 380, label: ' Accounting Doc Number' } ] }
+  GLNumber;
+  
+//  @UI: {  lineItem:         [ { position: 360, label: 'Amount Transaction Currency' } ],
+//          identification:   [ { position: 360, label: 'Amount Transaction Currency' } ] }
+//  amttransactioncurrency;
+  
+  @UI: {  lineItem:         [ { position: 440, label: 'Rate' } ],
+          identification:   [ { position: 440, label: 'Rate' } ] }
+  Rate;
+  
+  @UI: {  lineItem:         [ { position: 450, label: 'Taxable Value' } ],
+          identification:   [ { position: 450, label: 'taxable Value' } ] }
+  taxablevalue;
+  
+  @UI: {  lineItem:         [ { position: 460, label: 'Price Unit' } ],
+          identification:   [ { position: 460, label: 'Price Unit' } ] }
+  PriceUnit;
+  
+  @UI: {  lineItem:         [ { position: 470, label: 'Discount Value' } ],
+          identification:   [ { position: 470, label: 'Discount Value' } ] }
+  discountvalue;
+  
+  @UI: {  lineItem:         [ { position: 480, label: 'Currency' } ],
+          identification:   [ { position: 480, label: 'Currency' } ] }
+  condcurr;
+  
+  @UI: {  lineItem:         [ { position: 490, label: 'CGST Amount' } ],
+          identification:   [ { position: 490, label: 'CGST Amount' } ] }
+  cgstamount;
+  
+  @UI: {  lineItem:         [ { position: 500, label: 'SGST Amount' } ],
+          identification:   [ { position: 500, label: 'SGST Amount' } ] }
+  sgstamount;
+  
+  @UI: {  lineItem:         [ { position: 510, label: 'IGST Amount' } ],
+          identification:   [ { position: 510, label: 'IGST Amount' } ] }
+  igstamount;
+  
+    @UI: {  lineItem:         [ { position: 520, label: 'CGSTPercent' } ],
+          identification:   [ { position: 520, label: 'CGSTPercent' } ] }
+ CGSTPercent;
+ 
+  @UI: {  lineItem:         [ { position: 530, label: 'SGSTPercent' } ],
+          identification:   [ { position: 530, label: 'SGSTPercent' } ] }
+ SGSTPercent;
+ 
+  @UI: {  lineItem:         [ { position: 540, label: 'IGSTPercent' } ],
+          identification:   [ { position: 540, label: 'IGSTPercent' } ] }
+  IGSTPercent;
+ 
+  
+  @UI: {  lineItem:         [ { position: 550, label: 'Gross Amount' } ],
+          identification:   [ { position: 550, label: 'Gross Amount' } ] }
+  grossamount;
+  
+   @UI: {  lineItem:         [ { position: 560, label: 'TCS' } ],
+          identification:   [ { position: 560, label: 'TCS' } ] }
+  TCS;
+  
+  
+   @UI: {  lineItem:         [ { position: 570, label: 'CESS' } ],
+          identification:   [ { position: 570, label: 'CESS' } ] }
+  cess;
+
+  
+   @UI: {  lineItem:         [ { position: 590, label: 'Frieght Exp on Pur Coal' } ],
+          identification:   [ { position: 590, label: 'Frieght Exp on Pur Coal' } ] }
+  FreightEXO;
+  
+   @UI: {  lineItem:         [ { position: 600, label: 'Store & Spare (Con)' } ],
+          identification:   [ { position: 650, label: 'Store & Spare (Con)' } ] }
+  FreightSpare;
+  
+     @UI: {  lineItem:         [ { position: 610, label: 'Roundoff' } ],
+          identification:   [ { position: 610, label: 'Roundoff' } ] }
+  AMTRoundoff;
+  
+  
+
+  
+}

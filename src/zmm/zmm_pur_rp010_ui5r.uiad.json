@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Purchase Indent Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zmmpurchasereq45.zmmpurchasereq45"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_9C3FD436F3A4C9AF867A1AF498F05568DE986DFA_TM",
+    "semanticObject": "YY1_PURINDT_RP03",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_9C3FD436F3A4C9AF867A1AF498F05568DE986DFA_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Purchase Indent Report",
+        "subtitle": "Version - 2"
+      }
+    }
+  ]
+}

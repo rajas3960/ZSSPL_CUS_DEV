@@ -1,0 +1,48 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_APP09_IPV1
+    with 
+    {
+ @UI.facet: [ { id:              'Item1',
+                        purpose:         #STANDARD,
+                        type:            #IDENTIFICATION_REFERENCE,
+                        label:           'Jobsheet SFG Materials',
+                        position:        10 } ]
+                        
+  @UI.hidden: true
+Jobshtnum;
+@UI: { lineItem: [{ position: 10, label: 'Order No'}],
+
+  identification: [{ position: 10, label: 'Order No' } ] }
+Orderno;
+@UI.hidden: true
+Plant;
+@UI: { lineItem: [{ position: 20, label: 'Material'}],
+  identification: [{ position: 20, label: 'Material' } ] }
+Matnr;
+//@UI.hidden: true
+@UI: { lineItem: [{ position: 25, label: 'Material Description'}],
+  identification: [{ position: 25, label: 'Material Description' } ] }
+Maktx;
+@UI: { lineItem: [{ position: 30, label: 'Planned Quantity'}],
+  identification: [{ position: 30, label: 'Planned Quantity' } ] }
+Plndqty;
+@UI.hidden: true
+Uom;
+//@UI: { lineItem: [{ position: 40, label: 'Requested Quantity'}],
+//  identification: [{ position: 40, label: 'Requested Quantity' } ] }
+//Reqty;
+@UI: { lineItem: [{ position: 50, label: 'Total Req Qty'}],
+  identification: [{ position: 50, label: 'Total Req Qty' } ] }
+Reqty;
+
+// @UI.identification: [{ position: 70, label: 'Created by' } ] 
+@UI.hidden: true
+Createdby;
+// @UI.identification: [{ position: 80, label: 'Created on' } ] 
+@UI.hidden: true
+Createdon;
+@UI.hidden: true
+/* Associations */
+_hdr;
+    
+}

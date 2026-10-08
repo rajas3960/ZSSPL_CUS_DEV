@@ -1,0 +1,73 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'BOM DETAILS',
+typeNamePlural: 'BOM DETAILS',
+title: { type: #STANDARD, value: 'Materialnumber' },
+         description: { type: #STANDARD, value: 'Status' }  } }
+
+
+annotate entity ZBOM_APP01_PV with
+{
+  @UI.facet: [  {
+                    id:  'Header',
+                    purpose:         #STANDARD,
+                    type:            #IDENTIFICATION_REFERENCE,
+                    label:           'Attachment',
+                    position:        10
+                    },
+                     {
+                    id:              'Items',
+                    purpose:         #STANDARD,
+                    type:            #LINEITEM_REFERENCE,
+                    label:           ' Items',
+                    position:        20,
+                    targetElement:   '_ITEM'
+                    } 
+                               ]
+  @UI.hidden: true
+  Suid;
+  @UI.identification: [{ position: 20,label: 'Attachment',importance: #HIGH },
+  { type: #FOR_ACTION, dataAction: 'loadexcl' , label: 'Excel Upload'  ,position: 10 }]
+  attachment;
+  @UI.hidden: true
+  minetype;
+  @UI.hidden: true
+  filename;
+  @UI.lineItem: [{ position: 30,label: 'Status'  }]
+  @UI.dataPoint: { qualifier: 'fileupd', title: 'Status'}
+  status;
+  @UI.lineItem: [{ position: 40,label: 'Created By'  }]
+  @UI.dataPoint: { qualifier: 'crtdby', title: 'Created By'}
+  createdby;
+  @UI.lineItem: [{ position: 50,label: 'Created On'  }]
+  @UI.dataPoint: { qualifier: 'crtdon', title: 'Created On'}
+  createdon;
+  @UI.lineItem: [{ position: 60,label: 'Plant'  }]
+ @UI.identification: [{ position: 60,label: 'bom usage' }]
+  plant;
+  @UI.lineItem: [{ position: 80,label: 'bom usage' }]
+  @UI.identification: [{ position: 80,label: 'bom usage' }]
+  bomusage;
+  @UI.lineItem: [{ position: 90,label: 'alternative bom' }]
+  @UI.identification: [{ position: 90,label: 'alternative bom' }]
+  alternativebom;
+  @UI.lineItem: [{ position: 100,label: 'valid from date' }]
+  @UI.identification: [{ position: 100,label: 'valid from date' }]
+  validfromdate;
+  @UI.lineItem: [{ position: 110,label: 'bom status' }]
+  @UI.identification: [{ position: 110,label: 'bom status' }]
+  bomstatus;
+  @UI.lineItem: [{ position: 120,label: ' base quantity' }]
+  @UI.identification: [{ position: 120,label: ' base quantity' }]
+  basequantity;
+  @UI.lineItem: [{ position: 140,label: 'base unit of measure for bom' }]
+  @UI.identification: [{ position: 140,label: 'base unit of measure for bom' }]
+  baseunitofmeasureforbom;
+  @UI.lineItem: [{ position: 180,label: ' bom description' }]
+  @UI.identification: [{ position: 180,label: ' bom description' }]
+  bomdescription;
+  /* Associations */
+  @UI.hidden: true
+  _ITEM;
+
+}

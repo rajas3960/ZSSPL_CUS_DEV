@@ -1,0 +1,35 @@
+@Metadata.layer: #PARTNER
+annotate entity zsd_item_pv
+    with 
+{
+@UI.facet: [ { id:              'Item',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Lc Item',
+                 position:        10 } ]
+ @UI: { lineItem: [{ position: 10, label: 'Sales Document' }],
+  identification: [{ position: 10, label: 'Sales Document'  }] }
+    SALENO;
+     @UI: { lineItem: [{ position: 20, label: 'LC Number' }],
+  identification: [{ position: 20, label: 'LC Number'  }] }
+    LCNUMER;
+     @UI: { lineItem: [{ position: 20, label: 'LC Amount used' }],
+  identification: [{ position: 20, label: 'LC Amount used'  }] }
+    AMT;
+     @UI: { lineItem: [{ position: 20, label: 'Created By User' }],
+  identification: [{ position: 20, label: 'Created By User'  }] }
+    CreatedByUser;
+    @UI: { lineItem: [{ position: 20, label: 'Creation Date' }],
+  identification: [{ position: 20, label: 'Creation Date'  }] }
+    CreationDate;
+    @UI: { lineItem: [{ position: 20, label: 'Last Changed By User' }],
+  identification: [{ position: 20, label: 'Last Changed By User'  }] }
+    LastChangedByUser;
+    @UI: { lineItem: [{ position: 20, label: 'Last Change Date' }],
+  identification: [{ position: 20, label: 'Last Change Date'  }] }
+    LastChangeDate;
+    
+    @UI.hidden: true
+    CURR;
+    
+}

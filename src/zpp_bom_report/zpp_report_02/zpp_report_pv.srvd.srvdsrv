@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service defination of Bom Details'
+define service ZPP_REPORT_PV {
+  expose zpp_report_PV    as MainPage;
+  expose ZPP_REPORT_IPV02;
+}

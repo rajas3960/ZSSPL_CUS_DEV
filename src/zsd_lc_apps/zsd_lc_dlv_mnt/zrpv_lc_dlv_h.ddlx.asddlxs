@@ -1,0 +1,90 @@
+@Metadata.layer: #PARTNER
+@Search.searchable: true
+annotate entity ZRPV_LC_DLV_H with
+{
+  @UI.facet: [{
+             id: 'idhdr',
+             type: #COLLECTION,
+             label: 'Order Header',
+             position: 10 },
+             {
+             id: 'idline',
+             type: #IDENTIFICATION_REFERENCE,
+             parentId: 'idhdr' } ,
+               {
+                 id: 'litem',
+                 purpose: #STANDARD,
+                 type: #LINEITEM_REFERENCE,
+                 label: 'Line Items',
+                 position: 20,
+                 targetElement: '_item' },
+                 {
+                 id: 'lcitm',
+                 purpose: #STANDARD,
+                 type: #LINEITEM_REFERENCE,
+                 label: 'LC Details',
+                 position: 30,
+                 targetElement: '_lcnum' }  ]
+  @UI.lineItem: [{ position: 10, label: 'Record GUID ' } ]
+  Recguid;
+  @UI.lineItem: [{ position: 20, label: 'Sales Order' } ]
+  @UI.identification: [{ position: 10, label: 'Sales Order' } ]
+  @Search.defaultSearchElement: true
+  Sonum;
+  @UI.identification: [{ position: 20, label: 'Order Type' } ]
+  Sotype;
+  @UI.lineItem: [{ position: 100, label: 'Created By' } ]
+  @UI.identification: [{ position: 200, label: 'Created By' } ]
+  @Search.defaultSearchElement: true
+  Ernam;
+  @UI.lineItem: [{ position: 110, label: 'Creation Date' } ]
+  @UI.identification: [{ position: 210, label: 'Creation Date' } ]
+  Erdat;
+  @UI.identification: [{ position: 220, label: 'Document Date' } ]
+  Audat;
+  @UI.identification: [{ position: 30, label: 'Sales Org.' } ]
+  Vkorg;
+  @UI.identification: [{ position: 40, label: 'Dist. Chnl.' } ]
+  Vtweg;
+  @UI.identification: [{ position: 50, label: 'Division' } ]
+  Spart;
+  @UI.lineItem: [{ position: 30, label: 'Sold-To' } ]
+  @UI.identification: [{ position: 60, label: 'Sold-To' } ]
+  Soldto;
+  @UI.lineItem: [{ position: 40, label: 'Ship-To' } ]
+  @UI.identification: [{ position: 70, label: 'Ship-To' } ]
+  Shipto;
+  @UI.hidden: true
+  Staddr;
+  @UI.hidden: true
+  Shaddr;
+  @UI.lineItem: [{ position: 50, label: ' ' } ]
+  @UI.identification: [{ position: 80, label: '' } ]
+  Cusref;
+  @UI.identification: [{ position: 90, label: '' } ]
+  Crefdt;
+  @UI.identification: [{ position: 230, label: '' } ]
+  Prcdat;
+  @UI.identification: [{ position: 240, label: '' } ]
+  Prcprcd;
+  @UI.hidden: true
+  Docurr;
+  @UI.identification: [{ position: 100, label: 'Net Value' } ]
+  Netval;
+  @UI.identification: [{ position: 110, label: 'Tax Value' } ]
+  Taxval;
+  @UI.identification: [{ position: 120, label: 'Grand Total' } ]
+  Grdtot;
+  @UI.identification: [{ position: 130, label: 'Total LCs' } ]
+  Totlcno;
+  @UI.identification: [{ position: 140, label: 'Total LC Value' } ]
+  Totlcval;
+  @UI.identification: [{ position: 150, label: 'Total Dlv Value' } ]
+  Totdlval;
+  /* Associations */
+  @UI.hidden: true
+  _Item;
+  @UI.hidden: true
+  _lcnum;
+
+}

@@ -1,0 +1,32 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Item Detail',
+    typeNamePlural: 'Item Details',
+    title: { type: #STANDARD, value: 'Uuid' }
+  }
+}
+annotate entity ZPP_APPS02_IPV with
+{
+  @UI.facet: [
+    {
+      id: 'Itemtrd',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Jobsheet Material Selection',
+      position: 10
+    }
+  ]
+
+  @UI: { lineItem: [{ position: 10, label: 'UUID'}],
+         identification: [{ position: 10, label: 'UUID' } ] }
+  Uuid;
+
+  @UI: { lineItem: [{ position: 20, label: 'Order No'}],
+         identification: [{ position: 20, label: 'Order No' } ] }
+  Orderno;
+
+  @UI: { lineItem: [{ position: 30, label: 'Material'}],
+         identification: [{ position: 30, label: 'Material' } ] }
+  Matnr;
+}

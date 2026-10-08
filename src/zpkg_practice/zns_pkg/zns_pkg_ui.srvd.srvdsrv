@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZNS_PKG_Ui'
+define service ZNS_PKG_UI {
+  expose ZNS_PKG_PV;
+}

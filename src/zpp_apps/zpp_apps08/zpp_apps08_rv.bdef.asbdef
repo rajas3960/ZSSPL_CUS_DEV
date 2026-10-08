@@ -1,0 +1,28 @@
+managed implementation in class zbp_pp_apps08_rv unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZPP_APPS08_RV alias hdr
+persistent table zpp_apps08_htb
+draft table zpp_apps08_dhtb
+lock master total etag Createdon
+
+authorization master ( instance )
+ etag master Createdon
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly,numbering : managed ) Uuid;
+  field(mandatory : create,readonly : update) Userid,Name,Compny,Plant;
+  field(readonly) Createdby,Createdon;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+//  draft action Share;
+
+mapping for zpp_apps08_htb corresponding ;
+}

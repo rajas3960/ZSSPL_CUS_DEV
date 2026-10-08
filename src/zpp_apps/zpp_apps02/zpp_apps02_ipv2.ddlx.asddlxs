@@ -1,0 +1,73 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_APPS02_IPV2
+    with 
+{
+  @UI.facet: [ { id:              'Itemda',
+                       purpose:         #STANDARD,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Jobsheet Material Selected',
+                          position:        30 }  ]
+
+@UI.hidden: true
+    Uuid;
+@UI: { lineItem: [{ position: 10, label: 'Order No'}],
+  identification: [{ position: 10, label: 'Order No' } ] }
+    Orderno;
+@UI: { lineItem: [{ position: 20, label: 'Sno'}],
+  identification: [{ position: 20, label: 'Sno' } ] }
+    Sno;
+    @UI.hidden: true
+    Orderitem;
+    @UI.hidden: true
+    Plant;
+@UI: { lineItem: [{ position: 30, label: 'Material'}], 
+  identification: [{ position: 30, label: 'Material' } ] }
+Matnr;
+@UI: { lineItem: [{ position: 40, label: 'Material Dec.'}],
+  identification: [{ position: 40, label: 'Material Dec.' } ] }
+  Maktx;
+@UI: { lineItem: [{ position: 50, label: 'Planned Quantity'}],
+  identification: [{ position: 50, label: 'Planned Quantity' } ] }
+Plnqty;
+@UI: { lineItem: [{ position: 60, label: 'Requested Quantity'}],
+  identification: [{ position: 60, label: 'Requested Quantity' } ] }
+Reqty;
+@UI.hidden: true
+    Uom;
+@UI.hidden: true
+    Vbeln;
+@UI.hidden: true
+    Soitem;
+@UI.hidden: true
+    Rsnum;
+    @UI: { lineItem: [{ position: 70, label: 'Length'}],
+  identification: [{ position: 70, label: 'Length' } ] }
+    Matlent;
+    @UI.hidden: true
+    Matlentuom;
+       @UI: { lineItem: [{ position: 80, label: 'Width'}],
+  identification: [{ position: 80, label: 'Width' } ] }
+    Matwidth;
+   @UI.hidden: true
+    Matwidthuom;
+       @UI: { lineItem: [{ position: 90, label: 'Total Weight'}],
+  identification: [{ position: 90, label: 'Total Weight' } ] }
+    Totwgh;
+    @UI.hidden: true
+    Totwghuom;
+     @UI: { lineItem: [{ position: 100, label: 'UNT Weight'}],
+  identification: [{ position: 100, label: 'UNT Weight' } ] }
+    Untwgh;
+    @UI.hidden: true
+    Untwghuom;
+    @UI: { lineItem: [{ position: 110, label: 'Weight Per'}],
+  identification: [{ position: 110, label: 'Weight Per' } ] }
+    Wgtpc;
+    @UI.hidden: true
+    Wgtpcuom;
+    @UI.hidden: true
+    Operation;
+    @UI.hidden: true
+    /* Associations */
+    _hdr;
+}

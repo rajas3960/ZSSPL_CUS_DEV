@@ -1,0 +1,49 @@
+@Metadata.layer: #PARTNER
+//@UI:{ 
+//headerInfo:{ typeName: 'Sales Order Item',
+//            typeNamePlural: 'Sales Order Item',
+//            title: { type: #STANDARD,label: 'Sales Order Item',value: 'Recguid' },
+//            description:{ type: #STANDARD,label: 'Sales Order Item' }
+// },
+// presentationVariant: [{ sortOrder: [{by: 'Item',direction: #ASC  }] }]
+//}
+//@Search.searchable: true
+annotate entity ZSD_APP_IPV
+    with 
+{  
+@UI.facet: [{ id: 'SalesOrderItem',
+purpose: #STANDARD,
+type: #IDENTIFICATION_REFERENCE,
+label: 'Sales Order Item',
+position: 10
+ }]             
+@UI.hidden: true
+                 Recguid;
+@UI:{ lineItem: [{ position: 10,label: 'Item' }],
+ identification: [{ position: 10,label: 'Item' }] }
+                 Item;
+@UI:{ lineItem: [{ position: 20,label: 'Material' }],
+ identification: [{ position: 20,label: 'Material' }] }
+ @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_ProductStdVH',element: 'Product' } }]
+                 Product;
+@UI:{ lineItem: [{ position: 30,label: 'Order Quantity' }],
+ identification: [{ position: 30,label: 'Order Quantity' }] }
+                 Requestqnt;
+//@UI:{ lineItem: [{ position: 40,label: 'Unit Of Measure'}],
+// identification: [{ position: 40,label: 'Unit Of Measure' }] }  
+////@UI.hidden: true         
+//                 Requestqntunit;
+@UI:{ lineItem: [{ position: 50,label: 'Plant' }],
+ identification: [{ position: 50,label: 'Plant' }] } 
+                 Plnt;
+@UI:{ lineItem: [{ position: 60,label: 'Netamt' }],
+ identification: [{ position: 60,label: 'Netamt' }] }  
+                 Netamt;
+// @UI:{ lineItem: [{ position: 70,label: 'Curr' }],
+// identification: [{ position: 70,label: 'Curr' }] } 
+//                  Curr;
+@UI.hidden: true
+                 /* Associations */
+                 _SalesHeader;
+    
+}

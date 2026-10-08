@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service defination of Project wise summary Report For Form'
+define service ZPP_REP_CEUI {
+  expose ZPP_REP_hce     as hdr;
+  expose ZPP_REPORT_ICE  as item;
+  expose ZPP_REPORT_ICE2 as item2;
+}

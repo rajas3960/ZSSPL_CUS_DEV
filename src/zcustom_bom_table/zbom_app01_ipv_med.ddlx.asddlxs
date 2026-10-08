@@ -1,0 +1,62 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZBOM_APP01_IPV
+    with 
+{
+     @UI.facet: [ { id:              'Item',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Items',
+                   position:        10 } ]
+   //@UI.hidden: true 
+   @UI.hidden: true
+   suid;               
+   @UI.lineItem: [{ position: 10,label: 'Material Number ' }]
+   @UI.identification: [{ position: 10,label: 'Material Number ' }]
+   materialnumber;
+   @UI.lineItem: [{ position: 20,label: 'Plant ' }]
+   @UI.identification: [{ position: 20,label: 'Plant ' }]
+   plant;
+   @UI.lineItem: [{ position: 50,label: 'bom usage' }]
+   @UI.identification: [{ position: 50,label: 'bom usage ' }]
+   bomusage;
+   @UI.lineItem: [{ position: 80,label: 'alternative bom ' }]
+   @UI.identification: [{ position: 80,label: 'alternative bom ' }]
+   alternativebom;
+   @UI.lineItem: [{ position: 100,label: 'Itemid ' }]
+   @UI.identification: [{ position: 100,label: 'Itemid' }]
+   itemid;
+   @UI.lineItem: [{ position: 120,label: 'bom item number' }]
+   @UI.identification: [{ position: 120,label: 'bom item number' }]
+   bomitemnumber;
+   @UI.lineItem: [{ position: 140,label: 'item category' }]
+   @UI.identification: [{ position: 140,label: 'item category' }]
+   itemcategory;
+   @UI.lineItem: [{ position: 160,label: 'bom component' }]
+   @UI.identification: [{ position: 160,label: 'bom component' }]
+   bomcomponent;
+   @UI.lineItem: [{ position: 180,label: 'component quantity' }]
+   @UI.identification: [{ position: 180,label: 'component quantity' }]
+   componentquantity;
+   @UI.lineItem: [{ position: 190,label: 'component unit of measure' }]
+   @UI.identification: [{ position: 190,label: 'component unit of measure' }]
+   componentunitofmeasure;
+   @UI.lineItem: [{ position: 200,label: 'wt pcinkg' }]
+   @UI.identification: [{ position: 200,label: 'wt pcinkg' }]
+   wtpcinkg;
+   @UI.lineItem: [{ position: 210,label: 'product width in mm' }]
+   @UI.identification: [{ position: 210,label: 'product width in mm' }]
+   productwidthinmm;
+   @UI.lineItem: [{ position: 220,label: 'total weight in kg' }]
+   @UI.identification: [{ position: 220,label: 'total weight in kg' }]
+   totalweightinkg;
+   @UI.lineItem: [{ position: 230,label: 'unit weight in kgm' }]
+   @UI.identification: [{ position: 230,label: 'unit weight in kgm' }]
+   unitweightinkgm;
+   @UI.lineItem: [{ position: 240,label: 'product length in mm' }]
+   @UI.identification: [{ position: 240,label: 'product length in mm' }]
+   productlengthinmm;
+
+   @UI.hidden: true
+/* Associations */
+_HDR;
+}

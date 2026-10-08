@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Bill Of Material Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zppreportpv.zppreportpv"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_6F3342AD4ABA43513C8D41C71CC929C6CFDB12CB_TM",
+    "semanticObject": "zpp_report_pv",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_6F3342AD4ABA43513C8D41C71CC929C6CFDB12CB_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Bill Of Material Report",
+        "subtitle": "Details"
+      }
+    }
+  ]
+}

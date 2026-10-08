@@ -1,0 +1,69 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'BOM Item',
+typeNamePlural: 'BOM Item',
+title: { type: #STANDARD, value: 'bomnumber' } } }
+annotate entity ZPP_BOM_IDPV
+    with 
+{
+    @UI.facet: [ { id:              'Item',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'BOM ITEM',
+                 position:        10 } ]
+    @UI.hidden: true
+    Uuid;
+     @UI.hidden: true
+    Srno;
+    @UI.hidden: true
+    bomnumber;
+    @UI: { lineItem: [{ position: 10, label: 'SR NO'}],
+    identification: [{ position: 10, label: 'SR NO' } ] }
+    @EndUserText.label: 'SR NO'
+    Markshortno;
+    @UI: { lineItem: [{ position: 10, label: 'MARK NO.'}],
+    identification: [{ position: 10, label: 'MARK NO.' } ] }
+    @EndUserText.label: 'MARK NO.'
+    Markno;
+    @UI: { lineItem: [{ position: 15, label: 'MEMBER'}],
+    identification: [{ position: 15, label: 'MEMBER' } ] }
+    @EndUserText.label: 'MEMBER'
+    Member;
+    @UI: { lineItem: [{ position: 20, label: 'SECTION'}],
+    identification: [{ position: 20, label: 'SECTION' } ] }
+    @EndUserText.label: 'SECTION'
+    Markdesc;
+    @UI: { lineItem: [{ position: 25, label: 'Length'}],
+    identification: [{ position: 25, label: 'Length' } ] }
+    @EndUserText.label: 'Length'
+    Length;
+    @UI: { lineItem: [{ position: 30, label: 'Width'}],
+    identification: [{ position: 30, label: 'Width' } ] }
+    @EndUserText.label: 'Width MM'
+    Width;
+    @UI: { lineItem: [{ position: 35, label: 'Unit WT'}],
+    identification: [{ position: 35, label: 'Unit WT' } ] }
+    @EndUserText.label: 'Unit WT'
+    Unit;
+    @UI: { lineItem: [{ position: 40, label: 'WT/PCS KG'}],
+    identification: [{ position: 40, label: 'WT/PCS KG' } ] }
+    @EndUserText.label: 'WT/PCS KG'
+    unitperpcs;
+    @UI: { lineItem: [{ position: 45, label: 'QTY'}],
+    identification: [{ position: 45, label: 'QTY' } ] }
+    @EndUserText.label: 'QTY'
+    Quantity;
+    @UI: { lineItem: [{ position: 55, label: 'TOTAL WT'}],
+    identification: [{ position: 55, label: 'TOTAL WT' } ] }
+    @EndUserText.label: 'TOTAL WT'
+    totalwt;
+    @UI.hidden: true
+    Itemcreatedby;
+    @UI.hidden: true
+    Itemcreatedat;
+    @UI.hidden: true
+    Itemlastchangedby;
+    @UI.hidden: true
+    /* Associations */
+    _hdr;
+}

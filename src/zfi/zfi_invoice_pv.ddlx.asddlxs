@@ -1,0 +1,97 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Invoice Report',
+                typeNamePlural: 'Invoice Report',
+                title: { type: #STANDARD, label: 'Invoice Report', value: 'SAP_DOCNO' } },
+  presentationVariant: [{ sortOrder: [{ by: 'SAP_DOCNO', direction:  #ASC }] }] }
+annotate entity ZFI_INVOICE_PV
+    with 
+{
+    @UI.facet: [ { id:              'InvoiceReport',
+                     purpose:         #STANDARD,
+                     type:            #IDENTIFICATION_REFERENCE, 
+                     label:           'Invoice Report',
+                     position: 10
+                     }]
+@UI                 : { lineItem: [{ position: 60, label: 'SAP Document Number'}],
+    identification      : [{ position: 60, label: 'SAP Document Number' }],
+    selectionField      : [{position: 20}]   }
+SAP_DOCNO;
+@UI                 : { lineItem: [{ position: 65, label: 'SAP Document Type'}],
+    identification      : [{ position: 65, label: 'SAP Document Type' }]}
+AccountingDocumentType;
+@UI.hidden: true
+ACCITEM;
+@UI                 : { lineItem: [{ position: 10, label: 'Vendor Code'}],
+    identification      : [{ position: 10, label: 'Vendor Code' }]}
+    @UI.selectionField: [{ position: 10 }]
+    //@Consumption.filter : {mandatory: true}
+    @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZFI_SUPPLIER_VH', element: 'Supplier' } }]
+VENDORCODE;
+@UI                 : { lineItem: [{ position: 20, label: 'Vendor Name'}],
+    identification      : [{ position: 20, label: 'Vendor Name' }]}
+VENDORNAME;
+@UI                 : { lineItem: [{ position: 30, label: 'Supplier Invoice Date'}],
+    identification      : [{ position: 30, label: 'Supplier Invoice Date' }]}
+SUPPLIERINVOICEDATE;
+@UI                 : { lineItem: [{ position: 40, label: 'Supplier Invoice No'}],
+    identification      : [{ position: 40, label: 'Supplier Invoice No' }]}
+SUPPLIERINVOICENO;
+@UI                 : { lineItem: [{ position: 50, label: 'Posting Date'}],
+    identification      : [{ position: 50, label: 'Posting Date' }]}
+    @UI.selectionField: [{ position: 20 }]
+    @Consumption.filter:{ selectionType: #INTERVAL,multipleSelections: false}
+PostingDate;
+@UI                 : { lineItem: [{ position: 70, label: 'Vendor GSTIN No.'}],
+    identification      : [{ position: 70, label: 'Vendor GSTIN No.' }]}
+VENDOR_GSTINNO;
+@UI                 : { lineItem: [{ position: 80, label: 'Vendor PAN No.'}],
+    identification      : [{ position: 80, label: 'Vendor PAN No.' }]}
+VENDOR_PANNO;
+@UI                 : { lineItem: [{ position: 90, label: 'Text (Narration)'}],
+    identification      : [{ position: 90, label: 'Text (Narration)' }]}
+TEXT;
+@UI                 : { lineItem: [{ position: 100, label: 'Profit Center'}],
+    identification      : [{ position: 100, label: 'Profit Center' }]}
+ProfitCenter;
+@UI                 : { lineItem: [{ position: 110, label: 'GL Account Reversal code'}],
+    identification      : [{ position: 110, label: 'GL Account Reversal code' }]}
+GLAccount;
+@UI                 : { lineItem: [{ position: 120, label: ' Name of Reversal Account '}],
+    identification      : [{ position: 120, label: ' Name of Reversal Account ' }]}
+GLAccountName;
+@UI                 : { lineItem: [{ position: 130, label: 'Tax Code'}],
+    identification      : [{ position: 130, label: 'TaxC ode' }]}
+TaxCode;
+@UI                 : { lineItem: [{ position: 140, label: 'Taxable Value(Company Code Currency)'}],
+    identification      : [{ position: 140, label: 'Taxable Value(Company Code Currency)' }]}
+TAXABLE_VALUE_C;
+@UI                 : { lineItem: [{ position: 150, label: 'CGST Amount C'}],
+    identification      : [{ position: 150, label: 'CGST Amount C' }]}
+CGST_C;
+@UI                 : { lineItem: [{ position: 160, label: 'SGST Amount C'}],
+    identification      : [{ position: 160, label: 'SGST Amount C' }]}
+SGST_C;
+@UI                 : { lineItem: [{ position: 165, label: 'IGST Amount C'}],
+    identification      : [{ position: 165, label: 'IGST Amount C' }]}
+IGST_C;
+@UI                 : { lineItem: [{ position: 170, label: 'TDS Amount C'}],
+    identification      : [{ position: 170, label: 'TDS Amount C' }]}
+TDS_C;
+@UI                 : { lineItem: [{ position: 180, label: 'GROSS AMOUNT C'}],
+    identification      : [{ position: 180, label: 'GROSS AMOUNT C' }]}
+GROSS_AMOUNT_C;
+@UI                 : { lineItem: [{ position: 180, label: 'Withholding Tax'}],
+    identification      : [{ position: 180, label: 'Withholding Tax' }]}
+WITHHOLDINGTXT;
+@UI                 : { lineItem: [{ position: 190, label: 'Reversal'}],
+    identification      : [{ position: 190, label: 'Reversal' }]}
+    IsReversal;
+    @UI                 : { lineItem: [{ position: 200, label: 'Reversed'}],
+    identification      : [{ position: 200, label: 'Reversed' }]}
+    IsReversed;
+      @UI                 : { lineItem: [{ position: 210, label: 'Reverse Document'}],
+    identification      : [{ position: 210, label: 'Reverse Document' }]}
+    ReverseDocument;
+    
+}

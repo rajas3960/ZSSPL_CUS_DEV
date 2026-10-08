@@ -1,0 +1,61 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Jobsheet Good Issue Application',
+typeNamePlural: 'Jobsheet Good Issue Application',
+title: { type: #STANDARD, value: 'Jobshtnum' }         } }
+annotate entity ZPP_APP09_PV
+    with 
+{
+   @UI.facet: [ { id:              'Header',
+                       purpose:         #STANDARD,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Header',
+                       position:        10 } ,
+                     { id:              'Item1',
+                       purpose:         #STANDARD,
+                       type:            #LINEITEM_REFERENCE,
+                       label:           'Jobsheet SFG Materials',
+                       position:        20,
+                       targetElement:   'item1'} ,{
+                       id:              'Item2',
+                       purpose:         #STANDARD,
+                       type:            #LINEITEM_REFERENCE,
+                       label:           'Jobsheet Raw Materials',
+                       position:        30,
+                       targetElement:   '_item2'}
+                       ]
+                       
+  @UI: { lineItem: [{ position: 20, label: 'Plant'}],
+ identification: [{ position: 20, label: 'Plant' },{ type: #FOR_ACTION ,dataAction: 'goodissue', label: 'Good Issue' , position: 10} ] }
+ @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_PlantStdVH',element: 'Plant' } }]
+  Werks;
+  @UI: { lineItem: [{ position: 10, label: 'Jobsheet No'}],
+  identification: [{ position: 10, label: 'Jobsheet No' } ] }
+  Jobshtnum;
+  @UI.hidden: true
+  Serialno;
+  @UI: { lineItem: [{ position: 30, label: 'Jobsheet Desc.'}],
+  identification: [{ position: 30, label: 'Jobsheet Desc.' } ] }
+  Jobdesc;
+  @UI: { lineItem: [{ position: 40, label: 'Del Mark'}]}
+
+  Delmark;
+  @UI: { lineItem: [{ position: 50, label: 'Status'}],
+   identification: [{ position: 50, label: 'Status' } ] }
+  Status;
+  @UI: { lineItem: [{ position: 60, label: 'Createdby'}]}
+  Createdby;
+  @UI: { lineItem: [{ position: 70, label: 'Createdon'}]}
+  Createdon;
+  @UI: { lineItem: [{ position: 80, label: 'Lastchangedby'}]}
+  Lastchangedby;
+  @UI: { lineItem: [{ position: 90, label: 'Lastchangedon'}]}
+  Lastchangedon;
+  @UI.hidden: true
+  /* Associations */
+  item1;
+  @UI.hidden: true
+  _item2;
+
+}
+    

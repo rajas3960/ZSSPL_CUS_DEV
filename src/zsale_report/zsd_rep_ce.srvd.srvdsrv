@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service defination of  Sales Report custom entity'
+define service Zsd_rep_CE {
+  expose ZSD_REP_HCE    as main;
+  expose ZSD_REP_ICE    as Item;
+  expose ZSD_REP_001_CE as Item1;
+}

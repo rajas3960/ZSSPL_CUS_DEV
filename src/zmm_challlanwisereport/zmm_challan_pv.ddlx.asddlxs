@@ -1,0 +1,128 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Challan Wise Report',
+                typeNamePlural: 'Challan Wise Report',
+                title: { type: #STANDARD, label: 'Challan Wise Report', value: 'PurchaseOrder' } },
+                headerInfo.description.iconUrl: 'imge',
+                
+  presentationVariant: [{ sortOrder: [{ by: 'PurchaseOrder', direction:  #ASC }] }] }
+  annotate entity ZMM_CHALLAN_PV
+    with 
+{
+@UI.facet: [ { id:              'Creport',
+                     purpose:         #STANDARD,
+                     type:            #IDENTIFICATION_REFERENCE, 
+                     label:           'Challan Wise Report',
+                     position: 10
+                     }]
+  @UI: { lineItem: [{ position: 10, label: 'Purchase Order No' }],
+  identification: [{ position: 10, label: 'Purchase Order No' }] }
+  @EndUserText.label: 'Purchase Order No'
+PurchaseOrder;
+ @UI: { lineItem: [{ position: 20, label: 'Purchase Order Item' }],
+  identification: [{ position: 20, label: 'Purchase Order Item' }] }
+  @EndUserText.label: 'Purchase Order Item'
+PurchaseOrderItem;
+
+ @UI: { lineItem: [{ position: 30, label: 'Header Material' }],
+  identification: [{ position: 30, label: 'Header Material' }] }
+  @EndUserText.label: 'Header Material'
+hmaterial;
+@UI.hidden: true
+hqom;
+@UI: { lineItem: [{ position: 40, label: 'Header Quantity' }],
+  identification: [{ position: 40, label: 'Header Quantity' }] }
+  @EndUserText.label: 'Header Quantity'
+hquantity;
+@UI: { lineItem: [{ position: 50, label: 'Component Material' }],
+  identification: [{ position: 50, label: 'Component Material' }] }
+  @EndUserText.label: 'Component Material'
+imaterial;
+@UI.hidden: true
+qom;
+@UI: { lineItem: [{ position: 60, label: 'Component Quantity' }],
+  identification: [{ position: 60, label: 'Component Quantity' }] }
+  @EndUserText.label: 'Component Quantity'
+iquantity;
+@UI: { lineItem: [{ position: 80, label: 'PGI Quantity' }],
+  identification: [{ position: 80, label: 'PGI Quantity' }] }
+  @EndUserText.label: 'PGI Quantity'
+BILLQYT;
+@UI.hidden: true
+UOMB;
+@UI: { lineItem: [{ position: 70, label: 'PGI Document No' }],
+  identification: [{ position: 70, label: 'PGI Document No' }] }
+  @EndUserText.label: 'PGI Document No'
+MaterialDocument;
+@UI: { lineItem: [{ position: 100, label: 'Challan Quantity' }],
+  identification: [{ position: 100, label: 'Challan Quantity' }] }
+  @EndUserText.label: 'Challan Quantity'
+BillingQuantity;
+@UI: { lineItem: [{ position: 90, label: 'Challan No' }],
+  identification: [{ position: 90, label: 'Challan No' }] }
+  @EndUserText.label: 'Challan No'
+BillingDocument;
+
+@UI.hidden: true
+NetAmount;
+@UI.hidden: true
+BillingQuantityUnit;
+@UI.hidden: true
+TransactionCurrency;
+@UI: { lineItem: [{ position: 120, label: 'PGR Document No ' }],
+  identification: [{ position: 120, label: 'PGR Document No ' }] }
+  @EndUserText.label: 'PGR Document No '
+MOMENT101;
+@UI: { lineItem: [{ position: 130, label: 'PGR Header Quantity ' }],
+  identification: [{ position: 130, label: 'PGR Header Quantity ' }] }
+  @EndUserText.label: 'PGR Header Quantity '
+MOMENTB101;
+@UI.hidden: true
+MOMENTU101;
+@UI.hidden: true
+TotalGoodsMvtAmtInCCCrcy;
+@UI.hidden: true
+CompanyCodeCurrency;
+@UI: { lineItem: [{ position: 140, label: 'PGR Component Quantity ' }],
+  identification: [{ position: 140, label: 'PGR Component Quantity ' }] }
+  @EndUserText.label: 'PGR Component Quantity'
+moment543;
+@UI.hidden: true
+MaterialBaseUnit;
+@UI: { lineItem: [{ position: 150, label: 'Balance Header' }],
+  identification: [{ position: 150, label: 'Balance Header' }] }
+  @EndUserText.label: 'Balance Header'
+blance1;
+@UI: { lineItem: [{ position: 150, label: 'Balance Component' }],
+  identification: [{ position: 150, label: 'Balance Component' }] }
+  @EndUserText.label: 'Balance Component'
+blance2;
+@UI: { lineItem: [{ position: 160, label: 'Process Loss' }],
+  identification: [{ position: 160, label: 'Process Loss' }] }
+  @EndUserText.label: 'Process Loss'
+MOMENT543O;
+@UI: { lineItem: [{ position: 160, label: 'Material Group' }],
+  identification: [{ position: 160, label: 'Material Group' }] }
+  @EndUserText.label: 'Material Group'
+MaterialGroup;
+//@UI: { lineItem: [{ position: 170, label: 'Total_Balance' }],
+//  identification: [{ position: 170, label: 'Total_Balance' }] }
+//  @EndUserText.label: 'Total_Balance'
+//process_loss;
+@UI: { lineItem: [{ position: 180, label: 'Customer Code' }],
+  identification: [{ position: 180, label: 'Customer Code' }] }
+  @EndUserText.label: 'Customer Code'
+  Supplier;
+  @UI: { lineItem: [{ position: 190, label: 'Customer Name' }],
+  identification: [{ position: 190, label: 'Customer Name' }] }
+  @EndUserText.label: 'Customer Name'
+  Supplier_Name;
+  @UI: { lineItem: [{ position: 200, label: 'Plant' }],
+  identification: [{ position: 200, label: 'Plant' }] }
+  @EndUserText.label: 'Plant'
+  Plant;
+  @UI: { lineItem: [{ position: 210, label: 'Batch' }],
+  identification: [{ position: 210, label: 'Batch' }] }
+  @EndUserText.label: 'Batch'
+  Batch;
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service defination of MIS Report'
+define service ZPP_REPORT2_UI {
+  expose ZPP_REPORT02_pV2;
+}

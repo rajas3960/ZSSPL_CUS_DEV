@@ -1,0 +1,8 @@
+@EndUserText.label: 'Jobsheet Production Order App'
+define service ZPP_APP03_UI {
+  expose ZPP_APP03_PV1      as Mainpage;
+  expose ZPP_APP03_IPV1;
+  expose ZPP_APP03_IPV2;
+  expose ZPP_APP03_ORD;
+  expose ZPP_PRODUCT_VH_ORD;
+}

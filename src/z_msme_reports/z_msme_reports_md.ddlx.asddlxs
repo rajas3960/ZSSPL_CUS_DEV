@@ -1,0 +1,65 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'MSME_REPORTS',
+                typeNamePlural: 'MSME_REPORTS',
+                title: { type: #STANDARD, label: 'MSME REPORTS', value: 'BillNo' } },
+  presentationVariant: [{ sortOrder: [{ by: 'BillNo', direction:  #DESC }] }] }
+annotate entity Z_MSME_REPORTS_PV
+    with 
+{
+   @UI: {  lineItem:       [ { position: 10, label: 'Financial Year' } ],
+        identification:   [ { position: 10, label: 'Financial Year' } ] }
+  FinancialYearFrom;
+ // @Consumption.valueHelpDefinition: [{ entity: { name: 'I_Supplier', element: 'Supplier'  } } ]
+ 
+  
+  @UI: {  lineItem:       [ { position: 20, label: 'AccCode' } ],
+        identification:   [ { position: 20, label: 'AccCode' } ],
+        selectionField:   [ { position: 20}  ]}
+  AccCode;
+  
+  @UI: {  lineItem:       [ { position: 30, label: 'Name of Supplier' } ],
+        identification:   [ { position: 30, label: 'Name of Supplier' } ] }
+  NameofSupplier;
+  
+ @UI: {  lineItem:       [ { position: 40, label: 'PAN of Supplier' } ],
+        identification:   [ { position: 40, label: 'PAN of Supplier' } ] }
+  PANofSupplier;
+  
+   @UI: {  lineItem:       [ { position: 50, label: 'BillNo' } ],
+        identification:   [ { position: 50, label: 'BillNo' } ],
+        selectionField:   [ { position: 50}  ]}
+ // @Consumption.valueHelpDefinition: [{ entity: { name: 'I_Supplier', element: 'Supplier'  } } ]
+  BillNo;
+  
+  @UI: {  lineItem:       [ { position: 60, label: 'Bill Date' } ],
+        identification:   [ { position: 60, label: 'Bill Date' } ] }
+  BillDate;
+  
+  @UI: {  lineItem:       [ { position: 70, label: 'Acceptance Date / GRN Date' } ],
+        identification:   [ { position: 70, label: 'Acceptance Date / GRN Date' } ] }
+  GRNDate;
+  
+  @UI: {  lineItem:       [ { position: 80, label: 'Due Date /Credit Period' } ],
+        identification:   [ { position: 80, label: 'Due Date /Credit Period' } ] }
+  DueDate;
+  
+    @UI: {  lineItem:       [ { position: 90, label: 'Amount Due' } ],
+        identification:   [ { position: 90, label: 'Amount Due' } ] }
+  AmountDue;
+  
+   @UI: {  lineItem:       [ { position: 100, label: 'Specify the Date from which amount is due' } ],
+        identification:   [ { position: 100, label: 'Specify the Date from which amount is due' } ] }
+  SpecifyDueDate;
+  
+  @UI: {  lineItem:       [ { position: 110, label: 'Date of Payment' } ],
+        identification:   [ { position: 110, label: 'Date of Payment' } ] }
+  DateofPayment;
+  
+  @UI: {  lineItem:       [ { position: 120, label: 'DAYS' } ],
+        identification:   [ { position: 120, label: 'DAYS' } ] }
+  REdays;
+  
+  
+    
+}

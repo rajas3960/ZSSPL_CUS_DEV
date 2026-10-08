@@ -1,0 +1,6 @@
+@EndUserText.label: 'SD of Project wise summary Report'
+define service ZPP_rep_UI {
+  expose ZPP_REPORT_Hpv as Main;
+  expose ZPP_REP_IPV01  as Item;
+  expose ZPP_REP_IPV02  as SubItem;
+}

@@ -1,0 +1,105 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: { typeName: 'Asset Register',
+                typeNamePlural: 'Asset Register Report',
+                title: { type: #STANDARD, label: 'Asset Register Report', value: 'PurchaseOrder' } },
+  presentationVariant: [{ sortOrder: [{ by: 'MasterFixedAsset', direction:  #DESC }] }] }
+annotate entity ZMM_RP01_PV with
+{
+  @UI.facet: [ { id:              'Assetregister',
+                  purpose:         #STANDARD,
+                  type:            #IDENTIFICATION_REFERENCE,
+                  label:           'Asset Register Report',
+                  position:        10 }]
+
+
+  @UI: {  lineItem:       [ { position: 10, label: 'Plant' } ],
+          identification: [ { position: 10, label: 'Plant' } ] }
+  @EndUserText.label: 'Plant'
+  PLANT;
+  @UI: {  lineItem:       [ { position: 20, label: 'Supplier Name' } ],
+  identification: [ { position: 20, label: 'Supplier Name' } ] }
+  @EndUserText.label: 'Supplier Name'
+  SupplierName;
+  @UI: {  lineItem:       [ { position: 32, label: 'Asset No' }, { type:#FOR_INTENT_BASED_NAVIGATION,semanticObjectAction: 'display'  }],
+  identification: [ { position: 32, label: 'Asset No' } ] }
+  @EndUserText.label: 'Asset No'
+  @UI.selectionField: [{ element: 'MasterFixedAsset',position: 20 }]
+  MasterFixedAsset;
+  @UI: {  lineItem:       [ { position: 34, label: 'Description of Asset' } ],
+  identification: [ { position: 34, label: 'Description of Asset' } ] }
+  @EndUserText.label: 'Description of Asset'
+  FixedAssetDescription;
+  @UI: {  lineItem:       [ { position: 35, label: 'BLOCK' } ],
+  identification: [ { position: 35, label: 'BLOCK' } ] }
+  @EndUserText.label: 'BLOCK'
+  AssetAdditionalDescription;
+
+  @UI: {  lineItem:       [ { position: 36, label: 'Bill no' } ],
+  identification: [ { position: 36, label: 'Bill no' } ] }
+  @EndUserText.label: 'Bill no'
+  DocumentReferenceID;
+  @UI: {  lineItem:       [ { position: 37, label: 'Bill Date' } ],
+  identification: [ { position: 37, label: 'Bill Date' } ] }
+  @EndUserText.label: 'Bill Date'
+  PostingDate;
+
+  @UI: {  lineItem:       [ { position: 40, label: 'Purchase Order' } ],
+  identification: [ { position: 40, label: 'Purchase Order' } ] }
+  @UI.selectionField: [{ element: 'PurchaseOrder',position: 10 }]
+  @EndUserText.label: 'Purchase Order'
+  PurchaseOrder;
+  @UI: {  lineItem:       [ { position: 42, label: 'Purchase Order Date' } ],
+  identification: [ { position: 42, label: 'Purchase Order Date' } ] }
+  @EndUserText.label: 'Purchase Order Date'
+  PurchaseOrderDate;
+  @UI.hidden: true
+  PurchaseOrderItem;
+  @UI.hidden: true
+  AccountAssignmentNumber;
+  @UI: {  lineItem:       [ { position: 50, label: 'GRN Number' } ],
+        identification: [ { position: 50, label: 'GRN Number' } ] }
+  @EndUserText.label: 'GRN Number'
+  MaterialDocument;
+  @UI: {  lineItem:       [ { position: 50, label: 'GRN Date' } ],
+      identification: [ { position: 50, label: 'GRN Date' } ] }
+  @EndUserText.label: 'GRN Date'
+  DocumentDate;
+  @UI.hidden: true
+  MaterialDocumentItem;
+  @UI.hidden: true
+  MaterialDocumentYear;
+  @UI: {  lineItem:       [ { position: 30, label: 'Accounting Document' } ],
+   identification: [ { position: 30, label: 'Accounting Document' } ] }
+  @EndUserText.label: 'Accounting Document'
+  AccountingDocument;
+  @UI.hidden: true
+  TaxItemGroup;
+  @UI: {  lineItem:       [ { position: 70, label: 'Value' } ],
+           identification: [ { position: 70, label: 'Value' } ] }
+  @EndUserText.label: 'Value'
+  AmountInCompanyCodeCurrency;
+  @UI.hidden: true
+  CompanyCodeCurrency;
+  @UI: {  lineItem:       [ { position: 80, label: 'CGST' } ],
+       identification: [ { position: 80, label: 'CGST' } ] }
+  @EndUserText.label: 'CGST'
+  AmountInCompanyCodeCurrency2;
+  @UI: {  lineItem:       [ { position: 90, label: 'SGST' } ],
+       identification: [ { position: 90, label: 'SGST' } ] }
+  @EndUserText.label: 'SGST'
+  AmountInCompanyCodeCurrency3;
+  @UI: {  lineItem:       [ { position: 100, label: 'IGST' } ],
+       identification: [ { position: 100, label: 'IGST' } ] }
+  @EndUserText.label: 'IGST'
+  AmountInCompanyCodeCurrency4;
+  @UI: {  lineItem:       [ { position: 110, label: 'Reciver Main Asset' } ],
+       identification: [ { position: 110, label: 'Reciver Main Asset' } ] }
+  @EndUserText.label: 'Reciver Main Asset'
+  assetno;
+  @UI: {  lineItem:       [ { position: 120, label: 'Capltalilization Date' } ],
+       identification: [ { position: 120, label: 'Capltalilization Date' } ] }
+  @EndUserText.label: 'Capltalilization Date'
+  ps;
+
+}

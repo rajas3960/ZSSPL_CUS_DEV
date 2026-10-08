@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Incoming Invoice Report",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Incoming Invoice Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zfiinvrp01"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_10DF5AAC2EB063E42D351B0F36D41B1AE878AA97_TM",
+    "semanticObject": "YY1_INV_RP01",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_10DF5AAC2EB063E42D351B0F36D41B1AE878AA97_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Incoming Invoice Report"
+      }
+    }
+  ]
+}

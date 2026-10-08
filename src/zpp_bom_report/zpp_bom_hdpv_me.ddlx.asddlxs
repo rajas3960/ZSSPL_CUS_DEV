@@ -1,0 +1,124 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'BOM Header',
+typeNamePlural: 'BOM Header',
+title: { type: #STANDARD, value: 'Projectno' }         } }
+annotate entity ZPP_BOM_HDPV with
+{
+  @UI.facet: [ { id:              'Header',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'BOM HEADER',
+                      position:        10 } ,
+                    { id:              'Items',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'BOM Item',
+                      position:        20,
+                      targetElement:   '_item'},
+                    { id:              'Items1',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'Section Details',
+                      position:        30,
+                      targetElement:   '_item1'} ]
+  @UI.hidden: true
+  Uuid;
+  @UI: {
+    lineItem: [{ position: 20, label: 'PROJECT NO'}],
+    identification: [
+      { position: 20, label: 'PROJECT NO' },
+      { type: #FOR_ACTION, dataAction: 'seltitem', label: 'Fetch Bom',position: 10   },
+    { type: #FOR_ACTION, dataAction: 'printBom', label: 'Print BOM',position: 20  },
+    { type: #FOR_ACTION, dataAction: 'selsec', label: 'Fetch Section',position: 30 }
+    ]
+  }
+  @EndUserText.label: 'PROJECT NO'
+
+  @Consumption.valueHelpDefinition: [{
+    entity: {
+      name: 'ZPP_MD_VH',
+      element: 'Projectno'
+    },
+    additionalBinding: [
+      {
+        localElement: 'Towertype',
+        element: 'Towertype',
+        usage: #RESULT
+      },
+      {
+        localElement: 'Structure',
+        element: 'Structure',
+        usage: #RESULT
+      }
+    ]
+  }]
+  Projectno;
+  @UI: { lineItem: [{ position: 30, label: 'Attachment'}],
+  identification: [{ position: 30, label: 'Attachment' } ] }
+  @EndUserText.label: 'Attachment'
+  Attachment;
+
+
+  @UI: { lineItem: [{ position: 40, label: 'PURCHASER'}],
+  identification: [{ position: 40, label: 'PURCHASER' } ] }
+  @EndUserText.label: 'PURCHASER'
+  Purchaser;
+  @UI: { lineItem: [{ position: 50, label: 'CLIENT NAME'}],
+  identification: [{ position: 50, label: 'CLIENT NAME' } ] }
+  @EndUserText.label: 'CLIENT NAME'
+  Refdocno;
+  @UI: { lineItem: [{ position: 60, label: 'PROJECT NAME'}],
+  identification: [{ position: 60, label: 'PROJECT NAME' } ] }
+  @EndUserText.label: 'PROJECT NAME'
+  Projectname;
+  @UI: { lineItem: [{ position: 70, label: 'DRAWING NO'}],
+  identification: [{ position: 70, label: 'DRAWING NO' } ] }
+  @EndUserText.label: 'DRAWING NO'
+  Drawingno;
+  @UI: { lineItem: [{ position: 80, label: 'BOM NO'}],
+  identification: [{ position: 80, label: 'BOM NO' } ] }
+  @EndUserText.label: 'BOM NO'
+  Bomno;
+  @UI: { lineItem: [{ position: 90, label: 'TOWER TYPE'}],
+  identification: [{ position: 90, label: 'TOWER TYPE' } ] }
+  @EndUserText.label: 'TOWER TYPE'
+
+  Towertype;
+  @UI: { lineItem: [{ position: 100, label: 'TOWER TYPE DESC'}],
+  identification: [{ position: 100, label: 'TOWER TYPE DESC' } ] }
+  @EndUserText.label: 'TOWER TYPE DESC'
+  towertypedesc;
+  @UI: { lineItem: [{ position: 110, label: 'STRUCTURE'}],
+  identification: [{ position: 110, label: 'STRUCTURE' } ] }
+  @EndUserText.label: 'STRUCTURE'
+
+  Structure;
+  @UI: { lineItem: [{ position: 120, label: 'STRUCTURE DESC'}],
+  identification: [{ position: 120, label: 'STRUCTURE DESC' } ] }
+  @EndUserText.label: 'STRUCTURE DESC'
+  structuredesc;
+  @UI: { lineItem: [{ position: 125, label: 'Alternative BOM'}],
+  identification: [{ position: 125, label: 'Alternative BOM' } ] }
+  @EndUserText.label: 'Alternative BOM'
+  BOMVERSION;
+  @UI: { lineItem: [{ position: 130, label: 'BOM DATE'}],
+  identification: [{ position: 130, label: 'BOM DATE' } ] }
+  @EndUserText.label: 'BOM DATE'
+  Bomdate;
+  @UI: { lineItem: [ { position: 140, label: 'BOM NUMBER'}],
+  identification: [ { position: 140, label: 'BOM NUMBER' }]}
+  @EndUserText.label: 'BOM NUMBER'
+  Bomnumber;
+
+  @UI.hidden: true
+  Createdby;
+  @UI.hidden: true
+  Createdon;
+  @UI.hidden: true
+  /* Associations */
+  _item;
+  @UI.hidden: true
+  _item1;
+
+}

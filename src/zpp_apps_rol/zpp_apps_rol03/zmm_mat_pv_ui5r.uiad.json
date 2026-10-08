@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Material Details",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Burning Maintenance Record"
+  },
+  "ui5AppDetails": {
+    "appId": "zppmat.zppmat"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_26B8AC1232279CE705D5C02004B67EB22653955A_TM",
+    "semanticObject": "ZPP_MAT_DETAILS",
+    "action": "Display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_26B8AC1232279CE705D5C02004B67EB22653955A_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Burning Maintenance Record",
+        "subtitle": "Details"
+      }
+    }
+  ]
+}

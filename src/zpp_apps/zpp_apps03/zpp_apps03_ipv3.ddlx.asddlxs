@@ -1,0 +1,23 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPP_APPS03_IPV3
+    with 
+{
+ @UI.facet: [ { id:              'Length',
+                       purpose:         #STANDARD,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Length',
+                       position:        10 } ]
+@UI.hidden: true
+
+   Uuid;
+   @UI: { lineItem: [{ position: 10, label: 'Length'}],
+  identification: [{ position: 10, label: 'Length' } ] }
+   Length;
+      @UI: { lineItem: [{ position: 20, label: 'Quantity'}],
+  identification: [{ position: 20, label: 'Quantity' } ] }
+   Quantity;
+   @UI.hidden: true
+   /* Associations */
+   _hdr;
+    
+}

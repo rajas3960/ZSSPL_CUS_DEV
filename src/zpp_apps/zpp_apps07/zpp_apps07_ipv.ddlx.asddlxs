@@ -1,0 +1,59 @@
+@Metadata.layer:#PARTNER 
+annotate entity ZPP_APPS07_IPV
+    with 
+{
+ @UI.facet: [ { id:              'Item',
+                       purpose:         #STANDARD,
+                       type:            #IDENTIFICATION_REFERENCE,
+                       label:           'Good Issue and Good Recipt',
+                       position:        10 } ]
+  @UI: { lineItem: [{ position: 10, label: 'Vrno'}],
+  identification: [{ position: 10, label: 'Vrno' } ] }                 
+  Vrno;
+  @UI: { lineItem: [{ position: 20, label: 'Sno'}],
+  identification: [{ position: 20, label: 'Sno' } ] }
+  Sno;
+  @UI.hidden: true
+  Uuid;
+  @UI: { lineItem: [{ position: 30, label: 'Order No'}],
+  identification: [{ position: 30, label: 'Order No' } ] }
+  Orderno;
+  @UI.hidden: true
+  Plant;
+  @UI: { lineItem: [{ position: 40, label: 'Material'}],
+  identification: [{ position: 40, label: 'Material' } ] }
+  Matnr;
+  @UI.hidden: true
+  Maktx;
+  @UI.hidden: true
+  Plnqty;
+@UI: { lineItem: [{ position: 50, label: 'Requested Quanity'}],
+  identification: [{ position: 50, label: 'Requested Quanity' } ] }
+  Reqty;
+  @UI.hidden: true
+  Uom;
+  @UI.hidden: true
+  Vbeln;
+  @UI: { lineItem: [{ position: 60, label: 'Length'}],
+  identification: [{ position: 60, label: 'Length' } ] }
+  Length;
+  @UI: { lineItem: [{ position: 70, label: 'Width'}],
+  identification: [{ position: 70, label: 'Width' } ] }
+  Width;
+  @UI: { lineItem: [{ position: 80, label: 'Wt/Pc'}],
+  identification: [{ position: 80, label: 'Wt/Pc' } ] }
+  Wetpc;
+  @UI: { lineItem: [{ position: 90, label: 'Net Weight'}],
+  identification: [{ position: 90, label: 'Net Weight' } ] }
+  Netwt;
+  @UI: { lineItem: [{ position: 5, label: 'Jobsheet No'}],
+  identification: [{ position: 5, label: 'Jobsheet No' } ] }
+  Jobsht;
+  @UI: { lineItem: [{ position: 110, label: 'Operation'}],
+  identification: [{ position: 110, label: 'Operation' } ] }
+  Operation;
+  @UI.hidden: true
+  /* Associations */
+  _hdr;  
+    
+}

@@ -1,0 +1,69 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: {
+    typeName: 'Balance to Plan Report',
+    typeNamePlural: 'Balance to Plan Reports',title: {type: #STANDARD,label: 'Balance to Plan Report'}},
+  presentationVariant: [ {sortOrder: [{ by: 'SalesOrder', direction: #ASC }    ]  } ]}
+annotate entity ZPP_REPORT_PV1
+    with 
+{
+     @UI.facet: [ { id:              'BalancetoPlan',
+  purpose:         #STANDARD,
+  type:            #LINEITEM_REFERENCE,
+  label:           'Balance To Plan',
+  position:        10 }]
+    @UI: {  lineItem:       [ { position: 10, label: 'Sales order No' } ],
+     identification: [ { position: 10, label: 'Sales order No'} ] }
+  @EndUserText.label: 'Sales order No'
+  @UI.selectionField: [{ position: 10 }]
+  
+    SalesOrder;
+    @UI: {  lineItem:       [ { position: 15, label: 'Line Item No' } ],
+     identification: [ { position: 15, label: 'Line Item No'} ] }
+  @EndUserText.label: 'Line Item No'
+    SalesOrderItem;
+    @UI: {  lineItem:       [ { position: 20, label: 'Material (Product)' } ],
+     identification: [ { position: 20, label: 'Material (Product)'} ] }
+  @EndUserText.label: 'Material (Product)'
+    Product;
+    @UI: {  lineItem:       [ { position: 30, label: 'Material Desc. (Product)' } ],
+     identification: [ { position: 30, label: 'Material Desc. (Product)'} ] }
+  @EndUserText.label: 'Material Desc. (Product)'
+    ProductName;
+    @UI: {  lineItem:       [ { position: 33, label: 'Material Group' } ],
+     identification: [ { position: 33, label: 'Material Group'} ] }
+  @EndUserText.label: 'Material Group'
+    ProductGroup;
+    @UI: {  lineItem:       [ { position: 40, label: 'Sales Order Qty in KG' } ],
+     identification: [ { position: 40, label: 'Sales Order Qty in KG'} ] }
+  @EndUserText.label: 'Sales Order Qty in KG'
+    RequestedQuantity;
+    @UI: {  lineItem:       [ { position: 43, label: 'Total Plan Qty in kg' } ],
+     identification: [ { position: 43, label: 'Total Plan Qty in kg'} ] }
+  @EndUserText.label: 'Total Plan Qty in kg'
+    Plan_TotalQty;
+    @UI: {  lineItem:       [ { position: 46, label: 'Total Plan Qty in Nos' } ],
+     identification: [ { position: 46, label: 'Total Plan Qty in Nos'} ] }
+  @EndUserText.label: 'Total Plan Qty in Nos'
+    TotalPC;
+   @UI: {  lineItem:       [ { position: 80, label: 'Bal. to JC Release Qty in Kgs' } ],
+     identification: [ { position: 80, label: 'Bal. to JC Release Qty in Kgs'} ] }
+  @EndUserText.label: 'Bal. to JC Release Qty in Kgs'
+    PlannedTotalQtyInBaseUnit;
+    @UI.hidden: true
+    BaseUnit;
+    @UI.hidden: true
+    RequestedQuantityUnit;
+     @UI: {  lineItem:       [ { position: 60, label: 'JC Released Qty in Nos' } ],
+     identification: [ { position: 60, label: 'JC Released Qty in Nos'} ] }
+  @EndUserText.label: 'JC Released Qty in Nos'
+    jcpc;
+    @UI: {  lineItem:       [ { position: 70, label: 'JC Released Qty in Kgs' } ],
+     identification: [ { position: 70, label: 'JC Released Qty in Kgs'} ] }
+  @EndUserText.label: 'JC Released Qty in Kgs'
+    jcqty;
+    @UI: {  lineItem:       [ { position: 90, label: 'Bal. to JC Release Qty in Nos' } ],
+     identification: [ { position: 90, label: 'Bal. to JC Release Qty in Nos'} ] }
+  @EndUserText.label: 'Bal. to JC Release Qty in Nos'
+    bal_pcs;
+}

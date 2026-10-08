@@ -1,0 +1,42 @@
+managed implementation in class zbp_rcv_lc_mnt unique;
+strict ( 2 );
+with draft;
+define behavior for ZRCV_LC_MNT alias HDR
+persistent table ztb1_lc_mnt_h
+draft table zdt1_lc_mnt_h
+lock master total etag Lcnumber
+authorization master ( instance )
+//etag master <field_name>
+{
+  field ( mandatory : create ) Lcnumber, Soldto;
+  field ( readonly : update ) Lcnumber, Soldto, Cusname;
+  field ( readonly )  Lcutamt, Lcbcamt;
+
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ztb1_lc_mnt_h control zcx_lc_mnt_h
+    {
+      Bankname = bankname;
+      Bnkbrch  = bnkbrch;
+      Cusname  = cusname;
+      Lcamt    = lcamt;
+      Lcbcamt  = lcbcamt;
+      Lccuky   = lccuky;
+      Lcdate   = lcdate;
+      Lcnumber = lcnumber;
+      Lcutamt  = lcutamt;
+      Lcvdate  = lcvdate;
+      Soldto   = soldto;
+      Status   = status;
+      Vfdate   = vfdate;
+      Vtdate   = vtdate;
+    }
+}

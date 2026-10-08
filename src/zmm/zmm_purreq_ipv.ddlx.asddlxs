@@ -1,0 +1,73 @@
+@Metadata.layer: #PARTNER
+
+//@UI:{ 
+//headerInfo:{ typeName: 'ItemData',
+//            typeNamePlural: 'Item',
+//            title: { type: #STANDARD,label: 'Table Purchase Indent',value: 'purreq_no' },
+//            description:{ type: #STANDARD,label: 'Purchase Indent Table' }
+// },
+//  presentationVariant: [{ sortOrder: [{by: 'purreq_no',direction: #ASC  }] }]
+//}
+//@Search.searchable: true
+annotate entity zmm_purreq_ipv
+    with 
+{
+//@UI.facet: [{ id: 'ItemData',
+//purpose: #STANDARD,
+//type: #IDENTIFICATION_REFERENCE,
+//label: 'Purchase Indent Table',
+//position: 10
+// }]
+  @UI.hidden: true
+    purreq_no;
+    @UI:{ lineItem: [{ position: 10,label: 'SI No',importance: #HIGH }],
+ identification: [{ position: 10,label: 'SI No' }] }
+    purreq_itno;
+    @UI.hidden: true
+    itemtext;
+     @UI:{ lineItem: [{ position: 20,label: 'Item Description',importance: #HIGH }],
+ identification: [{ position: 20,label: 'Item Description' }] }
+    itemdecs;
+     @UI:{ lineItem: [{ position: 30,label: 'Required Quantity',importance: #HIGH }],
+ identification: [{ position: 30,label: 'Required Quantity' }] }
+    REQ;
+ @UI:{ lineItem: [{ position: 35,label: 'Stock Div Entity',importance: #HIGH }],
+ identification: [{ position: 35,label: 'Stock Div Entity' }] }   
+    stock;
+   @UI:{ lineItem: [{ position: 36,label: 'Division',importance: #HIGH }],
+ identification: [{ position: 36,label: 'Division' }] }  
+ div; 
+    @UI:{ lineItem: [{ position: 40,label: 'UOM',importance: #HIGH }],
+ identification: [{ position: 40,label: 'UOM' }] }
+    BaseUnit;
+   @UI.hidden: true
+    curr;
+    @UI:{ lineItem: [{ position: 50,label: 'Rate',importance: #HIGH }],
+ identification: [{ position: 50,label: 'Rate' }] }
+    PERPRICE;
+    @UI:{ lineItem: [{ position: 60,label: 'Value',importance: #HIGH }],
+ identification: [{ position: 60,label: 'Value' }] }
+    NET_AMT;
+    @UI:{ lineItem: [{ position: 70,label: 'Last Grn/PO no/Party Name',importance: #HIGH }],
+ identification: [{ position: 70,label: 'Last Grn/PO no/Party Name' }] }
+    lastgrnpov;
+    @UI.hidden: true
+    remarks;
+    @UI.hidden: true
+    reqdate;
+    @UI.hidden: true
+    indetdate;
+    @UI.hidden: true
+    GRDocument;
+    @UI.hidden: true
+    VendorName;
+    @UI.hidden: true
+    PurchasingDocument;
+    @UI.hidden: true
+    PurchasingDocumentItem;
+    @UI.hidden: true
+    REQDays;
+    @UI.hidden: true
+    /* Associations */
+    _header;     
+}

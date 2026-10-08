@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "GSTR1",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "GSTR1"
+  },
+  "ui5AppDetails": {
+    "appId": "zsfgstr1rep01"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_E23AC9FDFABD84AD34EB4F721D8F9895E208F947_TM",
+    "semanticObject": "YY1_GSTR1_RE01",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_E23AC9FDFABD84AD34EB4F721D8F9895E208F947_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "GSTR1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+@Metadata.layer: #PARTNER
+@UI: { headerInfo: {
+typeName: 'Customer LC',
+typeNamePlural: 'Customer LC',
+ 
+title: { type: #STANDARD, value: 'Lnum' },
+         description: { type: #STANDARD, value: 'StpName' }
+         } }
+annotate entity ZLC_REP_PV
+    with 
+{
+@UI.facet: [{  
+                      id:  'Header',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'LC Header',
+                      parentId: 'Headerinfo',
+                      position:        10 
+                      } ,
+                      
+                      
+                      { 
+                      id:              'Items',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'LC Line Items',
+                      position:        20,
+                      targetElement:   '_item'
+                      }]
+    
+    @UI: { lineItem: [{ position: 10, label: 'Customer Name' }],
+    identification: [{ position: 10, label: 'Customer Name' }]}
+   StpName;
+    @UI: { lineItem: [{ position: 20, label: 'LC Number' }],
+    identification: [{ position: 20, label: 'LC Number' }]}   
+    @UI.selectionField: [{element: 'Lnum', position: 10 }]
+    @EndUserText.label: 'LC Number'                
+   Lnum;
+    @UI: { lineItem: [{ position: 30, label: 'LC Issue Dtae' }],
+    identification: [{ position: 30, label: 'LC Issue Dtae' }]}
+   Valfrm;
+    @UI: { lineItem: [{ position: 40, label: 'Last Date of Despatch' }],
+    identification: [{ position: 40, label: 'Last Date of Despatch' }]}
+   Ldd;
+//    @UI: { lineItem: [{ position: 10, label: 'Sales Order' }],
+//    identification: [{ position: 10, label: 'Sales Order' }]}
+//   Valto;
+    @UI: { lineItem: [{ position: 50, label: 'Bank Name' }],
+    identification: [{ position: 50, label: 'Bank Name' }]}
+   Banknam;
+    @UI: { lineItem: [{ position: 60, label: 'Planned LC Amount' }],
+    identification: [{ position: 60, label: 'Planned LC Amount' }]}
+   TlcAmt;
+    @UI: { lineItem: [{ position: 70, label: 'Actual LC Received(Total BOE Value)' }],
+    identification: [{ position: 70, label: 'Actual LC Received(Total BOE Value)' }]}
+   Aclcamt;
+    @UI: { lineItem: [{ position: 80, label: 'Planned Balance' }],
+    identification: [{ position: 80, label: 'Planned Balance' }]}
+   Planlcamt;
+    @UI: { lineItem: [{ position: 90, label: 'BankBranch' }],
+    identification: [{ position: 90, label: 'BankBranch' }]}
+   BankBranch;
+    @UI: { lineItem: [{ position: 100, label: 'Customer No' }],
+    identification: [{ position: 100, label: 'Customer No' }]}
+   Stp;
+    @UI: { lineItem: [{ position: 110, label: 'Incoterm' }],
+    identification: [{ position: 110, label: 'Incoterm' }]}
+   Incoterm;
+    @UI: { lineItem: [{ position: 120, label: 'PO/PI No' }],
+    identification: [{ position: 120, label: 'PO/PI No' }]}
+   Popi;
+    @UI: { lineItem: [{ position: 130, label: 'Project' }],
+    identification: [{ position: 130, label: 'Project' }]}
+   Project;
+    @UI: { lineItem: [{ position: 140, label: 'Remark' }],
+    identification: [{ position: 140, label: 'Remark' }]}
+   Remark;
+    @UI: { lineItem: [{ position: 150, label: 'Torlence' }],
+    identification: [{ position: 150, label: 'Torlence' }]}
+   Torlce;
+    @UI: { lineItem: [{ position: 160, label: 'Total Value Amount' }],
+    identification: [{ position: 160, label: 'Total Value Amount' }]}
+   Totavamt;
+    @UI: { lineItem: [{ position: 170, label: 'No Of Days' }],
+    identification: [{ position: 170, label: 'No Of Days' }]}
+   noofdays;
+    @UI: { lineItem: [{ position: 180, label: 'Interest %' }],
+    identification: [{ position: 180, label: 'Interest %' }]}
+   Intrest;
+//    @UI: { lineItem: [{ position: 10, label: 'Sales Order' }],
+//    identification: [{ position: 10, label: 'Sales Order' }]}
+//   TlcUtilz;
+//    @UI: { lineItem: [{ position: 10, label: 'Sales Order' }],
+//    identification: [{ position: 10, label: 'Sales Order' }]}
+//   TotBalance;
+//    @UI: { lineItem: [{ position: 10, label: 'Sales Order' }],
+//    identification: [{ position: 10, label: 'Sales Order' }]}
+//   LcCurr;
+//    @UI: { lineItem: [{ position: 10, label: 'Sales Order' }],
+//    identification: [{ position: 10, label: 'Sales Order' }]}
+//   Applicant;
+//    @UI: { lineItem: [{ position: 10, label: 'Sales Order' }],
+//    identification: [{ position: 10, label: 'Sales Order' }]}
+//   Mark;
+//    @UI: { lineItem: [{ position: 10, label: 'Sales Order' }],
+//    identification: [{ position: 10, label: 'Sales Order' }]}
+//   Beneficiary;
+//    @UI: { lineItem: [{ position: 10, label: 'Sales Order' }],
+//    identification: [{ position: 10, label: 'Sales Order' }]}
+//   Totalqty;
+//    @UI: { lineItem: [{ position: 10, label: 'Sales Order' }],
+//    identification: [{ position: 10, label: 'Sales Order' }]}
+//   Unit;
+//    @UI: { lineItem: [{ position: 10, label: 'Sales Order' }],
+//    identification: [{ position: 10, label: 'Sales Order' }]}
+//   Totboeamt;
+   /* Associations */
+   @UI.hidden: true
+   _item;
+    
+}

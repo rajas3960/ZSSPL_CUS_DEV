@@ -1,0 +1,4 @@
+@EndUserText.label: 'SD Of RMR REPORT'
+define service ZPP_RM_REP_CV_UI {
+  expose ZPP_RM_REP_CV as RMR_REPORT;
+}

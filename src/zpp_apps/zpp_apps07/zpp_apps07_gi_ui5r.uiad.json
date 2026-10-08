@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Jobsheet Mass Goods Issue & Goods Receipts"
+  },
+  "ui5AppDetails": {
+    "appId": "zppapp07gi"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_198CA9E9ACE54552028AF32D91F51A2263C73D1D_TM",
+    "semanticObject": "YY1_PPAPP07_GI",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_198CA9E9ACE54552028AF32D91F51A2263C73D1D_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Jobsheet Mass Goods Issue & Goods Receipts",
+        "subtitle": "Application"
+      }
+    }
+  ]
+}

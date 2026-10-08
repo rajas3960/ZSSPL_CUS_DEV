@@ -1,0 +1,40 @@
+projection;
+strict(2) ;
+use draft;
+use side effects;
+define behavior for ZPP_APPSR_PV alias _hdr
+{
+  use create;
+  use update;
+  use delete;
+
+  use action gt_section;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+  use action GtSect;
+
+  use association _itemselc { create; with draft; }
+  use association _itemseld { create; with draft; }
+}
+
+define behavior for ZPP_APPSR_IPV alias _item
+{
+  use update;
+  use delete;
+
+  use action gt_selection;
+
+  use association _hdr { with draft; }
+}
+
+define behavior for ZPP_APPSR_IPV2 alias _itemwe
+{
+  use update;
+  use delete;
+
+  use association _hdr { with draft; }
+}

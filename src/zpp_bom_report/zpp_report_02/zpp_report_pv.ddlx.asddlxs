@@ -1,0 +1,49 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: { typeName: 'Bill Of Material Report',
+                typeNamePlural: 'Bill Of Material Reports',
+                title: { type: #STANDARD, label: 'STOCK REPORTS', value: 'Structure' } },
+  presentationVariant: [{ sortOrder: [{ by: 'Structure', direction:  #ASC }] }] }
+annotate entity zpp_report_PV with
+{
+  @UI.facet: [ { id:              'BillOfMaterialReport',
+                   purpose:         #STANDARD,
+                   type:            #IDENTIFICATION_REFERENCE,
+                   label:           'Bill Of Material Report',
+                   position:        10 },
+                   { id:              'Item',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'Bill Of Material Item',
+                      position:        20,
+                      targetElement:   '_item'}]
+  @UI: {
+      lineItem:       [ { position: 10, label: 'Project' } ],
+      identification: [ { position: 10, label: 'Project' } ]
+  }
+  @UI.selectionField: [{ element: 'Project', position: 10 }]
+  @EndUserText.label: 'Project'
+  @Consumption.valueHelpDefinition: [{
+    entity: {
+      name: 'ZPP_MAT_V4',
+      element: 'Product'
+    }}]
+
+  Project;
+  @UI: {  lineItem:       [ { position: 20, label: 'Tower Type' } ],
+       identification: [ { position: 20, label: 'Tower Type' } ] }
+  @EndUserText.label: 'Tower Type'
+  Towertype;
+  @UI: {  lineItem:       [ { position: 30, label: 'Tower Subtype' } ],
+       identification: [ { position: 30, label: 'Tower Subtype' } ] }
+  @EndUserText.label: 'Tower Subtype'
+  Towersubtype;
+  @UI: {  lineItem:       [ { position: 40, label: 'Structure' } ],
+       identification: [ { position: 40, label: 'Structure' } ] }
+  @EndUserText.label: 'Structure'
+  Structure;
+  @UI: {  lineItem:       [ { position: 50, label: 'Mark Number' } ],
+       identification: [ { position: 50, label: 'Mark Number' } ] }
+  @EndUserText.label: 'Mark Number'
+  Marknumber;
+}

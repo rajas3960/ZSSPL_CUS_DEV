@@ -1,0 +1,41 @@
+managed implementation in class zbp_pp_apps06_re unique;
+strict ( 1 );
+
+
+define behavior for ZPP_APPS06_RE //alias <alias_name>
+//persistent table zpp_apps05_htb
+with unmanaged save
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  //  create ( authorization : global );
+  //  update;
+  //  delete;
+  field ( readonly ) Vrno, Createdby, Createdon, Delmark, Gengt, Lastchangedby, Lastchangedon, Prod, Project, Projectname, Chckmrk,
+  Purno, Sectmat, Status, Statusr, Werks, Vrcuting, Vbeln, Uuid, Unitwet, Totwithst, Totwithmk, Totlentq;
+  association _item { create; }
+  action ( features : instance, authorization : instance ) Gtmatchk result [1] $self;
+  action ( features : instance, authorization : instance ) Gtrelord result [1] $self;
+  action (features : instance,authorization : instance) Gtunrelord result [1] $self;
+  action ( features : instance, authorization : instance ) GtContract parameter ZPP_APPS06_COVH result [1] $self;
+  action (features : instance,authorization : instance) Gtunrelord1 result [1] $self;
+  side effects
+  { action Gtrelord affects field _item.OrderIsReleased, field _item.OrderIsReleasedc;
+    action GtContract affects field Contr, field Contrname;
+    action Gtunrelord affects field Relusr , field Statusr;
+     action Gtunrelord1 affects field Relusr , field Statusr; }
+}
+
+define behavior for ZPP_APPS06_IRV //alias <alias_name>
+//persistent table zpp_apps05_itb2
+with unmanaged save
+lock dependent by _hdr
+authorization dependent by _hdr
+//etag master <field_name>
+{
+  //  update;
+  //  delete;
+  field ( readonly ) Vrno, Sno, Jobsht, Length, Maktx, Matnr, Netwt, Operation, Orderno, Plant, Plnqty, Reqty, Uom, Uuid, Vbeln, Wetpc;
+  association _hdr;
+}

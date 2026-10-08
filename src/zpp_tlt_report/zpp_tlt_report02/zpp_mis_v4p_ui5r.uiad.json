@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "MIS Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zppmisr3r"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_4D8B1F6865A14692883C2FC6D6D0DD805FCE85FE_TM",
+    "semanticObject": "YY1_MIS_RP06",
+    "action": "manage",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_4D8B1F6865A14692883C2FC6D6D0DD805FCE85FE_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "MIS Report",
+        "subtitle": "Version - 2"
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: {
+typeName: 'Material',
+typeNamePlural: 'Material',
+title: { type: #STANDARD, value: 'Matnr'        } }     }
+annotate entity ZPP_MAT_PV
+    with 
+{
+ @UI.facet: [ { id:              'Material',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'Material',
+                      position:        10 }]
+       @UI: { lineItem: [{ position: 10, label: 'Material'}],
+  identification: [{ position: 10, label: 'Material' } ] }
+  @EndUserText.label: 'Material'                  
+    Matnr;
+       @UI: { lineItem: [{ position: 20, label: 'Plant'}],
+  identification: [{ position: 20, label: 'Plant' } ] }
+  @EndUserText.label: 'Plant'
+    Plant;
+       @UI: { lineItem: [{ position: 30, label: 'Burningloss %'}],
+  identification: [{ position: 30, label: 'Burningloss %' } ] }
+  @EndUserText.label: 'Burningloss %'
+    Bourningloss;
+    @UI.hidden: true
+    createdon;
+    
+}

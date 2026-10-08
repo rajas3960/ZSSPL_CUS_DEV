@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service defination of Form Release Document'
+define service ZPP_APP03_HCE_UI {
+  expose ZPP_APP03_HCE;
+  expose ZPP_APP03_ICE;
+}
